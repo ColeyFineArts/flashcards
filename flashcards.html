@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Flash Cards">
+<title>Flash Cards</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f7f5f2;min-height:100vh;overflow-x:hidden;}
+:root{--radius:16px;--card-bg:#fff;--shadow:0 4px 20px rgba(0,0,0,0.08);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:100;}
+.nav-title{font-size:18px;font-weight:700;color:#1a1a1a;}
+.nav-back{font-size:15px;color:#5b4fcf;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:4px;}
+.nav-back:hover{opacity:.8;}
+.home{padding:20px;}
+.greeting{font-size:26px;font-weight:800;color:#1a1a1a;margin-bottom:4px;}
+.sub{font-size:14px;color:#888;margin-bottom:20px;}
+.decks-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.deck-card{background:var(--card-bg);border-radius:var(--radius);padding:18px 16px;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s;border:none;text-align:left;width:100%;}
+.deck-card:active{transform:scale(.97);}
+.deck-icon{font-size:36px;margin-bottom:10px;display:block;}
+.deck-name{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:2px;}
+.deck-count{font-size:12px;color:#999;}
+.deck-card.add{background:transparent;border:2px dashed #ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100px;}
+.deck-card.add .deck-icon{font-size:28px;color:#aaa;}
+.deck-card.add .deck-name{color:#aaa;font-size:13px;}
+.study{padding:20px;display:flex;flex-direction:column;align-items:center;}
+.progress-bar{width:100%;height:6px;background:#e8e4ff;border-radius:3px;margin-bottom:8px;}
+.progress-fill{height:100%;background:#5b4fcf;border-radius:3px;transition:width .3s;}
+.progress-label{font-size:12px;color:#999;margin-bottom:20px;align-self:flex-start;}
+.card-wrap{width:100%;perspective:1000px;cursor:pointer;margin-bottom:24px;}
+.card-inner{position:relative;width:100%;min-height:260px;transition:transform .5s;transform-style:preserve-3d;}
+.card-inner.flipped{transform:rotateY(180deg);}
+.card-face{position:absolute;width:100%;min-height:260px;border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;backface-visibility:hidden;box-shadow:var(--shadow);}
+.card-front{background:var(--card-bg);}
+.card-back{background:#5b4fcf;transform:rotateY(180deg);}
+.card-emoji{font-size:72px;margin-bottom:12px;line-height:1.1;}
+.card-text{font-size:28px;font-weight:800;color:#1a1a1a;text-align:center;line-height:1.2;}
+.card-back .card-text{color:#fff;}
+.card-hint{font-size:13px;color:#bbb;margin-top:8px;}
+.card-back .card-hint{color:rgba(255,255,255,.6);}
+.card-fun{font-size:13px;color:rgba(255,255,255,.8);text-align:center;margin-top:10px;line-height:1.5;max-width:240px;}
+.nav-btns{display:flex;gap:16px;width:100%;justify-content:center;}
+.nav-btn{flex:1;max-width:130px;padding:14px;border-radius:12px;border:none;font-size:24px;cursor:pointer;background:#fff;box-shadow:var(--shadow);transition:transform .1s;}
+.nav-btn:active{transform:scale(.95);}
+.nav-btn.primary{background:#5b4fcf;color:#fff;font-size:16px;font-weight:700;max-width:160px;}
+.shuffle-btn{margin-top:14px;background:none;border:1.5px solid #ccc;border-radius:10px;padding:8px 20px;font-size:13px;color:#666;cursor:pointer;}
+.add-deck{padding:20px;}
+.section-title{font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:4px;}
+.section-sub{font-size:13px;color:#888;margin-bottom:16px;}
+.ai-box{background:#fff;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:20px;}
+.ai-label{font-size:12px;font-weight:700;color:#5b4fcf;letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase;}
+.ai-input-row{display:flex;gap:8px;}
+.ai-input{flex:1;padding:12px 14px;border:1.5px solid #e0dff5;border-radius:10px;font-size:15px;outline:none;font-family:inherit;}
+.ai-input:focus{border-color:#5b4fcf;}
+.ai-btn{padding:12px 18px;background:#5b4fcf;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;}
+.ai-btn:disabled{opacity:.5;cursor:not-allowed;}
+.ai-status{font-size:13px;color:#888;margin-top:8px;min-height:18px;}
+.divider{display:flex;align-items:center;gap:10px;margin:20px 0;}
+.divider-line{flex:1;height:1px;background:#e5e5e5;}
+.divider-text{font-size:12px;color:#aaa;font-weight:600;}
+.manual-box{background:#fff;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);}
+.field-label{font-size:13px;font-weight:600;color:#555;margin-bottom:6px;}
+.field-input{width:100%;padding:11px 14px;border:1.5px solid #eee;border-radius:10px;font-size:15px;font-family:inherit;outline:none;margin-bottom:12px;}
+.field-input:focus{border-color:#5b4fcf;}
+.emoji-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.emoji-pick{font-size:22px;padding:6px 8px;border:1.5px solid #eee;border-radius:8px;cursor:pointer;background:#fff;transition:.1s;}
+.emoji-pick.selected{border-color:#5b4fcf;background:#f0eeff;}
+.create-btn{width:100%;padding:14px;background:#1a1a1a;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:4px;}
+.create-btn:disabled{opacity:.4;}
+.manage{padding:20px;}
+.card-row{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.card-row-emoji{font-size:22px;}
+.card-row-text{flex:1;}
+.card-row-front{font-size:14px;font-weight:600;color:#1a1a1a;}
+.card-row-back{font-size:12px;color:#888;}
+.card-row-del{font-size:18px;color:#ddd;cursor:pointer;padding:4px;}
+.card-row-del:hover{color:#e24b4a;}
+.add-card-btn{padding:12px;background:#fff;border:1.5px dashed #ccc;border-radius:10px;font-size:14px;color:#888;cursor:pointer;text-align:center;font-family:inherit;}
+.del-deck-btn{width:100%;padding:12px;background:none;border:1.5px solid #f0c0c0;border-radius:10px;font-size:14px;color:#e24b4a;cursor:pointer;margin-top:16px;font-family:inherit;}
+.add-card-form{background:#f7f5f2;border-radius:12px;padding:14px;margin-top:12px;}
+.hidden{display:none!important;}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(91,79,207,.3);border-top-color:#5b4fcf;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:6px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.complete-screen{text-align:center;padding:40px 20px;}
+.complete-emoji{font-size:64px;margin-bottom:16px;}
+.complete-title{font-size:24px;font-weight:800;color:#1a1a1a;margin-bottom:8px;}
+.complete-sub{font-size:15px;color:#888;margin-bottom:28px;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const STORAGE_KEY='flashcard_decks_v2';
+const STARTER_DECKS=[
+  {id:'numbers',name:'Numbers',icon:'🔢',accent:'accent-purple',cards:[
+    {id:'n1',front:'1',back:'One',emoji:'1️⃣',fun:'One is the loneliest number!'},
+    {id:'n2',front:'2',back:'Two',emoji:'2️⃣',fun:'You have 2 eyes and 2 ears!'},
+    {id:'n3',front:'3',back:'Three',emoji:'3️⃣',fun:'Triangles have 3 sides!'},
+    {id:'n4',front:'4',back:'Four',emoji:'4️⃣',fun:'A square has 4 corners!'},
+    {id:'n5',front:'5',back:'Five',emoji:'5️⃣',fun:'Count your fingers: 5 on each hand!'},
+    {id:'n6',front:'6',back:'Six',emoji:'6️⃣',fun:'Insects have 6 legs!'},
+    {id:'n7',front:'7',back:'Seven',emoji:'7️⃣',fun:'There are 7 days in a week!'},
+    {id:'n8',front:'8',back:'Eight',emoji:'8️⃣',fun:'Spiders have 8 legs!'},
+    {id:'n9',front:'9',back:'Nine',emoji:'9️⃣',fun:'Cats are said to have 9 lives!'},
+    {id:'n10',front:'10',back:'Ten',emoji:'🔟',fun:'You have 10 fingers and 10 toes!'},
+  ]},
+  {id:'colors',name:'Colors',icon:'🎨',accent:'accent-coral',cards:[
+    {id:'c1',front:'🔴',back:'Red',emoji:'🔴',fun:'Apples and fire trucks are red!'},
+    {id:'c2',front:'🔵',back:'Blue',emoji:'🔵',fun:'The sky and ocean are blue!'},
+    {id:'c3',front:'🟡',back:'Yellow',emoji:'🟡',fun:'The sun is bright yellow!'},
+    {id:'c4',front:'🟢',back:'Green',emoji:'🟢',fun:'Grass and leaves are green!'},
+    {id:'c5',front:'🟠',back:'Orange',emoji:'🟠',fun:'Oranges are orange!'},
+    {id:'c6',front:'🟣',back:'Purple',emoji:'🟣',fun:'Grapes and lavender are purple!'},
+    {id:'c7',front:'⚫',back:'Black',emoji:'⚫',fun:'The night sky looks black!'},
+    {id:'c8',front:'⚪',back:'White',emoji:'⚪',fun:'Snow is sparkling white!'},
+    {id:'c9',front:'🟤',back:'Brown',emoji:'🟤',fun:'Chocolate and dirt are brown!'},
+    {id:'c10',front:'🩷',back:'Pink',emoji:'🩷',fun:'Flamingos are bright pink!'},
+  ]},
+  {id:'shapes',name:'Shapes',icon:'🔷',accent:'accent-teal',cards:[
+    {id:'sh1',front:'●',back:'Circle',emoji:'⭕',fun:'Wheels and coins are circles!'},
+    {id:'sh2',front:'■',back:'Square',emoji:'🟦',fun:'A square has 4 equal sides!'},
+    {id:'sh3',front:'▲',back:'Triangle',emoji:'🔺',fun:'A triangle has 3 sides!'},
+    {id:'sh4',front:'▬',back:'Rectangle',emoji:'▬',fun:'Doors and books are rectangles!'},
+    {id:'sh5',front:'⭐',back:'Star',emoji:'⭐',fun:'Stars in the sky have 5 points!'},
+    {id:'sh6',front:'❤️',back:'Heart',emoji:'❤️',fun:'Hearts mean love!'},
+    {id:'sh7',front:'⬡',back:'Hexagon',emoji:'🔶',fun:'Honeycombs are hexagons — 6 sides!'},
+    {id:'sh8',front:'💎',back:'Diamond',emoji:'💎',fun:'Playing cards have diamond shapes!'},
+  ]},
+  {id:'days',name:'Days of the Week',icon:'📅',accent:'accent-amber',cards:[
+    {id:'d1',front:'1st day',back:'Monday',emoji:'📅',fun:'Monday starts the school week!'},
+    {id:'d2',front:'2nd day',back:'Tuesday',emoji:'📆',fun:'Tuesday comes after Monday!'},
+    {id:'d3',front:'3rd day',back:'Wednesday',emoji:'🗓️',fun:'Wednesday is the middle of the week!'},
+    {id:'d4',front:'4th day',back:'Thursday',emoji:'📅',fun:'Thursday means Friday is almost here!'},
+    {id:'d5',front:'5th day',back:'Friday',emoji:'🎉',fun:'Friday is the last school day!'},
+    {id:'d6',front:'6th day',back:'Saturday',emoji:'⚽',fun:'Saturday is for playing and fun!'},
+    {id:'d7',front:'7th day',back:'Sunday',emoji:'☀️',fun:'Sunday is family day!'},
+  ]},
+  {id:'planets',name:'Planets',icon:'🪐',accent:'accent-blue',cards:[
+    {id:'p1',front:'☀️',back:'The Sun',emoji:'☀️',fun:'The Sun is a giant ball of fire!'},
+    {id:'p2',front:'🪨',back:'Mercury',emoji:'🪨',fun:'Mercury is the closest planet to the Sun!'},
+    {id:'p3',front:'🌕',back:'Venus',emoji:'🌕',fun:'Venus is the hottest planet!'},
+    {id:'p4',front:'🌍',back:'Earth',emoji:'🌍',fun:'We live on Earth!'},
+    {id:'p5',front:'🔴',back:'Mars',emoji:'🔴',fun:'Mars is called the Red Planet!'},
+    {id:'p6',front:'🟠',back:'Jupiter',emoji:'🟠',fun:'Jupiter is the biggest planet!'},
+    {id:'p7',front:'💍',back:'Saturn',emoji:'💍',fun:'Saturn has beautiful rings!'},
+    {id:'p8',front:'🩵',back:'Uranus',emoji:'🩵',fun:'Uranus spins on its side!'},
+    {id:'p9',front:'🔵',back:'Neptune',emoji:'🔵',fun:'Neptune is the furthest planet!'},
+  ]},
+  {id:'alphabet',name:'Alphabet',icon:'🔤',accent:'accent-pink',cards:[
+    {id:'a1',front:'A',back:'Apple',emoji:'🍎',fun:'A is for Apple!'},
+    {id:'a2',front:'B',back:'Ball',emoji:'⚽',fun:'B is for Ball!'},
+    {id:'a3',front:'C',back:'Cat',emoji:'🐱',fun:'C is for Cat!'},
+    {id:'a4',front:'D',back:'Dog',emoji:'🐶',fun:'D is for Dog!'},
+    {id:'a5',front:'E',back:'Elephant',emoji:'🐘',fun:'E is for Elephant!'},
+    {id:'a6',front:'F',back:'Fish',emoji:'🐟',fun:'F is for Fish!'},
+    {id:'a7',front:'G',back:'Giraffe',emoji:'🦒',fun:'G is for Giraffe!'},
+    {id:'a8',front:'H',back:'House',emoji:'🏠',fun:'H is for House!'},
+    {id:'a9',front:'I',back:'Ice Cream',emoji:'🍦',fun:'I is for Ice Cream!'},
+    {id:'a10',front:'J',back:'Jellyfish',emoji:'🪼',fun:'J is for Jellyfish!'},
+    {id:'a11',front:'K',back:'Kite',emoji:'🪁',fun:'K is for Kite!'},
+    {id:'a12',front:'L',back:'Lion',emoji:'🦁',fun:'L is for Lion!'},
+    {id:'a13',front:'M',back:'Moon',emoji:'🌙',fun:'M is for Moon!'},
+    {id:'a14',front:'N',back:'Nest',emoji:'🪺',fun:'N is for Nest!'},
+    {id:'a15',front:'O',back:'Octopus',emoji:'🐙',fun:'O is for Octopus!'},
+    {id:'a16',front:'P',back:'Pizza',emoji:'🍕',fun:'P is for Pizza!'},
+    {id:'a17',front:'Q',back:'Queen',emoji:'👑',fun:'Q is for Queen!'},
+    {id:'a18',front:'R',back:'Rainbow',emoji:'🌈',fun:'R is for Rainbow!'},
+    {id:'a19',front:'S',back:'Star',emoji:'⭐',fun:'S is for Star!'},
+    {id:'a20',front:'T',back:'Tiger',emoji:'🐯',fun:'T is for Tiger!'},
+    {id:'a21',front:'U',back:'Umbrella',emoji:'☂️',fun:'U is for Umbrella!'},
+    {id:'a22',front:'V',back:'Volcano',emoji:'🌋',fun:'V is for Volcano!'},
+    {id:'a23',front:'W',back:'Whale',emoji:'🐳',fun:'W is for Whale!'},
+    {id:'a24',front:'X',back:'Xylophone',emoji:'🎵',fun:'X is for Xylophone!'},
+    {id:'a25',front:'Y',back:'Yak',emoji:'🐂',fun:'Y is for Yak!'},
+    {id:'a26',front:'Z',back:'Zebra',emoji:'🦓',fun:'Z is for Zebra!'},
+  ]},
+  {id:'math',name:'Simple Math',icon:'➕',accent:'accent-green',cards:[
+    {id:'m1',front:'1 + 1',back:'2',emoji:'✌️',fun:'One finger plus one finger = two fingers!'},
+    {id:'m2',front:'2 + 1',back:'3',emoji:'3️⃣',fun:'Two apples plus one more = three!'},
+    {id:'m3',front:'2 + 2',back:'4',emoji:'4️⃣',fun:'Two eyes plus two eyes = four!'},
+    {id:'m4',front:'3 + 1',back:'4',emoji:'4️⃣',fun:'Three bears plus one more = four!'},
+    {id:'m5',front:'3 + 2',back:'5',emoji:'🖐️',fun:'Count on your hand — five!'},
+    {id:'m6',front:'4 + 1',back:'5',emoji:'🖐️',fun:'Four flowers plus one more = five!'},
+    {id:'m7',front:'5 + 5',back:'10',emoji:'🔟',fun:'All your fingers together = ten!'},
+    {id:'m8',front:'3 + 3',back:'6',emoji:'6️⃣',fun:'Three cats plus three cats = six!'},
+    {id:'m9',front:'2 + 3',back:'5',emoji:'🖐️',fun:'Two toes plus three toes = five!'},
+    {id:'m10',front:'4 + 2',back:'6',emoji:'6️⃣',fun:'Four legs plus two more = six!'},
+  ]},
+  {id:'animals',name:'Animals',icon:'🐾',accent:'accent-sky',cards:[
+    {id:'an1',front:'🐶',back:'Dog',emoji:'🐶',fun:'Dogs say WOOF!'},
+    {id:'an2',front:'🐱',back:'Cat',emoji:'🐱',fun:'Cats say MEOW!'},
+    {id:'an3',front:'🐘',back:'Elephant',emoji:'🐘',fun:'Elephants are the biggest land animals!'},
+    {id:'an4',front:'🦁',back:'Lion',emoji:'🦁',fun:'Lions are called the King of the Jungle!'},
+    {id:'an5',front:'🐧',back:'Penguin',emoji:'🐧',fun:'Penguins can\'t fly but love to swim!'},
+    {id:'an6',front:'🦒',back:'Giraffe',emoji:'🦒',fun:'Giraffes have the longest necks!'},
+    {id:'an7',front:'🐬',back:'Dolphin',emoji:'🐬',fun:'Dolphins are very smart and friendly!'},
+    {id:'an8',front:'🐼',back:'Panda',emoji:'🐼',fun:'Pandas love to eat bamboo!'},
+    {id:'an9',front:'🦊',back:'Fox',emoji:'🦊',fun:'Foxes are clever and fast!'},
+    {id:'an10',front:'🐢',back:'Turtle',emoji:'🐢',fun:'Turtles carry their homes on their backs!'},
+    {id:'an11',front:'🦋',back:'Butterfly',emoji:'🦋',fun:'Butterflies start life as caterpillars!'},
+    {id:'an12',front:'🐸',back:'Frog',emoji:'🐸',fun:'Frogs say RIBBIT and love to jump!'},
+  ]},
+];
+
+function loadDecks(){try{const s=localStorage.getItem(STORAGE_KEY);if(s)return JSON.parse(s);}catch(e){}return JSON.parse(JSON.stringify(STARTER_DECKS));}
+function saveDecks(d){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d));}catch(e){}}
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2);}
+
+const ICON_OPTS=['🌟','🎯','🎪','🎠','🎭','🧩','🎲','🌈','🚀','🌺','🦄','🍄','🎸','⚡','🌊'];
+
+let state={view:'home',decks:loadDecks(),studyDeck:null,studyIdx:0,studyFlipped:false,studyOrder:[],manageDeck:null,addCardFront:'',addCardBack:'',addCardEmoji:'',newDeckName:'',newDeckIcon:'🃏',aiStatus:'',aiTopic:''};
+
+function render(){document.getElementById('app').innerHTML=buildHTML();attachEvents();}
+
+function buildHTML(){
+  if(state.view==='home')return buildHome();
+  if(state.view==='study')return buildStudy();
+  if(state.view==='complete')return buildComplete();
+  if(state.view==='manage')return buildManage();
+  if(state.view==='addDeck')return buildAddDeck();
+  return '';
+}
+
+function buildHome(){
+  const deckCards=state.decks.map(d=>`<button class="deck-card" onclick="startStudy('${d.id}')"><span class="deck-icon">${d.icon}</span><div class="deck-name">${d.name}</div><div class="deck-count">${d.cards.length} cards</div></button>`).join('');
+  return `<div class="nav"><span class="nav-title">⚡ Flash Cards</span><span style="font-size:13px;color:#5b4fcf;cursor:pointer;font-weight:500;" onclick="go('addDeck')">+ New Deck</span></div><div class="home"><div class="greeting">Let's learn! 🎉</div><div class="sub">Tap a deck to start</div><div class="decks-grid">${deckCards}<button class="deck-card add" onclick="go('addDeck')"><span class="deck-icon">➕</span><div class="deck-name">New deck</div></button></div></div>`;
+}
+
+function buildStudy(){
+  const deck=state.decks.find(d=>d.id===state.studyDeck);
+  if(!deck)return buildHome();
+  const order=state.studyOrder,idx=state.studyIdx;
+  if(idx>=order.length)return buildComplete();
+  const card=deck.cards[order[idx]];
+  const pct=Math.round((idx/order.length)*100);
+  return `<div class="nav"><span class="nav-back" onclick="go('home')">← Home</span><span class="nav-title">${deck.icon} ${deck.name}</span><span style="font-size:13px;color:#999;cursor:pointer;" onclick="go('manage','${deck.id}')">Edit</span></div><div class="study"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div><div class="progress-label">${idx+1} of ${order.length}</div><div class="card-wrap" onclick="flipCard()"><div class="card-inner${state.studyFlipped?' flipped':''}"><div class="card-face card-front"><div class="card-emoji">${card.emoji||card.front}</div><div class="card-text">${card.front}</div><div class="card-hint">Tap to flip</div></div><div class="card-face card-back"><div class="card-emoji">${card.emoji||'✨'}</div><div class="card-text">${card.back}</div>${card.fun?`<div class="card-fun">${card.fun}</div>`:''}</div></div></div><div class="nav-btns"><button class="nav-btn" onclick="prevCard()" ${idx===0?'disabled style="opacity:.3"':''}>←</button><button class="nav-btn primary" onclick="nextCard()">${idx===order.length-1?'Done ✓':'Next →'}</button></div><button class="shuffle-btn" onclick="reshuffleDeck()">🔀 Shuffle</button></div>`;
+}
+
+function buildComplete(){
+  const deck=state.decks.find(d=>d.id===state.studyDeck);
+  return `<div class="nav"><span class="nav-back" onclick="go('home')">← Home</span></div><div class="complete-screen"><div class="complete-emoji">🏆</div><div class="complete-title">Amazing job!</div><div class="complete-sub">You finished all ${deck?deck.cards.length:''} cards in ${deck?deck.name:''}!</div><div style="display:flex;flex-direction:column;gap:10px;max-width:260px;margin:0 auto;"><button class="nav-btn primary" style="max-width:100%;width:100%;" onclick="startStudy('${state.studyDeck}')">Play again 🔁</button><button class="nav-btn" style="max-width:100%;width:100%;font-size:15px;" onclick="go('home')">Choose another deck</button></div></div>`;
+}
+
+function buildManage(){
+  const deck=state.decks.find(d=>d.id===state.manageDeck);
+  if(!deck)return buildHome();
+  const rows=deck.cards.map(c=>`<div class="card-row"><span class="card-row-emoji">${c.emoji||'🃏'}</span><div class="card-row-text"><div class="card-row-front">${c.front}</div><div class="card-row-back">${c.back}</div></div><span class="card-row-del" onclick="deleteCard('${deck.id}','${c.id}')">✕</span></div>`).join('');
+  return `<div class="nav"><span class="nav-back" onclick="go('home')">← Home</span><span class="nav-title">${deck.icon} ${deck.name}</span></div><div class="manage"><div class="section-title">Cards (${deck.cards.length})</div><div class="section-sub">Tap ✕ to remove a card</div>${rows}<div style="margin-top:16px;"><div class="section-title" style="margin-bottom:12px;">Add a card</div><div class="add-card-form"><div class="field-label">Front (what they see first)</div><input class="field-input" id="new-front" placeholder="e.g. 🐸 or A" value="${state.addCardFront}"><div class="field-label">Back (the answer)</div><input class="field-input" id="new-back" placeholder="e.g. Frog" value="${state.addCardBack}"><div class="field-label">Emoji</div><input class="field-input" id="new-emoji" placeholder="e.g. 🐸" value="${state.addCardEmoji}"><button class="create-btn" onclick="addCardToDeck('${deck.id}')">Add Card</button></div></div><button class="del-deck-btn" onclick="confirmDeleteDeck('${deck.id}')">🗑 Delete this deck</button></div>`;
+}
+
+function buildAddDeck(){
+  const iconBtns=ICON_OPTS.map(ic=>`<button class="emoji-pick${state.newDeckIcon===ic?' selected':''}" onclick="pickIcon('${ic}')">${ic}</button>`).join('');
+  return `<div class="nav"><span class="nav-back" onclick="go('home')">← Home</span><span class="nav-title">New Deck</span></div><div class="add-deck"><div class="section-title">Build with AI ✨</div><div class="section-sub">Type a topic and Claude will create a full deck for you</div><div class="ai-box"><div class="ai-label">AI Deck Builder</div><div class="ai-input-row"><input class="ai-input" id="ai-topic" placeholder="e.g. farm animals, Spanish numbers…" value="${state.aiTopic||''}"><button class="ai-btn" id="ai-go-btn" onclick="buildAIDeck()">Build ✨</button></div><div class="ai-status" id="ai-status">${state.aiStatus}</div></div><div class="divider"><div class="divider-line"></div><div class="divider-text">OR BUILD MANUALLY</div><div class="divider-line"></div></div><div class="manual-box"><div class="field-label">Deck name</div><input class="field-input" id="deck-name" placeholder="e.g. Ocean Animals" value="${state.newDeckName}"><div class="field-label">Icon</div><div class="emoji-row">${iconBtns}</div><button class="create-btn" id="create-deck-btn" onclick="createDeck()" ${!state.newDeckName.trim()?'disabled':''}>Create Deck</button></div></div>`;
+}
+
+function attachEvents(){
+  const dn=document.getElementById('deck-name');
+  if(dn)dn.addEventListener('input',e=>{state.newDeckName=e.target.value;document.getElementById('create-deck-btn').disabled=!e.target.value.trim();});
+  const at=document.getElementById('ai-topic');
+  if(at)at.addEventListener('input',e=>{state.aiTopic=e.target.value;});
+}
+
+window.go=function(view,id){state.view=view;if(id)state.manageDeck=id;state.addCardFront='';state.addCardBack='';state.addCardEmoji='';render();};
+window.startStudy=function(id){const deck=state.decks.find(d=>d.id===id);if(!deck||!deck.cards.length)return;state.studyDeck=id;state.studyIdx=0;state.studyFlipped=false;state.studyOrder=deck.cards.map((_,i)=>i);state.view='study';render();};
+window.flipCard=function(){state.studyFlipped=!state.studyFlipped;render();};
+window.nextCard=function(){if(state.studyIdx>=state.studyOrder.length-1){state.view='complete';render();return;}state.studyIdx++;state.studyFlipped=false;render();};
+window.prevCard=function(){if(state.studyIdx>0){state.studyIdx--;state.studyFlipped=false;render();}};
+window.reshuffleDeck=function(){const deck=state.decks.find(d=>d.id===state.studyDeck);state.studyOrder=shuffle(deck.cards.map((_,i)=>i));state.studyIdx=0;state.studyFlipped=false;render();};
+window.pickIcon=function(ic){state.newDeckIcon=ic;render();};
+window.deleteCard=function(deckId,cardId){const deck=state.decks.find(d=>d.id===deckId);if(!deck)return;deck.cards=deck.cards.filter(c=>c.id!==cardId);saveDecks(state.decks);render();};
+window.addCardToDeck=function(deckId){const f=document.getElementById('new-front').value.trim();const b=document.getElementById('new-back').value.trim();const e=document.getElementById('new-emoji').value.trim();if(!f||!b)return;const deck=state.decks.find(d=>d.id===deckId);deck.cards.push({id:uid(),front:f,back:b,emoji:e||f,fun:''});saveDecks(state.decks);state.addCardFront='';state.addCardBack='';state.addCardEmoji='';render();};
+window.createDeck=function(){const name=state.newDeckName.trim();if(!name)return;const deck={id:uid(),name,icon:state.newDeckIcon,accent:'accent-purple',cards:[]};state.decks.push(deck);saveDecks(state.decks);state.manageDeck=deck.id;state.newDeckName='';state.newDeckIcon='🃏';state.view='manage';render();};
+window.confirmDeleteDeck=function(id){const deck=state.decks.find(d=>d.id===id);if(confirm(`Delete "${deck.name}"? This cannot be undone.`)){state.decks=state.decks.filter(d=>d.id!==id);saveDecks(state.decks);state.view='home';render();}};
+window.buildAIDeck=async function(){
+  const topic=(document.getElementById('ai-topic')||{}).value||state.aiTopic||'';
+  if(!topic.trim())return;
+  const btn=document.getElementById('ai-go-btn');
+  const statusEl=document.getElementById('ai-status');
+  if(btn)btn.disabled=true;
+  if(statusEl)statusEl.innerHTML='<span class="spinner"></span>Building your deck…';
+  try{
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:`You create flashcard decks for children aged 3-5. Return ONLY valid JSON, no markdown, no backticks. Format: {"name":"Deck Name","icon":"single emoji","cards":[{"front":"what child sees","back":"answer word","emoji":"single emoji","fun":"short fun fact under 12 words"}]} 8-12 cards. Keep front/back very simple. Fun facts should be exciting for a 3-5 year old.`,messages:[{role:'user',content:`Create a flashcard deck about: ${topic}`}]})});
+    const data=await resp.json();
+    const text=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+    const clean=text.replace(/```json|```/g,'').trim();
+    const deck=JSON.parse(clean);
+    deck.id=uid();deck.accent='accent-purple';
+    deck.cards=deck.cards.map(c=>({...c,id:uid()}));
+    state.decks.push(deck);saveDecks(state.decks);
+    state.manageDeck=deck.id;state.aiTopic='';state.view='manage';render();
+  }catch(err){
+    if(statusEl)statusEl.textContent='Something went wrong. Try again.';
+    if(btn)btn.disabled=false;
+  }
+};
+render();
+</script>
+</body>
+</html>
