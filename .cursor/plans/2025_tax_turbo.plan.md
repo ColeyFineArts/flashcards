@@ -21,7 +21,7 @@ todos:
     content: "PARTIAL 2026-09-17 — CSV export profiled (2,521 TY2025 txns). Accounts present: Mercury, BoA Jake/AdvPlus, Checking STR, cards, Megan Chase, USB 9422/5907. STILL NEED: apply TAX:STR/LTR-OAK/EPGC/W2/HOA-GROVE tags in Monarch app (export can't create tags)."
     status: completed
   - id: monarch-csv-profile
-    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1MyuJiq… in 01"
+    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1xGzoQcx… in 01"
     status: completed
   - id: oak-park-2025
     content: Finish 216 Oak Park LTR 2025 (smoke detector TBD); use Rocket 1098 already in 04 LTR / 216 N OAK PARK AVE for interest not full P+I
@@ -80,7 +80,7 @@ isProject: false
 
 **Drive layout (cleaned 2026-09-17)** under `2025 Taxes` (`1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu`):
 - `00 READ ME — Folder Map` → map doc `10zS1YHwErhsUkFzL5qJ5EdbAvpz8EtVUe5-6eVQjLP0`
-- `01 Checklist & Plan` → CURRENT checklist `1MyuJiq…`
+- `01 Checklist & Plan` → CURRENT checklist `1xGzoQcx…`
 - `02 Operating — Monarch` → snapshot + `Monarch Money` CSV
 - `03 STR + 524 Ferdinand Sale` → recon + `Platform PDFs + Closing NEED`
 - `04 LTR — 216 Oak Park`
@@ -99,7 +99,7 @@ isProject: false
 - Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT` (under 02)
 - Monarch CSV export CANONICAL: `1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w`
 - Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (in 02; duplicate copy archived)
-- Tax Packet Checklist CURRENT: `1MyuJiqAhAg6bDVz8-1Mg93i9umSmWt9RroCb5yxFN2U` (in 01)
+- Tax Packet Checklist CURRENT: `1xGzoQcx9kc6Cu6x8U4xo8aPSNVc8aLDEqli_105_y9Y` (in 01)
 - Airbnb Earnings 2025 CANONICAL: `1XJI1T8xRjoR_Gs_ZHdWoc39vm8gAW22J` (03/Platform PDFs)
 - VRBO Payout 2025 CANONICAL: `1GfFqkAPJIeJ70qk6V2i9se_s4VRBXCje` (03/Platform PDFs)
 - STR Platform vs Monarch recon: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY` (in 03)
@@ -108,7 +108,7 @@ isProject: false
 - 827 Grove Purchase CD: `1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ`
 - 524 Sale Facts sheet: `1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY`
 - 827 Grove Purchase Facts sheet: `1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc`
-- Childcare recon: `1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk` (in 06)
+- Childcare recon: `1CbssclH6xcRW6B2frIu1t-n0yajUcT4JQNA7fLl1deY` (in 06)
 
 **Trashed / archived:** Turbo stubs; CapEx clones; nested empty Documents; empty 827 Grove Purchase; root duplicate Airbnb/VRBO PDFs; prior checklists + old Turbo + snapshot copy → `_SUPERSEDED`.
 
