@@ -1,33 +1,39 @@
 ---
 name: 2025 Tax Turbo
-overview: Produce a CPA-ready 2025 tax packet matching prior years without re-keying every transaction into Excel — hybrid Monarch (operating P&L) + CapEx/Sale registers + one summary workbook. Diagnosed 2026-09-17.
+overview: Produce a CPA-ready 2025 tax packet matching prior years without re-keying every transaction into Excel — hybrid Monarch (operating P&L) + CapEx/Sale registers + one summary workbook. Diagnosed + partially implemented 2026-09-17.
 todos:
   - id: decide-source-of-truth
     content: "DECIDED hybrid — Monarch for recurring operating P&L (LTR/STR/LLC/W-2 feeds); CapEx + Sale as Excel/Sheets event registers; ONE year-end summary workbook. Pure Monarch-only ELIMINATED."
     status: completed
   - id: declutter-drive
-    content: "Trash corrupt Turbo stubs (8B id 1IMNMy…, 1526B id 1UZSbV…) + superseded CapEx sheet 18KFS0…; keep CapEx register 1ojNHX… + usable Turbo 1SaLWL… (~27KB) OR Personal Income copy 1ffBOP…; trash extra CapEx clones"
-    status: pending
-  - id: monarch-connect
-    content: Connect/confirm Mercury, BoA, STR payout, kid/joint accounts in Monarch; create tax-bucket tags for OPERATING only (not CapEx double-entry)
-    status: pending
+    content: "DONE 2026-09-17 — trashed 2 corrupt Turbo stubs + superseded CapEx 18KFS0… + 3 CapEx clones; labeled CANONICAL CapEx 1ojNHX… + REFERENCE Personal Income 1ffBOP…; old Turbo 1SaLWL… marked SUPERSEDED"
+    status: completed
   - id: diagnose-monarch
     content: "/diagnose DONE 2026-09-17 — pure Monarch-only CONTRADICTED; hybrid SUPPORTED (see Diagnostic Session Summary)"
     status: completed
+  - id: grove-capex-ty2025-packet
+    content: "DONE — TY2025 CapEx CPA one-pager $53,660 on Drive (sheet 1aqJe32… + xlsx 1NFZPjh…); CapEx year-split README in New House CapEx folder"
+    status: completed
+  - id: sale-folder-need-doc
+    content: "DONE — NEED Closing Disclosure checklist doc placed in 524 Ferdinand Sale folder (1fmtxZFK…). Actual CD PDF still human BLOCKER."
+    status: completed
+  - id: monarch-connect
+    content: Connect/confirm Mercury, BoA, STR payout, kid/joint accounts in Monarch; create tax-bucket tags for OPERATING only (not CapEx double-entry)
+    status: pending
   - id: oak-park-2025
     content: Finish 216 Oak Park LTR 2025 (smoke detector TBD); use Rocket 1098 already in Documents/216 folder for interest not full P+I
     status: pending
   - id: grove-capex-split
-    content: "TY split DONE in workbook ($53,660 / 2025 = 2 rows only; $268,532 / 2026). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup"
+    content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup"
     status: pending
   - id: sale-docs-blocker
-    content: "BLOCKER — drop 524 sale Closing Disclosure + prior depreciation schedules into empty 524 Ferdinand Sale folder (Drive reconfirm 2026-09-17: 0 children; no CD elsewhere)"
+    content: "BLOCKER — drop 524 sale Closing Disclosure + prior depreciation schedules into 524 Ferdinand Sale folder (NEED checklist already there)"
     status: pending
   - id: grove-purchase-cd
-    content: "Also need 827 N Grove purchase Closing Disclosure for initial basis (CapEx action item R154)"
+    content: "Also need 827 N Grove purchase Closing Disclosure for initial basis"
     status: pending
   - id: cpa-packet
-    content: Assemble forms + checklist; CPA handles §121 allocation / dep. recapture / STR Sch E vs C
+    content: Assemble forms + checklist; CPA handles §121 allocation / dep. recapture / STR Sch E vs C — CapEx TY2025 line ready at $53,660
     status: pending
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet
@@ -60,12 +66,16 @@ isProject: false
 
 **Rule:** Do not maintain three live ledgers. CapEx hand-lists are the **register** (required — multi-account Laura reimbursements). ~~Pure Monarch-only for CapEx~~ **ELIMINATED** — diagnose 2026-09-17.
 
-**Canonical Drive IDs (keep):**
-- CapEx register: `1ojNHX_z94FGMXBFKGcZ7Eta_iyQCrBvNjKbitKUJT4Q`
-- Usable Turbo xlsx: `1SaLWLzyPSxatdyfO28pwdkKv0lGbkPjw` (27104 B) **or** Personal Income copy `1ffBOPDNo8vwt2LSKZJy__VG37nmIw9sy` (132313 B)
-- Sale folder (empty): `1K6_C7BcRF1PuC1l_MGjYWHBOGS2I9w9L`
+**Canonical Drive IDs (post-implement 2026-09-17):**
+- CapEx register: `1ojNHX_z94FGMXBFKGcZ7Eta_iyQCrBvNjKbitKUJT4Q` (title: CANONICAL)
+- TY2025 CapEx CPA one-pager: `1aqJe32LWQwwAXdk7pDdo0MJHBu6mVnM7hbsE5W6aBmE` ($53,660 ONLY)
+- TY2025 CapEx CPA slice xlsx: `1NFZPjhBOpIdLOB5TZfsHqCueDpBtoc_5`
+- REFERENCE Personal Income: `1ffBOPDNo8vwt2LSKZJy__VG37nmIw9sy`
+- Sale folder + NEED doc: `1K6_C7BcRF1PuC1l_MGjYWHBOGS2I9w9L` / `1fmtxZFK9fNWr7xY0CoN1isOxqv0wVP4oLdUCOZX8GlY`
+- CapEx year-split README: `14XLuHT4cLvh4wDbHARM70x0aC09OX7-qwBhMwKtkah8`
+- Local full implemented workbook: `/opt/cursor/artifacts/Personal_Income_2025_Tax_Turbo_IMPLEMENTED.xlsx` (TY2025_CapEx_CPA sheet)
 
-**Trash candidates:** Turbo stubs `1IMNMy5WtmbbHgG2mtGmqekglui-JIcR0` (8 B), `1UZSbVckykzcZWo2KtEc6yDWvutUk4imY` (1526 B); superseded CapEx `18KFS06ib6MhC2mmg3sqBqRKBPUlLQrkPu3aceRWimNY`.
+**Trashed (implement):** Turbo stubs `1IMNMy…` / `1UZSbV…`; CapEx `18KFS0…` + clones `1WbF4…` / `19a3eA…` / `1aaFpq…`. Old Turbo `1SaLWL…` marked SUPERSEDED.
 
 ## Key properties / entities
 
@@ -222,11 +232,12 @@ isProject: false
 
 ## Recommended next action
 
-1. **Declutter Drive** — trash corrupt Turbo stubs + superseded CapEx; keep canonical IDs above.
-2. **Drop 524 Closing Disclosure** (+ dep. schedules) into sale folder — still BLOCKER; also collect **827 purchase CD** for basis.
-3. Put only **$53,660 TY2025 CapEx** (2 Dec 19 payments) on the 2025 CPA packet CapEx line; keep full register for multi-year basis.
-4. Optionally connect Monarch MCP / tag operating accounts — **not** CapEx double-entry.
-5. Refresh ONE summary workbook for CPA.
+1. ~~Declutter Drive~~ **DONE** (implement 2026-09-17).
+2. ~~Publish TY2025 CapEx $53,660 CPA line~~ **DONE** (sheet + xlsx on Drive).
+3. **Drop 524 Closing Disclosure** (+ dep. schedules) into sale folder — still BLOCKER; also collect **827 purchase CD** for basis.
+4. Fill CapEx UNKNOWN dates / missing amounts; confirm Laura $3,031.41 dup in bank.
+5. Optionally connect Monarch MCP / tag operating accounts — **not** CapEx double-entry.
+6. Finish Oak Park LTR (smoke detector $) + assemble remaining CPA packet forms.
 
 ---
 
@@ -289,3 +300,25 @@ isProject: false
 - No hand rebuild of monthly property ledgers from statements **OR** honest Excel-first fallback chosen → **hybrid chosen**
 - Sale + CapEx have dedicated CPA-flagged trackers with docs present
 - Next year = duplicate one workbook + clear numbers + keep Mapping/habits
+
+---
+
+### Implementation Session Summary (2026-09-17)
+
+**Batches:** 2 (declutter+labels; CapEx CPA publish + sale NEED doc)
+
+**Completed:**
+- Drive declutter: 6 files trashed (2 corrupt Turbo, 1 superseded CapEx, 3 CapEx clones)
+- Canonical labels applied; TY2025 CapEx CPA one-pager ($53,660) + slice xlsx uploaded
+- Sale folder NEED Closing Disclosure checklist created (actual CD still human blocker)
+- CapEx year-split README in New House CapEx folder
+- Local implemented workbook with `TY2025_CapEx_CPA` sheet + checklist stamps
+- `implement-plan` skill parked under `.cursor/skills/implement-plan/`
+
+**Still blocked / pending:**
+- 524 Ferdinand Closing Disclosure PDF (and dep. schedules)
+- 827 purchase Closing Disclosure
+- CapEx UNKNOWN dates / missing amounts / Laura dup confirm
+- Oak Park smoke detector $; Monarch connect/MCP; final CPA packet assembly
+
+**Verification:** Drive folder re-list shows no corrupt stubs; TY2025 CapEx sheet + CPA xlsx present; sale folder has NEED doc only (no CD yet). Topics `run_suite.py` N/A for this personal-finance plan.
