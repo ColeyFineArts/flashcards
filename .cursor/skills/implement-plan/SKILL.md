@@ -5,6 +5,14 @@ description: "Execute a plan file with batched tasks, verification gates, and te
 
 # Implement Plan (Topics)
 
+## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+
+If Topics `_system` is missing, print `CLOUD ADAPTER: Topics _system absent — implementing via workspace plans + Drive/git only`.
+Skip `plan_link.py` / Topics suite; use `.cursor/plans/*.plan.md` and Drive MCP.
+**Drive writes:** prefer Google Sheet/CSV `textContent`. NEVER spawn child agents to inline multi-KB xlsx `base64Content` (Sep 17 2026: 4 upload children, corrupt 8/1526/7500-byte stubs). After every `create_file`, verify `fileSize`. See repo `AGENTS.md` Drive write policy.
+
+---
+
 Execute a plan file using batched task execution with verification gates between batches.
 
 Usage: `/implement-plan` (uses most recent plan) or `/implement-plan <plan_path>`

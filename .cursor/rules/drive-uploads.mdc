@@ -1,0 +1,13 @@
+---
+description: Google Drive upload policy for cloud agents — ban corrupt xlsx base64 loops
+alwaysApply: true
+---
+
+# Drive uploads (cloud)
+
+After Sep 17 2026 tax-turbo upload thrash (4 child agents, corrupt 8/1526/7500-byte files):
+
+1. Prefer `create_file` with `textContent` → Google Sheet/Doc.
+2. Never spawn a child agent whose sole job is inlining multi-KB `base64Content` for `.xlsx`.
+3. If binary upload is unavoidable, keep payload small and **verify returned `fileSize`** matches source; trash stubs &lt;2KB.
+4. Full policy: repo root `AGENTS.md` §Drive write policy.

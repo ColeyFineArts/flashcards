@@ -5,6 +5,13 @@ description: "Second-pass review of a plan: challenge assumptions, find gaps, ve
 
 # Deepen Plan (Topics)
 
+## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+
+If Topics `_system` is missing, print `CLOUD ADAPTER: Topics _system absent — deepen without plan_panel/suite; write findings into the plan file only`.
+Skip `plan_panel.py` / OpenRouter fan-out unless those tools exist. Prefer workspace `.cursor/plans/*.plan.md`. Do not mass-create Drive workbooks during deepen — lock the operating model first (incident: user “take a step back” after premature packet build).
+
+---
+
 Force a rigorous second-pass review of a plan before implementation. Challenges assumptions, searches for missed context, identifies gaps — and fans the plan out to a cross-lab advisory panel of OpenRouter models whose returns are triaged as intake.
 
 Usage: `/deepen-plan` (uses most recent plan) or `/deepen-plan <plan_path>`

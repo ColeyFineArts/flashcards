@@ -6,6 +6,25 @@ disable-model-invocation: true
 
 # Improve AGENTS.md + Infrastructure From Chat Analysis (Topics)
 
+## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+
+If `C:/Topics` / `/c/Topics` / `_system/tools/transcript_census.py` is missing, print:
+`CLOUD ADAPTER: Topics _system absent — mining cloud-agent transcripts; writing fixes to this repo's AGENTS.md + .cursor/skills/`
+
+Then substitute:
+
+| Topics step | Cloud substitute |
+|-------------|------------------|
+| `transcript_census.py --since …` | `cursor-cloud` `list-cloud-agents` + `batch-fetch-details` (`includeTranscripts: true`); park extracts in `/home/ubuntu/.cursor/scratch/imp_*` |
+| Read JSONL under `agent-transcripts/` | Spawn one subagent per `…/<bcId>/transcript.json` (never load megabyte transcripts into the parent) |
+| `delegation_census.py` | Skip with one line if tool absent; still scan assistant text for WRONG-SEAT / grind patterns manually |
+| Canonical edits in `_system/workspace/` | Edit **this repo** `AGENTS.md` + `.cursor/skills|rules/`; commit + push on the skills branch |
+| `install_workspace.py` / LOCAL-ONLY no-push | Cloud agents **do** push feature branches; use `ManagePullRequest` |
+
+Do not invent a fake Topics `_system`. Quantify format + top-1–3 fix cap still bind.
+
+---
+
 Mine past agent conversations for the moments where the principal had to correct,
 re-explain, or re-push the agent; quantify them; turn the worst offenders into durable
 fixes. This is not a coding workspace: the waste that matters here is NOT failed

@@ -5,6 +5,13 @@ description: "Find the fastest experiment that yields the most learning for a pl
 
 # Diagnose (Topics)
 
+## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+
+If Topics `_system` is missing, print `CLOUD ADAPTER: Topics _system absent — diagnose against Drive/git/local plans only`.
+Park one-shot diag scripts under `/home/ubuntu/.cursor/scratch/` (not `D:\cursor_agents\scratch\`). Skip `topic_lock.py` / Topics suite. Do not claim Monarch MCP is available in cloud — CSV/Drive proxies only.
+
+---
+
 Find the fastest experiment that yields the most learning, then **RUN IT**.
 
 Usage: `/diagnose` (uses most recent plan) or `/diagnose <path>`
