@@ -5,10 +5,10 @@ description: "Second-pass review of a plan: challenge assumptions, find gaps, ve
 
 # Deepen Plan (Topics)
 
-## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+## CLOUD ADAPTER — run FIRST
 
-If Topics `_system` is missing, print `CLOUD ADAPTER: Topics _system absent — deepen without plan_panel/suite; write findings into the plan file only`.
-Skip `plan_panel.py` / OpenRouter fan-out unless those tools exist. Prefer workspace `.cursor/plans/*.plan.md`. Do not mass-create Drive workbooks during deepen — lock the operating model first (incident: user “take a step back” after premature packet build).
+Topics `_system` missing → print `CLOUD ADAPTER: Topics _system absent — deepen without plan_panel; write into the plan only`.
+Skip `plan_panel.py` unless present. Use `.cursor/plans/*.plan.md`. ⛔ No Drive packet sprawl during deepen — lock the operating model first (AGENTS.md §3).
 
 ---
 

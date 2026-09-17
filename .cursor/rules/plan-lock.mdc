@@ -1,0 +1,12 @@
+---
+description: Plan lock — no Drive packet sprawl before deepen/diagnose
+alwaysApply: true
+---
+
+# Plan lock before packet build
+
+⛔ NEVER mass-create Drive workbooks, CapEx clones, or Turbo stubs before the operating model is locked.
+
+✅ INSTEAD: deepen-plan → diagnose → implement-plan.
+
+Incident: user “Lets take a step back and make sure this is a good plan” after premature overbuild (2026-09-17).

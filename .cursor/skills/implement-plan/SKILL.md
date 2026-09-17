@@ -5,11 +5,13 @@ description: "Execute a plan file with batched tasks, verification gates, and te
 
 # Implement Plan (Topics)
 
-## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+## CLOUD ADAPTER — run FIRST
 
-If Topics `_system` is missing, print `CLOUD ADAPTER: Topics _system absent — implementing via workspace plans + Drive/git only`.
-Skip `plan_link.py` / Topics suite; use `.cursor/plans/*.plan.md` and Drive MCP.
-**Drive writes:** prefer Google Sheet/CSV `textContent`. NEVER spawn child agents to inline multi-KB xlsx `base64Content` (Sep 17 2026: 4 upload children, corrupt 8/1526/7500-byte stubs). After every `create_file`, verify `fileSize`. See repo `AGENTS.md` Drive write policy.
+Topics `_system` missing → print `CLOUD ADAPTER: Topics _system absent — implement via .cursor/plans + Drive/git` and:
+
+1. Skip `plan_link.py` / Topics suite; use workspace `.cursor/plans/*.plan.md`.
+2. **Drive:** Sheet/`textContent` only for multi-KB data. After every `create_file`, run `python .cursor/tools/drive_create_verify.py --got-filesize F …` (AGENTS.md §2). ⛔ NEVER spawn child agents to inline xlsx base64.
+3. Push feature branch + update PR when the plan says so (cloud is not Topics LOCAL-ONLY).
 
 ---
 

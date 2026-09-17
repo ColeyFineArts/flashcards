@@ -6,22 +6,23 @@ disable-model-invocation: true
 
 # Improve AGENTS.md + Infrastructure From Chat Analysis (Topics)
 
-## CLOUD ADAPTER (flashcards / Cursor Cloud — run FIRST)
+## CLOUD ADAPTER — run FIRST
 
-If `C:/Topics` / `/c/Topics` / `_system/tools/transcript_census.py` is missing, print:
-`CLOUD ADAPTER: Topics _system absent — mining cloud-agent transcripts; writing fixes to this repo's AGENTS.md + .cursor/skills/`
+```bash
+test -f /c/Topics/_system/tools/transcript_census.py || test -f C:/Topics/_system/tools/transcript_census.py
+```
 
-Then substitute:
+Missing → print `CLOUD ADAPTER: Topics _system absent — mining cloud-agent transcripts; writing fixes to this repo AGENTS.md + .cursor/skills|rules/` and use the table below. Present → ignore this block.
 
-| Topics step | Cloud substitute |
-|-------------|------------------|
-| `transcript_census.py --since …` | `cursor-cloud` `list-cloud-agents` + `batch-fetch-details` (`includeTranscripts: true`); park extracts in `/home/ubuntu/.cursor/scratch/imp_*` |
-| Read JSONL under `agent-transcripts/` | Spawn one subagent per `…/<bcId>/transcript.json` (never load megabyte transcripts into the parent) |
-| `delegation_census.py` | Skip with one line if tool absent; still scan assistant text for WRONG-SEAT / grind patterns manually |
-| Canonical edits in `_system/workspace/` | Edit **this repo** `AGENTS.md` + `.cursor/skills|rules/`; commit + push on the skills branch |
-| `install_workspace.py` / LOCAL-ONLY no-push | Cloud agents **do** push feature branches; use `ManagePullRequest` |
+| Topics | Cloud substitute |
+|--------|------------------|
+| `transcript_census.py --since …` | `cursor-cloud` `list-cloud-agents` + `batch-fetch-details` (`includeTranscripts: true`); park `/home/ubuntu/.cursor/scratch/imp_*` |
+| Raw JSONL under `agent-transcripts/` | One **subagent per** `…/<bcId>/transcript.json` — never load MB transcripts into the parent |
+| `delegation_census.py` | Skip one line if absent; still pattern-scan assistant text |
+| Edits in `_system/workspace/` | This repo `AGENTS.md` + `.cursor/skills\|rules\|tools/`; push feature branch + `ManagePullRequest` |
+| LOCAL-ONLY no-push | Cloud agents **do** push |
 
-Do not invent a fake Topics `_system`. Quantify format + top-1–3 fix cap still bind.
+Do not invent a fake Topics `_system`. Quantify format + top-1–3 fix cap still bind. Floor-first: prefer forcing mechanisms (`drive_create_verify.py`, alwaysApply rules) over re-worded prose.
 
 ---
 

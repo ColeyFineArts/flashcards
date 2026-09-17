@@ -1,0 +1,14 @@
+---
+description: Monarch access card — cloud = CSV drop; never re-prompt the user
+alwaysApply: true
+---
+
+# Monarch (cloud)
+
+When Monarch is mentioned, lead with:
+
+1. **Cloud:** no Monarch MCP here — ask for CSV in Drive `Monarch Money` (`1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT`).
+2. **Desktop:** OAuth `https://api.monarch.com/mcp`.
+3. **Hybrid:** Monarch = operating P&L; CapEx/sale stay on registers.
+
+Do not make the user re-ask “How do we access monarch?” (incident 2026-09-17).
