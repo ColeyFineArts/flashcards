@@ -6,7 +6,7 @@ todos:
     content: "DECIDED hybrid — Monarch for recurring operating P&L (LTR/STR/LLC/W-2 feeds); CapEx + Sale as Excel/Sheets event registers; ONE year-end summary workbook. Pure Monarch-only ELIMINATED."
     status: completed
   - id: declutter-drive
-    content: "DONE 2026-09-17 — trashed 2 corrupt Turbo stubs + superseded CapEx 18KFS0… + 3 CapEx clones; labeled CANONICAL CapEx 1ojNHX… + REFERENCE Personal Income 1ffBOP…; old Turbo 1SaLWL… marked SUPERSEDED"
+    content: "DONE 2026-09-17 — numbered topic folders 00–07 + _SUPERSEDED under 2025 Taxes; nested Documents flattened; duplicate STR PDFs trashed; folder map 10zS1YH…"
     status: completed
   - id: diagnose-monarch
     content: "/diagnose DONE 2026-09-17 — pure Monarch-only CONTRADICTED; hybrid SUPPORTED (see Diagnostic Session Summary)"
@@ -15,26 +15,26 @@ todos:
     content: "DONE — TY2025 CapEx CPA one-pager $53,660 on Drive (sheet 1aqJe32… + xlsx 1NFZPjh…); CapEx year-split README in New House CapEx folder"
     status: completed
   - id: sale-folder-need-doc
-    content: "DONE — NEED Closing Disclosure checklist doc placed in 524 Ferdinand Sale folder (1fmtxZFK…). Actual CD PDF still human BLOCKER."
+    content: "DONE — Closing Statement + purchase CD filed into 03/Platform PDFs (copies 1vvgkDyz… / 10TQQAum…); NEED doc retitled FILED"
     status: completed
   - id: monarch-connect
     content: "PARTIAL 2026-09-17 — CSV export profiled (2,521 TY2025 txns). Accounts present: Mercury, BoA Jake/AdvPlus, Checking STR, cards, Megan Chase, USB 9422/5907. STILL NEED: apply TAX:STR/LTR-OAK/EPGC/W2/HOA-GROVE tags in Monarch app (export can't create tags)."
     status: completed
   - id: monarch-csv-profile
-    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot sheets 1yxtwpNG… (2025 Taxes) / 1vgAYlBS… (Monarch folder); checklist 1B8n4hNd…"
+    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1MyuJiq… in 01"
     status: completed
   - id: oak-park-2025
-    content: Finish 216 Oak Park LTR 2025 (smoke detector TBD); use Rocket 1098 already in Documents/216 folder for interest not full P+I
+    content: Finish 216 Oak Park LTR 2025 (smoke detector TBD); use Rocket 1098 already in 04 LTR / 216 N OAK PARK AVE for interest not full P+I
     status: pending
   - id: grove-capex-split
     content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup. Riverton $11,750 absent from Monarch — register remains required."
     status: pending
   - id: sale-docs-blocker
-    content: "BLOCKER — drop 524 sale Closing Disclosure + prior depreciation schedules into 524 Ferdinand Sale folder (NEED checklist already there)"
+    content: "PARTIAL — 524 sale Closing Statement + 2023 purchase CD filed in 03. Still NEED prior depreciation schedules if any."
     status: pending
   - id: grove-purchase-cd
-    content: "Also need 827 N Grove purchase Closing Disclosure for initial basis"
-    status: pending
+    content: "DONE — 827 Grove purchase CD filed CANONICAL copy 1mWyNNIA… under 05 / 827 N GROVE AVE"
+    status: completed
   - id: cpa-packet
     content: "Assemble forms + checklist; Monarch operating rollup + CapEx TY2025 $53,660 ready; CPA handles §121 / dep. recapture / STR Sch E vs C"
     status: pending
@@ -75,38 +75,51 @@ isProject: false
 
 **Rule:** Do not maintain three live ledgers. CapEx hand-lists are the **register** (required — multi-account Laura reimbursements). ~~Pure Monarch-only for CapEx~~ **ELIMINATED** — diagnose 2026-09-17.
 
-**Canonical Drive IDs (post-implement 2026-09-17):**
-- CapEx register: `1ojNHX_z94FGMXBFKGcZ7Eta_iyQCrBvNjKbitKUJT4Q` (title: CANONICAL)
+**Drive layout (cleaned 2026-09-17)** under `2025 Taxes` (`1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu`):
+- `00 READ ME — Folder Map` → map doc `10zS1YHwErhsUkFzL5qJ5EdbAvpz8EtVUe5-6eVQjLP0`
+- `01 Checklist & Plan` → CURRENT checklist `1MyuJiq…`
+- `02 Operating — Monarch` → snapshot + `Monarch Money` CSV
+- `03 STR + 524 Ferdinand Sale` → recon + `Platform PDFs + Closing NEED`
+- `04 LTR — 216 Oak Park`
+- `05 CapEx — 827 Grove`
+- `06 Childcare — BrightWheel`
+- `07 Income & Bank Docs`
+- `_SUPERSEDED`
+
+**Canonical Drive IDs (post-organize 2026-09-17):**
+- CapEx register: `1ojNHX_z94FGMXBFKGcZ7Eta_iyQCrBvNjKbitKUJT4Q` (in 05)
 - TY2025 CapEx CPA one-pager: `1aqJe32LWQwwAXdk7pDdo0MJHBu6mVnM7hbsE5W6aBmE` ($53,660 ONLY)
 - TY2025 CapEx CPA slice xlsx: `1NFZPjhBOpIdLOB5TZfsHqCueDpBtoc_5`
-- REFERENCE Personal Income: `1ffBOPDNo8vwt2LSKZJy__VG37nmIw9sy`
-- Sale folder + NEED doc: `1K6_C7BcRF1PuC1l_MGjYWHBOGS2I9w9L` / `1fmtxZFK9fNWr7xY0CoN1isOxqv0wVP4oLdUCOZX8GlY`
-- CapEx year-split README: `14XLuHT4cLvh4wDbHARM70x0aC09OX7-qwBhMwKtkah8`
-- Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT`
+- REFERENCE Personal Income: `1ffBOPDNo8vwt2LSKZJy__VG37nmIw9sy` (in 07)
+- Sale/platform folder + status doc: `1K6_C7BcRF1PuC1l_MGjYWHBOGS2I9w9L` / `1fmtxZFK9fNWr7xY0CoN1isOxqv0wVP4oLdUCOZX8GlY`
+- CapEx year-split README: `14XLuHT4cLvh4wDbHARM70x0aC09OX7-qwBhMwKtkah8` (05/Year-split notes)
+- Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT` (under 02)
 - Monarch CSV export CANONICAL: `1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w`
-- Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (2025 Taxes) + copy `1vgAYlBSD9tUyln6G9Q8akl60mH-96E18aJ4XRNN0hqA` (Monarch folder)
-- Tax Packet Checklist (STR platforms filed): see latest checklist sheet in 2025 Taxes
-- Airbnb Earnings 2025 CANONICAL: `1XJI1T8xRjoR_Gs_ZHdWoc39vm8gAW22J` (524 Sale) + copy `16p5vbaaERRoeg5CGlDuqCus4xThPaumw`
-- VRBO Payout 2025 CANONICAL: `1GfFqkAPJIeJ70qk6V2i9se_s4VRBXCje` (524 Sale) + copy `1LU08jkMvWw91ui-9xK5CAAFBvloOXNdA`
-- STR Platform vs Monarch recon: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY`
-- Local full implemented workbook: `/opt/cursor/artifacts/Personal_Income_2025_Tax_Turbo_IMPLEMENTED.xlsx` (TY2025_CapEx_CPA sheet)
-- Local Monarch snapshot xlsx: `/opt/cursor/artifacts/Monarch_TY2025_Operating_Snapshot.xlsx`
+- Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (in 02; duplicate copy archived)
+- Tax Packet Checklist CURRENT: `1MyuJiqAhAg6bDVz8-1Mg93i9umSmWt9RroCb5yxFN2U` (in 01)
+- Airbnb Earnings 2025 CANONICAL: `1XJI1T8xRjoR_Gs_ZHdWoc39vm8gAW22J` (03/Platform PDFs)
+- VRBO Payout 2025 CANONICAL: `1GfFqkAPJIeJ70qk6V2i9se_s4VRBXCje` (03/Platform PDFs)
+- STR Platform vs Monarch recon: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY` (in 03)
+- 524 Sale Closing Statement: `1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv`
+- 524 Purchase 2023 CD: `10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f`
+- 827 Grove Purchase CD: `1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ`
+- Childcare recon: `1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk` (in 06)
 
-**Trashed (implement):** Turbo stubs `1IMNMy…` / `1UZSbV…`; CapEx `18KFS0…` + clones `1WbF4…` / `19a3eA…` / `1aaFpq…`. Old Turbo `1SaLWL…` marked SUPERSEDED.
+**Trashed / archived:** Turbo stubs; CapEx clones; nested empty Documents; empty 827 Grove Purchase; root duplicate Airbnb/VRBO PDFs; prior checklists + old Turbo + snapshot copy → `_SUPERSEDED`.
 
 ## Key properties / entities
 
 - W-2 Hindman; Megan income; GCM; art; EPGC LLC (Mercury)
-- LTR: 216 N. Oak Park — Documents/216 already has Rocket **1098**
-- STR / two-flat: 524 Ferdinand Unit 2 through sale; Unit 1 owner allocation
-- New primary: 827 N Grove — Documents/827 already has USB Mortgage **1098**; Water `0245000849-01`; ComEd `7103042419`
+- LTR: 216 N. Oak Park — `04 LTR / 216 N OAK PARK AVE` already has Rocket **1098**
+- STR / two-flat: 524 Ferdinand Unit 2 through sale; Unit 1 owner allocation — CDs in `03/Platform PDFs`
+- New primary: 827 N Grove — `05 CapEx / 827 N GROVE AVE` has USB Mortgage **1098** + purchase CD; Water `0245000849-01`; ComEd `7103042419`
 
 ## Already captured
 
 - **Childcare BrightWheel (2026-09-17):** Phoebe paid **$30,588.55** (incl. Aug lump **$23,361.05**); Emma TY2025 **$80**; Monarch Brightwheel cash ≈$30,640.58; recon `1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk`
 
 
-- Drive `2025 Taxes` + property subfolders under Documents
+- Drive `2025 Taxes` numbered `00–07` + `_SUPERSEDED` (nested Documents flattened)
 - Oak Park 2025 known cash ~$21,423 (smoke detector TBD)
 - Grove CapEx running ~$331,594 (excl. duplicate-suspect $3,031.41)
   - **TY2025 included:** $53,660 (16.2%) — JCDA $41,910 + Riverton $11,750 on 2025-12-19 only
@@ -117,7 +130,8 @@ isProject: false
   - VRBO gross **$10,214.30** / net payout **$9,395.53** (16 res / 46 nights); owner-remit tax $36.30
   - Combined net payout **$17,086.94** — Monarch cash only $12,794.57 (gap exactly = missing Apr/May Airbnb + 5 VRBO payouts)
   - Recon sheet: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY`
-- **Monarch CSV export** (2026-09-17) in Documents/Monarch Money — **2,521 TY2025 txns** profiled into Operating Snapshot
+- **Monarch CSV export** (2026-09-17) in `02/Monarch Money` — **2,521 TY2025 txns** profiled into Operating Snapshot
+- **Closing docs (2026-09-17):** 524 sale Closing Statement + 524 purchase 2023 CD + 827 Grove purchase CD (Megan uploads; CANONICAL copies filed — Megan-owned originals may remain at root)
   - STR Airbnb/VRBO cash net **$12,794.57** (25 txns; many Airbnb still in Travel & Vacation)
   - Hindman deposits ~$55.7k + Freeman ~$11.8k; Mercury Business Income ~$282k
   - Monarch Home Improvement only **−$3,870** — CapEx register still authoritative

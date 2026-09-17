@@ -1,0 +1,42 @@
+{
+  "updated": "2026-09-17",
+  "root": {
+    "id": "1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu",
+    "title": "2025 Taxes",
+    "url": "https://drive.google.com/drive/folders/1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu"
+  },
+  "folders": {
+    "00_readme": "12MvBOewv-8H7TK2cb5U6gQehane8JDlw",
+    "01_checklist": "1IRaYqfUd9s413JVGSyMSWfNW1Yt4IWDa",
+    "02_operating": "1OYSjFWmGjXn6FzjwgJlvlK2mkCzWNJp7",
+    "03_str_sale": "1BSiuBLI7BE-zeUWfJGyhtTdynURMO-a6",
+    "04_ltr_oak": "1wSwfqPo1GYdaUkw45Pc5CkgVDWR0Br3t",
+    "05_capex_grove": "1ci43aF525F1Mv81H8NoQzXhH2eFzxRA_",
+    "06_childcare": "1xVPyhmW9Eb3zdnS9G9fgDNsAt8ecA3I4",
+    "07_income": "1oYiDt0bepjfz00Bci9HgDor-ZdKrb-Y2",
+    "_superseded": "16FIlGSrcewJgft3FR85HYXwR7h_6Ov06",
+    "monarch_money": "1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT",
+    "platform_pdfs": "1K6_C7BcRF1PuC1l_MGjYWHBOGS2I9w9L",
+    "oak_park_docs": "17sO871qlrA4QguL1g4dgXTnkx2BrakpV",
+    "grove_docs": "1vT28n3sd0mJFo7pjlWT95ktzt9DhHzf6",
+    "brightwheel_invoices": "1K7BWq2fP7Cwn9V1vgwJp0vWQayz5xkTk"
+  },
+  "key_files": {
+    "folder_map_doc": "10zS1YHwErhsUkFzL5qJ5EdbAvpz8EtVUe5-6eVQjLP0",
+    "checklist_current": "1MyuJiqAhAg6bDVz8-1Mg93i9umSmWt9RroCb5yxFN2U",
+    "operating_snapshot": "1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w",
+    "monarch_csv": "1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w",
+    "str_recon": "1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY",
+    "capex_register": "1ojNHX_z94FGMXBFKGcZ7Eta_iyQCrBvNjKbitKUJT4Q",
+    "capex_cpa_53660": "1aqJe32LWQwwAXdk7pDdo0MJHBu6mVnM7hbsE5W6aBmE",
+    "childcare_recon": "1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk",
+    "sale_closing_2025": "1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv",
+    "purchase_cd_524_2023": "10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f",
+    "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ"
+  },
+  "notes": [
+    "Megan-owned closing PDFs may remain at root (no move permission); CANONICAL copies filed in 03 and 05.",
+    "Nested Documents folder emptied and trashed.",
+    "Root duplicate Airbnb/VRBO PDFs trashed; originals remain in Platform PDFs."
+  ]
+}
