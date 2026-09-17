@@ -16,7 +16,7 @@ test -d /c/Topics/_system || test -d /workspace/../Topics/_system
 | Fact | Rule |
 |------|------|
 | Repo is `flashcards`, not `C:\Topics` | No `transcript_census.py`, `plan_link.py`, Topics suite, or `_system` packs |
-| Monarch MCP **not** in cloud tool catalog | NEVER claim live Monarch access. Cloud path = CSV/PDF drop in Drive |
+| Monarch MCP **not** in this run’s tool catalog until dashboard OAuth | Prefer CSV drop for cloud packet work; desktop/`cursor.com/agents` MCP UI for live tools — §4 |
 | Google Drive MCP **is** available | Sheets/Docs via `textContent` only for multi-KB data — §2 |
 | Plans live in `.cursor/plans/` | Prefer workspace plans; `~/.cursor/plans/` is a mirror when present |
 
