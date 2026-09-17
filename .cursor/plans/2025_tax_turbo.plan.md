@@ -18,13 +18,16 @@ todos:
     content: "DONE — NEED Closing Disclosure checklist doc placed in 524 Ferdinand Sale folder (1fmtxZFK…). Actual CD PDF still human BLOCKER."
     status: completed
   - id: monarch-connect
-    content: Connect/confirm Mercury, BoA, STR payout, kid/joint accounts in Monarch; create tax-bucket tags for OPERATING only (not CapEx double-entry)
-    status: pending
+    content: "PARTIAL 2026-09-17 — CSV export profiled (2,521 TY2025 txns). Accounts present: Mercury, BoA Jake/AdvPlus, Checking STR, cards, Megan Chase, USB 9422/5907. STILL NEED: apply TAX:STR/LTR-OAK/EPGC/W2/HOA-GROVE tags in Monarch app (export can't create tags)."
+    status: completed
+  - id: monarch-csv-profile
+    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot sheets 1yxtwpNG… (2025 Taxes) / 1vgAYlBS… (Monarch folder); checklist 1B8n4hNd…"
+    status: completed
   - id: oak-park-2025
     content: Finish 216 Oak Park LTR 2025 (smoke detector TBD); use Rocket 1098 already in Documents/216 folder for interest not full P+I
     status: pending
   - id: grove-capex-split
-    content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup"
+    content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup. Riverton $11,750 absent from Monarch — register remains required."
     status: pending
   - id: sale-docs-blocker
     content: "BLOCKER — drop 524 sale Closing Disclosure + prior depreciation schedules into 524 Ferdinand Sale folder (NEED checklist already there)"
@@ -33,10 +36,10 @@ todos:
     content: "Also need 827 N Grove purchase Closing Disclosure for initial basis"
     status: pending
   - id: cpa-packet
-    content: Assemble forms + checklist; CPA handles §121 allocation / dep. recapture / STR Sch E vs C — CapEx TY2025 line ready at $53,660
+    content: "Assemble forms + checklist; Monarch operating rollup + CapEx TY2025 $53,660 ready; CPA handles §121 / dep. recapture / STR Sch E vs C"
     status: pending
   - id: optional-monarch-mcp
-    content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet
+    content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
     status: pending
 isProject: false
 ---
@@ -73,7 +76,12 @@ isProject: false
 - REFERENCE Personal Income: `1ffBOPDNo8vwt2LSKZJy__VG37nmIw9sy`
 - Sale folder + NEED doc: `1K6_C7BcRF1PuC1l_MGjYWHBOGS2I9w9L` / `1fmtxZFK9fNWr7xY0CoN1isOxqv0wVP4oLdUCOZX8GlY`
 - CapEx year-split README: `14XLuHT4cLvh4wDbHARM70x0aC09OX7-qwBhMwKtkah8`
+- Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT`
+- Monarch CSV export CANONICAL: `1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w`
+- Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (2025 Taxes) + copy `1vgAYlBSD9tUyln6G9Q8akl60mH-96E18aJ4XRNN0hqA` (Monarch folder)
+- Tax Packet Checklist (Monarch-profiled): `1B8n4hNd3mrNtBuurw88hjTMpyMC5uEBn9zKY-Y7_LZw`
 - Local full implemented workbook: `/opt/cursor/artifacts/Personal_Income_2025_Tax_Turbo_IMPLEMENTED.xlsx` (TY2025_CapEx_CPA sheet)
+- Local Monarch snapshot xlsx: `/opt/cursor/artifacts/Monarch_TY2025_Operating_Snapshot.xlsx`
 
 **Trashed (implement):** Turbo stubs `1IMNMy…` / `1UZSbV…`; CapEx `18KFS0…` + clones `1WbF4…` / `19a3eA…` / `1aaFpq…`. Old Turbo `1SaLWL…` marked SUPERSEDED.
 
@@ -92,7 +100,12 @@ isProject: false
   - **TY2025 included:** $53,660 (16.2%) — JCDA $41,910 + Riverton $11,750 on 2025-12-19 only
   - **TY2026 included:** $268,532 (81.0%)
   - **UNKNOWN / undated:** $9,401.93 (2.8%) — Wayfair $1,189.08 + Laura supplies $7,512.85 + Village permit ~$700
-- Official Monarch MCP: `https://api.monarch.com/mcp` (host reachable; Cursor MCP not connected)
+- **Monarch CSV export** (2026-09-17) in Documents/Monarch Money — **2,521 TY2025 txns** profiled into Operating Snapshot
+  - STR Airbnb/VRBO cash net **$12,794.57** (25 txns; many Airbnb still in Travel & Vacation)
+  - Hindman deposits ~$55.7k + Freeman ~$11.8k; Mercury Business Income ~$282k
+  - Monarch Home Improvement only **−$3,870** — CapEx register still authoritative
+  - JCDA Check #140 −$41,910 present as Transfer; Riverton $11,750 **absent** from Monarch
+- Official Monarch MCP: `https://api.monarch.com/mcp` (host reachable; Cursor MCP not connected; CSV unblocks operating P&L)
 
 ---
 
@@ -305,7 +318,7 @@ isProject: false
 
 ### Implementation Session Summary (2026-09-17)
 
-**Batches:** 2 (declutter+labels; CapEx CPA publish + sale NEED doc)
+**Batches:** 3 (declutter+labels; CapEx CPA publish + sale NEED doc; Monarch CSV profile)
 
 **Completed:**
 - Drive declutter: 6 files trashed (2 corrupt Turbo, 1 superseded CapEx, 3 CapEx clones)
@@ -314,11 +327,13 @@ isProject: false
 - CapEx year-split README in New House CapEx folder
 - Local implemented workbook with `TY2025_CapEx_CPA` sheet + checklist stamps
 - `implement-plan` skill parked under `.cursor/skills/implement-plan/`
+- **Monarch CSV profiled:** 7,027 rows / 2,521 TY2025; Operating Snapshot + STR detail published to Drive; CSV renamed CANONICAL; checklist updated
 
 **Still blocked / pending:**
 - 524 Ferdinand Closing Disclosure PDF (and dep. schedules)
 - 827 purchase Closing Disclosure
 - CapEx UNKNOWN dates / missing amounts / Laura dup confirm
-- Oak Park smoke detector $; Monarch connect/MCP; final CPA packet assembly
+- Apply TAX:* tags inside Monarch app (export cannot create tags)
+- Oak Park smoke detector $; Monarch MCP OAuth; final CPA packet assembly
 
-**Verification:** Drive folder re-list shows no corrupt stubs; TY2025 CapEx sheet + CPA xlsx present; sale folder has NEED doc only (no CD yet). Topics `run_suite.py` N/A for this personal-finance plan.
+**Verification:** Drive folder re-list shows no corrupt stubs; TY2025 CapEx sheet + CPA xlsx present; sale folder has NEED doc only (no CD yet); Monarch Money folder has CANONICAL CSV + Operating Snapshot + STR sheet. Topics `run_suite.py` N/A for this personal-finance plan.
