@@ -62,9 +62,13 @@ Incident: user had to say “Lets take a step back and make sure this is a good 
 
 When Monarch comes up, lead with this block (do not make the user re-ask “How do we access monarch?”):
 
-1. **This cloud session:** no Monarch MCP tools. Drop a Monarch **CSV export** in Drive folder `Documents/Monarch Money` (`1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT`).
-2. **Desktop Cursor:** OAuth official MCP `https://api.monarch.com/mcp` in `mcp.json`.
+1. **Official MCP (option 2):** URL `https://api.monarch.com/mcp` — see `.cursor/mcp.json` + `.cursor/skills/monarch-mcp-setup/SKILL.md`.
+   - **Desktop:** Settings → Tools & MCP → Connect (repo `mcp.json` loads automatically).
+   - **Cloud Agents:** add the same HTTP URL in the [Agents MCP UI](https://cursor.com/agents) / Dashboard Plugins & MCPs, then OAuth — cloud does **not** read project `mcp.json`.
+2. **Until MCP is auth’d in this session:** CSV export → Drive `Documents/Monarch Money` (`1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT`).
 3. **Hybrid tax rule:** Monarch = recurring operating P&L only. CapEx + sale Closing Disclosures stay on Excel/Sheets registers — never double-enter CapEx as Monarch tags.
+
+⛔ NEVER put Monarch email/password/MFA into `mcp.json`. OAuth only.
 
 ## 5. Topics skills in this repo
 

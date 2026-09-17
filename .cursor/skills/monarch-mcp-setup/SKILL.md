@@ -3,42 +3,43 @@
 Official connector: `https://api.monarch.com/mcp`  
 Help: https://help.monarch.com/hc/en-us/articles/50207234679956-Monarch-MCP-Connector
 
-## What we verified from this Cloud Agent (2026-09-17)
+## Verified from this Cloud Agent (2026-09-17)
 
 | Check | Result |
 |-------|--------|
-| Host reachable | Yes — POST → `401 invalid_token` (OAuth required); GET → `405` |
-| Monarch in cloud tool catalog | **No** — cannot `mcp_auth` Monarch from this session |
-| Config in repo | `.cursor/mcp.json` points at the official URL (no secrets) |
+| Host reachable | Yes — POST → `401 invalid_token` (needs OAuth); GET → `405` |
+| Monarch already in this run’s tool catalog | **No** |
+| Repo config | `.cursor/mcp.json` has the official URL (no secrets) |
 
-**OAuth needs a browser.** Complete connection in **Desktop Cursor** (or another Cursor surface that can open Monarch’s authorize page). This headless cloud VM cannot finish the login redirect.
+## Path A — Desktop Cursor (uses repo `mcp.json`)
 
-## Desktop setup (do this on your machine)
+1. Open this repo in **Cursor Desktop** (loads `.cursor/mcp.json`), or paste the same block into `~/.cursor/mcp.json`.
+2. Fully quit + reopen Cursor.
+3. **Settings → Tools & MCP** → **monarch** → **Connect**.
+4. Browser → Monarch sign-in → **Authorize** (password stays with Monarch, not in config).
+5. Confirm Monarch tools appear in the chat tool list.
 
-1. Open this repo in **Cursor Desktop** (so it picks up `.cursor/mcp.json`), **or** add the same block to `~/.cursor/mcp.json`:
+If the browser doesn’t open, copy the authorize URL from MCP status/logs and open it manually. Desktop OAuth redirect is typically `http://localhost:8787/callback`.
 
-```json
-{
-  "mcpServers": {
-    "monarch": {
-      "url": "https://api.monarch.com/mcp"
-    }
-  }
-}
-```
+## Path B — Cloud Agents (dashboard — not the repo file)
 
-2. Fully quit and reopen Cursor (MCP configs often load only on restart).
-3. **Settings → Tools & MCP** (or Customize → MCPs) → find **monarch** → **Connect**.
-4. Browser opens Monarch → sign in → **Authorize**. You never put your Monarch password in `mcp.json`.
-5. Confirm Monarch tools appear (accounts, transactions, etc.).
+Cloud Agents **do not** load project `.cursor/mcp.json`. Add Monarch under the Cloud Agents MCP UI:
 
-If the browser doesn’t open: copy the authorize URL from MCP logs / status and open it manually. If authorize succeeds but Cursor stays disconnected: check firewall/loopback for `http://localhost:8787/callback`.
+1. Open [cursor.com/agents](https://cursor.com/agents) (or Dashboard → Cloud Agents → Plugins & MCPs).
+2. Add a custom **HTTP** MCP server with URL exactly: `https://api.monarch.com/mcp`
+3. Complete **OAuth** when prompted (Cloud redirect: `https://www.cursor.com/agents/mcp/oauth/callback`).
+4. Start a **new** Cloud Agent run (or reconnect MCP) and confirm Monarch tools show in the catalog.
 
-## After you’re connected
+Until Path B is done, this cloud session keeps using **CSV drops** in Drive `Monarch Money`.
 
-- Use a **Desktop** Agent chat to query Monarch live (tags, categories, “show STR payouts”).
-- Cloud Agents may still lack Monarch until Cursor exposes that MCP to the cloud tool catalog — keep CSV drops as the cloud fallback (`Documents/Monarch Money`).
+## After connect — useful asks
+
+- “List accounts synced in Monarch”
+- “TY2025 transactions tagged Business / missing TAX:STR”
+- “Airbnb/VRBO payouts this year vs category Travel & Vacation”
+
+Hybrid rule unchanged: Monarch = operating P&L; CapEx + sale CDs stay on registers.
 
 ## Do not use
 
-Unofficial servers that store `MONARCH_EMAIL` / `MONARCH_PASSWORD` / MFA secrets in `mcp.json`. Prefer official OAuth only.
+Unofficial MCP servers that store `MONARCH_EMAIL` / `MONARCH_PASSWORD` / MFA secrets in config. Official OAuth only.
