@@ -45,7 +45,7 @@ todos:
     content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
     status: completed
   - id: childcare-brightwheel
-    content: "DONE — BrightWheel Phoebe $30,588.55 + Emma TY2025 $80 filed; recon sheet 1-nG1L_E0…; Aug prepaid $23,361.05 CPA flag"
+    content: "DONE — BrightWheel $30,668.55 provider cash; Aug $23,361.05 prepaid for BOTH kids; Kids Empire $233 + Zelle babysitting $100 EXCLUDED from 2441; recon 1CbssclH…"
     status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
@@ -121,7 +121,7 @@ isProject: false
 
 ## Already captured
 
-- **Childcare BrightWheel (2026-09-17):** Phoebe paid **$30,588.55** (incl. Aug lump **$23,361.05**); Emma TY2025 **$80**; Monarch Brightwheel cash ≈$30,640.58; recon `1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk`
+- **Childcare BrightWheel (2026-09-17, updated):** Provider invoices **$30,668.55**; Aug 4 **$23,361.05** is prepaid/bulk for **both** Phoebe + Emma (charged to Phoebe account). **Kids Empire $233.28** and **Zelle babysitting $100** do **not** qualify for Form 2441. Qualifying Monarch cash ≈ Brightwheel **$30,640.58**. Recon `1CbssclH6xcRW6B2frIu1t-n0yajUcT4JQNA7fLl1deY`
 
 
 - Drive `2025 Taxes` numbered `00–07` + `_SUPERSEDED` (nested Documents flattened)

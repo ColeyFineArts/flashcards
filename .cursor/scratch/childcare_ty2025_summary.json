@@ -3,15 +3,21 @@
   "brightwheel_folder": "1K7BWq2fP7Cwn9V1vgwJp0vWQayz5xkTk",
   "phoebe_csv": "1nJoTgW8Abqq36BCWd3owYPbHKTaBjx7u",
   "emma_csv": "1z1WKRSsM9cs23zrF_rt079EBGGuYBZ94",
-  "recon_sheet": "1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk",
-  "phoebe_paid_ty2025": 30588.55,
-  "emma_paid_ty2025": 80.0,
+  "recon_sheet": "1CbssclH6xcRW6B2frIu1t-n0yajUcT4JQNA7fLl1deY",
+  "recon_sheet_superseded": "1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk",
+  "phoebe_account_paid_ty2025": 30588.55,
+  "emma_account_paid_ty2025": 80.0,
   "brightwheel_invoices_combined": 30668.55,
-  "monarch_brightwheel": -30640.58,
-  "aug_lump_phoebe": 23361.05,
+  "monarch_brightwheel_qualifying": -30640.58,
+  "aug_lump_both_kids": 23361.05,
+  "aug_lump_note": "Prepaid/bulk tuition for BOTH Emma and Phoebe; charged to Phoebe account only",
+  "excluded_from_2441": {
+    "kids_empire": -233.28,
+    "zelle_babysitting": -100.0
+  },
   "cpa_flags": [
-    "Form 2441 prepaid allocation for Aug lump",
-    "provider EIN",
-    "Kids Empire / babysitting qualify?"
+    "Allocate Aug $23361.05 prepaid across both children / care months for Form 2441",
+    "BrightWheel provider EIN still needed",
+    "Kids Empire and Zelle babysitting excluded per user"
   ]
 }
