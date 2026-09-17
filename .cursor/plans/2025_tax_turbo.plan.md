@@ -24,7 +24,7 @@ todos:
     content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1xKJFKyt… in 01"
     status: completed
   - id: oak-park-2025
-    content: Finish 216 Oak Park LTR 2025 (smoke detector TBD); use Rocket 1098 already in 04 LTR / 216 N OAK PARK AVE for interest not full P+I
+    content: "PARTIAL — LTR costs + vacancy accounting sheet 1O4SKBYp… (empty-apt clean 9/30 supports late vacancy). Still NEED exact vacant months + smoke detector $; Rocket 1098 for interest"
     status: pending
   - id: grove-capex-split
     content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup. Riverton $11,750 absent from Monarch — register remains required."
