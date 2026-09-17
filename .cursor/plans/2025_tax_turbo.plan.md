@@ -38,6 +38,9 @@ todos:
   - id: cpa-packet
     content: "Assemble forms + checklist; Monarch operating rollup + CapEx TY2025 $53,660 ready; CPA handles §121 / dep. recapture / STR Sch E vs C"
     status: pending
+  - id: str-platform-pdfs
+    content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
+    status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
     status: pending
@@ -79,7 +82,10 @@ isProject: false
 - Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT`
 - Monarch CSV export CANONICAL: `1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w`
 - Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (2025 Taxes) + copy `1vgAYlBSD9tUyln6G9Q8akl60mH-96E18aJ4XRNN0hqA` (Monarch folder)
-- Tax Packet Checklist (Monarch-profiled): `1B8n4hNd3mrNtBuurw88hjTMpyMC5uEBn9zKY-Y7_LZw`
+- Tax Packet Checklist (STR platforms filed): see latest checklist sheet in 2025 Taxes
+- Airbnb Earnings 2025 CANONICAL: `1XJI1T8xRjoR_Gs_ZHdWoc39vm8gAW22J` (524 Sale) + copy `16p5vbaaERRoeg5CGlDuqCus4xThPaumw`
+- VRBO Payout 2025 CANONICAL: `1GfFqkAPJIeJ70qk6V2i9se_s4VRBXCje` (524 Sale) + copy `1LU08jkMvWw91ui-9xK5CAAFBvloOXNdA`
+- STR Platform vs Monarch recon: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY`
 - Local full implemented workbook: `/opt/cursor/artifacts/Personal_Income_2025_Tax_Turbo_IMPLEMENTED.xlsx` (TY2025_CapEx_CPA sheet)
 - Local Monarch snapshot xlsx: `/opt/cursor/artifacts/Monarch_TY2025_Operating_Snapshot.xlsx`
 
@@ -100,6 +106,11 @@ isProject: false
   - **TY2025 included:** $53,660 (16.2%) — JCDA $41,910 + Riverton $11,750 on 2025-12-19 only
   - **TY2026 included:** $268,532 (81.0%)
   - **UNKNOWN / undated:** $9,401.93 (2.8%) — Wayfair $1,189.08 + Laura supplies $7,512.85 + Village permit ~$700
+- **STR platform PDFs (2026-09-17):** Airbnb Earnings Report + VRBO Payout Summary for 524 Unit 2
+  - Airbnb gross **$8,053** / net payout **$7,691.41** (Megan → Checking 8507); remitted tax $641.20
+  - VRBO gross **$10,214.30** / net payout **$9,395.53** (16 res / 46 nights); owner-remit tax $36.30
+  - Combined net payout **$17,086.94** — Monarch cash only $12,794.57 (gap exactly = missing Apr/May Airbnb + 5 VRBO payouts)
+  - Recon sheet: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY`
 - **Monarch CSV export** (2026-09-17) in Documents/Monarch Money — **2,521 TY2025 txns** profiled into Operating Snapshot
   - STR Airbnb/VRBO cash net **$12,794.57** (25 txns; many Airbnb still in Travel & Vacation)
   - Hindman deposits ~$55.7k + Freeman ~$11.8k; Mercury Business Income ~$282k
@@ -328,6 +339,7 @@ isProject: false
 - Local implemented workbook with `TY2025_CapEx_CPA` sheet + checklist stamps
 - `implement-plan` skill parked under `.cursor/skills/implement-plan/`
 - **Monarch CSV profiled:** 7,027 rows / 2,521 TY2025; Operating Snapshot + STR detail published to Drive; CSV renamed CANONICAL; checklist updated
+- **STR platform PDFs filed:** Airbnb + VRBO 2025; combined net payout $17,086.94; Monarch understates by $4,292.37 (exact missing payouts identified)
 
 **Still blocked / pending:**
 - 524 Ferdinand Closing Disclosure PDF (and dep. schedules)
