@@ -41,6 +41,9 @@ todos:
   - id: str-platform-pdfs
     content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
     status: completed
+  - id: childcare-brightwheel
+    content: "DONE — BrightWheel Phoebe $30,588.55 + Emma TY2025 $80 filed; recon sheet 1-nG1L_E0…; Aug prepaid $23,361.05 CPA flag"
+    status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
     status: pending
@@ -99,6 +102,9 @@ isProject: false
 - New primary: 827 N Grove — Documents/827 already has USB Mortgage **1098**; Water `0245000849-01`; ComEd `7103042419`
 
 ## Already captured
+
+- **Childcare BrightWheel (2026-09-17):** Phoebe paid **$30,588.55** (incl. Aug lump **$23,361.05**); Emma TY2025 **$80**; Monarch Brightwheel cash ≈$30,640.58; recon `1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk`
+
 
 - Drive `2025 Taxes` + property subfolders under Documents
 - Oak Park 2025 known cash ~$21,423 (smoke detector TBD)
