@@ -30,10 +30,13 @@ todos:
     content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup. Riverton $11,750 absent from Monarch — register remains required."
     status: pending
   - id: sale-docs-blocker
-    content: "PARTIAL — 524 sale Closing Statement + 2023 purchase CD filed in 03. Still NEED prior depreciation schedules if any."
+    content: "PARTIAL — Sale CS + both purchase CDs filed & fact sheets built. Still NEED prior depreciation schedules (Sch E / 4562) + Unit 1/2 allocation."
     status: pending
   - id: grove-purchase-cd
-    content: "DONE — 827 Grove purchase CD filed CANONICAL copy 1mWyNNIA… under 05 / 827 N GROVE AVE"
+    content: "DONE — 827 Grove CD filed; purchase facts sheet 1RuCiJmO… ($670k / close 2025-12-18); radon $2,550 on CD flagged vs CapEx register"
+    status: completed
+  - id: sale-facts-from-cds
+    content: "DONE — 524 sale facts sheet 1p1fRuyT…: sold $600k on 2025-12-18; net $216,844.96; bought 2023-08-09 for $575k"
     status: completed
   - id: cpa-packet
     content: "Assemble forms + checklist; Monarch operating rollup + CapEx TY2025 $53,660 ready; CPA handles §121 / dep. recapture / STR Sch E vs C"
@@ -103,6 +106,8 @@ isProject: false
 - 524 Sale Closing Statement: `1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv`
 - 524 Purchase 2023 CD: `10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f`
 - 827 Grove Purchase CD: `1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ`
+- 524 Sale Facts sheet: `1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY`
+- 827 Grove Purchase Facts sheet: `1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc`
 - Childcare recon: `1-nG1L_E0foojiU51yXLhnNG1016MPHPsXozC--lD-fk` (in 06)
 
 **Trashed / archived:** Turbo stubs; CapEx clones; nested empty Documents; empty 827 Grove Purchase; root duplicate Airbnb/VRBO PDFs; prior checklists + old Turbo + snapshot copy → `_SUPERSEDED`.
@@ -132,6 +137,9 @@ isProject: false
   - Recon sheet: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY`
 - **Monarch CSV export** (2026-09-17) in `02/Monarch Money` — **2,521 TY2025 txns** profiled into Operating Snapshot
 - **Closing docs (2026-09-17):** 524 sale Closing Statement + 524 purchase 2023 CD + 827 Grove purchase CD (Megan uploads; CANONICAL copies filed — Megan-owned originals may remain at root)
+  - **524 sold** 2025-12-18 for **$600,000**; net to seller **$216,844.96**; USB payoff **$340,911.17**; commission **$15,000**; bought 2023-08-09 for **$575,000**
+  - **827 bought** 2025-12-18 for **$670,000**; loan **$535,000** @ 5.875%; cash to close **$121,925.63**; radon mitigation **$2,550** on CD (CapEx check)
+  - Fact sheets: sale `1p1fRuyT…` / Grove `1RuCiJmO…`
   - STR Airbnb/VRBO cash net **$12,794.57** (25 txns; many Airbnb still in Travel & Vacation)
   - Hindman deposits ~$55.7k + Freeman ~$11.8k; Mercury Business Income ~$282k
   - Monarch Home Improvement only **−$3,870** — CapEx register still authoritative
