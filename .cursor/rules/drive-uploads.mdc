@@ -1,0 +1,24 @@
+---
+description: HARD — Drive create_file must verify fileSize; ban xlsx base64 child loops
+alwaysApply: true
+---
+
+# Drive uploads (cloud) — HARD
+
+Incident 2026-09-17: corrupt Drive stubs of 8 / 1526 / 7500 bytes; 4 child agents; 972+148 msg ERROR loops.
+
+**After every `create_file` that uploads a sheet/workbook, run:**
+
+```bash
+python .cursor/tools/drive_create_verify.py --got-filesize <F> --expected-min-bytes <N> --title "<title>"
+```
+
+Nonzero exit ⇒ trash, retry as Google Sheet `textContent`. Do not re-inline the same `base64Content`.
+
+| ✅ | ⛔ |
+|----|----|
+| `textContent` → Sheet/Doc | Multi-KB xlsx `base64Content` when a Sheet works |
+| Verify `fileSize` | Child agent whose only job is base64 upload |
+| `search_files` with `title contains` / `parentId =` | Free-text `query: "Monarch"` |
+
+Full card: repo `AGENTS.md` §2.
