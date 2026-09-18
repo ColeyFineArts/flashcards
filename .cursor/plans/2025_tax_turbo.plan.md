@@ -21,7 +21,7 @@ todos:
     content: "PARTIAL 2026-09-17 — CSV export profiled (2,521 TY2025 txns). Accounts present: Mercury, BoA Jake/AdvPlus, Checking STR, cards, Megan Chase, USB 9422/5907. STILL NEED: apply TAX:STR/LTR-OAK/EPGC/W2/HOA-GROVE tags in Monarch app (export can't create tags)."
     status: completed
   - id: monarch-csv-profile
-    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1xKJFKyt… in 01"
+    content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1MuL7JNs… in 01"
     status: completed
   - id: oak-park-2025
     content: "PARTIAL — LTR costs + vacancy accounting sheet 1O4SKBYp… (empty-apt clean 9/30 supports late vacancy). Still NEED exact vacant months + smoke detector $; Rocket 1098 for interest"
@@ -48,7 +48,10 @@ todos:
     content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
     status: completed
   - id: childcare-brightwheel
-    content: "DONE — BrightWheel $30,668.55 provider cash; Aug $23,361.05 prepaid for BOTH kids; Kids Empire $233 + Zelle babysitting $100 EXCLUDED from 2441; recon 1CbssclH…"
+    content: "DONE — BrightWheel $30,668.55; Aug $23,361.05 prepaid both kids; Kids Empire + babysitting EXCLUDED; USER CONFIRMED CPA allocates Aug prepaid across children/care months for 2441; recon 1lEc9OPS…"
+    status: completed
+  - id: childcare-2441-allocate
+    content: "DONE (decision) — CPA allocates Aug $23,361.05 across children AND care months for Form 2441 (user confirmed 2026-09-18). Still NEED BrightWheel EIN."
     status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
@@ -83,7 +86,7 @@ isProject: false
 
 **Drive layout (cleaned 2026-09-17)** under `2025 Taxes` (`1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu`):
 - `00 READ ME — Folder Map` → map doc `10zS1YHwErhsUkFzL5qJ5EdbAvpz8EtVUe5-6eVQjLP0`
-- `01 Checklist & Plan` → CURRENT checklist `1xKJFKyt…`
+- `01 Checklist & Plan` → CURRENT checklist `1MuL7JNs…`
 - `02 Operating — Monarch` → snapshot + `Monarch Money` CSV
 - `03 STR + 524 Ferdinand Sale` → recon + `Platform PDFs + Closing NEED`
 - `04 LTR — 216 Oak Park`
@@ -102,7 +105,7 @@ isProject: false
 - Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT` (under 02)
 - Monarch CSV export CANONICAL: `1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w`
 - Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (in 02; duplicate copy archived)
-- Tax Packet Checklist CURRENT: `1xKJFKytSL_vYDnoPquHeMH4qEnD9Zlpes5ejTOH9evE` (in 01)
+- Tax Packet Checklist CURRENT: `1MuL7JNsZVNPUBMfgJJpKZefbAOCDKe6WttpuHNMx0-I` (in 01)
 - Airbnb Earnings 2025 CANONICAL: `1XJI1T8xRjoR_Gs_ZHdWoc39vm8gAW22J` (03/Platform PDFs)
 - VRBO Payout 2025 CANONICAL: `1GfFqkAPJIeJ70qk6V2i9se_s4VRBXCje` (03/Platform PDFs)
 - STR Platform vs Monarch recon: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY` (in 03)
@@ -111,7 +114,7 @@ isProject: false
 - 827 Grove Purchase CD: `1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ`
 - 524 Sale Facts sheet: `1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY`
 - 827 Grove Purchase Facts sheet: `1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc`
-- Childcare recon: `1CbssclH6xcRW6B2frIu1t-n0yajUcT4JQNA7fLl1deY` (in 06)
+- Childcare recon: `1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY` (in 06)
 
 **Trashed / archived:** Turbo stubs; CapEx clones; nested empty Documents; empty 827 Grove Purchase; root duplicate Airbnb/VRBO PDFs; prior checklists + old Turbo + snapshot copy → `_SUPERSEDED`.
 
@@ -124,7 +127,7 @@ isProject: false
 
 ## Already captured
 
-- **Childcare BrightWheel (2026-09-17, updated):** Provider invoices **$30,668.55**; Aug 4 **$23,361.05** is prepaid/bulk for **both** Phoebe + Emma (charged to Phoebe account). **Kids Empire $233.28** and **Zelle babysitting $100** do **not** qualify for Form 2441. Qualifying Monarch cash ≈ Brightwheel **$30,640.58**. Recon `1CbssclH6xcRW6B2frIu1t-n0yajUcT4JQNA7fLl1deY`
+- **Childcare BrightWheel (updated 2026-09-18):** Provider invoices **$30,668.55**; Aug 4 **$23,361.05** prepaid for **both** Phoebe + Emma. **Kids Empire** + **Zelle babysitting** excluded. **DECISION:** CPA allocates Aug prepaid across children **and** care months for Form 2441. Recon `1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY`
 
 
 - Drive `2025 Taxes` numbered `00–07` + `_SUPERSEDED` (nested Documents flattened)
@@ -376,7 +379,7 @@ isProject: false
 **Still blocked / pending:**
 - Prior depreciation schedules (Sch E / 4562) + Unit 1/2 allocation for 524 sale gain
 - CapEx UNKNOWN dates / missing amounts / Laura dup confirm; radon $2,550 on Grove CD vs register
-- BrightWheel provider EIN for Form 2441; CPA allocate Aug prepaid across both kids
+- BrightWheel provider EIN for Form 2441; Aug prepaid allocation = **CPA** (user confirmed)
 - Apply TAX:* tags inside Monarch app (export cannot create tags)
 - Oak Park smoke detector $; Monarch MCP OAuth; final CPA packet assembly
 
