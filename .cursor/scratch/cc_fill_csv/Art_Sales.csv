@@ -20,10 +20,10 @@ Roman Marble Base with Foot,Arte Primitivo,500,,Harlan J. Berk,,2025-02-07 00:00
 Neolithic Flint Celt,Arte Primitivo,195.78,2022-12-13 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F20="""",C20=""""),"""",F20-C20)","=IF(OR(H20="""",C20=0),"""",H20/C20)"
 Neolithic Danish Chert Adze,Live Auctioneers,311.25,2021-03-29 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F21="""",C21=""""),"""",F21-C21)","=IF(OR(H21="""",C21=0),"""",H21/C21)"
 Three Lots from Lithics Sale,Hindman,2240.27,2024-03-05 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F22="""",C22=""""),"""",F22-C22)","=IF(OR(H22="""",C22=0),"""",H22/C22)"
-,,=SUM(C51:C70),,,30000,,"=IF(OR(F23="""",C23=""""),"""",F23-C23)","=IF(OR(H23="""",C23=0),"""",H23/C23)"
+Sale 6428 Contract 303468 (object TBD),Cost TBD,,,Freeman's LLC — check to Megan (joint 0203),11000.0,2025-12-24 00:00:00,"=IF(OR(F23="""",C23=""""),"""",F23-C23)","=IF(OR(H23="""",C23=0),"""",H23/C23)"
 Total,,=SUM(C3:C23),,,=SUM(F3:F23),,=SUM(H3:H23),
 ,,,,,,,,
-Yellow Sale Price = still need buyer invoices. Green Cost = COGS already entered.,,,,,,,,
+"Yellow Sale Price = still need Berk buyer invoices. Row 23 Freeman’s Sale 6428 $11,000 CONFIRMED (check to Megan 12/24); Cost / object yellow. Green Cost = COGS already entered. Not tax advice.",,,,,,,,
 ,,,,,,,,
 2025 CC inventory (CONFIRMED category — NOT in Cost total until object is identified),,,,,,,,
 Los Angeles Modern Auctions (inventory purchase),Sapphire 5423,6821.06,2025-07-24,,,,,
@@ -31,3 +31,5 @@ Hindman LLC (inventory purchase),Sapphire 5423,282.24,2025-04-03,,,,,
 Hindman LLC (inventory purchase),Sapphire 5423,403.51,2025-07-29,,,,,
 The Great Frame Up (inventory framing),Sapphire 5423,536.41,2025-02-16,,,,,
 "User 2026-09-18: these are inventory, not EPGC operating expense. Do not add into Cost (COGS) total until the object is named — avoid double count vs Mercury.",,,,,,,,
+,,,,,,,,
+"User 2026-09-18: Freeman’s / CIBC $11,000 on joint 0203 is an art-sale settlement; the check went to Megan. Do not add Cost into the total until the object is named. 2026-01-08 Hindman Sale 6428 $937.83 is 2026.",,,,,,,,

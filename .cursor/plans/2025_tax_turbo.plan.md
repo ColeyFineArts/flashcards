@@ -24,7 +24,7 @@ todos:
     content: "DONE — CANONICAL CSV 1ElqZTJq… + Operating Snapshot 1yxtwpNG… in 02 Operating; checklist CURRENT 1MuL7JNs… in 01"
     status: completed
   - id: oak-park-2025
-    content: "PARTIAL — LTR costs + vacancy accounting sheet 1O4SKBYp… (empty-apt clean 9/30 supports late vacancy). Still NEED exact vacant months + smoke detector $; Rocket 1098 for interest"
+    content: "PARTIAL — LTR cash $19,500 (Delach+Ava co-tenant+Joan). Vacancy CONFIRMED Oct + half Nov. Joan repair $675 on INTERIOR Dec. Half-Nov $975 WAIT 8507. Still NEED smoke detector $; Rocket 1098 for interest"
     status: pending
   - id: grove-capex-split
     content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup. Riverton $11,750 absent from Monarch — register remains required."
@@ -58,6 +58,9 @@ todos:
     status: completed
   - id: childcare-2441-allocate
     content: "DONE — CPA allocates Aug $23,361.05 across children AND care months. Form 2441 Part I LOCKED: La Casa Montessori School; EIN 45-5289483; 608 Harrison St, Oak Park, IL 60304."
+    status: completed
+  - id: checking-answers-2026-09-18
+    content: "DONE — Ava co-tenant keep; vacant Oct+half Nov; Joan $675 repair; GCM off EPGC Consultant (personal 1099); May 22 reimbursement; Bear Creek $38k gift to Jake from parents; Freeman’s $11k Sale 6428 to Megan; 8507 WAIT-MEGAN. Not tax advice."
     status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP

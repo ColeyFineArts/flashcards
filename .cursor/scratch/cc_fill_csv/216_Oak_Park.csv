@@ -9,7 +9,7 @@
 ,SERVICE FEES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C9:N9)
 ,REMITTED TAX,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C10:N10)
 ,INSURANCE,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C11:N11)
-,INTERIOR MAINTENANCE,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C12:N12)
+,INTERIOR MAINTENANCE,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,675.0,=SUM(C12:N12)
 ,EXTERIOR REPAIRS,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C13:N13)
 ,VILLAGE WATER AND REFUSE,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C14:N14)
 ,GAS,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C15:N15)
@@ -27,7 +27,7 @@
 ,,,,,,,,,,,,,,
 ,YEAR-TO-DATE INCOME LESS EXPENSES,=C5-C26,=D5-D26,=E5-E26,=F5-F26,=G5-G26,=H5-H26,=I5-I26,=J5-J26,=K5-K26,=L5-L26,=M5-M26,=N5-N26,=SUM(C28:N28)
 ,,,,,,,,,,,,,,
-,"LTR rent 2026-09-18: joint 0203 Zelle — Delach $1,450 + Ava $500 (yellow, ASK roommate) Feb–Sep cash, then Joan $1,950 on 12/1 and 12/31 (yellow, ASK Dec vs Jan-2026 prepaid). TY2025 cash $19500.00. Oct–Nov no rent on 0203 (ASK vacancy). Jan 2025 occupancy was paid 12/31/2024 — not in this year. HOA + Rocket payment cash from Monarch (green). Deduct interest from Rocket 1098 only — not full P+I. Not tax advice.",,,,,,,,,,,,,
+,"LTR after answers 2026-09-18: Ava CONFIRMED Delach co-tenant — keep $500/mo. TY2025 cash $19500.00 (Delach $11,600 + Ava $4,000 + Joan $3,900). Occupancy vacant October and half of November (held for rent). Joan half-Nov $975 NOT booked — not on 0203, WAIT 8507. 12/1 $1,950 IN = December occupancy cash; 12/31 $1,950 = Jan 2026 prepaid cash in TY2025. 12/1 8507 Zelle OUT $675 to Joan → INTERIOR MAINTENANCE (repair). Jan 2025 occupancy was paid 12/31/2024 — not in this year. HOA + Rocket payment cash from Monarch (green). Deduct interest from Rocket 1098 only — not full P+I. Not tax advice.",,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,

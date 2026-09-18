@@ -37,7 +37,7 @@
     "Grove Collaborative orders",
     "State Farm bundled home + auto"
   ],
-    "still_open": [
+  "still_open": [
     "REMIND JACOB \u2014 ComEd with Megan",
     "Soldier Field East Parking $57",
     "Extra Space $360",
@@ -76,6 +76,7 @@
   "checking_inflows": {
     "updated": "2026-09-18",
     "disclaimer": "Not tax advice. Organizational packet only.",
+    "pass": "checking-answers",
     "accounts": {
       "jsc": {
         "folder": "bank of america checking_JSC",
@@ -88,7 +89,8 @@
         "acct": "4830 7359 0203"
       }
     },
-    "gcm_board_1099": 21500.0,
+    "gcm_board_1099_personal": 21500.0,
+    "epgc_consultant": 0.0,
     "gcm_reimburse_excluded": 5214.69,
     "oak_park_ltr_cash": 19500.0,
     "oak_park_by_month": [
@@ -105,18 +107,28 @@
       0.0,
       3900.0
     ],
-    "bear_creek_gift_excluded": 38000.0,
+    "oak_interior_repair_dec": 675.0,
+    "joan_half_nov_unbooked": 975.0,
+    "vacancy": "October + first half of November",
+    "bear_creek_gift_to_jake_excluded": 38000.0,
     "utma_thomas_excluded": 10000.0,
-    "hold_freemans_cibc": 11000.0,
-    "questions": [
+    "art_sale_6428_price": 11000.0,
+    "art_sale_6428_cost": null,
+    "checking_8507": "WAIT-MEGAN",
+    "confirmed": [
       "Ava L Hernandez $500/mo rent",
-      "Oak Park vacant Oct\u2013Nov 2025?",
-      "Joan Friedberger Dec cash",
-      "GCM on EPGC Consultant vs personal 1099",
+      "Oak Park vacant Oct + half Nov",
+      "Joan 12/1 Zelle OUT $675 = repair",
+      "GCM off EPGC Consultant",
       "May 22 Gates $609.02",
-      "Bear Creek $38,000 vs kids\u2019 UTMA ~$10k each",
-      "Freeman\u2019s / CIBC $11,000 wire 12/24 on joint 0203",
-      "Checking 8507 (NOW) 2025 statements?"
+      "Bear Creek $38,000 to Jake from parents",
+      "Freeman\u2019s / CIBC $11,000 art-sale settlement",
+      "Checking 8507 statements"
+    ],
+    "still_open": [
+      "WAIT MEGAN \u2014 Checking 8507 (NOW) 2025 statements",
+      "Joan half-November rent $975",
+      "Sale 6428 object / Cost"
     ]
   }
 }
