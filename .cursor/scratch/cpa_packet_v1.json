@@ -1,0 +1,29 @@
+{
+  "version": "v1.1",
+  "updated": "2026-09-18",
+  "packet_sheet": "1pijm_pwWqBVlOUCRS3ydRN2GQAdVCwAg0xWYj1ug_qk",
+  "packet_url": "https://docs.google.com/spreadsheets/d/1pijm_pwWqBVlOUCRS3ydRN2GQAdVCwAg0xWYj1ug_qk/edit",
+  "checklist": "1tY4ywq0kLOB_OR2VPQSU7e06w0Wszcx3sq_q1yupCeU",
+  "checklist_url": "https://docs.google.com/spreadsheets/d/1tY4ywq0kLOB_OR2VPQSU7e06w0Wszcx3sq_q1yupCeU/edit",
+  "drive_root": "1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu",
+  "folder_01": "1IRaYqfUd9s413JVGSyMSWfNW1Yt4IWDa",
+  "approach": "Ship with LOCKED facts; TBD rows updated as docs arrive without rebuilding packet",
+  "superseded_v1": "1gnp-XKAcUSClkjeOY3tz-tV7mOyaG_fgaFikRRMRGZE",
+  "locked": [
+    "W2/1099",
+    "Closing docs 524+827",
+    "STR platform net 17086.94",
+    "CapEx TY2025 53660",
+    "Unit2 2023 dep 7090 basis 203434",
+    "Childcare rules + CPA Aug allocate"
+  ],
+  "tbd_adjust_later": [
+    "2024 Form 1040",
+    "2025 stub dep",
+    "section 121 allocation",
+    "BrightWheel EIN",
+    "Oak Park vacant months",
+    "CapEx UNKNOWN",
+    "radon vs CapEx"
+  ]
+}

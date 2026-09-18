@@ -45,8 +45,8 @@ todos:
     content: "DONE — Form W2.pdf + 1099_JacobColey… provided in 07 Income & Bank Docs (1Xgd2Tc4… / 1k9ySc3h…)"
     status: completed
   - id: cpa-packet
-    content: "PARTIAL — W2/1099 + CDs + STR + childcare + CapEx $53,660 in Drive; still assemble packet + BrightWheel EIN + dep schedules + CapEx UNKNOWN"
-    status: pending
+    content: "DONE v1.1 WORKING — CPA PACKET 1pijm_pw… + CURRENT checklist 1tY4ywq… in 01; LOCKED vs TBD; v1 superseded (broken # headers)"
+    status: completed
   - id: str-platform-pdfs
     content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
     status: completed
@@ -381,14 +381,12 @@ isProject: false
 - **STR platform PDFs filed:** Airbnb + VRBO 2025; combined net payout $17,086.94; Monarch understates by $4,292.37 (exact missing payouts identified)
 - **Income docs PROVIDED:** Form W-2 + 1099 in `07 Income & Bank Docs`
 
-**Still blocked / pending:**
-- **2024 filed Form 1040** (Sch E / 4562) — **still need**; 2026-09-18 upload was engagement letter only (Wermer); 2023 dep **$7,090** extracted
-- Unit 1/2 allocation for §121 on 524 sale
-- CapEx UNKNOWN dates / missing amounts / Laura dup confirm; radon $2,550 on Grove CD vs register
-- BrightWheel provider EIN for Form 2441; Aug prepaid allocation = **CPA** (user confirmed)
-- Apply TAX:* tags inside Monarch app (export cannot create tags)
-- Oak Park smoke detector $; Monarch MCP OAuth; final CPA packet assembly
+**Working packet (2026-09-18):** Ship with what we have — [CPA PACKET 2025 — WORKING DRAFT v1.1](https://docs.google.com/spreadsheets/d/1pijm_pwWqBVlOUCRS3ydRN2GQAdVCwAg0xWYj1ug_qk/edit) + [CURRENT checklist](https://docs.google.com/spreadsheets/d/1tY4ywq0kLOB_OR2VPQSU7e06w0Wszcx3sq_q1yupCeU/edit). LOCKED facts vs TBD plug-ins (2024 return, EIN, vacancy months, CapEx UNKNOWN). Do not block on perfect data. Living draft — revise TBD rows as docs arrive.
 
-**Provided (no longer blockers):** W-2, 1099, closing CDs, **2023 Sch E/4562 for 524 Unit 2**.
+**Still TBD (adjust later):**
+- 2024 Form 1040 client copy → Unit 2 2024 dep + cumulative basis
+- §121 Unit allocation; BrightWheel EIN; Oak Park vacant months; CapEx UNKNOWN; radon vs register
 
-**Verification:** Drive folder re-list shows no corrupt stubs; TY2025 CapEx sheet + CPA xlsx present; sale folder has NEED doc only (no CD yet); Monarch Money folder has CANONICAL CSV + Operating Snapshot + STR sheet. Topics `run_suite.py` N/A for this personal-finance plan.
+**Provided / locked:** W-2, 1099, CDs, STR platforms, CapEx $53,660, 2023 Unit 2 dep $7,090, childcare Form 2441 rules.
+
+**Verification:** Packet v1.1 sections A–I render cleanly (no `#ERROR!`); superseded v1 + old checklist in `_SUPERSEDED`; TY2025 CapEx sheet + CPA xlsx present; Monarch Money folder has CANONICAL CSV + Operating Snapshot + STR sheet. Topics `run_suite.py` N/A for this personal-finance plan.
