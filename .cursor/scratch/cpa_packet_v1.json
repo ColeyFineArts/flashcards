@@ -5,9 +5,16 @@
   "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
   "start_here_cc": "1_ekfhyHOMz7bMk6RcynJJ-6h9UO5SY7dAoNOJC0966Q",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
-  "xlsx_bytes": 42885,
+  "xlsx_bytes": 50744,
   "note": "Drive MCP cannot upload >~8KB xlsx base64 reliably; browser tabs are per-sheet Google Sheets; full multi-tab xlsx is in git. Grove Collaborative ≠ 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan — checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
+  "checking_inflows": {
+    "gcm_consultant_1099": 21500.0,
+    "gcm_reimburse_excluded": 5214.69,
+    "oak_park_ltr_cash": 19500.0,
+    "bear_creek_excluded": 38000.0,
+    "utma_thomas_excluded": 10000.0
+  },
   "grove_collaborative": {
     "user": "grove orders = Grove Collaborative, not 827 N Grove the house",
     "unit2_supplies": 791.21,

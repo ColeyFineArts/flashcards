@@ -1,0 +1,46 @@
+{
+  "updated": "2026-09-18",
+  "disclaimer": "Not tax advice. Organizational packet only.",
+  "accounts": {
+    "jsc": {
+      "folder": "bank of america checking_JSC",
+      "id": "1zsgbJxKVdpA4a0vHEIix8wUxnzhNYZdZ",
+      "acct": "4830 6191 9922"
+    },
+    "joint": {
+      "folder": "Bank of America checking_joint",
+      "id": "1dIxS-VnqWTSNgvNXt47W_GYx88z2FdCC",
+      "acct": "4830 7359 0203"
+    }
+  },
+  "gcm_board_1099": 21500.0,
+  "gcm_reimburse_excluded": 5214.69,
+  "oak_park_ltr_cash": 19500.0,
+  "oak_park_by_month": [
+    1950.0,
+    1950.0,
+    1950.0,
+    1950.0,
+    1950.0,
+    1950.0,
+    1450.0,
+    2450.0,
+    0.0,
+    0.0,
+    0.0,
+    3900.0
+  ],
+  "bear_creek_gift_excluded": 38000.0,
+  "utma_thomas_excluded": 10000.0,
+  "hold_freemans_cibc": 11000.0,
+  "questions": [
+    "Ava L Hernandez $500/mo rent",
+    "Oak Park vacant Oct\u2013Nov 2025?",
+    "Joan Friedberger Dec cash",
+    "GCM on EPGC Consultant vs personal 1099",
+    "May 22 Gates $609.02",
+    "Bear Creek $38,000 vs kids\u2019 UTMA ~$10k each",
+    "Freeman\u2019s / CIBC $11,000 wire 12/24 on joint 0203",
+    "Checking 8507 (NOW) 2025 statements?"
+  ]
+}

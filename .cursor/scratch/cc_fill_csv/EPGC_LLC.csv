@@ -1,7 +1,7 @@
 2025,,,,,,,,,,,,,
 INCOME,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,YR TOTAL
 Business Income (Mercury rollup — includes art deals),15000,30000,14000,0,37200,41895,37034.79,10000,22261.27,50670,6000,0,=SUM(B3:M3)
-Consultant,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B4:M4)
+Consultant,0.0,4100.0,0.0,9200.0,0.0,0.0,0.0,0.0,4100.0,0.0,4100.0,0.0,=SUM(B4:M4)
 Total,=SUM(B3:B4),=SUM(C3:C4),=SUM(D3:D4),=SUM(E3:E4),=SUM(F3:F4),=SUM(G3:G4),=SUM(H3:H4),=SUM(I3:I4),=SUM(J3:J4),=SUM(K3:K4),=SUM(L3:L4),=SUM(M3:M4),=SUM(B5:M5)
 ,,,,,,,,,,,,,
 EXPENSES,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,YR TOTAL
@@ -39,4 +39,6 @@ COGS for art objects = Cost column on Art Sales and Purchases tab (not this roll
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 "CC answers 2026-09-18: Canva CONFIRMED Software Fees; Park Chicago $100 + Field Museum $53 → Travel. Coinbase golf/voids still excluded; Soldier Field parking $57 HOLD. Frame Up / LAMA / Hindman are Art Sales inventory, not this P&L. TruGreen is 524 yard. Not tax advice.",,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Checking inflows 2026-09-18: GCM BOM PAYMEN $21500.00 → Consultant (ties 1099-NEC). JAKE C / SEFOF reimbursements $5214.69 EXCLUDED. ASK: EPGC LLC vs personal 1099. Bear Creek / UTMA not on this tab. Not tax advice.,,,,,,,,,,,,,
 ,,,,,,,,,,,,,

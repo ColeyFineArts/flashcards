@@ -1,0 +1,21 @@
+GCM / Gates Capital 2025 — board fees vs reimbursements (not tax advice),,,,,,,,,,,,,
+"BOM PAYMEN $21500.00 = Form 1099-NEC $21,500 → EPGC Consultant + this tab. JAKE C / SEFOF reimbursements $5214.69 EXCLUDED. CPA: confirm EPGC LLC vs personal 1099/Sch C.",,,,,,,,,,,,,
+,,,,,,,,,,,,,
+LINE,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC,YR TOTAL
+Board fee (BOM PAYMEN → Consultant),0.0,4100.0,0.0,9200.0,0.0,0.0,0.0,0.0,4100.0,0.0,4100.0,0.0,=SUM(B5:M5)
+Reimbursements (EXCLUDED from income),0.0,1150.99,0.0,0.0,609.02,0.0,1717.41,0.0,0.0,0.0,1737.27,0.0,=SUM(B6:M6)
+,,,,,,,,,,,,,
+Transaction register,,,,,,,,,,,,,
+Date,Account,Amount,Bucket,Status,Memo,,,,,,,,
+2025-02-12,9922,4100.0,Consultant / 1099,APPLIED,BOM PAYMEN,,,,,,,,
+2025-04-18,9922,9200.0,Consultant / 1099,APPLIED,BOM PAYMEN,,,,,,,,
+2025-09-13,9922,4100.0,Consultant / 1099,APPLIED,BOM PAYMEN,,,,,,,,
+2025-11-13,9922,4100.0,Consultant / 1099,APPLIED,BOM PAYMEN,,,,,,,,
+2025-02-18,9922,1150.99,Reimbursement,EXCLUDED,PMT INFO: BOARD MEETING EXPENSES,,,,,,,,
+2025-05-22,9922,609.02,Reimbursement,EXCLUDED,"JAKE C — no PMT INFO on statement; odd cents, not BOM — treated as reimburse",,,,,,,,
+2025-11-05,9922,1273.82,Reimbursement,EXCLUDED,Monarch tag Reimburse; statement JAKE C (not BOM),,,,,,,,
+2025-07-25,8507,462.48,Reimbursement,EXCLUDED,SEFOF WHARTON EXPENSES — not on the two BoA folders,,,,,,,,
+2025-07-31,8507,1254.93,Reimbursement,EXCLUDED,SEFOF ANNUAL CONFERENCE EXPENSES,,,,,,,,
+2025-11-05,8507,463.45,Reimbursement,EXCLUDED,SEFOF REIMBURSE EXPENSES FOR EDUCATION COMMITTEE,,,,,,,,
+,,,,,,,,,,,,,
+"1099-NEC Gates Capital Management LLC TIN 84-1331261 box 1 = $21,500. BOM sum ties. Reimbursements are not on the 1099.",,,,,,,,,,,,,
