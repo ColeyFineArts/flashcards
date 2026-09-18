@@ -108,7 +108,9 @@ isProject: false
 - Monarch Money folder: `1HqEA5yfN12bAeY5yseTANPKEDBl0DJgT` (under 02)
 - Monarch CSV export CANONICAL: `1ElqZTJqP4y6Flbh5ajlfLSaIpYJivR-w`
 - Monarch TY2025 Operating Snapshot: `1yxtwpNGpHvdP_2VjXVlKlpBCcFlsSRAQm4duqiUEv2w` (in 02; duplicate copy archived)
-- Tax Packet Checklist CURRENT: `1MuL7JNsZVNPUBMfgJJpKZefbAOCDKe6WttpuHNMx0-I` (in 01)
+- Tax Packet Checklist CURRENT: `1KQj-KCb5eNA5BnPTjMotPqZb7fBzHJqYX3T-Ai2dwCA` (in 01)
+- 524 Unit 2 prior dep extract: `14pbeH8nt7mi3sZPCEuy8RN975WtjEDKAitVnYf-ac6c`
+- 2023 Taxes.pdf (Sch E/4562 source): `1masjXrfxRPAgELs669WGPzfXhEwMvImX`
 - Airbnb Earnings 2025 CANONICAL: `1XJI1T8xRjoR_Gs_ZHdWoc39vm8gAW22J` (03/Platform PDFs)
 - VRBO Payout 2025 CANONICAL: `1GfFqkAPJIeJ70qk6V2i9se_s4VRBXCje` (03/Platform PDFs)
 - STR Platform vs Monarch recon: `1Yo0IFgaWi_fM6OFxznZH6HX25uwyDMp2puq-6PRA1fY` (in 03)
@@ -380,12 +382,13 @@ isProject: false
 - **Income docs PROVIDED:** Form W-2 + 1099 in `07 Income & Bank Docs`
 
 **Still blocked / pending:**
-- Prior depreciation schedules (Sch E / 4562) + Unit 1/2 allocation for 524 sale gain
+- **2024 filed Form 1040** (Sch E / 4562 for Unit 2) — not on Drive; 2023 dep **$7,090** extracted
+- Unit 1/2 allocation for §121 on 524 sale
 - CapEx UNKNOWN dates / missing amounts / Laura dup confirm; radon $2,550 on Grove CD vs register
 - BrightWheel provider EIN for Form 2441; Aug prepaid allocation = **CPA** (user confirmed)
 - Apply TAX:* tags inside Monarch app (export cannot create tags)
 - Oak Park smoke detector $; Monarch MCP OAuth; final CPA packet assembly
 
-**Provided (no longer blockers):** W-2, 1099, 524 sale Closing Statement, 524 purchase 2023 CD, 827 Grove purchase CD.
+**Provided (no longer blockers):** W-2, 1099, closing CDs, **2023 Sch E/4562 for 524 Unit 2**.
 
 **Verification:** Drive folder re-list shows no corrupt stubs; TY2025 CapEx sheet + CPA xlsx present; sale folder has NEED doc only (no CD yet); Monarch Money folder has CANONICAL CSV + Operating Snapshot + STR sheet. Topics `run_suite.py` N/A for this personal-finance plan.
