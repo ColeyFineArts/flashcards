@@ -45,7 +45,7 @@ todos:
     content: "DONE — Form W2.pdf + 1099_JacobColey… provided in 07 Income & Bank Docs (1Xgd2Tc4… / 1k9ySc3h…)"
     status: completed
   - id: cpa-packet
-    content: "DONE v1.1 WORKING — CPA PACKET 1pijm_pw… + CURRENT checklist 1tY4ywq… in 01; LOCKED vs TBD; v1 superseded (broken # headers)"
+    content: "CORRECTED — Personal Income 2025 Tax Turbo multi-tab (expenses+COGS) is the CPA deliverable; folder 1lZvEhDt…; status checklist demoted"
     status: completed
   - id: str-platform-pdfs
     content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
@@ -381,12 +381,16 @@ isProject: false
 - **STR platform PDFs filed:** Airbnb + VRBO 2025; combined net payout $17,086.94; Monarch understates by $4,292.37 (exact missing payouts identified)
 - **Income docs PROVIDED:** Form W-2 + 1099 in `07 Income & Bank Docs`
 
-**Working packet (2026-09-18):** Ship with what we have — [CPA PACKET 2025 — WORKING DRAFT v1.1](https://docs.google.com/spreadsheets/d/1pijm_pwWqBVlOUCRS3ydRN2GQAdVCwAg0xWYj1ug_qk/edit) + [CURRENT checklist](https://docs.google.com/spreadsheets/d/1tY4ywq0kLOB_OR2VPQSU7e06w0Wszcx3sq_q1yupCeU/edit). LOCKED facts vs TBD plug-ins (2024 return, EIN, vacancy months, CapEx UNKNOWN). Do not block on perfect data. Living draft — revise TBD rows as docs arrive.
+**Working packet (2026-09-18 CORRECTED):** The CPA deliverable is **Personal Income 2025 Tax Turbo** — same tab shape as prior `Personal Income.xlsx` (monthly property EXPENSES + Art Sales **Cost = COGS**), not the status checklist.
+
+- Folder: [CANONICAL — Personal Income 2025 Tax Turbo (tabs)](https://drive.google.com/drive/folders/1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J)
+- [START HERE](https://docs.google.com/document/d/1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8/edit)
+- Local multi-tab xlsx: `.cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx`
+- Per-tab Google Sheets in that folder for browser editing (Unit 2 expenses, Art Sales COGS, EPGC, Oak Park, etc.)
 
 **Still TBD (adjust later):**
-- 2024 Form 1040 client copy → Unit 2 2024 dep + cumulative basis
-- §121 Unit allocation; BrightWheel EIN; Oak Park vacant months; CapEx UNKNOWN; radon vs register
+- Yellow expense lines on property tabs; Art Sale Prices; 2024 Form 1040; §121; BrightWheel EIN; Oak Park vacant months; CapEx UNKNOWN; radon vs register
 
-**Provided / locked:** W-2, 1099, CDs, STR platforms, CapEx $53,660, 2023 Unit 2 dep $7,090, childcare Form 2441 rules.
+**Provided / locked:** W-2/1099 docs, CDs, STR platforms $17,086.94, CapEx $53,660, 2023 Unit 2 dep $7,090, childcare Form 2441 rules, Monarch-filled STR income months + Oak Park HOA/mortgage cash + Mercury EPGC rollups.
 
-**Verification:** Packet v1.1 sections A–I render cleanly (no `#ERROR!`); superseded v1 + old checklist in `_SUPERSEDED`; TY2025 CapEx sheet + CPA xlsx present; Monarch Money folder has CANONICAL CSV + Operating Snapshot + STR sheet. Topics `run_suite.py` N/A for this personal-finance plan.
+**Verification:** Unit 2 tab shows EXPENSES block; Art Sales shows Cost (COGS) column with 2025 inventory costs; status checklist demoted.

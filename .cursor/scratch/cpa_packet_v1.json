@@ -1,29 +1,34 @@
 {
-  "version": "v1.1",
   "updated": "2026-09-18",
-  "packet_sheet": "1pijm_pwWqBVlOUCRS3ydRN2GQAdVCwAg0xWYj1ug_qk",
-  "packet_url": "https://docs.google.com/spreadsheets/d/1pijm_pwWqBVlOUCRS3ydRN2GQAdVCwAg0xWYj1ug_qk/edit",
-  "checklist": "1tY4ywq0kLOB_OR2VPQSU7e06w0Wszcx3sq_q1yupCeU",
-  "checklist_url": "https://docs.google.com/spreadsheets/d/1tY4ywq0kLOB_OR2VPQSU7e06w0Wszcx3sq_q1yupCeU/edit",
-  "drive_root": "1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu",
-  "folder_01": "1IRaYqfUd9s413JVGSyMSWfNW1Yt4IWDa",
-  "approach": "Ship with LOCKED facts; TBD rows updated as docs arrive without rebuilding packet",
-  "superseded_v1": "1gnp-XKAcUSClkjeOY3tz-tV7mOyaG_fgaFikRRMRGZE",
-  "locked": [
-    "W2/1099",
-    "Closing docs 524+827",
-    "STR platform net 17086.94",
-    "CapEx TY2025 53660",
-    "Unit2 2023 dep 7090 basis 203434",
-    "Childcare rules + CPA Aug allocate"
+  "correction": "CPA deliverable is Personal Income-style multi-tab workbook (expenses + Art Sales COGS), not status checklist",
+  "drive_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
+  "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
+  "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
+  "xlsx_bytes": 23663,
+  "note": "Drive MCP cannot upload >~8KB base64 reliably; browser tabs are per-sheet Google Sheets; full multi-tab xlsx is in git",
+  "tabs": [
+    "_SOURCE_2025",
+    "Income",
+    "524 Ferdinand Ave, Unit 2",
+    "524 Ferdinand Ave, Unit 1",
+    "216 N. Oak Park Ave",
+    "EPGC LLC",
+    "Art Sales and Purchases",
+    "GCM",
+    "Hindman W2",
+    "Megan T4",
+    "Investments",
+    "524 Home Sale",
+    "827 Grove CapEx",
+    "Childcare 2441"
   ],
-  "tbd_adjust_later": [
-    "2024 Form 1040",
-    "2025 stub dep",
-    "section 121 allocation",
-    "BrightWheel EIN",
-    "Oak Park vacant months",
-    "CapEx UNKNOWN",
-    "radon vs CapEx"
-  ]
+  "sheet_ids": {
+    "folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
+    "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
+    "index": "1gRsoW2siHOK2yMALp9oSPgryPejHuYAHHjpMK-qJN9Q",
+    "unit2": "1Q_Tn_vxi2M3YSNtcbcN6bl_oc_v4AcCr2HbAz1wQsaw",
+    "oak": "1k208pXaKqyGGisp-OVSy2vC3xqp2WKjbfDNTzz6XlC0",
+    "epgc": "14piNcLHKm38gKgHWRGMUQXM-atE4f456ghJyN7skKUY",
+    "art_sales_cogs": "1o8PB6SAKaCCTuQDhuLcBRLGXe3BVjDg37HW8EJ5NLD4"
+  }
 }
