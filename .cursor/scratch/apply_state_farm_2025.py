@@ -32,9 +32,9 @@ JSON_PATH = ans.JSON_PATH
 
 NONE_FILL = PatternFill(fill_type=None)
 U2_NOTE = (
-    "CC answers 2026-09-18: Nicor small / Prime ATT / Grove / Schauer / yard CONFIRMED. "
+    "CC answers 2026-09-18: Nicor small / Prime ATT / Grove Collaborative supplies / Schauer / yard CONFIRMED. "
     f"March HD ${ans.MARCH_HD_TOTAL} → 524 EXTERIOR REPAIRS 50/50 with Unit 1. "
-    "Remaining Prime HD/Lowe’s/IKEA 1/3 524 (50/50), 1/3 personal, 1/3 Grove. "
+    "Remaining Prime HD/Lowe’s/IKEA 1/3 524 (50/50), 1/3 personal, 1/3 827 N Grove the house (not Grove Collaborative). "
     "ELECTRIC yellow — REMIND JACOB: double-check ComEd with Megan (checking ACH Jacob $829.15; any extra check?). "
     "Home Depot March read as 524 (not 534). Extra Space $360 HOLD. "
     "State Farm: bundled home+auto (was Travelers home / Geico auto). Only HOME share on this INSURANCE line "

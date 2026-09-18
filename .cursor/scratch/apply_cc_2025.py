@@ -228,7 +228,8 @@ _sf_billed = sum((r["billed"] for r in sf_split_rows), Decimal("0.00"))
 assert sum(u2_ins) + sum(u1_ins) + sum(sf_auto) == _sf_billed
 assert _sf_billed == D("2124.79")
 
-# Grove -> Unit 2 SUPPLIES
+# Grove Collaborative (household/STR supplies) -> 524 Unit 2 SUPPLIES
+# Not 827 N Grove the house. User 2026-09-18: “grove orders” = Grove Collaborative.
 u2_sup = zeros()
 for m, amt in [
     (0, "32.98"), (0, "77.82"), (2, "92.96"), (3, "105.25"),
@@ -317,7 +318,7 @@ LEDGER = [
     ("Prime 2351", "2025 Nicor smaller", "NICOR GAS BILL (smaller of pair)", float(sum(u2_gas)), "GAS", "524 Unit 2", "APPLIED", "Matches 2024 Unit 2 gas $21–62"),
     ("Prime 2351", "2025 Nicor larger", "NICOR GAS BILL (larger of pair)", float(sum(u1_gas)), "GAS", "524 Unit 1", "APPLIED", "Seasonal heating — residence meter"),
     ("Prime 2351", "bi-monthly", "VILLAGE OF FOREST PARK", 1148.93, "VILLAGE WATER AND REFUSE", "U1 50% / U2 50%", "APPLIED", "One building bill; 2023 sat on Unit 1, 2024 year-total on Unit 2"),
-    ("Prime 2351", "Grove 8 orders", "GROVE COLLABORATIVE", float(sum(u2_sup)), "SUPPLIES", "524 Unit 2", "APPLIED", "User example; Aug tagged Business in Monarch"),
+    ("Prime 2351", "Jan/Mar/Apr/Jun/Jul/Aug/Sep", "GROVE COLLABORATIVE", float(sum(u2_sup)), "SUPPLIES", "524 Unit 2", "APPLIED", "User 2026-09-18: “grove orders” = Grove Collaborative, not 827 N Grove the house. 8 Prime charges → 524 Unit 2 SUPPLIES."),
     ("Prime 2351", "2025-01-03", "Schauer Hardware", 7.46, "INTERIOR MAINTENANCE", "524 Unit 2", "APPLIED", ""),
     ("Prime 2351", "2025-10-18", "Schauer Hardware", 45.60, "INTERIOR MAINTENANCE", "524 Unit 2", "APPLIED", ""),
     ("Prime 2351", "2025-11-08", "Schauer Hardware", 2.75, "INTERIOR MAINTENANCE", "524 Unit 2", "APPLIED", ""),
@@ -467,7 +468,7 @@ def main():
     write_month_row(u2, u2_map["EQUIPMENT/APPLIANCE PURCHASES"], u2_equip, PROP_COLS, GREEN)
     u2["B30"] = (
         "CC starting point: Prime Nicor SMALLER bill = Unit 2 gas (2024 U2 was $21–62); "
-        "Prime ATT $45–50 = internet (2024 U2 $50); Grove = supplies; Schauer/Rubio = interior; "
+        "Prime ATT $45–50 = internet (2024 U2 $50); Grove Collaborative = supplies (not 827 N Grove); Schauer/Rubio = interior; "
         "TruGreen+Alsip+Good Earth = exterior/yard; Aquasana = equipment; water 50/50 with Unit 1; "
         "State Farm HOME share 50/50 (auto excluded); ComEd Jacob Coley from checking (not CC). "
         "Home Depot/Lowe's/IKEA HELD — see CC_LEDGER. Income green = Monarch STR deposits vs PLATFORM net $17,086.94."
@@ -607,7 +608,7 @@ def main():
         ("Unit 1 WATER 50%", sum(u1_water)),
         ("Unit 2 INSURANCE", sum(u2_ins)),
         ("Unit 1 INSURANCE", sum(u1_ins)),
-        ("Unit 2 SUPPLIES (Grove)", sum(u2_sup)),
+        ("Unit 2 SUPPLIES (Grove Collaborative)", sum(u2_sup)),
         ("Unit 2 INTERIOR (Schauer/Rubio)", sum(u2_int)),
         ("Unit 2 EXTERIOR/YARD (TruGreen/Alsip/Good Earth)", sum(u2_ext)),
         ("Unit 2 EQUIPMENT (Aquasana)", sum(u2_equip)),

@@ -52,7 +52,7 @@ Prime 2351,2025-01..11,ATT*BILL PAYMENT $45 then $50,530.0,INTERNET,524 Unit 2,A
 Prime 2351,2025 Nicor smaller,NICOR GAS BILL (smaller of pair),324.42,GAS,524 Unit 2,APPLIED,Matches 2024 Unit 2 gas $21–62
 Prime 2351,2025 Nicor larger,NICOR GAS BILL (larger of pair),846.7,GAS,524 Unit 1,APPLIED,Seasonal heating — residence meter
 Prime 2351,bi-monthly,VILLAGE OF FOREST PARK,1148.93,VILLAGE WATER AND REFUSE,U1 50% / U2 50%,APPLIED,"One building bill; 2023 sat on Unit 1, 2024 year-total on Unit 2"
-Prime 2351,Grove 8 orders,GROVE COLLABORATIVE,791.21,SUPPLIES,524 Unit 2,APPLIED,User example; Aug tagged Business in Monarch
+Prime 2351,Jan/Mar/Apr/Jun/Jul/Aug/Sep,GROVE COLLABORATIVE,791.21,SUPPLIES,524 Unit 2,APPLIED,"User 2026-09-18: “grove orders” = Grove Collaborative, not 827 N Grove the house. 8 Prime charges → 524 Unit 2 SUPPLIES."
 Prime 2351,2025-01-03,Schauer Hardware,7.46,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
 Prime 2351,2025-10-18,Schauer Hardware,45.6,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
 Prime 2351,2025-11-08,Schauer Hardware,2.75,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
@@ -71,36 +71,36 @@ Prime 2351,2025-03-15,THE HOME DEPOT #1901,28.14,EXTERIOR REPAIRS,U1 50% / U2 50
 Prime 2351,2025-03-15,THE HOME DEPOT #1901,50.75,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,"March HD 100% 524 repairs, then 50/50 U1/U2 → U2 $25.38 / U1 $25.37"
 Prime 2351,2025-03-22,THE HOME DEPOT #1901,93.96,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,"March HD 100% 524 repairs, then 50/50 U1/U2 → U2 $46.98 / U1 $46.98"
 Prime 2351,2025-03-26,HOMEDEPOT.COM,1185.8,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,"March HD 100% 524 repairs, then 50/50 U1/U2 → U2 $592.90 / U1 $592.90"
-Prime 2351,2025-02-16,THE HOME DEPOT #1901,11.34,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $5.67 / U1 $5.67
+Prime 2351,2025-02-16,THE HOME DEPOT #1901,11.34,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $5.67 / U1 $5.67
 Prime 2351,2025-02-16,THE HOME DEPOT #1901,11.34,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-02-16,THE HOME DEPOT #1901,11.33,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-02-17,IKEA BOLINGBROOK,99.79,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $49.90 / U1 $49.89
+Prime 2351,2025-02-16,THE HOME DEPOT #1901,11.33,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-02-17,IKEA BOLINGBROOK,99.79,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $49.90 / U1 $49.89
 Prime 2351,2025-02-17,IKEA BOLINGBROOK,99.79,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-02-17,IKEA BOLINGBROOK,99.79,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-02-18,IKEA 471245314,22.0,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $11.00 / U1 $11.00
+Prime 2351,2025-02-17,IKEA BOLINGBROOK,99.79,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-02-18,IKEA 471245314,22.0,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $11.00 / U1 $11.00
 Prime 2351,2025-02-18,IKEA 471245314,21.99,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-02-18,IKEA 471245314,21.99,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-03-23,LOWES #01845,18.57,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $9.29 / U1 $9.28
+Prime 2351,2025-02-18,IKEA 471245314,21.99,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-03-23,LOWES #01845,18.57,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $9.29 / U1 $9.28
 Prime 2351,2025-03-23,LOWES #01845,18.56,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-03-23,LOWES #01845,18.56,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-04-20,THE HOME DEPOT #1901,78.79,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $39.40 / U1 $39.39
+Prime 2351,2025-03-23,LOWES #01845,18.56,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-04-20,THE HOME DEPOT #1901,78.79,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $39.40 / U1 $39.39
 Prime 2351,2025-04-20,THE HOME DEPOT #1901,78.79,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-04-20,THE HOME DEPOT #1901,78.78,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-04-20,THE HOME DEPOT #1901,0.36,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $0.18 / U1 $0.18
+Prime 2351,2025-04-20,THE HOME DEPOT #1901,78.78,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-04-20,THE HOME DEPOT #1901,0.36,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $0.18 / U1 $0.18
 Prime 2351,2025-04-20,THE HOME DEPOT #1901,0.36,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-04-20,THE HOME DEPOT #1901,0.35,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-07-06,THE HOME DEPOT #1901,101.98,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $50.99 / U1 $50.99
+Prime 2351,2025-04-20,THE HOME DEPOT #1901,0.35,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-07-06,THE HOME DEPOT #1901,101.98,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $50.99 / U1 $50.99
 Prime 2351,2025-07-06,THE HOME DEPOT #1901,101.98,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-07-06,THE HOME DEPOT #1901,101.98,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-09-01,LOWES #01845,69.73,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $34.87 / U1 $34.86
+Prime 2351,2025-07-06,THE HOME DEPOT #1901,101.98,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-09-01,LOWES #01845,69.73,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $34.87 / U1 $34.86
 Prime 2351,2025-09-01,LOWES #01845,69.73,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-09-01,LOWES #01845,69.73,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-10-11,THE HOME DEPOT #1901,136.96,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $68.48 / U1 $68.48
+Prime 2351,2025-09-01,LOWES #01845,69.73,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-10-11,THE HOME DEPOT #1901,136.96,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $68.48 / U1 $68.48
 Prime 2351,2025-10-11,THE HOME DEPOT #1901,136.96,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-10-11,THE HOME DEPOT #1901,136.96,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
-Prime 2351,2025-11-02,THE HOME DEPOT #1901,64.66,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction) → U2 $32.33 / U1 $32.33
+Prime 2351,2025-10-11,THE HOME DEPOT #1901,136.96,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-11-02,THE HOME DEPOT #1901,64.66,EXTERIOR REPAIRS,U1 50% / U2 50%,APPLIED,1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction) → U2 $32.33 / U1 $32.33
 Prime 2351,2025-11-02,THE HOME DEPOT #1901,64.66,personal,—,EXCLUDED,User 2026-09-18: remaining HD/Lowe's/IKEA 1/3 personal (by transaction).
-Prime 2351,2025-11-02,THE HOME DEPOT #1901,64.65,827 Grove materials,827 Grove CapEx,GROVE-SPLIT,"1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660."
+Prime 2351,2025-11-02,THE HOME DEPOT #1901,64.65,827 N Grove the house (not Grove Collaborative),827 Grove CapEx,GROVE-SPLIT,"1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660."
 Prime 2351,2025-12-10,EXTRA SPACE 6720,360.0,storage?,HOLD,HOLD,Was in Prime HOME total. Not HD/Lowe's/IKEA — still HOLD.
 ,,,,,,,
-"STATUS: APPLIED = monthly P&L. EXCLUDED = personal. HOLD = still confirm. INVENTORY = Art Sales (not P&L, not Cost total yet). TBD-MEGAN = ComEd — remind Jacob to ask Megan. GROVE-SPLIT = 827 materials, not locked $53,660.",,,,,,,
+"STATUS: APPLIED = monthly P&L. EXCLUDED = personal. HOLD = still confirm. INVENTORY = Art Sales (not P&L, not Cost total yet). TBD-MEGAN = ComEd — remind Jacob to ask Megan. GROVE-SPLIT = 827 N Grove the house materials (not Grove Collaborative), not locked $53,660.",,,,,,,

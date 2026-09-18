@@ -128,7 +128,7 @@ for date, merch, amt in REMAINING:
             "date": date,
             "merchant": merch,
             "amount": amt,
-            "rule": "1/3 524 repairs / 1/3 personal / 1/3 827 Grove (by transaction)",
+            "rule": "1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (by transaction)",
             "to_524": to_524,
             "to_personal": to_personal,
             "to_grove": to_grove,
@@ -368,10 +368,10 @@ def build_ledger() -> list[tuple]:
                     rec["date"],
                     rec["merchant"],
                     float(rec["to_grove"]),
-                    "827 Grove materials",
+                    "827 N Grove the house (not Grove Collaborative)",
                     "827 Grove CapEx",
                     "GROVE-SPLIT",
-                    "1/3 of txn. Pre-close materials — NOT folded into locked TY2025 CapEx $53,660.",
+                    "1/3 of txn for 827 N Grove the house. Pre-close materials — NOT Grove Collaborative supplies. NOT folded into locked TY2025 CapEx $53,660.",
                 )
             )
     rows.append(
@@ -411,7 +411,11 @@ CONFIRMED = [
     ),
     (
         "Remaining HD / Lowe’s / IKEA",
-        f"CONFIRMED split by transaction 1/3 524 / 1/3 personal / 1/3 Grove. Remaining ${REMAINING_TOTAL}. Extra Space $360 HOLD.",
+        f"CONFIRMED split by transaction 1/3 524 repairs / 1/3 personal / 1/3 827 N Grove the house (NOT Grove Collaborative). Remaining ${REMAINING_TOTAL}. Extra Space $360 HOLD.",
+    ),
+    (
+        "Grove Collaborative orders",
+        f"CONFIRMED. “Grove orders” = Grove Collaborative supplies, not 827 N Grove the house. Prime ${sum(base.u2_sup)} → 524 Unit 2 SUPPLIES (8 charges). Betty’s Pizza / KS Grove is unrelated (personal dining).",
     ),
     (
         "State Farm bundled home + auto",
@@ -435,8 +439,8 @@ STILL_OPEN = [
         "Frame Up $536.41 + LAMA $6,821.06 + Hindman $282.24 + $403.51 parked off Cost total until objects named (avoid Mercury double count).",
     ),
     (
-        "827 Grove 1/3 hardware vs locked CapEx",
-        f"Grove share ${sum(grove_hd)} is pre-close materials on the Grove tab. Do NOT fold into locked TY2025 CapEx $53,660 until CPA says so.",
+        "827 N Grove the house — HD 1/3 vs locked CapEx",
+        f"HD/Lowe’s/IKEA 1/3 ${sum(grove_hd)} is pre-close materials for 827 N Grove the house (Q5 split), not Grove Collaborative. Do NOT fold into locked TY2025 CapEx $53,660 until CPA says so.",
     ),
 ]
 
@@ -472,7 +476,7 @@ def rebuild_ledger(wb):
         1,
         "STATUS: APPLIED = monthly P&L. EXCLUDED = personal. HOLD = still confirm. "
         "INVENTORY = Art Sales (not P&L, not Cost total yet). TBD-MEGAN = ComEd — remind Jacob to ask Megan. "
-        "GROVE-SPLIT = 827 materials, not locked $53,660.",
+        "GROVE-SPLIT = 827 N Grove the house materials (not Grove Collaborative), not locked $53,660.",
     )
     led.merge_cells(start_row=last_led + 2, start_column=1, end_row=last_led + 2, end_column=8)
     for i, w in enumerate([18, 16, 48, 12, 32, 18, 14, 78], 1):
@@ -548,7 +552,8 @@ def rebuild_ask(wb):
         ("Unit 2 EXTERIOR add (March 50% + remaining 524-share 50%)", sum(u2_hd)),
         ("Unit 1 EXTERIOR add (March 50% + remaining 524-share 50%)", sum(u1_hd)),
         ("Personal 1/3 (excluded from P&L)", sum(personal_hd)),
-        ("827 Grove 1/3 (not in locked $53,660)", sum(grove_hd)),
+        ("827 N Grove the house 1/3 HD/Lowe’s/IKEA (not Grove Collaborative; not locked $53,660)", sum(grove_hd)),
+        ("524 Unit 2 SUPPLIES (Grove Collaborative)", sum(base.u2_sup)),
         ("Unit 2 ELECTRIC ComEd Jacob (YELLOW — ask Megan)", sum(base.u2_elec)),
         ("Unit 1 ELECTRIC ComEd Megan (YELLOW — ask Megan)", sum(base.u1_elec)),
         ("524 INSURANCE home share (Unit 2 50%, yellow proxy)", sum(base.u2_ins)),
@@ -566,13 +571,15 @@ def rebuild_ask(wb):
         fill = ORANGE if "Megan" in lab or "YELLOW" in lab else GREEN
         if "HOLD" in lab or "Personal" in lab or "personal" in lab or "Geico" in lab or "auto share" in lab:
             fill = YELLOW if "HOLD" in lab else GRAY
-        if "Grove" in lab:
+        if "827 N Grove" in lab:
             fill = BLUE
+        if "Grove Collaborative" in lab:
+            fill = GREEN
         if "INSURANCE" in lab:
             fill = YELLOW
         ask.cell(r + 1 + i, 1).fill = fill
         cell.fill = fill
-    ask.column_dimensions["A"].width = 64
+    ask.column_dimensions["A"].width = 78
     ask.column_dimensions["B"].width = 110
     return ask
 
@@ -586,9 +593,9 @@ def main():
     add_month_row(u2, u2_map["EXTERIOR REPAIRS"], u2_hd, PROP_COLS, GREEN)
     yellow_nonzero(u2, u2_map["ELECTRIC"], PROP_COLS)
     u2["B30"] = (
-        "CC answers 2026-09-18: Nicor small / Prime ATT / Grove / Schauer / yard CONFIRMED. "
+        "CC answers 2026-09-18: Nicor small / Prime ATT / Grove Collaborative supplies / Schauer / yard CONFIRMED. "
         f"March HD ${MARCH_HD_TOTAL} → 524 EXTERIOR REPAIRS 50/50 with Unit 1. "
-        "Remaining Prime HD/Lowe’s/IKEA 1/3 524 (50/50), 1/3 personal, 1/3 Grove. "
+        "Remaining Prime HD/Lowe’s/IKEA 1/3 524 (50/50), 1/3 personal, 1/3 827 N Grove the house (not Grove Collaborative). "
         "ELECTRIC yellow — REMIND JACOB: double-check ComEd with Megan (checking ACH Jacob $829.15; any extra check?). "
         "Home Depot March read as 524 (not 534). Extra Space $360 HOLD. Not tax advice."
     )
@@ -666,7 +673,7 @@ def main():
 
     # ----- 827 Grove CapEx materials (do not touch locked $53,660) -----
     grove = wb["827 Grove CapEx"]
-    grove["A11"] = "Prime HD / Lowe’s / IKEA — Grove 1/3 (user split 2026-09-18)"
+    grove["A11"] = "Prime HD / Lowe’s / IKEA — 827 N Grove the house 1/3 (NOT Grove Collaborative supplies)"
     grove["A11"].font = Font(bold=True)
     grove["A11"].fill = BLUE
     grove.merge_cells("A11:D11")
@@ -696,7 +703,8 @@ def main():
     tot.font = Font(bold=True)
     tot.fill = BLUE
     grove.cell(r + 2, 1, (
-        "CPA: this 1/3 is pre-close hardware/furniture (close 2025-12-18). "
+        "CPA: this 1/3 is pre-close hardware/furniture for 827 N Grove the house (close 2025-12-18). "
+        "This is NOT Grove Collaborative. "
         "Do NOT fold into locked TY2025 CapEx $53,660 (the 2025-12-19 contractor payments) until you say so. "
         "May be additional 827 basis / CapEx / personal — FLAG."
     ))
@@ -711,7 +719,8 @@ def main():
     src = wb["_SOURCE_2025"]
     src["A16"] = "CC answers 2026-09-18"
     src["B16"] = (
-        "Q1–4 CONFIRMED. March HD → 524 repairs 50/50. Remaining HD/Lowe’s/IKEA 1/3 524 / 1/3 personal / 1/3 Grove. "
+        "Q1–4 CONFIRMED. Grove Collaborative (not 827 N Grove) → 524 Unit 2 SUPPLIES. "
+        "March HD → 524 repairs 50/50. Remaining HD/Lowe’s/IKEA 1/3 524 / 1/3 personal / 1/3 827 N Grove the house. "
         "ComEd yellow — REMIND JACOB: double-check with Megan (checking ACH or extra check). "
         "Canva + Park Chicago + Field Museum $53 EPGC. Frame Up framing + LAMA/Hindman inventory. "
         "Soldier Field parking $57 and Extra Space $360 still HOLD. Not tax advice."
@@ -730,7 +739,7 @@ def main():
     hs.merge_cells("A1:I1")
     hs["A2"] = (
         "March Home Depot 100% → 524 repairs, then 50/50 Unit 1 / Unit 2. "
-        "Each remaining txn split 1/3 524 / 1/3 personal / 1/3 827 Grove; leftover pennies to 524 then personal. "
+        "Each remaining txn split 1/3 524 / 1/3 personal / 1/3 827 N Grove the house (NOT Grove Collaborative); leftover pennies to 524 then personal. "
         "524 third then 50/50 (extra penny to Unit 2). Not tax advice."
     )
     hs["A2"].alignment = Alignment(wrap_text=True)

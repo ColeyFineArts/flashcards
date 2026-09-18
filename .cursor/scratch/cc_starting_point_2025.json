@@ -34,6 +34,7 @@
     "Field Museum $53",
     "March Home Depot \u2192 524 repairs",
     "Remaining HD / Lowe\u2019s / IKEA",
+    "Grove Collaborative orders",
     "State Farm bundled home + auto"
   ],
   "still_open": [
@@ -42,7 +43,7 @@
     "Extra Space $360",
     "State Farm declarations / Sep\u2013Dec",
     "Inventory object IDs",
-    "827 Grove 1/3 hardware vs locked CapEx"
+    "827 N Grove the house \u2014 HD 1/3 vs locked CapEx"
   ],
   "state_farm": {
     "user": "bundled car and home; previously home=Travelers, car=Geico",
@@ -56,5 +57,12 @@
     "travelers_2025_found": 0.0,
     "sep_dec_on_prime": 0.0,
     "unit_split": "50/50 home share (2023-24 Excel had all homeowners on U1)"
+  },
+  "grove_collaborative": {
+    "user": "grove orders = Grove Collaborative, not 827 N Grove the house",
+    "unit2_supplies": 791.21,
+    "charges": 8,
+    "house_hd_third": 604.12,
+    "house_hd_third_tab": "827 Grove CapEx (Q5 split, unchanged dollars)"
   }
 }
