@@ -3,10 +3,11 @@
   "correction": "CPA deliverable is Personal Income-style multi-tab workbook (expenses + Art Sales COGS), not status checklist",
   "drive_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
   "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
-  "start_here_cc": "1jmvj0TOhNjwdX9QaatsJvLsBNejL_d8rKHmUhfac4eo",
+  "start_here_cc": "16GiGn7DwWNEVZcuc7SFnFDJN1tmDSilPFgh7F8aIHEo",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
-  "xlsx_bytes": 33842,
-  "note": "Drive MCP cannot upload >~8KB base64 reliably; browser tabs are per-sheet Google Sheets; full multi-tab xlsx is in git",
+  "xlsx_bytes": 39435,
+  "note": "Drive MCP cannot upload >~8KB xlsx base64 reliably; browser tabs are per-sheet Google Sheets; full multi-tab xlsx is in git",
+  "remind_jacob": "Double-check ComEd with Megan — checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "form_2441_part_i": {
     "provider": "La Casa Montessori School",
     "ein": "45-5289483",
@@ -17,12 +18,18 @@
   "sheet_ids": {
     "folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
     "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
-    "epgc_cc": "1zVxQEYdnvCyQfgzYQ0OOBfmSymmRw5oI-wwK6fa3ECU",
-    "unit2_cc": "1KGQohjBcuky0SLVdtcq3I0RXZuV-K_sQf6uwZ-5WtYQ",
-    "unit1_cc": "1mJXYocA3y2kWG7bVf08vh3q5eK8VMsyF17apkge50wA",
-    "ask_cc": "1myA2mGCto7xIVOXVxAL34-KYGUCOODjPaK7fl_dYc2k",
+    "start_here_cc": "16GiGn7DwWNEVZcuc7SFnFDJN1tmDSilPFgh7F8aIHEo",
+    "epgc_cc": "1X4aJcVBfig_rjDMHA0Gyj-wRZh29r_5Ef8LEc8IhxBE",
+    "unit2_cc": "1plVo5NRivPGoyTDcfz2bKomvQvh6JtHUqC2R2-ZygxM",
+    "unit1_cc": "1DA7mwEB2GIaiRdHIRHkHxXEMH-LX2xkmA9PK2vs6Eks",
+    "ask_cc": "1GD8vfyzZCnteVNdEQxjy743cNt1MtwqRphW9zo5MFgg",
+    "home_split": "1niI8bKKnYGGOHbMWdACnPJtkdOcyrUEYqf98ebL2pxM",
+    "grove_cc": "1mtvYByJRV55IVzGuRQIMXKpAaIJxSDBwiGdnCJVF69c",
+    "art_cc": "1dC3iOe3oplqdw-8dchjmGyIIHvypMBpaPenXVvQ1JcE",
+    "ledger_cc": "1pQdfdeg0xinjRqRpGes4N0CxKWcNnA3gDTGB5lW3aJc",
+    "source_cc": "1eVHYR4hCBmEBe98qPfw8xiohUYsOiTCtzQ4RrBC2VDg",
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
-    "checklist_current": "1dATGrsG-vVQ1cBypYreZ2KVLaB0RgRa0fzfVNJt-_Rs"
+    "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4"
   }
 }
