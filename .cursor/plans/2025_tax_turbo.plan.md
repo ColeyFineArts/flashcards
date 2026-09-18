@@ -33,8 +33,8 @@ todos:
     content: "PARTIAL — CDs provided; 2023 Sch E/4562 Unit 2 FOUND (dep $7,090; bldg $191,475 + yard $11,959) in 2023 Taxes.pdf. 2024 return NOT on Drive; §121 allocation still open."
     status: pending
   - id: unit2-prior-dep
-    content: "DONE (2023) — Extracted from 2023 Taxes.pdf; sheet 14pbeH8n… + PDF copy in 03. Still NEED 2024 filed return for full cumulative dep."
-    status: completed
+    content: "PARTIAL — 2023 Sch E/4562 DONE ($7,090). 2024 upload was CPA engagement letter (Wermer) NOT filed return — still NEED 2024 Form 1040 client copy."
+    status: pending
   - id: grove-purchase-cd
     content: "DONE — 827 Grove CD PROVIDED; purchase facts sheet 1RuCiJmO… ($670k / close 2025-12-18); radon $2,550 on CD flagged vs CapEx register"
     status: completed
@@ -382,7 +382,7 @@ isProject: false
 - **Income docs PROVIDED:** Form W-2 + 1099 in `07 Income & Bank Docs`
 
 **Still blocked / pending:**
-- **2024 filed Form 1040** (Sch E / 4562 for Unit 2) — not on Drive; 2023 dep **$7,090** extracted
+- **2024 filed Form 1040** (Sch E / 4562) — **still need**; 2026-09-18 upload was engagement letter only (Wermer); 2023 dep **$7,090** extracted
 - Unit 1/2 allocation for §121 on 524 sale
 - CapEx UNKNOWN dates / missing amounts / Laura dup confirm; radon $2,550 on Grove CD vs register
 - BrightWheel provider EIN for Form 2441; Aug prepaid allocation = **CPA** (user confirmed)
