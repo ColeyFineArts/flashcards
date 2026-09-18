@@ -176,17 +176,57 @@ for m, amt in [
 ]:
     add(u1_elec, m, amt)
 
-# State Farm — Feb two policies (larger U1); Mar-Aug combined 50/50
+# State Farm — user 2026-09-18: bundled car + home. Previously home=Travelers, car=Geico.
+# Feb 11 Prime: two unbundled policies $157.53 + $145.25 = $302.78.
+# $145.25 ≈ leftover Prime SF ~$147 in 2026 after 524 sold → AUTO (personal).
+# $157.53 = the other policy → HOME (replaces Travelers) → 524 INSURANCE 50/50 U1/U2.
+# Mar–Jul combined $302.75; Aug $308.26; none Sep–Dec 2025 on Prime.
+# Combined months: home = round(bill * 157.53/302.78); auto = remainder.
+# Yellow in the workbook: ratio is a proxy until declarations pages. Not tax advice.
+HOME_UNBUNDLED = D("157.53")
+AUTO_UNBUNDLED = D("145.25")
+SF_RATIO_BASE = HOME_UNBUNDLED + AUTO_UNBUNDLED  # 302.78
+GEICO_AUTO_CREDIT = D("540.89")
+SF_BILLS = [
+    (1, D("302.78"), "Feb 11 two policies $157.53 + $145.25"),
+    (2, D("302.75"), "Mar combined"),
+    (3, D("302.75"), "Apr combined"),
+    (4, D("302.75"), "May combined"),
+    (5, D("302.75"), "Jun combined"),
+    (6, D("302.75"), "Jul combined"),
+    (7, D("308.26"), "Aug combined"),
+]
+
+
+def sf_home_auto(bill: Decimal) -> tuple[Decimal, Decimal]:
+    home = D(D(bill) * HOME_UNBUNDLED / SF_RATIO_BASE)
+    auto = D(bill) - home
+    return home, auto
+
+
 u2_ins, u1_ins = zeros(), zeros()
-add(u2_ins, 1, "145.25")
-add(u1_ins, 1, "157.53")
-for m in (2, 3, 4, 5, 6):
-    a, b = split_half(D("302.75"))
-    add(u2_ins, m, a)
-    add(u1_ins, m, b)
-a, b = split_half(D("308.26"))
-add(u2_ins, 7, a)
-add(u1_ins, 7, b)
+sf_auto = zeros()
+sf_split_rows = []
+for m, billed, note in SF_BILLS:
+    home, auto = sf_home_auto(billed)
+    u2_p, u1_p = split_half(home)
+    add(u2_ins, m, u2_p)
+    add(u1_ins, m, u1_p)
+    add(sf_auto, m, auto)
+    sf_split_rows.append(
+        {
+            "month": MONTHS[m],
+            "billed": billed,
+            "home": home,
+            "auto": auto,
+            "u2": u2_p,
+            "u1": u1_p,
+            "note": note,
+        }
+    )
+_sf_billed = sum((r["billed"] for r in sf_split_rows), Decimal("0.00"))
+assert sum(u2_ins) + sum(u1_ins) + sum(sf_auto) == _sf_billed
+assert _sf_billed == D("2124.79")
 
 # Grove -> Unit 2 SUPPLIES
 u2_sup = zeros()
@@ -286,7 +326,10 @@ LEDGER = [
     ("Prime 2351", "2025-09-19", "Aquasana Water Filters", 82.27, "EQUIPMENT", "524 Unit 2", "APPLIED", ""),
     ("Prime 2351", "2025-01-31", "Abebooks x2", 153.44, "Art Library", "EPGC LLC", "APPLIED", "On Prime not BoA — still EPGC library"),
     ("Prime 2351", "2025-09..12", "Canva $15 x4", 60.00, "Software Fees", "EPGC LLC", "APPLIED", "Starting point — confirm not personal"),
-    ("Prime 2351", "Feb-Aug", "STATE FARM INSURANCE", float(sum(u2_ins) + sum(u1_ins)), "INSURANCE", "U1/U2", "APPLIED", "Feb two policies; Mar-Aug combined 50/50; none after Aug on this card"),
+    ("Prime 2351", "Feb-Aug", "STATE FARM INSURANCE (home share)", float(sum(u2_ins) + sum(u1_ins)), "INSURANCE", "U1 50% / U2 50%", "APPLIED", "User 2026-09-18: bundled home+auto. Only home share on 524. Feb unbundled $157.53 home / $145.25 auto used as the ratio. Yellow until declarations. None Sep–Dec on Prime."),
+    ("Prime 2351", "Feb-Aug", "STATE FARM INSURANCE (auto share)", float(sum(sf_auto)), "personal auto", "—", "EXCLUDED", "Bundled car. Previously Geico. Not 524 Sch E."),
+    ("Prime 2351", "2025-02-11", "GEICO *AUTO credit", -float(GEICO_AUTO_CREDIT), "personal auto", "—", "EXCLUDED", "Unused Geico auto premium when switching to State Farm auto. Not 524 income."),
+    ("—", "2025", "Travelers (prior home carrier)", 0, "INSURANCE", "—", "EXCLUDED", "No 2025 Travelers on Prime/Sapphire/BoA/Monarch. Home moved to State Farm in February."),
     ("Prime 2351", "HOME", "Home Depot / Lowe's / IKEA / Extra Space", 3732.32, "repairs vs personal", "524?", "HOLD", "Store HD/Lowes/IKEA not dumped into P&L until confirmed"),
     ("Checking 0203", "monthly", "ComEd Jacob Coley", float(sum(u2_elec)), "ELECTRIC", "524 Unit 2", "APPLIED", "Not on CC — Monarch Adv Plus; smaller account"),
     ("Checking 0203", "monthly", "ComEd Megan Gerrard", float(sum(u1_elec)), "ELECTRIC", "524 Unit 1", "APPLIED", "Not on CC — larger account"),
@@ -296,7 +339,7 @@ ASKS = [
     ("Nicor meters", "Smaller Nicor (~$23–40) applied to Unit 2 because 2024 Unit 2 gas was $21–62. Larger seasonal bill applied to Unit 1. Swap if meters are reversed."),
     ("Prime AT&T $45–50", "Applied 100% to Unit 2 INTERNET (2024 Unit 2 was $50/mo). 2023 Unit 1 was $45/mo — this may be house-wide. Split if both units used it."),
     ("Village water", "One Forest Park bill, 50/50 U1/U2. 2023 monthly sat on Unit 1; 2024 year-total $1,769 sat on Unit 2."),
-    ("State Farm", "Feb 145.25 → U2 and 157.53 → U1; Mar–Aug combined premium 50/50. No Sep–Dec on Prime — other account?"),
+    ("State Farm", "Bundled home+auto (was Travelers home / Geico auto). Only home share on 524 INSURANCE 50/50 U1/U2; auto + Geico $540.89 credit personal. Feb $157.53/$145.25 proxy. No Sep–Dec on Prime."),
     ("Home Depot / Lowe's / IKEA", "Prime HOME $3,732 includes HD.com $1,185.80 (Mar), HD $410 (Oct), Lowe's $209 (Sep), IKEA $365. Held out of P&L."),
     ("Canva $15 Sep–Dec", "Applied to EPGC Software Fees as a starting point. Move to personal if Megan/kids."),
     ("Park Chicago $100", "Five $20 BoA charges. Held — EPGC travel vs personal."),
@@ -426,7 +469,7 @@ def main():
         "CC starting point: Prime Nicor SMALLER bill = Unit 2 gas (2024 U2 was $21–62); "
         "Prime ATT $45–50 = internet (2024 U2 $50); Grove = supplies; Schauer/Rubio = interior; "
         "TruGreen+Alsip+Good Earth = exterior/yard; Aquasana = equipment; water 50/50 with Unit 1; "
-        "State Farm 50/50; ComEd Jacob Coley from checking (not CC). "
+        "State Farm HOME share 50/50 (auto excluded); ComEd Jacob Coley from checking (not CC). "
         "Home Depot/Lowe's/IKEA HELD — see CC_LEDGER. Income green = Monarch STR deposits vs PLATFORM net $17,086.94."
     )
     u2["B30"].alignment = Alignment(wrap_text=True)
@@ -445,7 +488,7 @@ def main():
     write_month_row(u1, u1_map["INSURANCE"], u1_ins, PROP_COLS, GREEN)
     u1["B30"] = (
         "§121 residence through sale 2025-12-18. Starting point from Prime: Nicor LARGER seasonal bill = Unit 1 gas; "
-        "ComEd Megan Gerrard = electric (checking, not CC); Village water 50/50; State Farm 50/50 (Feb larger policy). "
+        "ComEd Megan Gerrard = electric (checking, not CC); Village water 50/50; State Farm HOME share 50/50 (auto excluded). "
         "Internet left at $0 — Prime ATT $45–50 put on Unit 2 to match 2024 STR $50 (confirm if house-wide). "
         "Shared building costs may need CPA allocation vs Unit 2."
     )

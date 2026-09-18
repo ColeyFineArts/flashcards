@@ -11,6 +11,9 @@ User answers (not tax advice):
   8    Park Chicago CONFIRMED EPGC Travel
   9    Great Frame Up = inventory framing (Art Sales, not EPGC P&L)
   10   LAMA / Hindman = inventory purchases; Field Museum = EPGC LLC expense
+
+Third pass (State Farm 2026-09-18) is apply_state_farm_2025.py — REPLACES 524
+INSURANCE (does not add). Do not re-run this file on an already-filled workbook.
 """
 from __future__ import annotations
 
@@ -410,6 +413,10 @@ CONFIRMED = [
         "Remaining HD / Lowe’s / IKEA",
         f"CONFIRMED split by transaction 1/3 524 / 1/3 personal / 1/3 Grove. Remaining ${REMAINING_TOTAL}. Extra Space $360 HOLD.",
     ),
+    (
+        "State Farm bundled home + auto",
+        "CONFIRMED. Previously home=Travelers, car=Geico. Only the HOME share of Prime State Farm is on 524 INSURANCE (50/50 U1/U2, yellow). Auto share and Geico $540.89 credit are personal. Split uses Feb 11 unbundled $157.53 home / $145.25 auto as the ratio.",
+    ),
 ]
 
 STILL_OPEN = [
@@ -419,7 +426,10 @@ STILL_OPEN = [
     ),
     ("Soldier Field East Parking $57", "Coinbase 2025-11-01 same day as Field Museum. Not confirmed — HOLD."),
     ("Extra Space $360", "Prime 2025-12-10. Not part of the HD/Lowe’s/IKEA split — HOLD (storage vs moving vs personal)."),
-    ("State Farm after August", "None on Prime Sep–Dec. Other account?"),
+    (
+        "State Farm declarations / Sep–Dec",
+        "Home vs auto $ is a Feb-charge proxy ($157.53 home / $145.25 auto) until declarations pages. None on Prime Sep–Dec 2025 (524 sold 12/18 — those months may be another account). 2023–24 Excel booked all homeowners on U1; this packet 50/50’s the home share. No 2025 Travelers found on Prime/Sapphire/BoA/Monarch.",
+    ),
     (
         "Inventory object IDs",
         "Frame Up $536.41 + LAMA $6,821.06 + Hindman $282.24 + $403.51 parked off Cost total until objects named (avoid Mercury double count).",
@@ -429,6 +439,142 @@ STILL_OPEN = [
         f"Grove share ${sum(grove_hd)} is pre-close materials on the Grove tab. Do NOT fold into locked TY2025 CapEx $53,660 until CPA says so.",
     ),
 ]
+
+
+def rebuild_ledger(wb):
+    if "CC_LEDGER" in wb.sheetnames:
+        del wb["CC_LEDGER"]
+    led = wb.create_sheet("CC_LEDGER", 1)
+    led["A1"] = "2025 credit-card ledger after 2026-09-18 answers — not tax advice"
+    led["A1"].font = Font(bold=True, size=14)
+    led.merge_cells("A1:H1")
+    headers = ["Card", "Date", "Merchant / item", "Amount", "Prior-Excel category", "Tab", "Status", "Note"]
+    for i, h in enumerate(headers, 1):
+        cell = led.cell(3, i, h)
+        cell.fill = HEADER_FILL
+        cell.font = HEADER_FONT
+        cell.border = THIN
+    status_fill = {
+        "APPLIED": GREEN,
+        "EXCLUDED": GRAY,
+        "HOLD": YELLOW,
+        "HOLD-COGS": YELLOW,
+        "INVENTORY": LIGHT_GREEN,
+        "TBD-MEGAN": ORANGE,
+        "GROVE-SPLIT": BLUE,
+    }
+    ledger = build_ledger()
+    for i, row in enumerate(ledger, 4):
+        write_ledger_row(led, i, row, status_fill)
+    last_led = 3 + len(ledger)
+    led.cell(
+        last_led + 2,
+        1,
+        "STATUS: APPLIED = monthly P&L. EXCLUDED = personal. HOLD = still confirm. "
+        "INVENTORY = Art Sales (not P&L, not Cost total yet). TBD-MEGAN = ComEd — remind Jacob to ask Megan. "
+        "GROVE-SPLIT = 827 materials, not locked $53,660.",
+    )
+    led.merge_cells(start_row=last_led + 2, start_column=1, end_row=last_led + 2, end_column=8)
+    for i, w in enumerate([18, 16, 48, 12, 32, 18, 14, 78], 1):
+        led.column_dimensions[get_column_letter(i)].width = w
+    led.auto_filter.ref = f"A3:H{last_led}"
+    led.freeze_panes = "A4"
+    return led
+
+
+def rebuild_ask(wb):
+    if "ASK" in wb.sheetnames:
+        del wb["ASK"]
+    ask = wb.create_sheet("ASK", 2)
+    ask["A1"] = "REMIND JACOB: Double-check ComEd with Megan (checking ACH and/or a check; confirm meters)."
+    ask["A1"].font = Font(bold=True, size=14, color="9C5700")
+    ask["A1"].fill = ORANGE
+    ask.merge_cells("A1:B1")
+    ask.row_dimensions[1].height = 28
+    ask["A2"] = (
+        "Monarch Adv Plus already has ComEd ACH: Jacob Coley $829.15 (Unit 2, yellow) and Megan Gerrard $1,565.26 "
+        "(Unit 1, yellow). User said it must have been paid directly or with a check — confirm with Megan whether "
+        "that ACH is complete or if extra check/direct payments exist. Not tax advice."
+    )
+    ask["A2"].alignment = Alignment(wrap_text=True)
+    ask["A2"].fill = ORANGE
+    ask.merge_cells("A2:B2")
+    ask.row_dimensions[2].height = 48
+
+    ask["A4"] = "CONFIRMED 2026-09-18"
+    ask["B4"] = "What was applied"
+    ask["A4"].fill = HEADER_FILL
+    ask["B4"].fill = HEADER_FILL
+    ask["A4"].font = HEADER_FONT
+    ask["B4"].font = HEADER_FONT
+    r = 5
+    for item, detail in CONFIRMED:
+        ask.cell(r, 1, item).fill = GREEN
+        ask.cell(r, 2, detail).fill = GREEN
+        ask.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top")
+        ask.cell(r, 2).alignment = Alignment(wrap_text=True, vertical="top")
+        ask.cell(r, 1).border = THIN
+        ask.cell(r, 2).border = THIN
+        ask.row_dimensions[r].height = 36
+        r += 1
+
+    r += 1
+    ask.cell(r, 1, "STILL OPEN").fill = HEADER_FILL
+    ask.cell(r, 2, "What to confirm").fill = HEADER_FILL
+    ask.cell(r, 1).font = HEADER_FONT
+    ask.cell(r, 2).font = HEADER_FONT
+    r += 1
+    for item, detail in STILL_OPEN:
+        fill = ORANGE if item.startswith("REMIND") else YELLOW
+        ask.cell(r, 1, item).fill = fill
+        ask.cell(r, 2, detail).fill = fill
+        ask.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top")
+        ask.cell(r, 2).alignment = Alignment(wrap_text=True, vertical="top")
+        ask.cell(r, 1).border = THIN
+        ask.cell(r, 2).border = THIN
+        ask.row_dimensions[r].height = 52
+        r += 1
+
+    r += 1
+    ask.cell(r, 1, "Applied / split totals").font = Font(bold=True)
+    ask.cell(r, 1).fill = HEADER_FILL
+    ask.cell(r, 1).font = HEADER_FONT
+    ask.cell(r, 2).fill = HEADER_FILL
+    summary = [
+        ("EPGC Travel (Park Chicago $100 + Field Museum $53)", sum(epgc_travel)),
+        ("March HD 100% 524 repairs", MARCH_HD_TOTAL),
+        ("Remaining HD/Lowe’s/IKEA (split pool)", REMAINING_TOTAL),
+        ("524 repairs from remaining 1/3 (then 50/50 U1/U2)", sum(u2_hd) + sum(u1_hd) - MARCH_HD_TOTAL),
+        ("Unit 2 EXTERIOR add (March 50% + remaining 524-share 50%)", sum(u2_hd)),
+        ("Unit 1 EXTERIOR add (March 50% + remaining 524-share 50%)", sum(u1_hd)),
+        ("Personal 1/3 (excluded from P&L)", sum(personal_hd)),
+        ("827 Grove 1/3 (not in locked $53,660)", sum(grove_hd)),
+        ("Unit 2 ELECTRIC ComEd Jacob (YELLOW — ask Megan)", sum(base.u2_elec)),
+        ("Unit 1 ELECTRIC ComEd Megan (YELLOW — ask Megan)", sum(base.u1_elec)),
+        ("524 INSURANCE home share (Unit 2 50%, yellow proxy)", sum(base.u2_ins)),
+        ("524 INSURANCE home share (Unit 1 50%, yellow proxy)", sum(base.u1_ins)),
+        ("State Farm auto share (personal, excluded)", sum(base.sf_auto)),
+        ("Geico auto credit (personal, excluded)", -base.GEICO_AUTO_CREDIT),
+        ("Inventory parked (Frame Up + LAMA + Hindman)", D("8043.22")),
+        ("Extra Space HOLD", D("360")),
+        ("Soldier Field parking HOLD", D("57")),
+    ]
+    for i, (lab, val) in enumerate(summary):
+        ask.cell(r + 1 + i, 1, lab)
+        cell = ask.cell(r + 1 + i, 2, money(val))
+        cell.number_format = '"$"#,##0.00'
+        fill = ORANGE if "Megan" in lab or "YELLOW" in lab else GREEN
+        if "HOLD" in lab or "Personal" in lab or "personal" in lab or "Geico" in lab or "auto share" in lab:
+            fill = YELLOW if "HOLD" in lab else GRAY
+        if "Grove" in lab:
+            fill = BLUE
+        if "INSURANCE" in lab:
+            fill = YELLOW
+        ask.cell(r + 1 + i, 1).fill = fill
+        cell.fill = fill
+    ask.column_dimensions["A"].width = 64
+    ask.column_dimensions["B"].width = 110
+    return ask
 
 
 def main():
@@ -644,132 +790,8 @@ def main():
         hs.column_dimensions[get_column_letter(i)].width = w
     hs.freeze_panes = "A5"
 
-    # ----- CC_LEDGER -----
-    if "CC_LEDGER" in wb.sheetnames:
-        del wb["CC_LEDGER"]
-    led = wb.create_sheet("CC_LEDGER", 1)
-    led["A1"] = "2025 credit-card ledger after 2026-09-18 answers — not tax advice"
-    led["A1"].font = Font(bold=True, size=14)
-    led.merge_cells("A1:H1")
-    headers = ["Card", "Date", "Merchant / item", "Amount", "Prior-Excel category", "Tab", "Status", "Note"]
-    for i, h in enumerate(headers, 1):
-        cell = led.cell(3, i, h)
-        cell.fill = HEADER_FILL
-        cell.font = HEADER_FONT
-        cell.border = THIN
-    status_fill = {
-        "APPLIED": GREEN,
-        "EXCLUDED": GRAY,
-        "HOLD": YELLOW,
-        "HOLD-COGS": YELLOW,
-        "INVENTORY": LIGHT_GREEN,
-        "TBD-MEGAN": ORANGE,
-        "GROVE-SPLIT": BLUE,
-    }
-    ledger = build_ledger()
-    for i, row in enumerate(ledger, 4):
-        write_ledger_row(led, i, row, status_fill)
-    last_led = 3 + len(ledger)
-    led.cell(
-        last_led + 2,
-        1,
-        "STATUS: APPLIED = monthly P&L. EXCLUDED = personal. HOLD = still confirm. "
-        "INVENTORY = Art Sales (not P&L, not Cost total yet). TBD-MEGAN = ComEd — remind Jacob to ask Megan. "
-        "GROVE-SPLIT = 827 materials, not locked $53,660.",
-    )
-    led.merge_cells(start_row=last_led + 2, start_column=1, end_row=last_led + 2, end_column=8)
-    for i, w in enumerate([18, 16, 48, 12, 32, 18, 14, 78], 1):
-        led.column_dimensions[get_column_letter(i)].width = w
-    led.auto_filter.ref = f"A3:H{last_led}"
-    led.freeze_panes = "A4"
-
-    # ----- ASK -----
-    if "ASK" in wb.sheetnames:
-        del wb["ASK"]
-    ask = wb.create_sheet("ASK", 2)
-    ask["A1"] = "REMIND JACOB: Double-check ComEd with Megan (checking ACH and/or a check; confirm meters)."
-    ask["A1"].font = Font(bold=True, size=14, color="9C5700")
-    ask["A1"].fill = ORANGE
-    ask.merge_cells("A1:B1")
-    ask.row_dimensions[1].height = 28
-    ask["A2"] = (
-        "Monarch Adv Plus already has ComEd ACH: Jacob Coley $829.15 (Unit 2, yellow) and Megan Gerrard $1,565.26 "
-        "(Unit 1, yellow). User said it must have been paid directly or with a check — confirm with Megan whether "
-        "that ACH is complete or if extra check/direct payments exist. Not tax advice."
-    )
-    ask["A2"].alignment = Alignment(wrap_text=True)
-    ask["A2"].fill = ORANGE
-    ask.merge_cells("A2:B2")
-    ask.row_dimensions[2].height = 48
-
-    ask["A4"] = "CONFIRMED 2026-09-18"
-    ask["B4"] = "What was applied"
-    ask["A4"].fill = HEADER_FILL
-    ask["B4"].fill = HEADER_FILL
-    ask["A4"].font = HEADER_FONT
-    ask["B4"].font = HEADER_FONT
-    r = 5
-    for item, detail in CONFIRMED:
-        ask.cell(r, 1, item).fill = GREEN
-        ask.cell(r, 2, detail).fill = GREEN
-        ask.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top")
-        ask.cell(r, 2).alignment = Alignment(wrap_text=True, vertical="top")
-        ask.cell(r, 1).border = THIN
-        ask.cell(r, 2).border = THIN
-        ask.row_dimensions[r].height = 36
-        r += 1
-
-    r += 1
-    ask.cell(r, 1, "STILL OPEN").fill = HEADER_FILL
-    ask.cell(r, 2, "What to confirm").fill = HEADER_FILL
-    ask.cell(r, 1).font = HEADER_FONT
-    ask.cell(r, 2).font = HEADER_FONT
-    r += 1
-    open_start = r
-    for item, detail in STILL_OPEN:
-        fill = ORANGE if item.startswith("REMIND") else YELLOW
-        ask.cell(r, 1, item).fill = fill
-        ask.cell(r, 2, detail).fill = fill
-        ask.cell(r, 1).alignment = Alignment(wrap_text=True, vertical="top")
-        ask.cell(r, 2).alignment = Alignment(wrap_text=True, vertical="top")
-        ask.cell(r, 1).border = THIN
-        ask.cell(r, 2).border = THIN
-        ask.row_dimensions[r].height = 52
-        r += 1
-
-    r += 1
-    ask.cell(r, 1, "Applied / split totals").font = Font(bold=True)
-    ask.cell(r, 1).fill = HEADER_FILL
-    ask.cell(r, 1).font = HEADER_FONT
-    ask.cell(r, 2).fill = HEADER_FILL
-    summary = [
-        ("EPGC Travel (Park Chicago $100 + Field Museum $53)", sum(epgc_travel)),
-        ("March HD 100% 524 repairs", MARCH_HD_TOTAL),
-        ("Remaining HD/Lowe’s/IKEA (split pool)", REMAINING_TOTAL),
-        ("524 repairs from remaining 1/3 (then 50/50 U1/U2)", sum(u2_hd) + sum(u1_hd) - MARCH_HD_TOTAL),
-        ("Unit 2 EXTERIOR add (March 50% + remaining 524-share 50%)", sum(u2_hd)),
-        ("Unit 1 EXTERIOR add (March 50% + remaining 524-share 50%)", sum(u1_hd)),
-        ("Personal 1/3 (excluded from P&L)", sum(personal_hd)),
-        ("827 Grove 1/3 (not in locked $53,660)", sum(grove_hd)),
-        ("Unit 2 ELECTRIC ComEd Jacob (YELLOW — ask Megan)", sum(base.u2_elec)),
-        ("Unit 1 ELECTRIC ComEd Megan (YELLOW — ask Megan)", sum(base.u1_elec)),
-        ("Inventory parked (Frame Up + LAMA + Hindman)", D("8043.22")),
-        ("Extra Space HOLD", D("360")),
-        ("Soldier Field parking HOLD", D("57")),
-    ]
-    for i, (lab, val) in enumerate(summary):
-        ask.cell(r + 1 + i, 1, lab)
-        cell = ask.cell(r + 1 + i, 2, money(val))
-        cell.number_format = '"$"#,##0.00'
-        fill = ORANGE if "Megan" in lab or "YELLOW" in lab else GREEN
-        if "HOLD" in lab or "Personal" in lab:
-            fill = YELLOW if "HOLD" in lab else GRAY
-        if "Grove" in lab:
-            fill = BLUE
-        ask.cell(r + 1 + i, 1).fill = fill
-        cell.fill = fill
-    ask.column_dimensions["A"].width = 64
-    ask.column_dimensions["B"].width = 110
+    rebuild_ledger(wb)
+    rebuild_ask(wb)
 
     wb.save(XLSX)
     shutil.copy2(XLSX, DELIVERABLE)

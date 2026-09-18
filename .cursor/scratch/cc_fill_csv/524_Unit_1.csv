@@ -8,7 +8,7 @@
 ,MARKETING / ADVERTISING,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C8:N8)
 ,SERVICE FEES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C9:N9)
 ,REMITTED TAX,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C10:N10)
-,INSURANCE,0,157.53,151.37,151.37,151.37,151.37,151.37,154.13,0,0,0,0,=SUM(C11:N11)
+,INSURANCE,0.0,78.76,78.75,78.75,78.75,78.75,78.75,80.19,0.0,0.0,0.0,0.0,=SUM(C11:N11)
 ,INTERIOR MAINTENANCE,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C12:N12)
 ,EXTERIOR REPAIRS,0,66.56,688.6,39.57,0,0,50.99,0,34.86,68.48,32.33,0,=SUM(C13:N13)
 ,VILLAGE WATER AND REFUSE,0,100.55,0,90.67,0,112.83,0,137.63,0,132.76,0,0,=SUM(C14:N14)
@@ -27,7 +27,7 @@
 ,,,,,,,,,,,,,,
 ,YEAR-TO-DATE INCOME LESS EXPENSES,=C5-C26,=D5-D26,=E5-E26,=F5-F26,=G5-G26,=H5-H26,=I5-I26,=J5-J26,=K5-K26,=L5-L26,=M5-M26,=N5-N26,=SUM(C28:N28)
 ,,,,,,,,,,,,,,
-,"§121 residence through sale 2025-12-18. Nicor large / water 50/50 CONFIRMED. March HD + remaining HD/Lowe’s/IKEA 524-share → EXTERIOR REPAIRS (U1 $981.39). ELECTRIC yellow — REMIND JACOB: double-check ComEd with Megan (checking ACH INDN Megan Gerrard $1,565.26; paid ACH and/or check?). Internet still $0 on this tab (Prime ATT on Unit 2). Not tax advice.",,,,,,,,,,,,,
+,"§121 residence through sale 2025-12-18. Nicor large / water 50/50 CONFIRMED. March HD + remaining HD/Lowe’s/IKEA 524-share → EXTERIOR REPAIRS (U1 $981.39). ELECTRIC yellow — REMIND JACOB: double-check ComEd with Megan (checking ACH INDN Megan Gerrard $1,565.26; paid ACH and/or check?). Internet still $0 on this tab (Prime ATT on Unit 2). State Farm: bundled home+auto (was Travelers home / Geico auto). Only HOME share on this INSURANCE line (50/50 with Unit 2, yellow proxy). Auto + Geico credit personal. Not tax advice.",,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
