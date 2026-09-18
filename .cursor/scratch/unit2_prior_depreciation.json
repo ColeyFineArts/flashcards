@@ -1,0 +1,22 @@
+{
+  "updated": "2026-09-18",
+  "source_2023_return": {
+    "id": "1masjXrfxRPAgELs669WGPzfXhEwMvImX",
+    "title": "2023 Taxes.pdf",
+    "copy_in_2025_packet": "1ZfpSflVOQ5UHQYy0SCO_sClRhv48_Tyz"
+  },
+  "extract_sheet": "14pbeH8nt7mi3sZPCEuy8RN975WtjEDKAitVnYf-ac6c",
+  "unit2_2023": {
+    "schedule_e_property": "524 FERDINAND AVENUE,# 2 FOREST PARK IL 60130",
+    "rents": 1050.0,
+    "depreciation": 7090.0,
+    "loss": -22039.0,
+    "assets": [
+      {"name": "524 FERDINAND AVENUE", "placed": "2023-01-01", "basis": 191475.0, "method": "27.5 SL/MM", "dep_2023": 6673.0},
+      {"name": "YARD CONSTRUCTION", "placed": "2023-01-01", "basis": 11959.0, "method": "27.5 SL/MM", "dep_2023": 417.0}
+    ],
+    "total_depreciable_basis": 203434.0
+  },
+  "status_2024_return": "NOT FOUND on Drive — 2024 Taxes folder has source docs only",
+  "cumulative_dep_known_through_2023": 7090.0
+}

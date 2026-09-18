@@ -30,7 +30,10 @@ todos:
     content: "TY split published ($53,660 / 2025). Still fill UNKNOWN $9,401.93 dates + 3 missing amounts; resolve $3031.41 dup. Riverton $11,750 absent from Monarch — register remains required."
     status: pending
   - id: sale-docs-blocker
-    content: "DONE (CDs) — Sale CS + both purchase CDs PROVIDED & fact-sheeted. Still NEED prior depreciation schedules (Sch E / 4562) + Unit 1/2 allocation."
+    content: "PARTIAL — CDs provided; 2023 Sch E/4562 Unit 2 FOUND (dep $7,090; bldg $191,475 + yard $11,959) in 2023 Taxes.pdf. 2024 return NOT on Drive; §121 allocation still open."
+    status: pending
+  - id: unit2-prior-dep
+    content: "DONE (2023) — Extracted from 2023 Taxes.pdf; sheet 14pbeH8n… + PDF copy in 03. Still NEED 2024 filed return for full cumulative dep."
     status: completed
   - id: grove-purchase-cd
     content: "DONE — 827 Grove CD PROVIDED; purchase facts sheet 1RuCiJmO… ($670k / close 2025-12-18); radon $2,550 on CD flagged vs CapEx register"
@@ -86,7 +89,7 @@ isProject: false
 
 **Drive layout (cleaned 2026-09-17)** under `2025 Taxes` (`1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu`):
 - `00 READ ME — Folder Map` → map doc `10zS1YHwErhsUkFzL5qJ5EdbAvpz8EtVUe5-6eVQjLP0`
-- `01 Checklist & Plan` → CURRENT checklist `1MuL7JNs…`
+- `01 Checklist & Plan` → CURRENT checklist `1MuL7…` / latest
 - `02 Operating — Monarch` → snapshot + `Monarch Money` CSV
 - `03 STR + 524 Ferdinand Sale` → recon + `Platform PDFs + Closing NEED`
 - `04 LTR — 216 Oak Park`
