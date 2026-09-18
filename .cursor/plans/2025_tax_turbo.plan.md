@@ -54,7 +54,7 @@ todos:
     content: "DONE — BrightWheel $30,668.55; Aug $23,361.05 prepaid both kids; Kids Empire + babysitting EXCLUDED; USER CONFIRMED CPA allocates Aug prepaid across children/care months for 2441; recon 1lEc9OPS…"
     status: completed
   - id: childcare-2441-allocate
-    content: "DONE (decision) — CPA allocates Aug $23,361.05 across children AND care months for Form 2441 (user confirmed 2026-09-18). Still NEED BrightWheel EIN."
+    content: "DONE — CPA allocates Aug $23,361.05 across children AND care months. Form 2441 Part I LOCKED: La Casa Montessori School; EIN 45-5289483; 608 Harrison St, Oak Park, IL 60304."
     status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
@@ -132,7 +132,7 @@ isProject: false
 
 ## Already captured
 
-- **Childcare BrightWheel (updated 2026-09-18):** Provider invoices **$30,668.55**; Aug 4 **$23,361.05** prepaid for **both** Phoebe + Emma. **Kids Empire** + **Zelle babysitting** excluded. **DECISION:** CPA allocates Aug prepaid across children **and** care months for Form 2441. Recon `1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY`
+- **Childcare BrightWheel (updated 2026-09-18):** Provider invoices **$30,668.55**; Aug 4 **$23,361.05** prepaid for **both** Phoebe + Emma. **Kids Empire** + **Zelle babysitting** excluded. **DECISION:** CPA allocates Aug prepaid across children **and** care months for Form 2441. **Form 2441 Part I LOCKED:** La Casa Montessori School; EIN **45-5289483**; 608 Harrison St, Oak Park, IL 60304 (BrightWheel is billing only). Recon `1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY`
 
 
 - Drive `2025 Taxes` numbered `00–07` + `_SUPERSEDED` (nested Documents flattened)
@@ -389,7 +389,7 @@ isProject: false
 - Per-tab Google Sheets in that folder for browser editing (Unit 2 expenses, Art Sales COGS, EPGC, Oak Park, etc.)
 
 **Still TBD (adjust later):**
-- Yellow expense lines on property tabs; Art Sale Prices; 2024 Form 1040; §121; BrightWheel EIN; Oak Park vacant months; CapEx UNKNOWN; radon vs register
+- Yellow expense lines / CC HOLD items; Art Sale Prices; 2024 Form 1040; §121; Oak Park vacant months; CapEx UNKNOWN; radon vs register
 
 **Provided / locked:** W-2/1099 docs, CDs, STR platforms $17,086.94, CapEx $53,660, 2023 Unit 2 dep $7,090, childcare Form 2441 rules, Monarch-filled STR income months + Oak Park HOA/mortgage cash + Mercury EPGC rollups.
 

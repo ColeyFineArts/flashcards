@@ -1,0 +1,78 @@
+{
+  "updated": "2026-09-18",
+  "method": "cash basis, transaction date month, prior Personal Income.xlsx categories",
+  "epgc": {
+    "cellphone": 1127.02,
+    "software": 326.04,
+    "tech": 212.0,
+    "advertising": 954.98,
+    "art_library": 295.6
+  },
+  "unit2": {
+    "gas": 324.42,
+    "electric": 829.15,
+    "internet": 530.0,
+    "water": 574.49,
+    "insurance": 1056.28,
+    "supplies_grove": 791.21,
+    "interior": 249.87,
+    "exterior_yard": 1195.42,
+    "equipment": 155.51
+  },
+  "unit1": {
+    "gas": 846.7,
+    "electric": 1565.26,
+    "water": 574.44,
+    "insurance": 1068.51
+  },
+  "asks": [
+    {
+      "item": "Nicor meters",
+      "detail": "Smaller Nicor (~$23\u201340) applied to Unit 2 because 2024 Unit 2 gas was $21\u201362. Larger seasonal bill applied to Unit 1. Swap if meters are reversed."
+    },
+    {
+      "item": "Prime AT&T $45\u201350",
+      "detail": "Applied 100% to Unit 2 INTERNET (2024 Unit 2 was $50/mo). 2023 Unit 1 was $45/mo \u2014 this may be house-wide. Split if both units used it."
+    },
+    {
+      "item": "Village water",
+      "detail": "One Forest Park bill, 50/50 U1/U2. 2023 monthly sat on Unit 1; 2024 year-total $1,769 sat on Unit 2."
+    },
+    {
+      "item": "State Farm",
+      "detail": "Feb 145.25 \u2192 U2 and 157.53 \u2192 U1; Mar\u2013Aug combined premium 50/50. No Sep\u2013Dec on Prime \u2014 other account?"
+    },
+    {
+      "item": "Home Depot / Lowe's / IKEA",
+      "detail": "Prime HOME $3,732 includes HD.com $1,185.80 (Mar), HD $410 (Oct), Lowe's $209 (Sep), IKEA $365. Held out of P&L."
+    },
+    {
+      "item": "Canva $15 Sep\u2013Dec",
+      "detail": "Applied to EPGC Software Fees as a starting point. Move to personal if Megan/kids."
+    },
+    {
+      "item": "Park Chicago $100",
+      "detail": "Five $20 BoA charges. Held \u2014 EPGC travel vs personal."
+    },
+    {
+      "item": "Great Frame Up $536.41",
+      "detail": "Sapphire Feb. Held \u2014 inventory framing vs personal."
+    },
+    {
+      "item": "LAMA $6,821.06 + Hindman $685.75",
+      "detail": "Inventory purchases on Sapphire. Not EPGC operating expense; identify objects for Art Sales COGS."
+    },
+    {
+      "item": "Electric",
+      "detail": "ComEd is on checking, not these cards. Jacob \u2192 Unit 2, Megan \u2192 Unit 1. Confirm meters."
+    },
+    {
+      "item": "Coinbase 6108",
+      "detail": "CSV is payments/voids/golf/museum. No EPGC operating expenses applied."
+    },
+    {
+      "item": "TruGreen / Alsip / Good Earth",
+      "detail": "All on Unit 2 exterior/yard (2024 YARD SERVICE was on Unit 2). Split with Unit 1 if shared grounds should follow \u00a7121."
+    }
+  ]
+}

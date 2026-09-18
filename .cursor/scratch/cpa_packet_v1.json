@@ -3,32 +3,26 @@
   "correction": "CPA deliverable is Personal Income-style multi-tab workbook (expenses + Art Sales COGS), not status checklist",
   "drive_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
   "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
+  "start_here_cc": "1jmvj0TOhNjwdX9QaatsJvLsBNejL_d8rKHmUhfac4eo",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
-  "xlsx_bytes": 23663,
+  "xlsx_bytes": 33842,
   "note": "Drive MCP cannot upload >~8KB base64 reliably; browser tabs are per-sheet Google Sheets; full multi-tab xlsx is in git",
-  "tabs": [
-    "_SOURCE_2025",
-    "Income",
-    "524 Ferdinand Ave, Unit 2",
-    "524 Ferdinand Ave, Unit 1",
-    "216 N. Oak Park Ave",
-    "EPGC LLC",
-    "Art Sales and Purchases",
-    "GCM",
-    "Hindman W2",
-    "Megan T4",
-    "Investments",
-    "524 Home Sale",
-    "827 Grove CapEx",
-    "Childcare 2441"
-  ],
+  "form_2441_part_i": {
+    "provider": "La Casa Montessori School",
+    "ein": "45-5289483",
+    "address": "608 Harrison St, Oak Park, IL 60304",
+    "drive_sheet": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
+    "packet_tab": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8"
+  },
   "sheet_ids": {
     "folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
     "start_here": "1z55os3Bv07FYDHj83q5OxQ77VGhogCUieHyafJ-FWs8",
-    "index": "1gRsoW2siHOK2yMALp9oSPgryPejHuYAHHjpMK-qJN9Q",
-    "unit2": "1Q_Tn_vxi2M3YSNtcbcN6bl_oc_v4AcCr2HbAz1wQsaw",
-    "oak": "1k208pXaKqyGGisp-OVSy2vC3xqp2WKjbfDNTzz6XlC0",
-    "epgc": "14piNcLHKm38gKgHWRGMUQXM-atE4f456ghJyN7skKUY",
-    "art_sales_cogs": "1o8PB6SAKaCCTuQDhuLcBRLGXe3BVjDg37HW8EJ5NLD4"
+    "epgc_cc": "1zVxQEYdnvCyQfgzYQ0OOBfmSymmRw5oI-wwK6fa3ECU",
+    "unit2_cc": "1KGQohjBcuky0SLVdtcq3I0RXZuV-K_sQf6uwZ-5WtYQ",
+    "unit1_cc": "1mJXYocA3y2kWG7bVf08vh3q5eK8VMsyF17apkge50wA",
+    "ask_cc": "1myA2mGCto7xIVOXVxAL34-KYGUCOODjPaK7fl_dYc2k",
+    "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
+    "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
+    "checklist_current": "1dATGrsG-vVQ1cBypYreZ2KVLaB0RgRa0fzfVNJt-_Rs"
   }
 }

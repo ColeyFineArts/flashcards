@@ -4,6 +4,8 @@
   "phoebe_csv": "1nJoTgW8Abqq36BCWd3owYPbHKTaBjx7u",
   "emma_csv": "1z1WKRSsM9cs23zrF_rt079EBGGuYBZ94",
   "recon_sheet": "1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY",
+  "form_2441_part_i_sheet": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
+  "packet_childcare_tab": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
   "checklist_current": "1MuL7JNsZVNPUBMfgJJpKZefbAOCDKe6WttpuHNMx0-I",
   "phoebe_account_paid_ty2025": 30588.55,
   "emma_account_paid_ty2025": 80.0,
@@ -16,8 +18,18 @@
     "kids_empire": -233.28,
     "zelle_babysitting": -100.0
   },
+  "provider": {
+    "legal_name": "La Casa Montessori School",
+    "ein": "45-5289483",
+    "ein_raw": "455289483",
+    "street": "608 Harrison St",
+    "city_state_zip": "Oak Park, IL 60304",
+    "billing_platform": "BrightWheel",
+    "status": "LOCKED",
+    "source": "User 2026-09-18; public records match EIN+address to La Casa Montessori School"
+  },
   "cpa_flags": [
     "CPA allocates Aug prepaid across children/care months — CONFIRMED",
-    "BrightWheel provider EIN still needed"
+    "Form 2441 Part I provider EIN/name/address — LOCKED 2026-09-18"
   ]
 }

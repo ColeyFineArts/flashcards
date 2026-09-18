@@ -1,0 +1,68 @@
+2025 credit-card starting-point ledger (folder 07) — not tax advice,,,,,,,
+,,,,,,,
+Card,Date,Merchant / item,Amount,Prior-Excel category,Tab,Status,Note
+BoA 4469,2025-01-31,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,Matches 2024 Software Fees pattern
+BoA 4469,2025-02-28,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-03-31,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-04-30,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-05-31,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-06-30,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-07-31,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-09-01,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,Cash Sep (Aug period)
+BoA 4469,2025-09-30,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-10-31,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-12-01,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,Cash Dec (Nov period)
+BoA 4469,2025-12-31,OPENAI CHATGPT,20,Software Fees,EPGC LLC,APPLIED,
+BoA 4469,2025-01-13,GOOGLE One,2.17,Software Fees,EPGC LLC,APPLIED,x12 months
+BoA 4469,2025-03-18,Tailor Brands,300,Advertising,EPGC LLC,APPLIED,Brand/logo — prior Advertising
+BoA 4469,2025-03-28,Tailor Brands,227.99,Advertising,EPGC LLC,APPLIED,
+BoA 4469,2025-03-28,Tailor Brands,227.99,Advertising,EPGC LLC,APPLIED,
+BoA 4469,2025-05-08,Tailor Brands,199,Advertising,EPGC LLC,APPLIED,
+BoA 4469,2025-02-07,Blurb,47.13,Art Library,EPGC LLC,APPLIED,Prior Art Library / Abebooks pattern
+BoA 4469,2025-02-25,Abebooks,31.34,Art Library,EPGC LLC,APPLIED,
+BoA 4469,2025-04-02,Abebooks,13.7,Art Library,EPGC LLC,APPLIED,
+BoA 4469,2025-03-27,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,NOT EPGC — 2024 Unit 2 YARD SERVICE
+BoA 4469,2025-04-25,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,
+BoA 4469,2025-05-30,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,
+BoA 4469,2025-06-27,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,
+BoA 4469,2025-07-21,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,
+BoA 4469,2025-08-14,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,
+BoA 4469,2025-09-27,TruGreen,249,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,Larger fall treatment
+BoA 4469,2025-10-10,TruGreen,60.95,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,
+BoA 4469,various,DoorDash / dining / RH restaurant / Salt Shed / barber / Pete's / Monarch Money,0,personal,—,EXCLUDED,"BoA dining $3,780.82 + personal services not EPGC"
+BoA 4469,various,PARK CHICAGO MOBILE x5,100,Travel?,EPGC LLC,HOLD,Could be gallery/auction parking — confirm
+Coinbase 6108,2025-11-29,Parennial Golf,1856.24,personal,—,EXCLUDED,CSV has almost no EPGC spend
+Coinbase 6108,2025-11-01,Field Museum + Soldier Field parking,110,personal,—,EXCLUDED,
+Coinbase 6108,2025-09-30,Coinbase,49.99,personal,—,EXCLUDED,
+Coinbase 6108,2025-12-15,Freeman's $1 voided x3,0,void,—,EXCLUDED,Voids / payments not expenses
+Sapphire 5423,2025-01..12,ATT* BILL PAYMENT (cellphone),1127.02,Cellphone and Internet,EPGC LLC,APPLIED,User: AT&T cellphone can be charged to EPGC
+Sapphire 5423,2025-04-27,Squarespace INV179625580,20,Tech,EPGC LLC,APPLIED,Matches 2024 Tech $20
+Sapphire 5423,2025-05-08,Squarespace INV181162020,192,Tech,EPGC LLC,APPLIED,Matches 2024 Tech $192
+Sapphire 5423,2025-04-14,WW Norton,49.99,Art Library,EPGC LLC,APPLIED,Art/reference book
+Sapphire 5423,2025-03-22,Schauer Hardware,52.78,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,Forest Park hardware — 524
+Sapphire 5423,2025-04-10,Rubio Monocoat,85.78,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,Wood finish
+Sapphire 5423,2025-04-26,Schauer Hardware,45.62,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
+Sapphire 5423,2025-05-04,Alsip Nursery,384.25,EXTERIOR REPAIRS / yard,524 Unit 2,APPLIED,Yard — 2024 Unit 2 YARD SERVICE
+Sapphire 5423,2025-07-24,Los Angeles Modern Auctions,6821.06,Inventory COGS,Art Sales,HOLD-COGS,Purchase — not EPGC P&L; add object when identified
+Sapphire 5423,2025-04-03,Hindman LLC,282.24,Inventory COGS,Art Sales,HOLD-COGS,
+Sapphire 5423,2025-07-29,Hindman LLC,403.51,Inventory COGS,Art Sales,HOLD-COGS,
+Sapphire 5423,2025-02-16,The Great Frame Up,536.41,framing?,EPGC / personal,HOLD,Could be inventory framing or personal
+Prime 2351,2025-01..11,ATT*BILL PAYMENT $45 then $50,530,INTERNET,524 Unit 2,APPLIED,2024 Unit 2 internet was $50/mo; one house bill
+Prime 2351,2025 Nicor smaller,NICOR GAS BILL (smaller of pair),324.42,GAS,524 Unit 2,APPLIED,Matches 2024 Unit 2 gas $21–62
+Prime 2351,2025 Nicor larger,NICOR GAS BILL (larger of pair),846.7,GAS,524 Unit 1,APPLIED,Seasonal heating — residence meter
+Prime 2351,bi-monthly,VILLAGE OF FOREST PARK,1148.93,VILLAGE WATER AND REFUSE,U1 50% / U2 50%,APPLIED,"One building bill; 2023 sat on Unit 1, 2024 year-total on Unit 2"
+Prime 2351,Grove 8 orders,GROVE COLLABORATIVE,791.21,SUPPLIES,524 Unit 2,APPLIED,User example; Aug tagged Business in Monarch
+Prime 2351,2025-01-03,Schauer Hardware,7.46,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
+Prime 2351,2025-10-18,Schauer Hardware,45.6,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
+Prime 2351,2025-11-08,Schauer Hardware,2.75,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
+Prime 2351,2025-11-13,Schauer Hardware,9.88,INTERIOR MAINTENANCE,524 Unit 2,APPLIED,
+Prime 2351,2025-03-15,Aquasana Water Filters,73.24,EQUIPMENT,524 Unit 2,APPLIED,STR water filter
+Prime 2351,2025-09-19,Aquasana Water Filters,82.27,EQUIPMENT,524 Unit 2,APPLIED,
+Prime 2351,2025-01-31,Abebooks x2,153.44,Art Library,EPGC LLC,APPLIED,On Prime not BoA — still EPGC library
+Prime 2351,2025-09..12,Canva $15 x4,60,Software Fees,EPGC LLC,APPLIED,Starting point — confirm not personal
+Prime 2351,Feb-Aug,STATE FARM INSURANCE,2124.79,INSURANCE,U1/U2,APPLIED,Feb two policies; Mar-Aug combined 50/50; none after Aug on this card
+Prime 2351,HOME,Home Depot / Lowe's / IKEA / Extra Space,3732.32,repairs vs personal,524?,HOLD,Store HD/Lowes/IKEA not dumped into P&L until confirmed
+Checking 0203,monthly,ComEd Jacob Coley,829.15,ELECTRIC,524 Unit 2,APPLIED,Not on CC — Monarch Adv Plus; smaller account
+Checking 0203,monthly,ComEd Megan Gerrard,1565.26,ELECTRIC,524 Unit 1,APPLIED,Not on CC — larger account
+,,,,,,,
+STATUS: APPLIED = in monthly P&L (green). EXCLUDED = personal / void. HOLD = confirm before P&L. HOLD-COGS = inventory not operating expense.,,,,,,,

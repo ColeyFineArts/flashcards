@@ -20,7 +20,7 @@ Oak Park LTR + vacancy accounting,WORKING,Need exact vacant months,04
 2024 Form 1040 client copy,TBD,Engagement letter is NOT the return,01
 Unit 2 2024 dep + 2025 stub,TBD,Needs 2024 return,C
 Sec 121 allocation,TBD,CPA,C
-BrightWheel EIN,TBD,Form 2441 Part I,06
+BrightWheel / La Casa EIN+address,LOCKED,EIN 45-5289483; 608 Harrison St Oak Park IL 60304,06
 CapEx UNKNOWN $9401.93,TBD,Dates/amounts,05
 Radon $2550 on CD vs CapEx,FLAG,CPA decide,D
 Smoke detector $,TBD,Oak Park,04
@@ -28,6 +28,6 @@ Monarch TAX tags,TBD,Optional polish,02
 ,,,
 Next docs that unlock rows,,,
 1,2024 Form 1040 → Unit 2 dep 2024 + cumulative,,
-2,BrightWheel EIN/address → Form 2441 Part I,,
+2,DONE — Form 2441 Part I provider EIN/address locked,,
 3,Oak Park vacant months + smoke $ → Sch E vacancy log,,
 4,CapEx UNKNOWN dates → finalize register,,

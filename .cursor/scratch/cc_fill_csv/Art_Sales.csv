@@ -1,0 +1,32 @@
+Sales 2025 — COGS = Cost column; Net Income = Sale Price − Cost,,,,,,,,
+Object,From,Cost (COGS),Purchase Date,To,Sale Price,Sale Date,Net Income,ROI
+A Group of 10 Engraved Gems,Erdal Dere,1000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F3="""",C3=""""),"""",F3-C3)","=IF(OR(H3="""",C3=0),"""",H3/C3)"
+A Greek Amber(?) Ram's Head Protome,Erdal Dere,300,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F4="""",C4=""""),"""",F4-C4)","=IF(OR(H4="""",C4=0),"""",H4/C4)"
+A Stone Cylinder Seal,Estate Sale,300,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F5="""",C5=""""),"""",F5-C5)","=IF(OR(H5="""",C5=0),"""",H5/C5)"
+Commission on Cypriot Head,Asher Edelman,1000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F6="""",C6=""""),"""",F6-C6)","=IF(OR(H6="""",C6=0),"""",H6/C6)"
+Commission on Seal Collection,Erdal Dere,1000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F7="""",C7=""""),"""",F7-C7)","=IF(OR(H7="""",C7=0),"""",H7/C7)"
+Scythian Faience Horse Plaque,Estate Sale,1000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F8="""",C8=""""),"""",F8-C8)","=IF(OR(H8="""",C8=0),"""",H8/C8)"
+Syro-Hittite Terracotta Figure,Estate Sale,600,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F9="""",C9=""""),"""",F9-C9)","=IF(OR(H9="""",C9=0),"""",H9/C9)"
+A Group of 6 Roman Oil Lamps,Estate Sale,600,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F10="""",C10=""""),"""",F10-C10)","=IF(OR(H10="""",C10=0),"""",H10/C10)"
+A Cypriot Limestine Head,Estate Sale,1000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F11="""",C11=""""),"""",F11-C11)","=IF(OR(H11="""",C11=0),"""",H11/C11)"
+A Roman Marble Torso,William Pearlstein,4000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F12="""",C12=""""),"""",F12-C12)","=IF(OR(H12="""",C12=0),"""",H12/C12)"
+Cypriot Bichrome Juglet,Live Auctioneers,600,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F13="""",C13=""""),"""",F13-C13)","=IF(OR(H13="""",C13=0),"""",H13/C13)"
+An Attic Black-Figured Fragment,Hindman,334.44,2023-05-25 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F14="""",C14=""""),"""",F14-C14)","=IF(OR(H14="""",C14=0),"""",H14/C14)"
+A Luristan Bronze Ibex,Hindman,234.44,2023-05-25 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F15="""",C15=""""),"""",F15-C15)","=IF(OR(H15="""",C15=0),"""",H15/C15)"
+An Egyptian Swivel Ring with Scarab,Live Auctioneers,2228.76,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F16="""",C16=""""),"""",F16-C16)","=IF(OR(H16="""",C16=0),"""",H16/C16)"
+A Canosan Terracotta Horse,Hindman,1000,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F17="""",C17=""""),"""",F17-C17)","=IF(OR(H17="""",C17=0),"""",H17/C17)"
+An Attic Black-Figured Column-Krater,Antiquarium/Benningson,4500,2023-12-15 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F18="""",C18=""""),"""",F18-C18)","=IF(OR(H18="""",C18=0),"""",H18/C18)"
+Roman Marble Base with Foot,Arte Primitivo,500,,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F19="""",C19=""""),"""",F19-C19)","=IF(OR(H19="""",C19=0),"""",H19/C19)"
+Neolithic Flint Celt,Arte Primitivo,195.78,2022-12-13 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F20="""",C20=""""),"""",F20-C20)","=IF(OR(H20="""",C20=0),"""",H20/C20)"
+Neolithic Danish Chert Adze,Live Auctioneers,311.25,2021-03-29 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F21="""",C21=""""),"""",F21-C21)","=IF(OR(H21="""",C21=0),"""",H21/C21)"
+Three Lots from Lithics Sale,Hindman,2240.27,2024-03-05 00:00:00,Harlan J. Berk,,2025-02-07 00:00:00,"=IF(OR(F22="""",C22=""""),"""",F22-C22)","=IF(OR(H22="""",C22=0),"""",H22/C22)"
+,,=SUM(C51:C70),,,30000,,"=IF(OR(F23="""",C23=""""),"""",F23-C23)","=IF(OR(H23="""",C23=0),"""",H23/C23)"
+Total,,=SUM(C3:C23),,,=SUM(F3:F23),,=SUM(H3:H23),
+,,,,,,,,
+Yellow Sale Price = still need buyer invoices. Green Cost = COGS already entered.,,,,,,,,
+,,,,,,,,
+2025 CC purchases not yet tied to an object (HOLD — not in Cost total),,,,,,,,
+Los Angeles Modern Auctions,Sapphire 5423,6821.06,2025-07-24,,,,,
+Hindman LLC,Sapphire 5423,282.24,2025-04-03,,,,,
+Hindman LLC,Sapphire 5423,403.51,2025-07-29,,,,,
+Identify objects before adding into Cost (COGS) total — avoid double count vs Mercury inventory.,,,,,,,,
