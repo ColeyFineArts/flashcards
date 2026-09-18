@@ -11,7 +11,7 @@ Office Interior,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B10:M10)
 Office Furniture,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B11:M11)
 Repairs and maintenance,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B12:M12)
 Advertising,0,0,755.98,0,199,0,0,0,0,0,0,0,=SUM(B13:M13)
-"Travel, Meals, and Entertainment",0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B14:M14)
+"Travel, Meals, and Entertainment",0.0,20.0,0.0,0.0,20.0,0.0,20.0,20.0,0.0,20.0,53.0,0.0,=SUM(B14:M14)
 Accounting and legal,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B15:M15)
 Cellphone and Internet,51.12,93.26,98.26,98.26,98.26,98.26,98.23,98.34,98.34,98.39,98.39,97.91,=SUM(B16:M16)
 Software Fees,22.17,22.17,22.17,22.17,22.17,22.17,22.17,2.17,57.17,37.17,17.17,57.17,=SUM(B17:M17)
@@ -38,5 +38,5 @@ COGS for art objects = Cost column on Art Sales and Purchases tab (not this roll
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 ,,,,,,,,,,,,,
-"CC starting point 2025-09-18: BoA 4469 ChatGPT/Google One/Tailor Brands/Abebooks/Blurb; Sapphire AT&T cellphone (user) + Squarespace Tech + WW Norton; Prime Abebooks + Canva. Coinbase 6108: no EPGC operating charges (golf/museum/voids). TruGreen on BoA went to 524 Unit 2 yard, not EPGC. Yellow ASK on CC_LEDGER tab. Not tax advice.",,,,,,,,,,,,,
+"CC answers 2026-09-18: Canva CONFIRMED Software Fees; Park Chicago $100 + Field Museum $53 → Travel. Coinbase golf/voids still excluded; Soldier Field parking $57 HOLD. Frame Up / LAMA / Hindman are Art Sales inventory, not this P&L. TruGreen is 524 yard. Not tax advice.",,,,,,,,,,,,,
 ,,,,,,,,,,,,,

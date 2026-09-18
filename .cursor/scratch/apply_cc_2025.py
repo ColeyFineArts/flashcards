@@ -8,6 +8,9 @@ Starting-point allocations (cash basis, transaction date month):
   524   <- Sapphire HOME + Prime utilities/Grove/yard; Nicor split by 2024 Unit 2
            gas pattern (smaller bill = Unit 2).
 Not tax advice.
+
+Second pass (user answers 2026-09-18) is apply_cc_answers_2025.py — do not re-run this
+file on an already-filled workbook (it would insert a duplicate Art Library row).
 """
 from __future__ import annotations
 

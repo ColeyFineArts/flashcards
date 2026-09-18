@@ -1,36 +1,38 @@
-Starting-point flags — confirm or leave for CPA (do not block the packet),
+REMIND JACOB: Double-check ComEd with Megan (checking ACH and/or a check; confirm meters).,
+"Monarch Adv Plus already has ComEd ACH: Jacob Coley $829.15 (Unit 2, yellow) and Megan Gerrard $1,565.26 (Unit 1, yellow). User said it must have been paid directly or with a check — confirm with Megan whether that ACH is complete or if extra check/direct payments exist. Not tax advice.",
 ,
-Item,What I applied / what to confirm
-Nicor meters,Smaller Nicor (~$23–40) applied to Unit 2 because 2024 Unit 2 gas was $21–62. Larger seasonal bill applied to Unit 1. Swap if meters are reversed.
-Prime AT&T $45–50,Applied 100% to Unit 2 INTERNET (2024 Unit 2 was $50/mo). 2023 Unit 1 was $45/mo — this may be house-wide. Split if both units used it.
-Village water,"One Forest Park bill, 50/50 U1/U2. 2023 monthly sat on Unit 1; 2024 year-total $1,769 sat on Unit 2."
-State Farm,Feb 145.25 → U2 and 157.53 → U1; Mar–Aug combined premium 50/50. No Sep–Dec on Prime — other account?
-Home Depot / Lowe's / IKEA,"Prime HOME $3,732 includes HD.com $1,185.80 (Mar), HD $410 (Oct), Lowe's $209 (Sep), IKEA $365. Held out of P&L."
-Canva $15 Sep–Dec,Applied to EPGC Software Fees as a starting point. Move to personal if Megan/kids.
-Park Chicago $100,Five $20 BoA charges. Held — EPGC travel vs personal.
-Great Frame Up $536.41,Sapphire Feb. Held — inventory framing vs personal.
-"LAMA $6,821.06 + Hindman $685.75",Inventory purchases on Sapphire. Not EPGC operating expense; identify objects for Art Sales COGS.
-Electric,"ComEd is on checking, not these cards. Jacob → Unit 2, Megan → Unit 1. Confirm meters."
-Coinbase 6108,CSV is payments/voids/golf/museum. No EPGC operating expenses applied.
-TruGreen / Alsip / Good Earth,All on Unit 2 exterior/yard (2024 YARD SERVICE was on Unit 2). Split with Unit 1 if shared grounds should follow §121.
+CONFIRMED 2026-09-18,What was applied
+Nicor meters,CONFIRMED. Smaller Nicor → Unit 2 gas; larger seasonal → Unit 1.
+Prime AT&T $45–50,CONFIRMED. 100% Unit 2 INTERNET.
+Village water,CONFIRMED. Forest Park bill 50/50 U1/U2.
+TruGreen / Alsip / Good Earth,CONFIRMED. Unit 2 exterior/yard (not EPGC).
+Canva $15 Sep–Dec,CONFIRMED. EPGC Software Fees.
+Park Chicago $100,CONFIRMED. EPGC Travel (five $20 BoA charges).
+Great Frame Up $536.41,CONFIRMED inventory framing. Art Sales tab; not EPGC P&L.
+"LAMA $6,821.06 + Hindman $685.75",CONFIRMED inventory purchases. Art Sales tab; identify objects before Cost total.
+Field Museum $53,CONFIRMED EPGC Travel (Coinbase 2025-11-01). Soldier Field East Parking $57 same day still HOLD.
+March Home Depot → 524 repairs,CONFIRMED (read “534” as 524 Ferdinand). March HD $1358.65 → EXTERIOR REPAIRS 50/50 U1/U2.
+Remaining HD / Lowe’s / IKEA,CONFIRMED split by transaction 1/3 524 / 1/3 personal / 1/3 Grove. Remaining $1812.46. Extra Space $360 HOLD.
 ,
+STILL OPEN,What to confirm
+REMIND JACOB — ComEd with Megan,"ComEd is not on these cards. Monarch Adv Plus shows ACH: Jacob Coley $829.15 → Unit 2 ELECTRIC; Megan Gerrard $1,565.26 → Unit 1 ELECTRIC (yellow). User: must have been paid directly or with a check. Double-check with Megan: meters, whether Jake checking ACH is the full picture, and any extra check/direct payments."
+Soldier Field East Parking $57,Coinbase 2025-11-01 same day as Field Museum. Not confirmed — HOLD.
+Extra Space $360,Prime 2025-12-10. Not part of the HD/Lowe’s/IKEA split — HOLD (storage vs moving vs personal).
+State Farm after August,None on Prime Sep–Dec. Other account?
+Inventory object IDs,"Frame Up $536.41 + LAMA $6,821.06 + Hindman $282.24 + $403.51 parked off Cost total until objects named (avoid Mercury double count)."
+827 Grove 1/3 hardware vs locked CapEx,"Grove share $604.12 is pre-close materials on the Grove tab. Do NOT fold into locked TY2025 CapEx $53,660 until CPA says so."
 ,
-Applied totals,
-EPGC Cellphone (Sapphire AT&T),1127.02
-EPGC Software (ChatGPT + Google One + Canva),326.04
-EPGC Tech (Squarespace),212
-EPGC Advertising (Tailor Brands),954.98
-EPGC Art Library,295.6
-Unit 2 GAS (Nicor smaller),324.42
-Unit 1 GAS (Nicor larger),846.7
-Unit 2 ELECTRIC (ComEd Jacob),829.15
-Unit 1 ELECTRIC (ComEd Megan),1565.26
-Unit 2 INTERNET (Prime ATT),530
-Unit 2 WATER 50%,574.49
-Unit 1 WATER 50%,574.44
-Unit 2 INSURANCE,1056.28
-Unit 1 INSURANCE,1068.51
-Unit 2 SUPPLIES (Grove),791.21
-Unit 2 INTERIOR (Schauer/Rubio),249.87
-Unit 2 EXTERIOR/YARD (TruGreen/Alsip/Good Earth),1195.42
-Unit 2 EQUIPMENT (Aquasana),155.51
+Applied / split totals,
+EPGC Travel (Park Chicago $100 + Field Museum $53),153.0
+March HD 100% 524 repairs,1358.65
+Remaining HD/Lowe’s/IKEA (split pool),1812.46
+524 repairs from remaining 1/3 (then 50/50 U1/U2),604.18
+Unit 2 EXTERIOR add (March 50% + remaining 524-share 50%),981.44
+Unit 1 EXTERIOR add (March 50% + remaining 524-share 50%),981.39
+Personal 1/3 (excluded from P&L),604.16
+"827 Grove 1/3 (not in locked $53,660)",604.12
+Unit 2 ELECTRIC ComEd Jacob (YELLOW — ask Megan),829.15
+Unit 1 ELECTRIC ComEd Megan (YELLOW — ask Megan),1565.26
+Inventory parked (Frame Up + LAMA + Hindman),8043.22
+Extra Space HOLD,360.0
+Soldier Field parking HOLD,57.0

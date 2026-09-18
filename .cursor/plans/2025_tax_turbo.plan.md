@@ -47,6 +47,9 @@ todos:
   - id: cpa-packet
     content: "CORRECTED — Personal Income 2025 Tax Turbo multi-tab (expenses+COGS) is the CPA deliverable; folder 1lZvEhDt…; status checklist demoted"
     status: completed
+  - id: cc-answers-2026-09-18
+    content: "DONE — User Q1–10 applied: March HD $1,358.65 → 524 repairs 50/50; remaining HD/Lowe’s/IKEA 1/3 524 / 1/3 personal / 1/3 Grove; Park Chicago + Field Museum $53 EPGC Travel; Frame Up/LAMA/Hindman inventory; ComEd yellow TBD-MEGAN reminder; Canva confirmed. Extra Space $360 + Soldier Field parking $57 HOLD. Not tax advice."
+    status: completed
   - id: str-platform-pdfs
     content: "DONE — Airbnb Earnings 2025 ($8,053 gross / $7,691.41 net) + VRBO Payout 2025 ($10,214.30 / $9,395.53) filed CANONICAL in 524 Sale + 2025 Taxes; recon sheet 1Yo0IFga… — USE PLATFORM not Monarch for STR"
     status: completed
