@@ -1,0 +1,777 @@
+{
+  "source": "/home/ubuntu/.cursor/scratch/Monarch_Transactions_2026-09-17.csv",
+  "total_rows": 7027,
+  "by_year": {
+    "2023": {
+      "n": 471,
+      "net": 6930.91
+    },
+    "2024": {
+      "n": 1974,
+      "net": 60357.17
+    },
+    "2025": {
+      "n": 2521,
+      "net": 944832.53
+    },
+    "2026": {
+      "n": 2061,
+      "net": -107889.04
+    }
+  },
+  "ty2025_n": 2521,
+  "ty2025_date_range": [
+    "2025-01-01",
+    "2025-12-31"
+  ],
+  "accounts_ty2025": [
+    [
+      "Amazon Shared (2351)",
+      943
+    ],
+    [
+      " Megan\u2019s Chase (1702)",
+      533
+    ],
+    [
+      "CREDIT CARD (...5423)",
+      299
+    ],
+    [
+      "jakes personal card (...4469)",
+      179
+    ],
+    [
+      "Jake (...9922)",
+      167
+    ],
+    [
+      "Adv Plus Banking (...0203)",
+      136
+    ],
+    [
+      "Checking (...8507)",
+      85
+    ],
+    [
+      "Mercury Checking (...8291)",
+      64
+    ],
+    [
+      "SEP-IRA (...0683)",
+      25
+    ],
+    [
+      "WRC 403(b) Savings Plan  (...6350)",
+      20
+    ],
+    [
+      "9422 (...9422)",
+      14
+    ],
+    [
+      "******9898 (...9898)",
+      14
+    ],
+    [
+      "FREEMAN'S 401(K) PLAN (...9826)",
+      13
+    ],
+    [
+      "CMA-Edge (...1A38)",
+      8
+    ],
+    [
+      "CMA-Edge (...2T48)",
+      7
+    ],
+    [
+      "CMA-Edge (...4729)",
+      7
+    ],
+    [
+      "Savings (...0501)",
+      3
+    ],
+    [
+      "THE METROPOLITAN MUSEUM OF ART 403B RETIREMENT PLAN FOR NON-UNION EMPLOYEES (...8132)",
+      3
+    ],
+    [
+      "5907 (...5907)",
+      1
+    ]
+  ],
+  "categories_ty2025": [
+    [
+      "Restaurants & Bars",
+      383,
+      -19474.35
+    ],
+    [
+      "Coffee Shops",
+      342,
+      -4612.48
+    ],
+    [
+      "Shopping",
+      285,
+      -21415.19
+    ],
+    [
+      "Transfer",
+      201,
+      77893.1
+    ],
+    [
+      "Credit Card Payment",
+      108,
+      18191.23
+    ],
+    [
+      "Entertainment & Recreation",
+      96,
+      -6287.02
+    ],
+    [
+      "Groceries",
+      90,
+      -7424.78
+    ],
+    [
+      "Travel & Vacation",
+      69,
+      -17378.94
+    ],
+    [
+      "Electronics",
+      65,
+      -1362.96
+    ],
+    [
+      "Medical",
+      59,
+      -3995.77
+    ],
+    [
+      "Taxi & Ride Shares",
+      55,
+      -2264.36
+    ],
+    [
+      "Gas & Electric",
+      48,
+      -3565.53
+    ],
+    [
+      "Miscellaneous",
+      41,
+      -770.27
+    ],
+    [
+      "Parking & Tolls",
+      40,
+      -1162.15
+    ],
+    [
+      "Streaming ",
+      36,
+      -1292.95
+    ],
+    [
+      "Mortgage",
+      36,
+      570139.31
+    ],
+    [
+      "Financial Fees",
+      35,
+      -12138.71
+    ],
+    [
+      "Gas",
+      34,
+      -1309.43
+    ],
+    [
+      "Clothing",
+      32,
+      -5082.42
+    ],
+    [
+      "Home Improvement",
+      32,
+      -3869.74
+    ],
+    [
+      "Personal",
+      31,
+      -2287.87
+    ],
+    [
+      "Other Income",
+      27,
+      124646.66
+    ],
+    [
+      "Paychecks",
+      26,
+      70618.0
+    ],
+    [
+      "Business Income",
+      26,
+      282070.08
+    ],
+    [
+      "Uncategorized",
+      25,
+      9669.14
+    ],
+    [
+      "Insurance",
+      23,
+      -2651.42
+    ],
+    [
+      "Auto Maintenance",
+      22,
+      -2497.94
+    ],
+    [
+      "Business Expense ",
+      21,
+      -32924.84
+    ],
+    [
+      "Charity",
+      20,
+      -644.64
+    ],
+    [
+      "Dividends & Capital Gains",
+      17,
+      2310.12
+    ],
+    [
+      "Phone",
+      16,
+      -1263.63
+    ],
+    [
+      "Child Activities",
+      15,
+      -3463.0
+    ],
+    [
+      "Interest",
+      12,
+      426.89
+    ],
+    [
+      "Buy",
+      12,
+      -6399.22
+    ],
+    [
+      "Beauty + Spa",
+      12,
+      -1109.43
+    ],
+    [
+      "Financial & Legal Services",
+      12,
+      -694.4
+    ],
+    [
+      "Education",
+      10,
+      -1639.25
+    ],
+    [
+      "Cash & ATM",
+      9,
+      -2334.46
+    ],
+    [
+      "Postage & Shipping",
+      9,
+      -518.93
+    ],
+    [
+      "Gifts",
+      8,
+      -3644.98
+    ],
+    [
+      "Public Transit",
+      7,
+      -24.19
+    ],
+    [
+      "Rent",
+      7,
+      -2950.71
+    ],
+    [
+      "Child Care",
+      7,
+      -334.03
+    ],
+    [
+      "Internet & Cable",
+      7,
+      -393.39
+    ],
+    [
+      "Business Investment ",
+      6,
+      -148000.0
+    ],
+    [
+      "Business Travel & Meals",
+      4,
+      344.42
+    ],
+    [
+      "Health Supplement ",
+      4,
+      -229.34
+    ],
+    [
+      "House Cleaning",
+      4,
+      -830.0
+    ],
+    [
+      "Taxes",
+      4,
+      -9981.47
+    ],
+    [
+      "Business Utilities & Communication",
+      3,
+      -73.6
+    ],
+    [
+      "Cash gift",
+      3,
+      17000.0
+    ],
+    [
+      "Fitness",
+      3,
+      -627.5
+    ],
+    [
+      "Sell",
+      2,
+      20000.0
+    ],
+    [
+      "Dentist",
+      2,
+      -50.0
+    ],
+    [
+      "Office Supplies & Expenses",
+      2,
+      -30.0
+    ],
+    [
+      "Check",
+      2,
+      -3203.79
+    ],
+    [
+      "Water",
+      2,
+      -540.8
+    ],
+    [
+      "Loan Repayment",
+      2,
+      100000.0
+    ],
+    [
+      "Cleaning Supplies",
+      2,
+      -285.1
+    ],
+    [
+      "Auto Payment",
+      2,
+      -40611.24
+    ],
+    [
+      "Furniture & Housewares",
+      2,
+      -365.35
+    ],
+    [
+      "Storage Locker",
+      1,
+      -360.0
+    ],
+    [
+      "Babysitting ",
+      1,
+      -100.0
+    ],
+    [
+      "Garbage",
+      1,
+      -4.85
+    ],
+    [
+      "Balance Adjustments",
+      1,
+      36000.0
+    ]
+  ],
+  "tags_ty2025": [
+    [
+      "Business",
+      45
+    ],
+    [
+      "Reimburse",
+      38
+    ],
+    [
+      "Subscription",
+      4
+    ],
+    [
+      "Home renovation",
+      1
+    ],
+    [
+      "Tax",
+      1
+    ],
+    [
+      "Split",
+      1
+    ]
+  ],
+  "buckets_ty2025": {
+    "INCOME": {
+      "n": 108,
+      "net": 480071.75,
+      "top_cats": [
+        [
+          "Other Income",
+          27
+        ],
+        [
+          "Paychecks",
+          26
+        ],
+        [
+          "Business Income",
+          26
+        ],
+        [
+          "Dividends & Capital Gains",
+          17
+        ],
+        [
+          "Interest",
+          12
+        ]
+      ]
+    },
+    "TRAVEL": {
+      "n": 73,
+      "net": -17034.52,
+      "top_cats": [
+        [
+          "Travel & Vacation",
+          69
+        ],
+        [
+          "Business Travel & Meals",
+          4
+        ]
+      ]
+    },
+    "TRANSFER_EXCLUDE": {
+      "n": 319,
+      "net": 7473.09,
+      "top_cats": [
+        [
+          "Transfer",
+          201
+        ],
+        [
+          "Credit Card Payment",
+          108
+        ],
+        [
+          "Business Investment ",
+          6
+        ],
+        [
+          "Loan Repayment",
+          2
+        ],
+        [
+          "Auto Payment",
+          2
+        ]
+      ]
+    },
+    "OTHER_OPERATING": {
+      "n": 351,
+      "net": -5143.33,
+      "top_cats": [
+        [
+          "Electronics",
+          65
+        ],
+        [
+          "Miscellaneous",
+          41
+        ],
+        [
+          "Streaming ",
+          36
+        ],
+        [
+          "Financial Fees",
+          35
+        ],
+        [
+          "Personal",
+          31
+        ],
+        [
+          "Uncategorized",
+          25
+        ],
+        [
+          "Business Expense ",
+          21
+        ],
+        [
+          "Child Activities",
+          15
+        ],
+        [
+          "Buy",
+          12
+        ],
+        [
+          "Beauty + Spa",
+          12
+        ],
+        [
+          "Financial & Legal Services",
+          12
+        ],
+        [
+          "Cash & ATM",
+          9
+        ],
+        [
+          "Postage & Shipping",
+          9
+        ],
+        [
+          "Public Transit",
+          7
+        ],
+        [
+          "House Cleaning",
+          4
+        ]
+      ]
+    },
+    "MEDICAL": {
+      "n": 63,
+      "net": -4225.11,
+      "top_cats": [
+        [
+          "Medical",
+          59
+        ],
+        [
+          "Health Supplement ",
+          4
+        ]
+      ]
+    },
+    "FOOD": {
+      "n": 815,
+      "net": -31511.61,
+      "top_cats": [
+        [
+          "Restaurants & Bars",
+          383
+        ],
+        [
+          "Coffee Shops",
+          342
+        ],
+        [
+          "Groceries",
+          90
+        ]
+      ]
+    },
+    "UTILITIES": {
+      "n": 110,
+      "net": -7146.38,
+      "top_cats": [
+        [
+          "Gas & Electric",
+          48
+        ],
+        [
+          "Gas",
+          34
+        ],
+        [
+          "Phone",
+          16
+        ],
+        [
+          "Internet & Cable",
+          7
+        ],
+        [
+          "Business Utilities & Communication",
+          3
+        ],
+        [
+          "Water",
+          2
+        ]
+      ]
+    },
+    "INSURANCE": {
+      "n": 23,
+      "net": -2651.42,
+      "top_cats": [
+        [
+          "Insurance",
+          23
+        ]
+      ]
+    },
+    "PERSONAL": {
+      "n": 413,
+      "net": -32784.63,
+      "top_cats": [
+        [
+          "Shopping",
+          285
+        ],
+        [
+          "Entertainment & Recreation",
+          96
+        ],
+        [
+          "Clothing",
+          32
+        ]
+      ]
+    },
+    "TAXES": {
+      "n": 59,
+      "net": -12245.83,
+      "top_cats": [
+        [
+          "Taxi & Ride Shares",
+          55
+        ],
+        [
+          "Taxes",
+          4
+        ]
+      ]
+    },
+    "CHARITY": {
+      "n": 31,
+      "net": 12710.38,
+      "top_cats": [
+        [
+          "Charity",
+          20
+        ],
+        [
+          "Gifts",
+          8
+        ],
+        [
+          "Cash gift",
+          3
+        ]
+      ]
+    },
+    "RENTAL_PROPERTY": {
+      "n": 43,
+      "net": 567188.6,
+      "top_cats": [
+        [
+          "Mortgage",
+          36
+        ],
+        [
+          "Rent",
+          7
+        ]
+      ]
+    },
+    "AUTO_TRANSPORT": {
+      "n": 69,
+      "net": -3994.12,
+      "top_cats": [
+        [
+          "Parking & Tolls",
+          40
+        ],
+        [
+          "Auto Maintenance",
+          22
+        ],
+        [
+          "Child Care",
+          7
+        ]
+      ]
+    },
+    "CAPEX_CANDIDATE": {
+      "n": 34,
+      "net": -4235.09,
+      "top_cats": [
+        [
+          "Home Improvement",
+          32
+        ],
+        [
+          "Furniture & Housewares",
+          2
+        ]
+      ]
+    },
+    "EDUCATION": {
+      "n": 10,
+      "net": -1639.25,
+      "top_cats": [
+        [
+          "Education",
+          10
+        ]
+      ]
+    }
+  },
+  "keyword_hit_counts": {
+    "capex": 202,
+    "rent": 72,
+    "tax": 1,
+    "insurance": 24,
+    "utilities": 101
+  }
+}

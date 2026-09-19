@@ -1,0 +1,43 @@
+2025 checking inflows after 2026-09-18 answers — JSC 9922 + joint 0203 — not tax advice,,,,,,,
+"Cash-basis by deposit date. GCM BOM → personal 1099 / GCM tab (NOT EPGC Consultant). JAKE C / SEFOF → reimbursement EXCLUDED (May 22 CONFIRMED). Delach + Ava (co-tenant CONFIRMED) + Joan → 216 Oak Park STR / RENTAL INCOME. Bear Creek = gift to Jake from parents. UTMA Thomas $5k each excluded. Freeman’s Sale 6428 $11,000 → Art Sales (check to Megan). 8507 Zelle OUT Joan $675 → 216 INTERIOR MAINTENANCE.",,,,,,,
+,,,,,,,
+Account,Date,Counterparty,Amount,Bucket,Tab,Status,Note
+0203 joint,2025-01-31,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,February rent. LTR 216 Oak Park
+0203 joint,2025-01-31,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,Rent (same day as Delach). Delach co-tenant CONFIRMED.
+0203 joint,2025-02-28,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,March Rent. LTR 216 Oak Park
+0203 joint,2025-02-28,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,Rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-03-31,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,April Rent. LTR 216 Oak Park
+0203 joint,2025-03-31,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,April Rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-04-28,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,May Rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-04-30,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,May Rent. LTR 216 Oak Park
+0203 joint,2025-05-30,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,June rent. LTR 216 Oak Park
+0203 joint,2025-05-30,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,June rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-06-23,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,july rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-06-30,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,july rent. LTR 216 Oak Park
+0203 joint,2025-07-31,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,august rent. LTR 216 Oak Park
+0203 joint,2025-08-01,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,August rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-08-29,JOHN T DELACH,1450.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,September Rent. LTR 216 Oak Park
+0203 joint,2025-08-29,AVA L HERNANDEZ,500.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,september rent. Delach co-tenant CONFIRMED.
+0203 joint,2025-12-01,JOAN FRIEDBERGER,1950.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,rent. December occupancy cash. (Half-Nov $975 not on 0203 — WAIT 8507.)
+0203 joint,2025-12-31,JOAN FRIEDBERGER,1950.0,STR / RENTAL INCOME,216 N. Oak Park Ave,APPLIED,January rent. Jan 2026 prepaid cash in TY2025.
+9922 JSC,2025-02-12,Gates Capital,4100.0,Personal 1099,GCM tab + Income E7,APPLIED,"BOM PAYMEN — personal 1099, not EPGC"
+9922 JSC,2025-04-18,Gates Capital,9200.0,Personal 1099,GCM tab + Income E7,APPLIED,"BOM PAYMEN — personal 1099, not EPGC"
+9922 JSC,2025-09-13,Gates Capital,4100.0,Personal 1099,GCM tab + Income E7,APPLIED,"BOM PAYMEN — personal 1099, not EPGC"
+9922 JSC,2025-11-13,Gates Capital,4100.0,Personal 1099,GCM tab + Income E7,APPLIED,"BOM PAYMEN — personal 1099, not EPGC"
+9922 JSC,2025-02-18,Gates Capital,1150.99,Reimbursement,—,EXCLUDED,PMT INFO: BOARD MEETING EXPENSES
+9922 JSC,2025-05-22,Gates Capital,609.02,Reimbursement,—,EXCLUDED,"CONFIRMED reimbursement (JAKE C, not BOM)"
+9922 JSC,2025-11-05,Gates Capital,1273.82,Reimbursement,—,EXCLUDED,Monarch tag Reimburse; statement JAKE C (not BOM)
+8507 NOW (WAIT-MEGAN statements),2025-07-25,Gates Capital,462.48,Reimbursement,—,EXCLUDED,SEFOF WHARTON EXPENSES — not on the two BoA folders
+8507 NOW (WAIT-MEGAN statements),2025-07-31,Gates Capital,1254.93,Reimbursement,—,EXCLUDED,SEFOF ANNUAL CONFERENCE EXPENSES
+8507 NOW (WAIT-MEGAN statements),2025-11-05,Gates Capital,463.45,Reimbursement,—,EXCLUDED,SEFOF REIMBURSE EXPENSES FOR EDUCATION COMMITTEE
+9922 JSC,2025-01-09,Bear Creek Inc.,9500.0,Annual gift to Jake from parents,—,EXCLUDED,BEAR CREEK INC - CLIENT W / JPMorgan; PMT DET ATS OF 25/01/07
+9922 JSC,2025-04-10,Bear Creek Inc.,9500.0,Annual gift to Jake from parents,—,EXCLUDED,BEAR CREEK INC.-CASH / Northern Trust
+9922 JSC,2025-07-10,Bear Creek Inc.,9500.0,Annual gift to Jake from parents,—,EXCLUDED,BEAR CREEK INC.-CASH / Northern Trust
+9922 JSC,2025-10-09,Bear Creek Inc.,9500.0,Annual gift to Jake from parents,—,EXCLUDED,BEAR CREEK INC.-CASH / Northern Trust
+CMA-Edge 4729,2025-11-28,THOMAS (wire),5000.0,UTMA gift,—,EXCLUDED,WIRE TRF IN ORG THOMAS — Phoebe UTMA (ASK which child)
+CMA-Edge 2T48,2025-12-02,THOMAS (wire),5000.0,UTMA gift,—,EXCLUDED,WIRE TRF IN ORG THOMAS as-of 11/28 — Emma UTMA 2T48
+0203 joint,2025-12-24,Freeman's LLC / CIBC,11000.0,Art-sale settlement Sale 6428,Art Sales,APPLIED,"Check to Megan. Sale Price $11,000; Cost / object TBD."
+8507 NOW,2025-12-01,JOAN FRIEDBERGER,-675.0,Repair (Zelle OUT),216 INTERIOR MAINTENANCE,APPLIED,User: towards a repair. Booked December INTERIOR. Interior vs exterior not specified.
+8507 NOW,pending,JOAN FRIEDBERGER,975.0,Half-November rent,216 N. Oak Park Ave,WAIT-MEGAN,User: Joan paid half of November. Not on 0203. Do not book until 8507 shows the deposit.
+,,,,,,,
+STATUS: APPLIED = in the workbook. EXCLUDED = not income. WAIT-MEGAN = parked until 8507 statements.,,,,,,,

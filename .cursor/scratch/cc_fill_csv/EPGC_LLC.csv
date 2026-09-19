@@ -1,0 +1,44 @@
+2025,,,,,,,,,,,,,
+INCOME,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,YR TOTAL
+Business Income (Mercury rollup — includes art deals),15000,30000,14000,0,37200,41895,37034.79,10000,22261.27,50670,6000,0,=SUM(B3:M3)
+Consultant,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,=SUM(B4:M4)
+Total,=SUM(B3:B4),=SUM(C3:C4),=SUM(D3:D4),=SUM(E3:E4),=SUM(F3:F4),=SUM(G3:G4),=SUM(H3:H4),=SUM(I3:I4),=SUM(J3:J4),=SUM(K3:K4),=SUM(L3:L4),=SUM(M3:M4),=SUM(B5:M5)
+,,,,,,,,,,,,,
+EXPENSES,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,YR TOTAL
+Supplies (office and operating),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B8:M8)
+Office Construction,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B9:M9)
+Office Interior,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B10:M10)
+Office Furniture,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B11:M11)
+Repairs and maintenance,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B12:M12)
+Advertising,0,0,755.98,0,199,0,0,0,0,0,0,0,=SUM(B13:M13)
+"Travel, Meals, and Entertainment",0,20,0,0,20,0,20,20,0,20,53,0,=SUM(B14:M14)
+Accounting and legal,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B15:M15)
+Cellphone and Internet,51.12,93.26,98.26,98.26,98.26,98.26,98.23,98.34,98.34,98.39,98.39,97.91,=SUM(B16:M16)
+Software Fees,22.17,22.17,22.17,22.17,22.17,22.17,22.17,2.17,57.17,37.17,17.17,57.17,=SUM(B17:M17)
+Tech,0,0,0,20,192,0,0,0,0,0,0,0,=SUM(B18:M18)
+Consultant Fees,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B19:M19)
+Art Library,153.44,78.47,0,63.69,0,0,0,0,0,0,0,0,=SUM(B20:M20)
+Inventory / Art purchases (prefer Art Sales COGS — avoid double count),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B21:M21)
+Business Expense (Mercury category rollup),0,0,0,0,0,0,334.17,0,0,8658.63,8000,8146.75,=SUM(B22:M22)
+Utilities,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B23:M23)
+Insurance,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(B24:M24)
+TOTAL EXPENSES,=SUM(B8:B24),=SUM(C8:C24),=SUM(D8:D24),=SUM(E8:E24),=SUM(F8:F24),=SUM(G8:G24),=SUM(H8:H24),=SUM(I8:I24),=SUM(J8:J24),=SUM(K8:K24),=SUM(L8:L24),=SUM(M8:M24),=SUM(N8:N24)
+,,,,,,,,,,,,,
+YEAR TO DATE LESS EXPENSES,=B5-B25,=C5-C25,=D5-D25,=E5-E25,=F5-F25,=G5-G25,=H5-H25,=I5-I25,=J5-J25,=K5-K25,=L5-L25,=M5-M25,=N5-N25
+,,,,,,,,,,,,,
+COGS for art objects = Cost column on Art Sales and Purchases tab (not this rollup).,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+"CC answers 2026-09-18: Canva CONFIRMED Software Fees; Park Chicago $100 + Field Museum $53 → Travel. Coinbase golf/voids still excluded; Soldier Field parking $57 HOLD. Frame Up / LAMA / Hindman are Art Sales inventory, not this P&L. TruGreen is 524 yard. Not tax advice.",,,,,,,,,,,,,
+,,,,,,,,,,,,,
+"Checking answers 2026-09-18: GCM BOM PAYMEN $21,500 REMOVED from EPGC Consultant (personal 1099 / GCM tab + Income E7 only). Consultant row is $0. JAKE C / SEFOF reimbursements $5214.69 still EXCLUDED. Bear Creek / UTMA not on this tab. Not tax advice.",,,,,,,,,,,,,
+,,,,,,,,,,,,,
