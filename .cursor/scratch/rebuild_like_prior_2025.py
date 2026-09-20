@@ -219,7 +219,10 @@ def fill_unit2(ws: Worksheet) -> None:
     ws["B34"].font = Font(name=CG, size=10)
     ws["A39"] = (
         "2025: platform STR net on RENTAL INCOME (Jun–Nov). TruGreen/Alsip on YARD SERVICE (same as 2024). "
-        "Grove Collaborative on SUPPLIES. State Farm HOME share only on INSURANCE. ELECTRIC yellow — confirm ComEd with Megan. Not tax advice."
+        "Grove Collaborative on SUPPLIES (≠ 827 N Grove the house). "
+        "INSURANCE LOCK 2026-09-20: Travelers was prior 524 home; Geico was the cars. "
+        "Only State Farm HOME share on this INSURANCE line (50/50 U1/U2). Auto + Geico $540.89 credit personal, not EPGC. "
+        "Travelers leftover Jan 2025 is 524 home ($0 on cards/Monarch). ELECTRIC yellow — confirm ComEd with Megan. Not tax advice."
     )
 
 
@@ -238,7 +241,10 @@ def fill_unit1(ws: Worksheet) -> None:
     ws["AB2"] = "2025 YR TOTAL"
     ws["A45"] = (
         "2025 columns P–AB. Residence through sale 2025-12-18. MORTGAGE = US Bank loan 09422 monthly P+I from joint 0203 "
-        "(not $50k extra principal on 9922 Jul/Sep — those are not on this row). HOA n/a. Not tax advice."
+        "(not $50k extra principal on 9922 Jul/Sep — those are not on this row). HOA n/a. "
+        "INSURANCE LOCK 2026-09-20: Travelers was prior 524 home; Geico was the cars. "
+        "Only State Farm HOME share on this INSURANCE line (50/50 with Unit 2). Travelers leftover Jan is 524 home "
+        "($0 on cards/Monarch). Auto + Geico credit personal — not EPGC. Not tax advice."
     )
 
 

@@ -40,6 +40,8 @@ Still open
 - Sale 6428 object / Cost before Income E8 net can move off $0.
 - REMIND JACOB: Double-check ComEd with Megan. Joint 0203 statements show ComEd ACH.
 
-Still true from last pass
+Still true / LOCKED 2026-09-20
 - Grove Collaborative $791.21 on 524 Unit 2 SUPPLIES ≠ 827 N Grove the house.
-- State Farm home share only on 524 INSURANCE.
+- Travelers was prior 524 home insurance; Geico was the cars.
+- Only State Farm HOME share on 524 INSURANCE (50/50 U1/U2). Auto + Geico credit personal, not EPGC.
+- Travelers leftover Jan 2025 is 524 home ($0 on cards/Monarch).

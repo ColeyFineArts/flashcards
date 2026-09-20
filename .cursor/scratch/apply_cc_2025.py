@@ -176,10 +176,12 @@ for m, amt in [
 ]:
     add(u1_elec, m, amt)
 
-# State Farm — user 2026-09-18: bundled car + home. Previously home=Travelers, car=Geico.
+# State Farm — user 2026-09-18: bundled car + home.
+# User 2026-09-20 LOCK: “Traveler's was home insurance before for Ferdinand and Geico was for the cars.”
 # Feb 11 Prime: two unbundled policies $157.53 + $145.25 = $302.78.
-# $145.25 ≈ leftover Prime SF ~$147 in 2026 after 524 sold → AUTO (personal).
+# $145.25 ≈ leftover Prime SF ~$147 in 2026 after 524 sold → AUTO (personal; Geico was the cars).
 # $157.53 = the other policy → HOME (replaces Travelers) → 524 INSURANCE 50/50 U1/U2.
+# Leftover Travelers 2025 (Jan leftover previously noted) is 524 home, not auto. $0 on cards/Monarch.
 # Mar–Jul combined $302.75; Aug $308.26; none Sep–Dec 2025 on Prime.
 # Combined months: home = round(bill * 157.53/302.78); auto = remainder.
 # Yellow in the workbook: ratio is a proxy until declarations pages. Not tax advice.
@@ -328,9 +330,9 @@ LEDGER = [
     ("Prime 2351", "2025-01-31", "Abebooks x2", 153.44, "Art Library", "EPGC LLC", "APPLIED", "On Prime not BoA — still EPGC library"),
     ("Prime 2351", "2025-09..12", "Canva $15 x4", 60.00, "Software Fees", "EPGC LLC", "APPLIED", "Starting point — confirm not personal"),
     ("Prime 2351", "Feb-Aug", "STATE FARM INSURANCE (home share)", float(sum(u2_ins) + sum(u1_ins)), "INSURANCE", "U1 50% / U2 50%", "APPLIED", "User 2026-09-18: bundled home+auto. Only home share on 524. Feb unbundled $157.53 home / $145.25 auto used as the ratio. Yellow until declarations. None Sep–Dec on Prime."),
-    ("Prime 2351", "Feb-Aug", "STATE FARM INSURANCE (auto share)", float(sum(sf_auto)), "personal auto", "—", "EXCLUDED", "Bundled car. Previously Geico. Not 524 Sch E."),
-    ("Prime 2351", "2025-02-11", "GEICO *AUTO credit", -float(GEICO_AUTO_CREDIT), "personal auto", "—", "EXCLUDED", "Unused Geico auto premium when switching to State Farm auto. Not 524 income."),
-    ("—", "2025", "Travelers (prior home carrier)", 0, "INSURANCE", "—", "EXCLUDED", "No 2025 Travelers on Prime/Sapphire/BoA/Monarch. Home moved to State Farm in February."),
+    ("Prime 2351", "Feb-Aug", "STATE FARM INSURANCE (auto share)", float(sum(sf_auto)), "personal auto", "—", "EXCLUDED", "Bundled car. User 2026-09-20: Geico was the cars. Not 524 Sch E. Not EPGC."),
+    ("Prime 2351", "2025-02-11", "GEICO *AUTO credit", -float(GEICO_AUTO_CREDIT), "personal auto", "—", "EXCLUDED", "LOCKED 2026-09-20: Geico = cars / personal auto. Unused Geico auto premium when switching to State Farm auto. Not 524 INSURANCE. Not EPGC. Not 524 income."),
+    ("—", "2025-01 leftover", "Travelers (prior 524 home carrier)", 0, "INSURANCE", "U1 50% / U2 50%", "LOCKED", "LOCKED 2026-09-20: Travelers was home insurance before for Ferdinand. Leftover 2025 (Jan leftover previously noted) is 524 INSURANCE, not auto. $0 cash on Prime/Sapphire/BoA/Monarch. Same 50/50 U1/U2 home-share mapping — do not invent a new split."),
     ("Prime 2351", "HOME", "Home Depot / Lowe's / IKEA / Extra Space", 3732.32, "repairs vs personal", "524?", "HOLD", "Store HD/Lowes/IKEA not dumped into P&L until confirmed"),
     ("Checking 0203", "monthly", "ComEd Jacob Coley", float(sum(u2_elec)), "ELECTRIC", "524 Unit 2", "APPLIED", "Not on CC — Monarch Adv Plus; smaller account"),
     ("Checking 0203", "monthly", "ComEd Megan Gerrard", float(sum(u1_elec)), "ELECTRIC", "524 Unit 1", "APPLIED", "Not on CC — larger account"),
@@ -340,7 +342,7 @@ ASKS = [
     ("Nicor meters", "Smaller Nicor (~$23–40) applied to Unit 2 because 2024 Unit 2 gas was $21–62. Larger seasonal bill applied to Unit 1. Swap if meters are reversed."),
     ("Prime AT&T $45–50", "Applied 100% to Unit 2 INTERNET (2024 Unit 2 was $50/mo). 2023 Unit 1 was $45/mo — this may be house-wide. Split if both units used it."),
     ("Village water", "One Forest Park bill, 50/50 U1/U2. 2023 monthly sat on Unit 1; 2024 year-total $1,769 sat on Unit 2."),
-    ("State Farm", "Bundled home+auto (was Travelers home / Geico auto). Only home share on 524 INSURANCE 50/50 U1/U2; auto + Geico $540.89 credit personal. Feb $157.53/$145.25 proxy. No Sep–Dec on Prime."),
+    ("State Farm", "Bundled home+auto. Only home share on 524 INSURANCE 50/50 U1/U2; auto personal. Travelers/Geico identity LOCKED 2026-09-20 (Travelers=524 home, Geico=cars). Feb $157.53/$145.25 proxy. No Sep–Dec on Prime."),
     ("Home Depot / Lowe's / IKEA", "Prime HOME $3,732 includes HD.com $1,185.80 (Mar), HD $410 (Oct), Lowe's $209 (Sep), IKEA $365. Held out of P&L."),
     ("Canva $15 Sep–Dec", "Applied to EPGC Software Fees as a starting point. Move to personal if Megan/kids."),
     ("Park Chicago $100", "Five $20 BoA charges. Held — EPGC travel vs personal."),

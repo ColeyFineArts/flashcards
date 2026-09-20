@@ -4,9 +4,11 @@
 REPLACES 524 U1/U2 INSURANCE (does not add). Do not re-run apply_cc_2025.py or
 apply_cc_answers_2025.py on the filled workbook.
 
-User: bundled car and home at State Farm. Previously home=Travelers, car=Geico.
+User 2026-09-18: bundled car and home at State Farm.
+User 2026-09-20 LOCK: Travelers was home for Ferdinand; Geico was the cars.
 Only the home share hits 524 INSURANCE (50/50 U1/U2, yellow proxy). Auto share
-and the Geico *AUTO credit are personal. Not tax advice.
+and the Geico *AUTO credit are personal. Leftover Travelers 2025 is 524 home.
+Not tax advice.
 """
 from __future__ import annotations
 
@@ -37,17 +39,19 @@ U2_NOTE = (
     "Remaining Prime HD/Lowe’s/IKEA 1/3 524 (50/50), 1/3 personal, 1/3 827 N Grove the house (not Grove Collaborative). "
     "ELECTRIC yellow — REMIND JACOB: double-check ComEd with Megan (checking ACH Jacob $829.15; any extra check?). "
     "Home Depot March read as 524 (not 534). Extra Space $360 HOLD. "
-    "State Farm: bundled home+auto (was Travelers home / Geico auto). Only HOME share on this INSURANCE line "
-    "(50/50 with Unit 1, yellow = Feb $157.53 home / $145.25 auto proxy). Auto share and Geico $540.89 credit "
-    "EXCLUDED personal. No Sep–Dec on Prime. Not tax advice."
+    "INSURANCE LOCK 2026-09-20: Travelers was prior 524 home; Geico was the cars. "
+    "Only State Farm HOME share on this INSURANCE line (50/50 with Unit 1, yellow = Feb $157.53 home / $145.25 auto proxy). "
+    "Travelers leftover Jan 2025 is 524 home ($0 on cards/Monarch). Auto share + Geico $540.89 credit EXCLUDED personal. "
+    "No Sep–Dec SF on Prime. Not tax advice."
 )
 U1_NOTE = (
     "§121 residence through sale 2025-12-18. Nicor large / water 50/50 CONFIRMED. "
     f"March HD + remaining HD/Lowe’s/IKEA 524-share → EXTERIOR REPAIRS (U1 ${sum(ans.u1_hd)}). "
     "ELECTRIC yellow — REMIND JACOB: double-check ComEd with Megan (checking ACH INDN Megan Gerrard $1,565.26; paid ACH and/or check?). "
     "Internet still $0 on this tab (Prime ATT on Unit 2). "
-    "State Farm: bundled home+auto (was Travelers home / Geico auto). Only HOME share on this INSURANCE line "
-    "(50/50 with Unit 2, yellow proxy). Auto + Geico credit personal. Not tax advice."
+    "INSURANCE LOCK 2026-09-20: Travelers was prior 524 home; Geico was the cars. "
+    "Only State Farm HOME share on this INSURANCE line (50/50 with Unit 2, yellow proxy). "
+    "Travelers leftover Jan is 524 home ($0 on cards/Monarch). Auto + Geico credit personal. Not tax advice."
 )
 
 
@@ -68,12 +72,14 @@ def write_sf_split(wb):
     ws["A1"].font = Font(bold=True, size=14)
     ws.merge_cells("A1:H1")
     ws["A2"] = (
-        "Bundled car + home at State Farm. Previously home=Travelers, car=Geico. "
-        "Feb 11 Prime charged two unbundled policies: $157.53 (HOME — replaces Travelers) and $145.25 "
-        "(AUTO — leftover Prime SF in 2026 after 524 sold is ~$147). Mar–Jul combined $302.75; Aug $308.26. "
-        "Home = round(bill × 157.53/302.78); auto = remainder. Only HOME → 524 INSURANCE 50/50 U1/U2 (yellow). "
-        "Geico *AUTO credit $540.89 (2025-02-11) is unused auto premium — personal, not 524. "
-        "No 2025 Travelers on Prime/Sapphire/BoA/Monarch. No Sep–Dec SF on Prime."
+        "LOCKED 2026-09-20: Travelers was home insurance before for Ferdinand; Geico was for the cars. "
+        "2025 State Farm is bundled car + home. Feb 11 Prime charged two unbundled policies: $157.53 "
+        "(HOME — replaces Travelers) and $145.25 (AUTO — leftover Prime SF in 2026 after 524 sold is ~$147). "
+        "Mar–Jul combined $302.75; Aug $308.26. Home = round(bill × 157.53/302.78); auto = remainder. "
+        "Only HOME → 524 INSURANCE 50/50 U1/U2 (yellow; do not invent a new split). "
+        "Travelers leftover 2025 (Jan leftover previously noted) is 524 home, not auto — $0 on Prime/Sapphire/BoA/Monarch. "
+        "Geico *AUTO credit $540.89 (2025-02-11) is unused auto premium — personal, not 524, not EPGC. "
+        "No Sep–Dec SF on Prime."
     )
     ws["A2"].alignment = Alignment(wrap_text=True)
     ws.merge_cells("A2:H2")
@@ -125,7 +131,13 @@ def write_sf_split(wb):
     g.number_format = '"$"#,##0.00'
     g.fill = base.GRAY
     ws.cell(tot_r + 2, 7, "EXCLUDED personal").fill = base.GRAY
-    ws.cell(tot_r + 2, 8, "Unused Geico auto premium when switching to State Farm auto. Not 524 income.")
+    ws.cell(tot_r + 2, 8, "LOCKED 2026-09-20: Geico = cars. Unused auto premium when switching to State Farm auto. Not 524. Not EPGC.")
+    ws.cell(tot_r + 3, 1, "Travelers leftover Jan 2025 (prior 524 home)")
+    t = ws.cell(tot_r + 3, 3, base.money(0))
+    t.number_format = '"$"#,##0.00'
+    t.fill = base.GREEN
+    ws.cell(tot_r + 3, 7, "LOCKED 524 home").fill = base.GREEN
+    ws.cell(tot_r + 3, 8, "User: Travelers was home for Ferdinand. Leftover 2025 is 524 INSURANCE, not auto. $0 on cards/Monarch.")
     ws.cell(tot_r + 4, 1, (
         "CPA: 2023–24 Personal Income booked all homeowners on Unit 1 ($0 on Unit 2). "
         "This packet 50/50’s the 2025 home share across both units because it is a building policy. "
@@ -161,12 +173,12 @@ def main():
     u1.row_dimensions[30].height = 96
 
     src = wb["_SOURCE_2025"]
-    src["A20"] = "State Farm 2026-09-18"
+    src["A20"] = "State Farm / Travelers / Geico 2026-09-20"
     src["B20"] = (
-        "Bundled home+auto (was Travelers home / Geico auto). "
+        "LOCKED: Travelers was prior 524 home; Geico was the cars. "
         f"HOME share ${sum(base.u2_ins)+sum(base.u1_ins)} on 524 INSURANCE 50/50 U1/U2 (yellow proxy from Feb $157.53/$145.25). "
-        f"AUTO share ${sum(base.sf_auto)} + Geico credit ${base.GEICO_AUTO_CREDIT} EXCLUDED personal. "
-        "No 2025 Travelers found. No Sep–Dec SF on Prime. Not tax advice."
+        f"AUTO share ${sum(base.sf_auto)} + Geico credit ${base.GEICO_AUTO_CREDIT} EXCLUDED personal (not EPGC, not 524). "
+        "Travelers leftover Jan 2025 is 524 home — $0 on Prime/Sapphire/BoA/Monarch. No Sep–Dec SF on Prime. Not tax advice."
     )
     src["A20"].fill = base.YELLOW
     src["B20"].fill = base.YELLOW
@@ -198,9 +210,10 @@ def main():
     payload = json.loads(JSON_PATH.read_text(encoding="utf-8")) if JSON_PATH.exists() else {}
     payload.update(
         {
-            "updated": "2026-09-18",
+            "updated": "2026-09-20",
             "state_farm": {
-                "user": "bundled car and home; previously home=Travelers, car=Geico",
+                "user": "Traveler's was home insurance before for Ferdinand and Geico was for the cars",
+                "locked": "2026-09-20",
                 "method": "Feb unbundled $157.53 home / $145.25 auto as ratio of later combined bills",
                 "prime_billed_feb_aug": float(sum((r["billed"] for r in base.sf_split_rows), 0)),
                 "home_524_total": float(sum(base.u2_ins) + sum(base.u1_ins)),
@@ -208,9 +221,13 @@ def main():
                 "home_u1": float(sum(base.u1_ins)),
                 "auto_excluded": float(sum(base.sf_auto)),
                 "geico_credit_excluded": float(base.GEICO_AUTO_CREDIT),
+                "geico_on_524": False,
+                "geico_on_epgc": False,
+                "travelers_is_524_home": True,
                 "travelers_2025_found": 0.0,
+                "travelers_leftover_jan_524_home": 0.0,
                 "sep_dec_on_prime": 0.0,
-                "unit_split": "50/50 home share (2023-24 Excel had all homeowners on U1)",
+                "unit_split": "50/50 home share (2023-24 Excel had all homeowners on U1) — do not invent a new split",
             },
             "confirmed": [a[0] for a in ans.CONFIRMED],
             "still_open": [a[0] for a in ans.STILL_OPEN],

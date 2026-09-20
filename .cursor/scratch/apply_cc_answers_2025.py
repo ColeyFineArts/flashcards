@@ -419,7 +419,16 @@ CONFIRMED = [
     ),
     (
         "State Farm bundled home + auto",
-        "CONFIRMED. Previously home=Travelers, car=Geico. Only the HOME share of Prime State Farm is on 524 INSURANCE (50/50 U1/U2, yellow). Auto share and Geico $540.89 credit are personal. Split uses Feb 11 unbundled $157.53 home / $145.25 auto as the ratio.",
+        "CONFIRMED 2026-09-18. Only the HOME share of Prime State Farm is on 524 INSURANCE (50/50 U1/U2, yellow proxy). Auto share is personal — not EPGC, not 524. Split uses Feb 11 unbundled $157.53 home / $145.25 auto as the ratio.",
+    ),
+    (
+        "Travelers prior 524 home / Geico personal auto",
+        "LOCKED 2026-09-20. User: “Traveler's was home insurance before for Ferdinand and Geico was for the cars.” "
+        "Travelers = prior 524 Ferdinand homeowners (Units 1 and 2 keep the existing 50/50 home-share mapping — do not invent a new split). "
+        "Any leftover Travelers 2025 (Jan leftover previously noted) is 524 INSURANCE / Sch E, not auto. "
+        "$0 Travelers cash on Prime/Sapphire/BoA/Monarch. Geico = cars / personal auto. "
+        "Geico $540.89 *AUTO credit already EXCLUDED personal. Do not put Geico on 524 INSURANCE or EPGC. "
+        "Grove Collaborative ≠ 827 N Grove the house.",
     ),
 ]
 
@@ -432,7 +441,10 @@ STILL_OPEN = [
     ("Extra Space $360", "Prime 2025-12-10. Not part of the HD/Lowe’s/IKEA split — HOLD (storage vs moving vs personal)."),
     (
         "State Farm declarations / Sep–Dec",
-        "Home vs auto $ is a Feb-charge proxy ($157.53 home / $145.25 auto) until declarations pages. None on Prime Sep–Dec 2025 (524 sold 12/18 — those months may be another account). 2023–24 Excel booked all homeowners on U1; this packet 50/50’s the home share. No 2025 Travelers found on Prime/Sapphire/BoA/Monarch.",
+        "Home vs auto $ of bundled State Farm is a Feb-charge proxy ($157.53 home / $145.25 auto) until declarations pages. "
+        "None on Prime Sep–Dec 2025 (524 sold 12/18 — those months may be another account). "
+        "2023–24 Excel booked all homeowners on U1; this packet 50/50’s the home share (locked mapping — do not invent a new split). "
+        "Travelers vs Geico identity is LOCKED 2026-09-20 — ASK no longer asks which carrier was home vs cars.",
     ),
     (
         "Inventory object IDs",
@@ -466,6 +478,7 @@ def rebuild_ledger(wb):
         "INVENTORY": LIGHT_GREEN,
         "TBD-MEGAN": ORANGE,
         "GROVE-SPLIT": BLUE,
+        "LOCKED": GREEN,
     }
     ledger = build_ledger()
     for i, row in enumerate(ledger, 4):
@@ -505,7 +518,7 @@ def rebuild_ask(wb):
     ask.merge_cells("A2:B2")
     ask.row_dimensions[2].height = 48
 
-    ask["A4"] = "CONFIRMED 2026-09-18"
+    ask["A4"] = "CONFIRMED 2026-09-18 + 2026-09-20 locks"
     ask["B4"] = "What was applied"
     ask["A4"].fill = HEADER_FILL
     ask["B4"].fill = HEADER_FILL
@@ -558,6 +571,7 @@ def rebuild_ask(wb):
         ("Unit 1 ELECTRIC ComEd Megan (YELLOW — ask Megan)", sum(base.u1_elec)),
         ("524 INSURANCE home share (Unit 2 50%, yellow proxy)", sum(base.u2_ins)),
         ("524 INSURANCE home share (Unit 1 50%, yellow proxy)", sum(base.u1_ins)),
+        ("Travelers leftover Jan 2025 (524 home; $0 on cards/Monarch)", D("0")),
         ("State Farm auto share (personal, excluded)", sum(base.sf_auto)),
         ("Geico auto credit (personal, excluded)", -base.GEICO_AUTO_CREDIT),
         ("Inventory parked (Frame Up + LAMA + Hindman)", D("8043.22")),
@@ -577,6 +591,8 @@ def rebuild_ask(wb):
             fill = GREEN
         if "INSURANCE" in lab:
             fill = YELLOW
+        if "Travelers leftover" in lab:
+            fill = GREEN
         ask.cell(r + 1 + i, 1).fill = fill
         cell.fill = fill
     ask.column_dimensions["A"].width = 78
