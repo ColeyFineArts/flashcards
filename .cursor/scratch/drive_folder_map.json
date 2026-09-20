@@ -64,7 +64,13 @@
     "start_here_all_tabs": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
     "start_here_all_tabs_07": "1ZoP8OZhZc1MM2IpcpzZCL4CxT0RsVSWWJcgdu4QjeMY",
     "start_here_all_tabs_root": "12nPQIxgS2SC1E7fM9GfzHf69YsPR1YORqQroaxLqT2M",
-    "oak_park_ltr_insurance": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo"
+    "oak_park_ltr_insurance": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo",
+    "oak_park_2025_costs_start": "1cPeb1LfmlG0ZV5VQoqYsXy8THwo0utcL-V8fIDmyH4M",
+    "oak_park_2025_costs_start_root": "1ckkEK5pOrA2NZYmPQc5sj4eRf9fHhsKv324_l9lPaqA",
+    "oak_park_2025_costs_lock": "1ceyNBu1HMJJmTVKPpW0oQFYmoj2iCeNdDUov3fYUHxc",
+    "oak_park_2025_costs_lock_packet": "1WX077kJwDtF4CYPGBMM3eBf7BlQOKoB8kLla678Xd0Y",
+    "oak_park_2025_pnl": "1Dp8r4WskMlqgQsPW62oewo992kldN5ThWwEMIP6xyLU",
+    "oak_park_2025_pnl_packet": "10FjNJ30Dhk8vYOUu1KEbUCFZT0jWeXVIYEzpsKbw2H8"
   },
   "notes": [
     "Megan-owned closing PDFs may remain at root (no move permission); CANONICAL copies filed in 03 and 05.",
@@ -86,6 +92,7 @@
     "2026-09-20 leftover packet lock 1TxnKmr\u2026 (concurrent Q1/Q2 mixed title) moved to _SUPERSEDED. Canonical lock remains 1vPLG0kR\u2026 / bank 1sd6Mugd\u2026 / packet 170l3Jhb\u2026.",
     "2026-09-20 Travelers/Geico lock: Travelers=prior 524 home, Geico=cars. Live ASK 1STRCzJe\u2026 SF_SPLIT 1xhHImqE\u2026 524 U1 1fB7OZg2\u2026 U2 1NUtDh7F\u2026 START HERE root 1SpTrXhc\u2026 packet 1Z_LjTDN\u2026 LOCK 17j4SdPN\u2026. Stale 1cB4REka / 1S9p9cm9 / 1nxaewV4 / 1-AIgRc3a / 13xD5XXn plus earlier 1R18NvBr / 1pNIBh26 / 1ewPhq4R / 12rxY13j / 13-H7dv2 / 1B9-17KS / 1pQdfdeg moved to _SUPERSEDED. Mercury live IDs unchanged (ASK 1r6-OcV1 / EPGC 1nZkTISK / START HERE 1sOaEz-b / lock 1vPLG0kR).",
     "2026-09-20 native Mercury CSV ingest: user upload 1pJL5IFj\u2026 (8291 full-year). 0 new unique Sent cash vs the 64. Venus $20k + Roman Gold Belt $45k LOCKED inventory. Live ASK 1TeRpRYc\u2026 START HERE 1umzmMAi\u2026 lock 1kgFtNXa\u2026 Fortuna 1-SlRPpR4\u2026. Prior Q6\u2013Q9 ASK/START HERE/lock 1r6-OcV1 / 1sOaEz-b / 1vPLG0kR moved to _SUPERSEDED. EPGC MATCHED 1nZkTISK unchanged (P&L dollars unchanged).",
-    "2026-09-20 full-tab workbook: GCM/EPGC/Art Sales restored into one converted Google Sheet 1BFOQzy0 (packet) / 128pxCH1 (07) / 1AJcCKiZ (root). Income+Properties-only 1XkpQn0z / 1qLmbezF and old same-layout START HERE 1G7ZF45y / 1oMk9p28 moved to _SUPERSEDED. LTR insurance Lemonade $514 October on 216. Mercury ASK 1r6-OcV1 / EPGC 1nZkTISK / lock 1vPLG0kR kept; Mercury START HERE successor 1aJ2XjUQ (old 1sOaEz-b superseded because it pointed at Income+Properties)."
+    "2026-09-20 full-tab workbook: GCM/EPGC/Art Sales restored into one converted Google Sheet 1BFOQzy0 (packet) / 128pxCH1 (07) / 1AJcCKiZ (root). Income+Properties-only 1XkpQn0z / 1qLmbezF and old same-layout START HERE 1G7ZF45y / 1oMk9p28 moved to _SUPERSEDED. LTR insurance Lemonade $514 October on 216. Mercury ASK 1r6-OcV1 / EPGC 1nZkTISK / lock 1vPLG0kR kept; Mercury START HERE successor 1aJ2XjUQ (old 1sOaEz-b superseded because it pointed at Income+Properties).",
+    "2026-09-20 216 Oak Park costs (user list, last-year pattern): insurance $42.84/mo amortized; mortgage/HOA cash + yellow WAIT 8507; Brennan $150; Imelda $300 move-out; Joan $675 INTERIOR REPAIR; Ace keys $11. Smoke detector Amazon ASK. Live START HERE 1cPeb1Lf lock 1ceyNBu1 P&L 1Dp8r4Ws. Oct-cash 216 sheet 15Cc67p80 moved to _SUPERSEDED."
   ]
 }

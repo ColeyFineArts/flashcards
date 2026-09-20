@@ -272,6 +272,9 @@
     "joan_repair_dec": 675.0,
     "ace_keys_dec": 11.0,
     "smoke_detector_amazon": 0.0,
-    "smoke_detector_status": "ASK"
+    "smoke_detector_status": "ASK",
+    "drive_start_here": "1cPeb1LfmlG0ZV5VQoqYsXy8THwo0utcL-V8fIDmyH4M",
+    "drive_lock": "1ceyNBu1HMJJmTVKPpW0oQFYmoj2iCeNdDUov3fYUHxc",
+    "drive_pnl": "1Dp8r4WskMlqgQsPW62oewo992kldN5ThWwEMIP6xyLU"
   }
 }
