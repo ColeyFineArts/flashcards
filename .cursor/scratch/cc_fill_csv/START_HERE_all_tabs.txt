@@ -1,0 +1,26 @@
+START HERE — one spreadsheet like last year (2026-09-20)
+
+Not tax advice. Organizational packet only.
+
+Open this Google Sheet (EPGC LLC, Art Sales and Purchases, and GCM are tabs in this file):
+https://docs.google.com/spreadsheets/d/1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo/edit
+
+Tabs: Income | 216 N. Oak Park Ave (LTR) | 524 Ferdinand Ave, Unit 2 | 524 Ferdinand Ave, Unit 1 | EPGC LLC | Art Sales and Purchases | GCM | Investments | ASK Mercury
+
+Why those three tabs were missing
+Last year’s Personal Income.xlsx was one workbook. Drive native xlsx conversion failed, so CSVs were converted to Google Sheets and the packet split: Income+Properties (no EPGC/Art/GCM tabs) vs a separate EPGC/Art/GCM file. Opening Income+Properties looked like last year but those tabs were in the other file. This file puts them back together.
+
+216 LTR insurance LOCKED
+Lemonade $514.00 cash 2025-10-03 on Megan Chase (1702) is booked on 216 RENTER'S INSURANCE in October (cash, not amortized).
+2023 Lemonade $321 = Excel $26.75/mo; 2024 $421 ≈ Excel $35.08/mo — same Oct 3 merchant/card.
+Travelers was Ferdinand (524) home. Geico was the cars. State Farm 2025 bundle is Ferdinand car+home — only the home share is on 524, not 216.
+
+Copies
+Packet: https://docs.google.com/spreadsheets/d/1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo/edit
+07 Income: https://docs.google.com/spreadsheets/d/128pxCH1qJM0mihCG8gis3Nwi4iI18X3Wg01zSho0Zw4/edit
+Root: https://docs.google.com/spreadsheets/d/1AJcCKiZegL5Cik3Iigzk_TQEvT8Yq-TmraoJ5OL2rwI/edit
+START HERE packet: https://docs.google.com/document/d/1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM/edit
+Mercury START HERE successor: https://docs.google.com/document/d/1aJ2XjUQsJ4ONDAZ4irdlYuFIvvuI8GOEczrRW5nUdrI/edit
+
+Mercury live IDs kept: ASK 1r6-OcV1… / EPGC 1nZkTISK… / lock 1vPLG0kR…
+Fortuna Venus + Belt successor: 1spLPY72…

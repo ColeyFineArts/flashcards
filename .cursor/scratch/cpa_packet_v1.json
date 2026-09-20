@@ -2,16 +2,16 @@
   "updated": "2026-09-20",
   "correction": "CPA deliverable matches prior Personal Income.xlsx look (2023|2024|2025 columns; RENTAL INCOME / MORTGAGE / HOA)",
   "drive_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
-  "start_here": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
-  "start_here_packet": "1oMk9p28WmRBYS5z_F1-zI53wDho7_8zUJQso0VYrpRQ",
+  "start_here": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
+  "start_here_packet": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
   "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
-  "xlsx_bytes_local": 119918,
-  "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
-  "like_last_year_income_properties_packet": "1qLmbezF77s8iKTV0UV9YUznkPlwzXyCm-Q50sXG_qBI",
+  "xlsx_bytes_local": 121052,
+  "like_last_year_income_properties": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+  "like_last_year_income_properties_packet": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
   "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
   "like_last_year_epgc_art_gcm_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
-  "xlsx_note": "2026-09-20 native Mercury CSV ingest: 0 new unique Sent cash vs the 64. Fortuna Venus $20k (5/9) + Roman Gold Belt $45k (7/21) LOCKED inventory (parked Cost). Aug Fortuna $20k unnamed (8/15 Monarch = 8/18 native). Aysel Monarch IN vs native Failed OUT still ASK. Q6\u2013Q9 + EOEB/L5 mixed unallocated unchanged. I8 $23,055.06.",
+  "xlsx_note": "2026-09-20 native Mercury CSV ingest: 0 new unique Sent cash vs the 64. Fortuna Venus $20k (5/9) + Roman Gold Belt $45k (7/21) LOCKED inventory (parked Cost). Aug Fortuna $20k unnamed (8/15 Monarch = 8/18 native). Aysel Monarch IN vs native Failed OUT still ASK. Q6\u2013Q9 + EOEB/L5 mixed unallocated unchanged. I8 $23,055.06. 2026-09-20 full-tab Drive sheet 1BFOQzy0 restores EPGC/Art/GCM tabs; 216 LTR Lemonade $514 October. Not tax advice.",
   "note": "Grove Collaborative \u2260 827 N Grove the house. Travelers = prior 524 home; Geico = personal auto. Only State Farm home share on 524 INSURANCE.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -44,9 +44,9 @@
   },
   "sheet_ids": {
     "folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
-    "start_here": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
-    "start_here_packet": "1oMk9p28WmRBYS5z_F1-zI53wDho7_8zUJQso0VYrpRQ",
-    "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
+    "start_here": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
+    "start_here_packet": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
+    "like_last_year_income_properties": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
     "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
     "ask_cc": "1STRCzJeJZGXQRazPLYo0anyKViYlJfYrHOOiGUgzfGY",
     "inflow_ledger": "1PS7Pnl2oSda89lKFdCkg7ZfpLm7862jqs-WJOCDt7DY",
@@ -58,7 +58,7 @@
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4",
-    "start_here_mercury": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+    "start_here_mercury": "1aJ2XjUQsJ4ONDAZ4irdlYuFIvvuI8GOEczrRW5nUdrI",
     "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
     "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
@@ -69,7 +69,11 @@
     "lock_travelers_geico": "17j4SdPNU62FSCJSULu1Q_BGLYr3MRlJcdcyS80hXyvI",
     "start_here_insurance": "1SpTrXhctgacO8qPLTWo8ZSCiiLr1Zkj65XT86V1Xeeo",
     "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
-    "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA"
+    "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA",
+    "like_last_year_all_tabs": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+    "oak_park_ltr": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo",
+    "ask_mercury_live": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
+    "mercury_lock_live": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg"
   },
   "mercury_8291": {
     "updated": "2026-09-20",
@@ -253,10 +257,14 @@
       "OCT": 514.0
     },
     "method": "2025 cash in October (not amortized). 2023/2024 Excel amortized the same Lemonade annual premium.",
+    "drive": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo",
     "not_216": [
       "Travelers (524 home)",
       "Geico (cars)",
       "State Farm home share (524 only)"
     ]
-  }
+  },
+  "like_last_year_all_tabs": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+  "like_last_year_all_tabs_07": "128pxCH1qJM0mihCG8gis3Nwi4iI18X3Wg01zSho0Zw4",
+  "like_last_year_all_tabs_root": "1AJcCKiZegL5Cik3Iigzk_TQEvT8Yq-TmraoJ5OL2rwI"
 }

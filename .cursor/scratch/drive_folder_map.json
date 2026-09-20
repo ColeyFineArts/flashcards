@@ -36,15 +36,15 @@
     "capex_cpa_53660": "1aqJe32LWQwwAXdk7pDdo0MJHBu6mVnM7hbsE5W6aBmE",
     "childcare_recon": "1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
-    "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
+    "like_last_year_income_properties": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
     "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
-    "start_here_xlsx": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
+    "start_here_xlsx": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
     "sale_closing_2025": "1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv",
     "purchase_cd_524_2023": "10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f",
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
     "sale_facts_sheet": "1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY",
     "grove_purchase_facts_sheet": "1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc",
-    "start_here_mercury": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+    "start_here_mercury": "1aJ2XjUQsJ4ONDAZ4irdlYuFIvvuI8GOEczrRW5nUdrI",
     "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
     "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
@@ -57,7 +57,14 @@
     "lock_travelers_geico": "17j4SdPNU62FSCJSULu1Q_BGLYr3MRlJcdcyS80hXyvI",
     "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
     "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA",
-    "native_mercury_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU"
+    "native_mercury_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU",
+    "like_last_year_all_tabs": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+    "like_last_year_all_tabs_07": "128pxCH1qJM0mihCG8gis3Nwi4iI18X3Wg01zSho0Zw4",
+    "like_last_year_all_tabs_root": "1AJcCKiZegL5Cik3Iigzk_TQEvT8Yq-TmraoJ5OL2rwI",
+    "start_here_all_tabs": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
+    "start_here_all_tabs_07": "1ZoP8OZhZc1MM2IpcpzZCL4CxT0RsVSWWJcgdu4QjeMY",
+    "start_here_all_tabs_root": "12nPQIxgS2SC1E7fM9GfzHf69YsPR1YORqQroaxLqT2M",
+    "oak_park_ltr_insurance": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo"
   },
   "notes": [
     "Megan-owned closing PDFs may remain at root (no move permission); CANONICAL copies filed in 03 and 05.",
@@ -78,6 +85,7 @@
     "2026-09-20 Q9+mixed Drive refresh: live ASK 1r6-OcV1\u2026 EPGC 1nZkTISK\u2026 START HERE 1sOaEz-b\u2026 lock 1vPLG0kR\u2026 Q6/Q8 and pre-mixed Q9 sheets in _SUPERSEDED.",
     "2026-09-20 leftover packet lock 1TxnKmr\u2026 (concurrent Q1/Q2 mixed title) moved to _SUPERSEDED. Canonical lock remains 1vPLG0kR\u2026 / bank 1sd6Mugd\u2026 / packet 170l3Jhb\u2026.",
     "2026-09-20 Travelers/Geico lock: Travelers=prior 524 home, Geico=cars. Live ASK 1STRCzJe\u2026 SF_SPLIT 1xhHImqE\u2026 524 U1 1fB7OZg2\u2026 U2 1NUtDh7F\u2026 START HERE root 1SpTrXhc\u2026 packet 1Z_LjTDN\u2026 LOCK 17j4SdPN\u2026. Stale 1cB4REka / 1S9p9cm9 / 1nxaewV4 / 1-AIgRc3a / 13xD5XXn plus earlier 1R18NvBr / 1pNIBh26 / 1ewPhq4R / 12rxY13j / 13-H7dv2 / 1B9-17KS / 1pQdfdeg moved to _SUPERSEDED. Mercury live IDs unchanged (ASK 1r6-OcV1 / EPGC 1nZkTISK / START HERE 1sOaEz-b / lock 1vPLG0kR).",
-    "2026-09-20 native Mercury CSV ingest: user upload 1pJL5IFj\u2026 (8291 full-year). 0 new unique Sent cash vs the 64. Venus $20k + Roman Gold Belt $45k LOCKED inventory. Live ASK 1TeRpRYc\u2026 START HERE 1umzmMAi\u2026 lock 1kgFtNXa\u2026 Fortuna 1-SlRPpR4\u2026. Prior Q6\u2013Q9 ASK/START HERE/lock 1r6-OcV1 / 1sOaEz-b / 1vPLG0kR moved to _SUPERSEDED. EPGC MATCHED 1nZkTISK unchanged (P&L dollars unchanged)."
+    "2026-09-20 native Mercury CSV ingest: user upload 1pJL5IFj\u2026 (8291 full-year). 0 new unique Sent cash vs the 64. Venus $20k + Roman Gold Belt $45k LOCKED inventory. Live ASK 1TeRpRYc\u2026 START HERE 1umzmMAi\u2026 lock 1kgFtNXa\u2026 Fortuna 1-SlRPpR4\u2026. Prior Q6\u2013Q9 ASK/START HERE/lock 1r6-OcV1 / 1sOaEz-b / 1vPLG0kR moved to _SUPERSEDED. EPGC MATCHED 1nZkTISK unchanged (P&L dollars unchanged).",
+    "2026-09-20 full-tab workbook: GCM/EPGC/Art Sales restored into one converted Google Sheet 1BFOQzy0 (packet) / 128pxCH1 (07) / 1AJcCKiZ (root). Income+Properties-only 1XkpQn0z / 1qLmbezF and old same-layout START HERE 1G7ZF45y / 1oMk9p28 moved to _SUPERSEDED. LTR insurance Lemonade $514 October on 216. Mercury ASK 1r6-OcV1 / EPGC 1nZkTISK / lock 1vPLG0kR kept; Mercury START HERE successor 1aJ2XjUQ (old 1sOaEz-b superseded because it pointed at Income+Properties)."
   ]
 }
