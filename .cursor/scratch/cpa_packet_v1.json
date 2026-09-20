@@ -11,7 +11,7 @@
   "like_last_year_income_properties_packet": "1qLmbezF77s8iKTV0UV9YUznkPlwzXyCm-Q50sXG_qBI",
   "like_last_year_epgc_art_gcm": "11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g",
   "like_last_year_epgc_art_gcm_packet": "1Vr-DS9gNwUmUJnpetCC3mFAfX2GzzRUzQRkx6jrKngo",
-  "xlsx_note": "2026-09-20 Q6\u2013Q9: David Aaron $13,595 Consultant June; Wise $992.80 Consultant Fees (expertise write-ups); Koziol/Ariadne $150k pass-through; Aquinas books $1,000 Art Sales February (Cost TBD). Art Sales MATCHED/LOCKED $150,000 (Feb $136,000). I8 $23,055.06 (excludes books until Cost). EOEB/L5 mixed pattern confirmed, dollars unallocated.",
+  "xlsx_note": "2026-09-20 Q6\u2013Q9 locked. EOEB/L5 mixed pattern CONFIRMED; remainder unallocated. Art Sales $150,000. I8 $23,055.06. Consultant June $13,595. Consultant Fees $992.80.",
   "note": "Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -58,9 +58,9 @@
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4",
-    "start_here_mercury": "1APFvhRrxj6t941kjeC_MwStU9c0pP5FHRwQbo2-Kme8",
-    "ask_mercury": "1G2LwKMOnCqlz_c1e0qEQrLhNMiGJR32lZXx8WXadzIs",
-    "mercury_ledger": "1GJxO-nbwGA1DQp48SLMq8889gdA96agThm6NMim2g_U",
+    "start_here_mercury": "1_2empVXj3gu1slQaOAqf_QdbhqFgYih84iMwHZgeOLs",
+    "ask_mercury": "150UnbXcNe9AMTkts8KQX54MypUDufNgogqmu0ED0FZI",
+    "mercury_ledger": "1sXXyE4cr7akZOKwLYFb6wjvZnNi5-bBYNABzJFHbkbg",
     "epgc_2025_matched": "11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
   },
@@ -138,15 +138,15 @@
     ],
     "epgc_consultant_fees": 992.8,
     "drive": {
-      "start_here_mercury_root": "1APFvhRrxj6t941kjeC_MwStU9c0pP5FHRwQbo2-Kme8",
-      "start_here_mercury_packet": "1p2ddQqTDuLUYw6mbMuuAToNQo3RHlpWS6EAgIgCWFZs",
-      "start_here_mercury_bank": "1V6r0TWeGKrj8nL4CHLpaGhNqup6r-Gl9CejBQfAlAAg",
-      "ask_mercury": "1G2LwKMOnCqlz_c1e0qEQrLhNMiGJR32lZXx8WXadzIs",
-      "ask_mercury_bank_folder": "1kUe-1FOzdseuEDyDot17GMSbfxbmgil4rZ94Jd2n-rg",
-      "ask_mercury_packet": "1Hn1S4rz52im3ISHM6NdDalW0vb1H4u7cO8ShgKrAWZo",
-      "mercury_ledger_q6_q9": "1GJxO-nbwGA1DQp48SLMq8889gdA96agThm6NMim2g_U",
-      "mercury_ledger_q6_q9_bank_folder": "1avMw_ZQh0zYZAAJ478XDSupOhZAaMsQqgZEwgQ3gbck",
-      "mercury_ledger_q6_q9_packet": "19IG_kylyVOgF4QIbWinwfT2uNS07yPqkEPNdG68bmtE",
+      "start_here_mercury_root": "1_2empVXj3gu1slQaOAqf_QdbhqFgYih84iMwHZgeOLs",
+      "start_here_mercury_packet": "1egSVrrXz43FofSdp2pKtWOv3H_9u59veNnviAD1h8fQ",
+      "start_here_mercury_bank": "1aT81WNgdVc0eal2r9MSJedlSkw2Oyolzexx13fnXgQE",
+      "ask_mercury": "150UnbXcNe9AMTkts8KQX54MypUDufNgogqmu0ED0FZI",
+      "ask_mercury_bank_folder": "1haKhKvXZuOI9oHaH5pJFJ7SiHHdUWH_Q9us6aPtry9Y",
+      "ask_mercury_packet": "1CsFouU74odLjDv3QxzECABe49Uiyen6sTRVVSxBS4LQ",
+      "mercury_ledger_q6_q9": "1sXXyE4cr7akZOKwLYFb6wjvZnNi5-bBYNABzJFHbkbg",
+      "mercury_ledger_q6_q9_bank_folder": "1cOUZgb0FymUoJTa25pxBx23Rlemgl2q0RzoMulRDmgg",
+      "mercury_ledger_q6_q9_packet": "1TxnKmrwic9AareKjA-2QItv_PjbMWrrTbvi598-aRmI",
       "epgc_2025_matched": "11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g",
       "epgc_2025_matched_bank_folder": "1ETnjTHApziXebBEPhuyAwF1O4J3jE1CqfxXj1KP0M9A",
       "epgc_2025_matched_packet": "1Vr-DS9gNwUmUJnpetCC3mFAfX2GzzRUzQRkx6jrKngo",
@@ -154,6 +154,6 @@
       "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
     }
   },
-  "start_here_mercury": "1APFvhRrxj6t941kjeC_MwStU9c0pP5FHRwQbo2-Kme8",
+  "start_here_mercury": "1_2empVXj3gu1slQaOAqf_QdbhqFgYih84iMwHZgeOLs",
   "start_here_mercury_packet": "16ayO4Zc9p7GNyqV2xP6M4PQKPffBm701JKFNqmbQ7vw"
 }
