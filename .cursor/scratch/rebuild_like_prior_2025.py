@@ -4,6 +4,10 @@
 Copies Personal_Income_prior.xlsx (2023 | 2024 columns, Century Gothic,
 MORTGAGE / HOA / monthly rent) and adds a 2025 year block.
 
+Do not run this after Mercury Q6–Q9 locks — it resets EPGC Consultant and
+Income I8. The user-facing file is publish_personal_income_2025.py +
+assert_personal_income_2025.py.
+
 216 Oak Park 2025:
   RENTAL INCOME from joint 0203 cash (Delach + Ava + Joan)
   MORTGAGE = Rocket from Checking 8507 (Jul–Dec known; Jan–Jun WAIT 8507)
@@ -424,6 +428,14 @@ def export_sheet(wb, name: str, path: Path) -> None:
 
 
 def main() -> None:
+    import sys
+
+    if "--force" not in sys.argv:
+        raise SystemExit(
+            "Refused: rebuild_like_prior_2025.py resets Mercury Q6–Q9 locks "
+            "(Consultant $13,595 / I8 $23,055.06). "
+            "Use publish_personal_income_2025.py. Pass --force only to re-clone last year."
+        )
     shutil.copy2(PRIOR, OUT)
     wb = load_workbook(OUT)
     extra_src = CLEAN_EXTRA if CLEAN_EXTRA.exists() else None

@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
-"""Build the Drive all-tabs workbook from locked last-year CSVs + extra turbo tabs.
+"""DO NOT USE for the user-facing Personal Income 2025 file.
+
+CSV rebuilds drop Century Gothic, merged C1:O1, Hindman W2, Megan T4,
+and Refrence Library. That is why Drive stopped looking like last year.
+
+Canonical path: copy last year's Personal_Income_prior.xlsx, fill 2025,
+run publish_personal_income_2025.py + assert_personal_income_2025.py.
+"""
+from __future__ import annotations
+
+import sys
+
+sys.exit(
+    "Refused: do not rebuild Personal Income 2025 from CSVs. "
+    "Use publish_personal_income_2025.py (copy of last year's xlsx)."
+)
+
+# Original CSV builder retained below for history only.
+_ = """Build the Drive all-tabs workbook from locked last-year CSVs + extra turbo tabs.
 
 Looks like last year’s Personal Income.xlsx (2023|2024|2025 on property tabs;
 GCM / EPGC / Art Sales in the same file).
@@ -9,7 +27,6 @@ Travelers = 524 home; Geico = 524 cars.
 
 Not tax advice.
 """
-from __future__ import annotations
 
 import csv
 import xml.etree.ElementTree as ET
