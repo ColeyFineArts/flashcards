@@ -8,12 +8,13 @@
     "coinbase_out": -59000.0,
     "coinbase_in": 8000.0,
     "newstar_cogs": 23581.0,
-    "art_sale_locked_gross": 149000.0,
+    "art_sale_locked_gross": 150000.0,
     "art_net_locked": 23055.06,
     "boa_9922_draws": 261172.0,
     "david_aaron_consultant": 13595.0,
     "koziol_ariadne_passthrough": 150000.0,
-    "wise_expertise_writeups": 992.8
+    "wise_expertise_writeups": 992.8,
+    "aquinas_books_sale": 1000.0
   },
   "ask": {
     "eoeb_remainder": 130270.0,
@@ -21,12 +22,12 @@
     "fortuna_remainder_out": 85000.0,
     "erdal_in": 57000.0,
     "aysel": 50000.0,
-    "aquinas_hobor": 1000.0,
+    "aquinas_books_cost_tbd": true,
     "mosaics_cost_missing_on_mercury": 40000.0
   },
   "epgc_art_sales_2025_monthly": [
     14000.0,
-    135000.0,
+    136000.0,
     0.0,
     0.0,
     0.0,

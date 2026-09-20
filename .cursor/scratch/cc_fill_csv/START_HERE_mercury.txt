@@ -17,21 +17,23 @@ https://docs.google.com/spreadsheets/d/1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI5
 LOCKED this pass
 - Coinbase ACH net $-51,000.00 (funded $59,000.00 / back $8,000.00) → Investments. Not EPGC. Not the Coinbase 6108 card.
 - Newstar Jewelers $23,581.00 → jewelry fabrication COGS (intaglios, engraved gems, scarabs). Not EPGC operating.
-- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21).
+- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21) + Aquinas books $1,000 (2/4).
 - Seals Cost $13,000 = Fortuna 1/8. Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
 - BoA 9922 transfers $261,172.00 = owner draws, not P&L.
 - Dec 2 Wise $565.75 reimbursed by EOEB — not income.
 - David Aaron Limited $13,595 (6/24) → EPGC Consultant June. User: consultant fee, not a sale.
 - Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → LOCKED pass-through. Not P&L.
 - Wise $334.17 (7/9) + $658.63 (10/30) → EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed.
+- Aquinas Hobor $1,000 (2/4) → books sold. EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost).
 
-EPGC 2025 Art Sales is only those matched sales ($149,000 cash: Jan $14,000 / Feb $135,000).
+EPGC 2025 Art Sales is MATCHED/LOCKED cash ($150,000: Jan $14,000 / Feb $136,000).
 EPGC Consultant June is $13,595 (David Aaron). EOEB remainder / L5 still ASK — not on Consultant.
 
 ANSWERED
 6. David Aaron Limited $13,595 (6/24) — LOCKED consultant fee (EPGC Consultant June).
 7. Wise $334.17 + $658.63 — LOCKED business expenses (expertise write-ups) on EPGC Consultant Fees.
 8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
+9. Aquinas Hobor $1,000 (2/4) — LOCKED books sold (EPGC Art Sales February; Cost TBD).
 
 ASK remaining
 1. EOEB remainder $130,270.00 after mosaics — advisory or more sales? Is Jan 16 $1,000 the Canosan horse?
@@ -39,7 +41,6 @@ ASK remaining
 3. Fortuna OUT remaining $85,000.00 — inventory objects?
 4. Erdal IN $57,000.00 — sales to Erdal?
 5. Aysel Dere $50,000 IN (7/18)
-9. Aquinas Hobor $1,000 (2/4)
 10. Where is the other $40,000 of mosaics Cost?
 
-Income I8 Art net is $23,055.06 from MATCHED deals only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 still waits on Cost. Consultant is EPGC, not I8.
+Income I8 Art net is $23,055.06 from MATCHED deals with Cost only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost. Consultant is EPGC, not I8.

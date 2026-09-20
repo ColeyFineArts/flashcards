@@ -19,6 +19,9 @@ LOCKED this pass:
   Wise $334.17 (7/9) + $658.63 (10/30) = EPGC Consultant Fees expense
     (user 2026-09-20: "7. Business expenses (expertise write ups)").
     Distinct from Dec Wise $565.75 reimbursed by EOEB (not P&L).
+  Aquinas Hobor $1,000 IN (2/4) = books sold (ART_SALE LOCKED)
+    (user 2026-09-20: "9. Books sold to Aquinas"). Hits EPGC Art Sales
+    February. Cost / titles TBD — not in Income I8 until Cost.
 
 Do NOT dump unclassified Mercury into EPGC Art Sales.
 Do not re-run apply_checking_answers_2025.py.
@@ -109,10 +112,10 @@ RULES = {
         "Art Sales has Canosan Terracotta Horse to Erdal $1,000. This cash is EOEB, not Erdal. Sale or advisory invoice?",
     ),
     ("2025-02-04", D("1000.00")): (
-        "ASK",
-        "ASK",
-        "Aquinas Hobor $1,000",
-        "Prior-year buyer (Saharan bracelets 2022). 2025 sale, leftover, or something else?",
+        "ART_SALE",
+        "LOCKED",
+        "Books sold to Aquinas Hobor — Sale Price",
+        "User 2026-09-20: books sold to Aquinas. Hits EPGC Art Sales February $1,000. Cost / titles TBD (not in I8 net until Cost). Distinct from 2022 Saharan bracelets sale.",
     ),
     ("2025-02-04", D("-25000.00")): (
         "TRANSFER",
@@ -574,6 +577,7 @@ def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
         "BoA 9922 draws and Koziol/Ariadne $150k are LOCKED not-P&L (pass-through / owner transfer). "
         "David Aaron $13,595 is LOCKED EPGC Consultant (June). "
         "Wise $334.17 + $658.63 are LOCKED EPGC Consultant Fees (expertise write-ups). "
+        "Aquinas Hobor $1,000 (2/4) is LOCKED books sold (EPGC Art Sales February; Cost TBD). "
         "Not tax advice."
     )
     ws["A1"].font = CG_B
@@ -667,7 +671,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws.sheet_properties.tabColor = "FFC000"
     ws["A1"] = (
         "ASK — remaining Mercury 8291 questions. "
-        "Q6 consultant, Q7 Wise expertise write-ups, Q8 pass-through LOCKED 2026-09-20. "
+        "Q6 consultant, Q7 Wise expertise write-ups, Q8 pass-through, Q9 Aquinas books LOCKED 2026-09-20. "
         "Not tax advice."
     )
     ws["A1"].font = CG_B
@@ -714,8 +718,9 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
             "CONFIRMED 2026-09-20: pass-through, not P&L. Not a sale, not a purchase, not COGS, not Consultant.",
         ),
         (
-            "9. Aquinas Hobor $1,000 IN (2/4)",
-            "Sale, leftover, or other? Aquinas bought Saharan bracelets in 2022.",
+            "9. Aquinas Hobor $1,000 IN (2/4) — LOCKED books sold",
+            "CONFIRMED 2026-09-20: books sold to Aquinas. Booked EPGC Art Sales February $1,000 (peach). "
+            "Cost / titles TBD — not in Income I8 until Cost. Distinct from 2022 Saharan bracelets.",
         ),
         (
             "10. Mosaics Cost $90,000 vs Mercury $50,000",
@@ -729,7 +734,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws["B3"].fill = NAVY
     ws["A3"].font = WHITE
     ws["B3"].font = WHITE
-    confirmed_idx = {6, 7, 8}  # 1-based question numbers
+    confirmed_idx = {6, 7, 8, 9}  # 1-based question numbers
     for i, (q, detail) in enumerate(questions, start=4):
         qnum = i - 3
         fill = GREEN if qnum in confirmed_idx else YELLOW
@@ -756,6 +761,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
         ("David Aaron Limited", "$13,595 (6/24) consultant fee → EPGC Consultant June. Not a sale."),
         ("Koziol / Ariadne", "$150,000 IN 10/20 + $150,000 OUT 10/21 LOCKED pass-through — not P&L"),
         ("Wise expertise write-ups", "$334.17 (7/9) + $658.63 (10/30) = $992.80 → EPGC Consultant Fees expense. Dec $565.75 still reimbursed / not P&L."),
+        ("Aquinas Hobor books", "$1,000 IN 2/4 LOCKED books sold → EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost)."),
     ]
     for i, (k, v) in enumerate(locked, start=16):
         ws.cell(i, 1, k).font = CG
@@ -896,6 +902,57 @@ def reclass_david_aaron(ws: Worksheet) -> None:
         )
 
 
+def lock_aquinas_books(ws: Worksheet) -> None:
+    """Always add/refresh the Aquinas books sale. patch_art_sales returns early after Newstar."""
+    sale_note = (
+        "LOCKED 2026-09-20: books sold to Aquinas. $1,000 cash on EPGC Art Sales February. "
+        "Cost / titles TBD — not in Income I8 until Cost. Distinct from 2022 Saharan bracelets. Not tax advice."
+    )
+    if _already_has(ws, "Books sold to Aquinas Hobor"):
+        for r in range(1, (ws.max_row or 1) + 1):
+            a = str(ws.cell(r, 1).value or "")
+            if "Books sold to Aquinas Hobor" in a and not a.startswith("2025 Mercury"):
+                ws.cell(r, 1).fill = GREEN
+                ws.cell(r, 2, "Aquinas Hobor").fill = GREEN
+                f = ws.cell(r, 6, 1000)
+                f.number_format = ACCT
+                f.fill = GREEN
+                ws.cell(r, 7, datetime(2025, 2, 4))
+                ws.cell(r, 7).number_format = "YYYY-MM-DD"
+                ws.cell(r, 7).fill = GREEN
+                ws.cell(r, 8, f'=IF(C{r}="","",F{r}-C{r})')
+                ws.cell(r, 9, sale_note).fill = GREEN
+                for col in range(1, 10):
+                    ws.cell(r, col).font = CG
+                    ws.cell(r, col).fill = GREEN
+        return
+    last = 1
+    for r in range(1, (ws.max_row or 1) + 1):
+        if any(ws.cell(r, c).value not in (None, "") for c in range(1, 10)):
+            last = r
+    start = last + 2
+    ws.cell(start, 1, "2025 Mercury 8291 — Books sold to Aquinas Hobor (LOCKED)")
+    ws.cell(start, 1).font = CG_B
+    ws.cell(start, 1).fill = GREEN
+    try:
+        ws.merge_cells(start_row=start, start_column=1, end_row=start, end_column=9)
+    except Exception:
+        pass
+    r = start + 1
+    ws.cell(r, 1, "Books sold to Aquinas Hobor (titles TBD)")
+    ws.cell(r, 2, "Aquinas Hobor")
+    ws.cell(r, 5, "Aquinas Hobor")
+    f = ws.cell(r, 6, 1000)
+    f.number_format = ACCT
+    ws.cell(r, 7, datetime(2025, 2, 4))
+    ws.cell(r, 7).number_format = "YYYY-MM-DD"
+    ws.cell(r, 8, f'=IF(C{r}="","",F{r}-C{r})')
+    ws.cell(r, 9, sale_note)
+    for col in range(1, 10):
+        ws.cell(r, col).font = CG
+        ws.cell(r, col).fill = GREEN
+
+
 def patch_art_sales(ws: Worksheet) -> None:
     # Restore net formulas on Berk lots 51–70; F71 stays $30,000 lump.
     for r in range(51, 71):
@@ -922,7 +979,8 @@ def patch_art_sales(ws: Worksheet) -> None:
         "Plutus $50,000 of mosaics $90,000 Cost — $40,000 of Cost not on 8291 (ASK). "
         "Newstar $23,581 is jewelry fabrication COGS, parked below — not in sold-lot Cost "
         "(Berk gem/scarab lots already sold in February). "
-        "David Aaron $13,595 (6/24) is LOCKED consultant fee — not a sale (EPGC Consultant June). Not tax advice."
+        "David Aaron $13,595 (6/24) is LOCKED consultant fee — not a sale (EPGC Consultant June). "
+        "Aquinas Hobor $1,000 (2/4) is LOCKED books sold — EPGC Art Sales February; Cost TBD (not in I8). Not tax advice."
     )
     ws["A78"].fill = GREEN
     ws["A78"].alignment = WRAP
@@ -933,6 +991,7 @@ def patch_art_sales(ws: Worksheet) -> None:
     ws.row_dimensions[78].height = 48
 
     reclass_david_aaron(ws)
+    lock_aquinas_books(ws)
 
     # Insert Newstar / Fortuna ASK rows once. Do not insert David Aaron as a sale.
     if _already_has(ws, "Newstar Jewelers — jewelry from intaglios"):
@@ -1012,7 +1071,8 @@ def patch_income(ws: Worksheet, art_net: Decimal) -> None:
         "I6 524 #2 STR platform net LOCKED. I7 GCM 1099-NEC $21,500. "
         f"I8 Art net ${money(art_net):,.2f} = MATCHED Mercury deals only "
         "(Berk lots $30,000 − $22,944.94 Cost) + seals $1,000 + mosaics $15,000. "
-        "Excludes Sale 6428 $11,000 until Cost. David Aaron $13,595 is EPGC Consultant June "
+        "Excludes Sale 6428 $11,000 until Cost. Excludes Aquinas books $1,000 until Cost. "
+        "David Aaron $13,595 is EPGC Consultant June "
         "(not I8). Erdal/Aysel/EOEB/L5 ASK. Not tax advice."
     )
     ws["A12"].alignment = WRAP
@@ -1060,7 +1120,8 @@ def summarize(rows: list[dict]) -> dict:
         "boa_out": sum((-r["amount"] for r in boa), D(0)),
         "david_aaron": D("13595.00"),
         "wise_expertise": D("334.17") + D("658.63"),
-        "art_sale_locked_gross": D("14000") + D("30000") + D("105000"),
+        "aquinas_books": D("1000.00"),
+        "art_sale_locked_gross": D("14000") + D("30000") + D("105000") + D("1000"),
         "art_net_locked": (D("30000") - D("22944.94")) + D("1000") + D("15000"),
         "koziol": D("150000"),
     }
@@ -1112,21 +1173,23 @@ Income + properties (unchanged this pass):
 LOCKED this pass
 - Coinbase ACH net ${money(sums['coinbase_net']):,.2f} (funded ${money(-sums['coinbase_out']):,.2f} / back ${money(sums['coinbase_in']):,.2f}) → Investments. Not EPGC. Not the Coinbase 6108 card.
 - Newstar Jewelers ${money(sums['newstar']):,.2f} → jewelry fabrication COGS (intaglios, engraved gems, scarabs). Not EPGC operating.
-- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21).
+- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21) + Aquinas books $1,000 (2/4).
 - Seals Cost $13,000 = Fortuna 1/8. Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
 - BoA 9922 transfers ${money(sums['boa_out']):,.2f} = owner draws, not P&L.
 - Dec 2 Wise $565.75 reimbursed by EOEB — not income.
 - David Aaron Limited $13,595 (6/24) → EPGC Consultant June. User: consultant fee, not a sale.
 - Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → LOCKED pass-through. Not P&L.
 - Wise $334.17 (7/9) + $658.63 (10/30) → EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed.
+- Aquinas Hobor $1,000 (2/4) → books sold. EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost).
 
-EPGC 2025 Art Sales is only those matched sales ($149,000 cash: Jan $14,000 / Feb $135,000).
+EPGC 2025 Art Sales is MATCHED/LOCKED cash ($150,000: Jan $14,000 / Feb $136,000).
 EPGC Consultant June is $13,595 (David Aaron). EOEB remainder / L5 still ASK — not on Consultant.
 
 ANSWERED
 6. David Aaron Limited $13,595 (6/24) — LOCKED consultant fee (EPGC Consultant June).
 7. Wise $334.17 + $658.63 — LOCKED business expenses (expertise write-ups) on EPGC Consultant Fees.
 8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
+9. Aquinas Hobor $1,000 (2/4) — LOCKED books sold (EPGC Art Sales February; Cost TBD).
 
 ASK remaining
 1. EOEB remainder ${money(sums['eoeb_remainder']):,.2f} after mosaics — advisory or more sales? Is Jan 16 $1,000 the Canosan horse?
@@ -1134,10 +1197,9 @@ ASK remaining
 3. Fortuna OUT remaining ${money(sums['fortuna_remainder_out']):,.2f} — inventory objects?
 4. Erdal IN ${money(sums['erdal_in']):,.2f} — sales to Erdal?
 5. Aysel Dere $50,000 IN (7/18)
-9. Aquinas Hobor $1,000 (2/4)
 10. Where is the other $40,000 of mosaics Cost?
 
-Income I8 Art net is ${money(sums['art_net_locked']):,.2f} from MATCHED deals only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 still waits on Cost. Consultant is EPGC, not I8.
+Income I8 Art net is ${money(sums['art_net_locked']):,.2f} from MATCHED deals with Cost only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost. Consultant is EPGC, not I8.
 """
     path.write_text(text, encoding="utf-8")
 
@@ -1192,8 +1254,8 @@ def main() -> None:
         consultant_months,
         consultant_fees_months,
         (
-            "2025 Mercury 2026-09-20: Art Sales = MATCHED cash only "
-            "(Berk $14,000 Jan + Berk $30,000 / mosaics $105,000 Feb = $149,000). "
+            "2025 Mercury 2026-09-20: Art Sales = MATCHED/LOCKED cash "
+            "(Berk $14,000 Jan + Berk $30,000 / mosaics $105,000 / Aquinas books $1,000 Feb = $150,000). "
             "Consultant June $13,595 = David Aaron Limited LOCKED (user: consultant fee, not a sale). "
             "Consultant Fees July $334.17 + October $658.63 = Wise expertise write-ups LOCKED "
             f"(${money(sums['wise_expertise']):,.2f}). "
@@ -1201,6 +1263,7 @@ def main() -> None:
             "Koziol/Ariadne $150,000 LOCKED pass-through — not P&L. "
             "Coinbase is Investments, not this tab. Newstar $23,581 is Art Sales COGS, not operating expense. "
             "Dec Wise $565.75 reimbursed — not on Consultant Fees. "
+            "Aquinas books Cost TBD — cash on Art Sales, not in I8. "
             "GCM 1099 is personal. Not tax advice."
         ),
     )
@@ -1284,6 +1347,7 @@ def main() -> None:
             "david_aaron_consultant": float(sums["david_aaron"]),
             "koziol_ariadne_passthrough": float(sums["koziol"]),
             "wise_expertise_writeups": float(sums["wise_expertise"]),
+            "aquinas_books_sale": float(sums["aquinas_books"]),
         },
         "ask": {
             "eoeb_remainder": float(sums["eoeb_remainder"]),
@@ -1291,7 +1355,7 @@ def main() -> None:
             "fortuna_remainder_out": float(sums["fortuna_remainder_out"]),
             "erdal_in": float(sums["erdal_in"]),
             "aysel": float(sums["aysel"]),
-            "aquinas_hobor": 1000.0,
+            "aquinas_books_cost_tbd": True,
             "mosaics_cost_missing_on_mercury": 40000.0,
         },
         "epgc_art_sales_2025_monthly": [float(x) for x in art_sales_months],
@@ -1321,6 +1385,12 @@ def main() -> None:
         pkt = json.loads(PACKET.read_text(encoding="utf-8"))
         pkt["updated"] = "2026-09-20"
         pkt["mercury_8291"] = payload
+        pkt["xlsx_note"] = (
+            "2026-09-20 Q6–Q9: David Aaron $13,595 Consultant June; "
+            "Wise $992.80 Consultant Fees (expertise write-ups); "
+            "Koziol/Ariadne $150k pass-through; Aquinas books $1,000 Art Sales February (Cost TBD). "
+            "Art Sales MATCHED/LOCKED $150,000. I8 $23,055.06 (excludes books until Cost)."
+        )
         PACKET.write_text(json.dumps(pkt, indent=2), encoding="utf-8")
 
     print("n", sums["n"])
@@ -1336,6 +1406,8 @@ def main() -> None:
     print("consultant months", [float(x) for x in consultant_months], "year", float(sum(consultant_months)))
     print("consultant fees months", [float(x) for x in consultant_fees_months], "year", float(sum(consultant_fees_months)))
     print("art net locked", float(sums["art_net_locked"]))
+    print("aquinas books", float(sums["aquinas_books"]))
+    print("art sale locked gross", float(sums["art_sale_locked_gross"]))
     print("saved", XLSX, XLSX.stat().st_size)
     print("pack", pack_path, pack_path.stat().st_size)
 
