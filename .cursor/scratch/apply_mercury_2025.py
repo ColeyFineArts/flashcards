@@ -689,7 +689,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws["A1"] = (
         "ASK — remaining Mercury 8291 questions. "
         "Q6 consultant, Q7 Wise expertise, Q8 pass-through, Q9 Aquinas books LOCKED (green). "
-        "Q1/Q2 mixed pattern CONFIRMED, dollars unallocated (yellow). Not tax advice."
+        "Q1/Q2 mixed pattern CONFIRMED (blue) — remainder dollars unallocated until invoice split. Not tax advice."
     )
     ws["A1"].font = CG_B
     ws.merge_cells("A1:C1")
@@ -699,14 +699,17 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
             "1. EOEB LLC remainder after mosaics — MIXED PATTERN CONFIRMED, dollars unallocated",
             f"${sums['eoeb_remainder']:,.2f} of EOEB IN is not mosaics $105,000 and not Wise reimburse $565.75. "
             "User 2026-09-20: EOEB is mixed art sales AND advisory/consultant fees. "
-            "Do NOT dump this remainder onto Consultant or Art Sales. Invoice-level split still ASK. "
-            "Jan 16 $1,000 Canosan-horse question STILL OPEN (Art Sales horse is to Erdal; this cash is EOEB).",
+            "Do NOT dump this remainder onto Consultant or Art Sales. Mark each invoice sale vs advisory: "
+            "1/16 $1,000 (Canosan-horse STILL OPEN — Art Sales horse is to Erdal, this cash is EOEB); "
+            "3/10 $14,000; 5/1 $21,000; 5/13 $16,200; 6/12 $25,000 + $3,300; 7/8 $2,000; "
+            "8/29 $10,000; 9/19 $5,000; 9/25 $3,100; 10/1 $10,000; 10/15 $16,000; 10/24 $1,500; 10/31 $2,170.",
         ),
         (
             "2. L5 (all seven invoices) — MIXED PATTERN CONFIRMED, dollars unallocated",
             f"${sums['l5']:,.2f}. User 2026-09-20: L5 is mixed art sales AND advisory/consultant fees. "
-            "Do NOT dump onto Consultant or Art Sales. Invoice-level split still ASK. "
-            "The 7/15 $50,000 still sits in the Aysel $50k / Fortuna $45k week.",
+            "Do NOT dump onto Consultant or Art Sales. Mark each invoice sale vs advisory: "
+            "7/11 $8,534.79; 7/15 $50,000 + $2,500 (same week as Aysel $50k / Fortuna $45k); "
+            "9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26.",
         ),
         (
             "3. Fortuna / Erdal Dere OUT after seals",
@@ -755,9 +758,15 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws["A3"].font = WHITE
     ws["B3"].font = WHITE
     confirmed_idx = {6, 7, 8, 9}  # 1-based question numbers
+    mixed_idx = {1, 2}  # pattern confirmed; dollars still unallocated
     for i, (q, detail) in enumerate(questions, start=4):
         qnum = i - 3
-        fill = GREEN if qnum in confirmed_idx else YELLOW
+        if qnum in confirmed_idx:
+            fill = GREEN
+        elif qnum in mixed_idx:
+            fill = BLUE
+        else:
+            fill = YELLOW
         ws.cell(i, 1, q).font = CG_B
         ws.cell(i, 1).fill = fill
         ws.cell(i, 1).alignment = WRAP
@@ -782,6 +791,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
         ("Koziol / Ariadne", "$150,000 IN 10/20 + $150,000 OUT 10/21 LOCKED pass-through — not P&L"),
         ("Wise expertise write-ups", "$334.17 (7/9) + $658.63 (10/30) = $992.80 → EPGC Consultant Fees expense. Dec $565.75 still reimbursed / not P&L."),
         ("Aquinas Hobor books", "$1,000 IN 2/4 LOCKED book sale → EPGC Art Sales February +$1,000 (Feb $136,000; matched cash $150,000). Cost / titles TBD (not in I8 until Cost, same as Sale 6428)."),
+        ("EOEB / L5 mixed pattern", "CONFIRMED mixed art sales AND advisory/consultant. Remainder $130,270 / $87,396.32 unallocated — not on P&L until invoice split. Jan 16 $1,000 Canosan-horse still open."),
     ]
     for i, (k, v) in enumerate(locked, start=16):
         ws.cell(i, 1, k).font = CG
@@ -991,6 +1001,61 @@ def lock_aquinas_books(ws: Worksheet) -> None:
     _clear_parked_aquinas(ws, shifted)
 
 
+def _fix_art_sales_footer(ws: Worksheet, note: str) -> None:
+    """Keep Sale 6428 / Aquinas / Total / one MATCHED note in that order."""
+    sale_row = aquinas_row = total_row = inv_row = None
+    matched_rows = []
+    for r in range(70, min((ws.max_row or 80) + 1, 90)):
+        a = str(ws.cell(r, 1).value or "")
+        if a.startswith("Sale 6428"):
+            sale_row = r
+        elif a == "Books (titles TBD)":
+            aquinas_row = r
+        elif a == "Total":
+            total_row = r
+        elif a.startswith("Mercury 8291 MATCHED"):
+            matched_rows.append(r)
+        elif a.startswith("Art Purchases"):
+            inv_row = r
+    for r in sorted(matched_rows[1:], reverse=True):
+        ws.delete_rows(r)
+        if total_row and total_row > r:
+            total_row -= 1
+        if inv_row and inv_row > r:
+            inv_row -= 1
+        matched_rows = [x if x < r else x - 1 for x in matched_rows if x != r]
+    if total_row is None:
+        insert_at = (aquinas_row or sale_row or 76) + 1
+        to_unmerge = [str(rng) for rng in list(ws.merged_cells.ranges) if rng.min_row <= insert_at <= rng.max_row]
+        for rng in to_unmerge:
+            try:
+                ws.unmerge_cells(rng)
+            except Exception:
+                pass
+        ws.insert_rows(insert_at)
+        ws.cell(insert_at, 1, "Total").font = CG
+        h = ws.cell(insert_at, 8, "=SUM(H51:H75)")
+        h.number_format = ACCT
+        h.font = CG
+        total_row = insert_at
+        matched_rows = [x + 1 if x >= insert_at else x for x in matched_rows]
+        if inv_row and inv_row >= insert_at:
+            inv_row += 1
+    note_row = matched_rows[0] if matched_rows else (total_row + 1 if total_row else 79)
+    # If MATCHED landed on Total or Aquinas, push it after Total.
+    a_note = str(ws.cell(note_row, 1).value or "")
+    if note_row == total_row or a_note == "Total" or a_note == "Books (titles TBD)":
+        note_row = total_row + 1
+    ws.cell(note_row, 1, note)
+    ws.cell(note_row, 1).fill = GREEN
+    ws.cell(note_row, 1).alignment = WRAP
+    try:
+        ws.merge_cells(start_row=note_row, start_column=1, end_row=note_row, end_column=9)
+    except Exception:
+        pass
+    ws.row_dimensions[note_row].height = 48
+
+
 def patch_art_sales(ws: Worksheet) -> None:
     # Restore net formulas on Berk lots 51–70; F71 stays $30,000 lump.
     for r in range(51, 71):
@@ -1011,25 +1076,19 @@ def patch_art_sales(ws: Worksheet) -> None:
     ws["G73"].number_format = "YYYY-MM-DD"
     ws["C74"].fill = GREEN
     ws["F74"].fill = GREEN
-    ws["A78"] = (
+    matched_note = (
         "Mercury 8291 MATCHED: Berk $14,000 (1/10 seals) + $30,000 (2/7 lots). "
         "EOEB $105,000 (2/21 mosaics). Fortuna $13,000 (1/8 seals Cost). "
         "Plutus $50,000 of mosaics $90,000 Cost — $40,000 of Cost not on 8291 (ASK). "
         "Newstar $23,581 is jewelry fabrication COGS, parked below — not in sold-lot Cost "
         "(Berk gem/scarab lots already sold in February). "
         "David Aaron $13,595 (6/24) is LOCKED consultant fee — not a sale (EPGC Consultant June). "
-        "Aquinas Hobor $1,000 (2/4) is LOCKED books sold — EPGC Art Sales February; Cost TBD (not in I8). Not tax advice."
+        "Aquinas Hobor $1,000 (2/4) is LOCKED book sale — EPGC Art Sales February; Cost TBD (not in I8). Not tax advice."
     )
-    ws["A78"].fill = GREEN
-    ws["A78"].alignment = WRAP
-    try:
-        ws.merge_cells("A78:I78")
-    except Exception:
-        pass
-    ws.row_dimensions[78].height = 48
 
     reclass_david_aaron(ws)
     lock_aquinas_books(ws)
+    _fix_art_sales_footer(ws, matched_note)
 
     # Insert Newstar / Fortuna ASK rows once. Do not insert David Aaron as a sale.
     if _already_has(ws, "Newstar Jewelers — jewelry from intaglios"):
@@ -1191,7 +1250,14 @@ def export_sheet(wb, name: str, path: Path) -> None:
     out.save(path)
 
 
-def write_start_here(path: Path, sums: dict, mercury_sheet_url: str, epgc_url: str, income_url: str) -> None:
+def write_start_here(
+    path: Path,
+    sums: dict,
+    mercury_sheet_url: str,
+    epgc_url: str,
+    income_url: str,
+    lock_url: str = "(Drive URL filled after upload)",
+) -> None:
     text = f"""START HERE — Mercury Bank 8291 (2026-09-20)
 
 Not tax advice. Same Personal Income.xlsx tabs as last year.
@@ -1199,13 +1265,16 @@ Not tax advice. Same Personal Income.xlsx tabs as last year.
 Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
 64 unique 2025 cash transactions from the monthly statements + Monarch.
 
-Open the classification ledger (answer the ASK tab):
+Open ASK (Q6–Q9 locked green; Q1/Q2 mixed pattern confirmed, dollars unallocated):
 {mercury_sheet_url}
 
-EPGC + Art Sales + GCM + Investments (last-year tabs, Art Sales unbundled):
+EPGC LLC 2025 (Art Sales cash $150,000 Jan $14,000 / Feb $136,000; Consultant June $13,595; Consultant Fees $992.80):
 {epgc_url}
 
-Income + properties (unchanged this pass):
+Lock sheet Q6 consultant / Q7 write-ups / Q8 pass-through / Q9 Aquinas books + mixed unallocated:
+{lock_url}
+
+Income + properties (I8 still $23,055.06 — Aquinas Cost TBD):
 {income_url}
 
 LOCKED this pass
@@ -1472,12 +1541,19 @@ def main() -> None:
             pass
     JSON_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
+    drive = payload.get("drive") or {}
+
+    def gsheet(key: str) -> str:
+        fid = drive.get(key)
+        return f"https://docs.google.com/spreadsheets/d/{fid}/edit" if fid else "(Drive URL filled after upload)"
+
     write_start_here(
         CSV_DIR / "START_HERE_mercury.txt",
         sums,
-        mercury_sheet_url="(Drive URL filled after upload)",
-        epgc_url="(Drive URL filled after upload)",
+        mercury_sheet_url=gsheet("ask_mercury"),
+        epgc_url=gsheet("epgc_2025_matched"),
         income_url="https://docs.google.com/spreadsheets/d/1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k/edit",
+        lock_url=gsheet("mercury_ledger_q6_q9"),
     )
     write_compact_lock(CSV_DIR / "LOCK_Mercury_Q6_Q9.csv", sums)
 
