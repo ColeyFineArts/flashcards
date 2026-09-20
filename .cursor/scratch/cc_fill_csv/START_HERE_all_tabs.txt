@@ -2,25 +2,39 @@ START HERE — one spreadsheet like last year (2026-09-20)
 
 Not tax advice. Organizational packet only.
 
-Open this Google Sheet (EPGC LLC, Art Sales and Purchases, and GCM are tabs in this file):
-https://docs.google.com/spreadsheets/d/1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo/edit
+Open this Google Sheet (EPGC LLC, Art Sales and Purchases, GCM, and Carriers are tabs in this file):
+https://docs.google.com/spreadsheets/d/1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc/edit
 
-Tabs: Income | 216 N. Oak Park Ave (LTR) | 524 Ferdinand Ave, Unit 2 | 524 Ferdinand Ave, Unit 1 | EPGC LLC | Art Sales and Purchases | GCM | Investments | ASK Mercury
+Tabs: Income | 216 N. Oak Park Ave (LTR) | 524 Ferdinand Ave, Unit 2 | 524 Ferdinand Ave, Unit 1 | EPGC LLC | Art Sales and Purchases | GCM | Investments | ASK Mercury | Carriers
 
-Why those three tabs were missing
-Last year’s Personal Income.xlsx was one workbook. Drive native xlsx conversion failed, so CSVs were converted to Google Sheets and the packet split: Income+Properties (no EPGC/Art/GCM tabs) vs a separate EPGC/Art/GCM file. Opening Income+Properties looked like last year but those tabs were in the other file. This file puts them back together.
+Why those tabs were missing
+Last year’s Personal Income.xlsx was one workbook. Drive native xlsx conversion failed, so CSVs were converted to Google Sheets and the packet split. This converted Google Sheet puts them back together. Do not open the native xlsx.
 
 216 LTR insurance LOCKED
-Lemonade $514.00 cash 2025-10-03 on Megan Chase (1702) is booked on 216 RENTER'S INSURANCE in October (cash, not amortized).
-2023 Lemonade $321 = Excel $26.75/mo; 2024 $421 ≈ Excel $35.08/mo — same Oct 3 merchant/card.
+Lemonade $42.84/mo x 12 = $514.08 on 216 RENTER'S INSURANCE (amortized like 2023 $26.75 and 2024 $35.08).
+Cash $514.00 on 2025-10-03 Megan Chase (1702). Sheet is 8 cents over cash. Not October lump $514.
+User said "216 N Grove" — this Oak Park #1Z unit, not 827 Grove (closed 12/18).
 Travelers was Ferdinand (524) home. Geico was the cars. State Farm 2025 bundle is Ferdinand car+home — only the home share is on 524, not 216.
 
+216 2025 costs LOCKED (same last-year rows)
+Mortgage $1,226.25 Jan-Oct / $1,177.52 Nov-Dec (Jan-Jun yellow WAIT 8507).
+HOA $421.53 x 12 (Jan-May yellow WAIT 8507).
+Chris Brennan $150 INTERIOR August.
+Imelda $300 MOVE OUT FEE October.
+Joan $675 INTERIOR REPAIR December.
+Ace keys $11 INTERIOR December.
+Smoke detector Amazon ASK.
+
 Copies
-Packet: https://docs.google.com/spreadsheets/d/1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo/edit
-07 Income: https://docs.google.com/spreadsheets/d/128pxCH1qJM0mihCG8gis3Nwi4iI18X3Wg01zSho0Zw4/edit
-Root: https://docs.google.com/spreadsheets/d/1AJcCKiZegL5Cik3Iigzk_TQEvT8Yq-TmraoJ5OL2rwI/edit
-START HERE packet: https://docs.google.com/document/d/1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM/edit
+Packet: https://docs.google.com/spreadsheets/d/1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc/edit
+07 Income: https://docs.google.com/spreadsheets/d/1QEOcn99ud9qfxP_-E-dP4nXRSWVFSpk0hM5_DMcjTGc/edit
+Root: https://docs.google.com/spreadsheets/d/1TAU2YRr2yN47s889Gu9Bzdq0O8pgAccw9mfNJOGAQP0/edit
+
+Mercury live IDs kept: ASK 1TeRpRYc / EPGC 1nZkTISK / lock 1kgFtNXa
+Fortuna Venus + Belt successor: 1spLPY72
+START HERE packet: https://docs.google.com/document/d/1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE/edit
+START HERE 07: https://docs.google.com/document/d/1mTaxWpqm8oY3mHcnho-frWYZaU-IJUsUxmsf8GoUmiA/edit
+START HERE root: https://docs.google.com/document/d/1o3dgQNGR7Jw7NrrzBAAD69yENO94gOOkwv81MyU7ymw/edit
 Mercury START HERE successor: https://docs.google.com/document/d/1aJ2XjUQsJ4ONDAZ4irdlYuFIvvuI8GOEczrRW5nUdrI/edit
 
-Mercury live IDs kept: ASK 1r6-OcV1… / EPGC 1nZkTISK… / lock 1vPLG0kR…
-Fortuna Venus + Belt successor: 1spLPY72…
+Oct-lump sheet 1BFOQzy0 and old START HERE 1AMZZvar are in _SUPERSEDED.

@@ -2,13 +2,13 @@
   "updated": "2026-09-20",
   "correction": "CPA deliverable matches prior Personal Income.xlsx look (2023|2024|2025 columns; RENTAL INCOME / MORTGAGE / HOA)",
   "drive_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
-  "start_here": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
-  "start_here_packet": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
+  "start_here": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
+  "start_here_packet": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
   "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
   "xlsx_bytes_local": 121179,
-  "like_last_year_income_properties": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
-  "like_last_year_income_properties_packet": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+  "like_last_year_income_properties": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
+  "like_last_year_income_properties_packet": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
   "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
   "like_last_year_epgc_art_gcm_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
   "xlsx_note": "2026-09-20 carrier map locked: Lemonade=216 Oak Park LTR $42.84/mo; Travelers=524 home leftover $0; Geico=524 cars (personal). 216 costs: mortgage/HOA cash + yellow WAIT 8507; Brennan $150; Imelda $300 move-out; Joan $675 INTERIOR REPAIR; Ace keys $11. Smoke detector Amazon ASK. Not tax advice.",
@@ -44,9 +44,9 @@
   },
   "sheet_ids": {
     "folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
-    "start_here": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
-    "start_here_packet": "1AMZZvar-9eQ1UK4sECP9FOSgm9EstMfduc_DS3JNiSM",
-    "like_last_year_income_properties": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+    "start_here": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
+    "start_here_packet": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
+    "like_last_year_income_properties": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
     "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
     "ask_cc": "1snkLOQ5kI0R8Vn7C77eDMcQN8j_zvZyF-VIGs2cbdj0",
     "inflow_ledger": "1PS7Pnl2oSda89lKFdCkg7ZfpLm7862jqs-WJOCDt7DY",
@@ -70,10 +70,15 @@
     "start_here_insurance": "1T-Ze1GBqpHzE9XiZqXwa1wMJwJfJ_Do4nsThzjmgyhQ",
     "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
     "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA",
-    "like_last_year_all_tabs": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
+    "like_last_year_all_tabs": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
     "oak_park_ltr": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo",
     "ask_mercury_live": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
-    "mercury_lock_live": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg"
+    "mercury_lock_live": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg",
+    "like_last_year_all_tabs_07": "1QEOcn99ud9qfxP_-E-dP4nXRSWVFSpk0hM5_DMcjTGc",
+    "like_last_year_all_tabs_root": "1TAU2YRr2yN47s889Gu9Bzdq0O8pgAccw9mfNJOGAQP0",
+    "start_here_all_tabs": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
+    "start_here_all_tabs_07": "1mTaxWpqm8oY3mHcnho-frWYZaU-IJUsUxmsf8GoUmiA",
+    "start_here_all_tabs_root": "1o3dgQNGR7Jw7NrrzBAAD69yENO94gOOkwv81MyU7ymw"
   },
   "mercury_8291": {
     "updated": "2026-09-20",
@@ -259,9 +264,9 @@
     "account": "Megan Chase 1702",
     "rounding_vs_cash": 0.08
   },
-  "like_last_year_all_tabs": "1BFOQzy0KehD7yOC7_Atd3736dVlfIA1771eMENK7EGo",
-  "like_last_year_all_tabs_07": "128pxCH1qJM0mihCG8gis3Nwi4iI18X3Wg01zSho0Zw4",
-  "like_last_year_all_tabs_root": "1AJcCKiZegL5Cik3Iigzk_TQEvT8Yq-TmraoJ5OL2rwI",
+  "like_last_year_all_tabs": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
+  "like_last_year_all_tabs_07": "1QEOcn99ud9qfxP_-E-dP4nXRSWVFSpk0hM5_DMcjTGc",
+  "like_last_year_all_tabs_root": "1TAU2YRr2yN47s889Gu9Bzdq0O8pgAccw9mfNJOGAQP0",
   "oak_park_2025_costs": {
     "mortgage_sheet": 14617.54,
     "mortgage_cash_jul_dec": 7260.04,
@@ -297,5 +302,7 @@
     "drive_insurance_start_packet": "1d9nAaPqoOvKey0UHPwGtbR3o9nP1HRoKv6ktEM6htPQ",
     "drive_ask": "1snkLOQ5kI0R8Vn7C77eDMcQN8j_zvZyF-VIGs2cbdj0",
     "drive_travelers_geico_lock": "1jOS-4NOl8SiWnpJMq9hRem16fPnluOxz35MbxrVq3dI"
-  }
+  },
+  "start_here_all_tabs_07": "1mTaxWpqm8oY3mHcnho-frWYZaU-IJUsUxmsf8GoUmiA",
+  "start_here_all_tabs_root": "1o3dgQNGR7Jw7NrrzBAAD69yENO94gOOkwv81MyU7ymw"
 }
