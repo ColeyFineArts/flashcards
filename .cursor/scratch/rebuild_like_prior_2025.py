@@ -132,13 +132,15 @@ def col_widths_from(src_ws: Worksheet, dest_ws: Worksheet, src_start: int, dest_
 # --- 2025 216 Oak Park (cash-basis) ---
 OAK_RENT = [1950, 1950, 1950, 1950, 1950, 1950, 1450, 2450, 0, 0, 0, 3900]
 # Rocket 8507: missing Jan–Jun in Monarch (Jan–May statements not in export; June 8507 has no Rocket)
-OAK_MORTGAGE = [0, 0, 0, 0, 0, 0, 1226.25, 1226.25, 1226.25, 1226.25, 1177.52, 1177.52]
+OAK_MORTGAGE = [1226.25, 1226.25, 1226.25, 1226.25, 1226.25, 1226.25, 1226.25, 1226.25, 1226.25, 1226.25, 1177.52, 1177.52]
 OAK_MORTGAGE_WAIT = [0, 1, 2, 3, 4, 5]
 # HOA Santa Maria: Jun–Dec on 8507
-OAK_HOA = [0, 0, 0, 0, 0, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53]
+OAK_HOA = [421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53, 421.53]
 OAK_HOA_WAIT = [0, 1, 2, 3, 4]
-OAK_INTERIOR = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 675]
-OAK_INS = [0, 0, 0, 0, 0, 0, 0, 0, 0, 514, 0, 0]  # Lemonade 10/3 cash LOCKED 216 LTR
+OAK_INTERIOR = [0, 0, 0, 0, 0, 0, 0, 150.0, 0, 0, 0, 11.0]  # Brennan Aug + Ace keys Dec
+OAK_REPAIR = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 675.0]  # Joan painting + repairs 12/1
+OAK_MOVEOUT = [0, 0, 0, 0, 0, 0, 0, 0, 0, 300.0, 0, 0]  # Imelda empty-apt cash 10/1
+OAK_INS = [42.84] * 12  # user $42.84/mo; Lemonade cash $514 10/3 amortized like 2023/2024
 
 # 524 Unit 2 2025 (from turbo; yard split back onto YARD SERVICE like 2024)
 U2_RENT = [0, 0, 0, 0, 0, 3479.60, 3180.81, 1757.50, 2690.16, 1261.64, 1509.84, 0]
@@ -181,19 +183,21 @@ def fill_216(ws: Worksheet) -> None:
     col_widths_from(ws, ws, 16, 29)
     ac = 29
     write_months(ws, 5, ac, OAK_RENT)
-    write_months(ws, 14, ac, OAK_INS, fill=GREEN)  # Lemonade LOCKED 216 LTR
+    write_months(ws, 14, ac, OAK_INS, fill=GREEN)  # $42.84/mo amortized Lemonade
     write_months(ws, 15, ac, OAK_INTERIOR)
+    write_months(ws, 16, ac, OAK_REPAIR)
     write_months(ws, 35, ac, OAK_MORTGAGE, wait_idx=OAK_MORTGAGE_WAIT)
     write_months(ws, 36, ac, OAK_HOA, wait_idx=OAK_HOA_WAIT)
+    write_months(ws, 38, ac, OAK_MOVEOUT)
     # Ask-Megan checklist → 2025 status
     ws["B60"] = "2025 (this column)"
     ws["B61"] = "Rent — filled from joint 0203 (Delach $1,450 + Ava $500; Joan $1,950 Dec + prepaid Jan). Vacant Oct + half Nov. Half-Nov $975 WAIT 8507."
-    ws["B62"] = "Mortgage — Rocket 8507 Jul–Oct $1,226.25, Nov–Dec $1,177.52. Jan–Jun yellow WAIT 8507 statements (June 8507 in Monarch has no Rocket)."
-    ws["B63"] = "HOA — Santa Maria C326 $421.53 Jun–Dec on 8507. Jan–May yellow WAIT 8507."
-    ws["B64"] = "LOCKED 2026-09-20: Lemonade $514 cash 10/3 Megan Chase is 216 LTR insurance (Oct cash, not amortized). 2023 $321 / 2024 $421 same Oct 3 pattern. Travelers/SF/Geico are not 216."
-    ws["B65"] = "Interior — 12/1 Zelle to Joan $675 repair (CONFIRMED). CPA may reclass interior vs exterior."
-    ws["B66"] = "Sch E: deduct Rocket 1098 interest, not full P+I. This sheet shows cash mortgage like 2023/2024."
-    ws["B67"] = "Jan 2025 occupancy cash hit 12/31/2024 — not in TY2025. 12/31/2025 $1,950 = Jan 2026 prepaid cash in TY2025."
+    ws["B62"] = "Mortgage — user $1,226.25/mo. Cash 8507 Jul–Oct $1,226.25 / Nov–Dec $1,177.52 (green). Jan–Jun $1,226.25 yellow WAIT 8507."
+    ws["B63"] = "HOA — user $421.53/mo Santa Maria C326. Jun–Dec cash 8507 green. Jan–May yellow WAIT 8507."
+    ws["B64"] = "Insurance — $42.84/mo × 12 = $514.08 amortized like 2023/2024. Lemonade cash $514.00 10/3 Megan Chase. Not Travelers/Geico/SF."
+    ws["B65"] = "Interior — Brennan $150 Aug (8507 check 8/18); Ace keys $11 Dec. Joan $675 painting → INTERIOR REPAIR Dec."
+    ws["B66"] = "Move-out — Imelda $300 empty-apt (user 9/30; cash 10/1) MOVE OUT FEE October. Other Imelda $150s not on 216."
+    ws["B67"] = "Smoke detector Amazon ASK. Sch E: deduct Rocket 1098 interest, not full P+I."
     ws["B68"] = "Not tax advice."
     for r in range(60, 69):
         ws.cell(r, 2).alignment = Alignment(wrap_text=True)

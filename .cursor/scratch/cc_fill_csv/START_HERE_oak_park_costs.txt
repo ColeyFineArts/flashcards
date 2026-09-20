@@ -1,0 +1,30 @@
+START HERE — 216 N. Oak Park 2025 costs (2026-09-20)
+
+Not tax advice. Organizational packet only. Same tab as last year’s Personal Income.xlsx.
+
+Your list is on the 216 tab (2025 columns AC–AN):
+
+LOCKED
+1. Mortgage $1,226.25/mo — cash Jul–Oct $1,226.25 and Nov–Dec $1,177.52 on Checking 8507.
+   Jan–Jun yellow $1,226.25 until 8507 statements show the ACH (not on Monarch).
+   Nov–Dec kept at cash $1,177.52 (2023 Excel also stepped when the payment changed).
+   Sch E deducts Rocket 1098 interest, not full P+I. This row is cash like 2023/2024.
+2. HOA $421.53 — Santa Maria C326 on 8507 Jun–Dec. Jan–May yellow $421.53 WAIT 8507.
+3. Insurance $42.84/mo × 12 = $514.08 on RENTER'S INSURANCE.
+   Same amortized Lemonade as 2023 ($26.75) and 2024 ($35.08). Cash $514.00 on 10/3 Megan Chase (8¢).
+   Travelers/Geico/State Farm are not 216.
+4. Chris Brennan exterminator $150 8/7 — INTERIOR August.
+   Cash: 8507 check posted 8/18 $150 (confirm payee on the 8507 PDF).
+5. Imelda $300 empty-apartment 9/30 — MOVE OUT FEE October.
+   Cash: joint 0203 Zelle 10/1 $300. 2023/24 move-out fee was October $200.
+   Other Imelda $150s are not on 216.
+6. Joan $675 painting + repairs 12/1 — INTERIOR REPAIR December (8507 Zelle).
+7. Key cutting $11 — Ace Hardware 12/8 Megan Chase → INTERIOR December.
+
+ASK
+- Smoke detector Amazon: no labeled charge. EQUIPMENT stays $0 until you point at the order.
+- Ace Hardware $17 same day as the $11 keys — 216 or not?
+- Confirm 8507 check 8/18 $150 payee = Chris Brennan.
+- WAIT MEGAN: 8507 statements for Jan–Jun Rocket and Jan–May HOA (yellow on the sheet).
+
+Do not re-run apply_checking_answers_2025.py.

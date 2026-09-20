@@ -8,26 +8,26 @@
 ,MARKETING / ADVERTISING,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C8:N8)
 ,SERVICE FEES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C9:N9)
 ,REMITTED TAX,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C10:N10)
-,INSURANCE,0,0,0,0,0,0,0,0,0,514.0,0,0,=SUM(C11:N11)
-,INTERIOR MAINTENANCE,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,675.0,=SUM(C12:N12)
+,INSURANCE,42.84,42.84,42.84,42.84,42.84,42.84,42.84,42.84,42.84,42.84,42.84,42.84,=SUM(C11:N11)
+,INTERIOR MAINTENANCE,0.0,0.0,0.0,0.0,0.0,0.0,0.0,150.0,0.0,0.0,0.0,686.0,=SUM(C12:N12)
 ,EXTERIOR REPAIRS,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C13:N13)
 ,VILLAGE WATER AND REFUSE,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C14:N14)
 ,GAS,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C15:N15)
 ,ELECTRIC,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C16:N16)
 ,INTERNET,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C17:N17)
-,CLEANING / TURNOVER,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C18:N18)
+,CLEANING / TURNOVER,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,300.0,0.0,0.0,=SUM(C18:N18)
 ,SUPPLIES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C19:N19)
 ,EQUIPMENT/APPLIANCE PURCHASES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C20:N20)
 ,LAND TAX,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C21:N21)
 ,LOANS INTEREST (from 1098),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C22:N22)
-,MORTGAGE (cash P+I — memo only),0,0,0,0,0,0,1226.25,1226.25,1226.25,1226.25,1177.52,1177.52,=SUM(C23:N23)
-,HOA,0,0,0,0,0,421.53,421.53,421.53,421.53,421.53,421.53,421.53,=SUM(C24:N24)
+,MORTGAGE (cash P+I — memo only),1226.25,1226.25,1226.25,1226.25,1226.25,1226.25,1226.25,1226.25,1226.25,1226.25,1177.52,1177.52,=SUM(C23:N23)
+,HOA,421.53,421.53,421.53,421.53,421.53,421.53,421.53,421.53,421.53,421.53,421.53,421.53,=SUM(C24:N24)
 ,OTHER,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C25:N25)
 ,TOTAL EXPENSES,=SUM(C8:C25),=SUM(D8:D25),=SUM(E8:E25),=SUM(F8:F25),=SUM(G8:G25),=SUM(H8:H25),=SUM(I8:I25),=SUM(J8:J25),=SUM(K8:K25),=SUM(L8:L25),=SUM(M8:M25),=SUM(N8:N25),=SUM(C26:N26)
 ,,,,,,,,,,,,,,
 ,YEAR-TO-DATE INCOME LESS EXPENSES,=C5-C26,=D5-D26,=E5-E26,=F5-F26,=G5-G26,=H5-H26,=I5-I26,=J5-J26,=K5-K26,=L5-L26,=M5-M26,=N5-N26,=SUM(C28:N28)
 ,,,,,,,,,,,,,,
-,"LTR after answers 2026-09-18 + insurance lock 2026-09-20: Ava CONFIRMED Delach co-tenant — keep $500/mo. TY2025 cash $19500.00 (Delach $11,600 + Ava $4,000 + Joan $3,900). Occupancy vacant October and half of November. Joan half-Nov $975 NOT booked — WAIT 8507. INTERIOR Dec $675 Joan repair. INSURANCE LOCKED: Lemonade $514 cash 2025-10-03 Megan Chase → October RENTER'S INSURANCE. Travelers/State Farm/Geico are not 216. HOA + Rocket cash from Monarch. Not tax advice.",,,,,,,,,,,,,
+,"LOCKED 2026-09-20 (user cost list, last-year Excel pattern). RENTER'S INSURANCE $42.84/mo × 12 = $514.08 (Lemonade cash $514.00 on 10/3 Megan Chase — 8¢ rounding, same amortize as 2023 $26.75 and 2024 $35.08). MORTGAGE: user $1,226.25/mo. Cash 8507 Jul–Oct $1,226.25 (green) / Nov–Dec $1,177.52 (green, escrow drop). Jan–Jun $1,226.25 yellow WAIT 8507 (not on Monarch). HOA Santa Maria C326 $421.53: Jun–Dec cash 8507 green; Jan–May $421.53 yellow WAIT 8507. Chris Brennan exterminator $150 8/7 → INTERIOR Aug (8507 check posted 8/18 $150). Imelda empty-apt cleaning $300 9/30 → MOVE OUT FEE October (cash 10/1 joint 0203; 2023/24 move-out was October). Other Imelda $150s left off 216 (524 STR pattern). Joan $675 12/1 painting+repairs → INTERIOR REPAIR December (8507 Zelle). Ace Hardware $11 12/8 Megan Chase → INTERIOR Dec keys. Same-day Ace $17 NOT booked. Smoke detector Amazon: no SKU on Monarch/Prime/Sapphire/BoA — EQUIPMENT stays $0 ASK. Sch E: deduct Rocket 1098 interest, not full P+I. Not tax advice.",,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
