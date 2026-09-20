@@ -11,7 +11,7 @@
   "like_last_year_income_properties_packet": "1qLmbezF77s8iKTV0UV9YUznkPlwzXyCm-Q50sXG_qBI",
   "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
   "like_last_year_epgc_art_gcm_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
-  "xlsx_note": "2026-09-20 Q6\u2013Q9 mixed: David Aaron $13,595 Consultant June; Wise $992.80 Consultant Fees; Koziol/Ariadne $150k pass-through; Aquinas books $1,000 Art Sales February (Cost TBD). Art Sales MATCHED/LOCKED $150,000 (Feb $136,000). I8 $23,055.06. EOEB/L5 mixed pattern confirmed, dollars unallocated.",
+  "xlsx_note": "2026-09-20 native Mercury CSV ingest: 0 new unique Sent cash vs the 64. Fortuna Venus $20k (5/9) + Roman Gold Belt $45k (7/21) LOCKED inventory (parked Cost). Aug Fortuna $20k unnamed (8/15 Monarch = 8/18 native). Aysel Monarch IN vs native Failed OUT still ASK. Q6\u2013Q9 + EOEB/L5 mixed unallocated unchanged. I8 $23,055.06.",
   "note": "Grove Collaborative \u2260 827 N Grove the house. Travelers = prior 524 home; Geico = personal auto. Only State Farm home share on 524 INSURANCE.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -58,9 +58,9 @@
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4",
-    "start_here_mercury": "1sOaEz-bokwz0tCwx6W-GGM14sIODJtm4wTWnBNXdlwQ",
-    "ask_mercury": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
-    "mercury_ledger": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg",
+    "start_here_mercury": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+    "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+    "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
     "sf_split": "1xhHImqExl03DhQvA55EEq-NDUtLwxBWrezy-QBX5qj4",
@@ -68,7 +68,8 @@
     "unit2_524": "1NUtDh7Ff5Ska6iM41DQtxrwmFnQLJpiFy4Ev0R2un8M",
     "lock_travelers_geico": "17j4SdPNU62FSCJSULu1Q_BGLYr3MRlJcdcyS80hXyvI",
     "start_here_insurance": "1SpTrXhctgacO8qPLTWo8ZSCiiLr1Zkj65XT86V1Xeeo",
-    "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY"
+    "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
+    "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA"
   },
   "mercury_8291": {
     "updated": "2026-09-20",
@@ -86,15 +87,19 @@
       "david_aaron_consultant": 13595.0,
       "koziol_ariadne_passthrough": 150000.0,
       "wise_expertise_writeups": 992.8,
-      "aquinas_books_sale": 1000.0
+      "aquinas_books_sale": 1000.0,
+      "fortuna_venus_inventory": 20000.0,
+      "fortuna_roman_gold_belt": 45000.0
     },
     "ask": {
       "eoeb_remainder": 130270.0,
       "l5": 87396.32,
       "eoeb_l5_pattern": "mixed art sales + advisory/consultant CONFIRMED; invoice-level split ASK; do not dump remainder",
-      "fortuna_remainder_out": 85000.0,
+      "fortuna_remainder_out": 20000.0,
+      "fortuna_named_inventory": 65000.0,
       "erdal_in": 57000.0,
       "aysel": 50000.0,
+      "aysel_native": "Monarch 7/18 +$50,000 IN vs native Failed 7/17 \u2212$50,000 OUT; not dumped",
       "mosaics_cost_missing_on_mercury": 40000.0,
       "eoeb_jan16_canosan_horse": 1000.0,
       "aquinas_books_cost_tbd": true
@@ -143,24 +148,61 @@
       0.0
     ],
     "epgc_consultant_fees": 992.8,
+    "native_csv": {
+      "drive_id": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU",
+      "title": "epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv",
+      "account": "Mercury Checking xx8291",
+      "n_rows": 65,
+      "sent_cash_rows": 63,
+      "sent_unique_keys": 62,
+      "new_unique_vs_64": 0,
+      "new_unique_keys": [],
+      "missing_from_native_sent": [
+        "2025-07-18 50000.00"
+      ],
+      "date_shift": "Fortuna $20,000 Monarch 2025-08-15 = Mercury native 2025-08-18 (same cash)",
+      "non_cash": [
+        {
+          "date": "2025-07-17",
+          "amount": -50000.0,
+          "status": "Failed",
+          "who": "Aysel Dere",
+          "reason": "Recipient account does not exist"
+        },
+        {
+          "date": "2025-01-08",
+          "amount": -13000.0,
+          "status": "Cancelled",
+          "who": "Erdal Dere (closed)",
+          "reason": "This ACH was canceled at the request of the sender."
+        }
+      ]
+    },
     "drive": {
-      "start_here_mercury_root": "1sOaEz-bokwz0tCwx6W-GGM14sIODJtm4wTWnBNXdlwQ",
-      "start_here_mercury_packet": "1MOf6mw1f3i5dUqwxIj1v8tEaU9urzYcCTnM63e0fm9I",
-      "ask_mercury": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
-      "ask_mercury_bank_folder": "16l4kfz6iC411ZBLK0vdtjsgS-oq1-ZEFUf338p6Ghs0",
-      "ask_mercury_packet": "1ie2-IT1RJa778A32bbjhQafDUu1BUWprn94VqV0Fc2o",
-      "mercury_ledger_q6_q9": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg",
-      "mercury_ledger_q6_q9_bank_folder": "1sd6MugdYYJZOF3UJVMaVnbjI3hnUbLOiqAQB7ajC69o",
-      "mercury_ledger_q6_q9_packet": "170l3JhbEQLO_jbq8sqigJPIUyjgyi6xJHcsCbbw1ibQ",
+      "start_here_mercury_root": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+      "start_here_mercury_packet": "14Tx2Iqk6pNhQzoc_5GUgj06r5TVryeATKizrRAHG7I0",
+      "start_here_mercury_income": "1Kqw__ySsoXHTxldxGbYnTEDOhDOmQXw31pKaKx60X6Y",
+      "start_here_mercury_bank": "1GrLyx25cb4RLo6SnTrq_F8VY95nbZznyl9H9kYCjgwU",
+      "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+      "ask_mercury_bank_folder": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+      "ask_mercury_packet": "1WwbQbCNrrD306t5SXuEWdJ39tDtyO2JvBJKTz9xMvWM",
+      "ask_mercury_income": "184z2cCDVnDg3h28fuFUW5r_FI9AkYFHgTHHSj8wSMZo",
+      "mercury_ledger_q6_q9": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
+      "mercury_ledger_q6_q9_bank_folder": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
+      "mercury_ledger_q6_q9_packet": "1idQVr9G-ovuVl4HLmNrNKM9oIBMYuOtncQc7cdHH4LM",
+      "mercury_ledger_q6_q9_income": "1_uot20vwrlJeRF3R-4TlL0RAyj6xEwo-VqQD5Z_N2YA",
+      "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA",
+      "fortuna_inventory_packet": "1spLPY72jVxqRxDKRz3-3ym6cCEJT3dpZFlSDoLzs0_k",
       "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
       "epgc_2025_matched_bank_folder": "12VZzaQrqWM3cG_zik5lJVMQ7I9bZeKF9yGcUO-URIok",
       "epgc_2025_matched_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
       "income_i8_note": "1cDyZJQB42YfFNM0I7Wv4maTP81GlHlkeuQdsvoE-GYI",
-      "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
+      "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
+      "native_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU"
     }
   },
-  "start_here_mercury": "1sOaEz-bokwz0tCwx6W-GGM14sIODJtm4wTWnBNXdlwQ",
-  "start_here_mercury_packet": "1MOf6mw1f3i5dUqwxIj1v8tEaU9urzYcCTnM63e0fm9I",
+  "start_here_mercury": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+  "start_here_mercury_packet": "14Tx2Iqk6pNhQzoc_5GUgj06r5TVryeATKizrRAHG7I0",
   "insurance_lock": {
     "user": "Traveler's was home insurance before for Ferdinand and Geico was for the cars",
     "locked": "2026-09-20",
@@ -194,10 +236,10 @@
       "unit2_income": "17XfobWT7txbcmAjPOBYSGTmZjFjfZwjSL8j6ABJVIXk",
       "lock_packet": "17j4SdPNU62FSCJSULu1Q_BGLYr3MRlJcdcyS80hXyvI",
       "lock_income": "1Gr6LHI-A-JEsTipQIpm7ZKFxd7XJ73CE1zPM4iEQyIo",
-      "mercury_ask_live": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
+      "mercury_ask_live": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
       "mercury_epgc_live": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
-      "mercury_start_here_live": "1sOaEz-bokwz0tCwx6W-GGM14sIODJtm4wTWnBNXdlwQ",
-      "mercury_lock_live": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg"
+      "mercury_start_here_live": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+      "mercury_lock_live": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0"
     }
   },
   "ltr_insurance": {

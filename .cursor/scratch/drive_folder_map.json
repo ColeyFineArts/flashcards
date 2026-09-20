@@ -44,9 +44,9 @@
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
     "sale_facts_sheet": "1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY",
     "grove_purchase_facts_sheet": "1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc",
-    "start_here_mercury": "1sOaEz-bokwz0tCwx6W-GGM14sIODJtm4wTWnBNXdlwQ",
-    "ask_mercury": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
-    "mercury_ledger": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg",
+    "start_here_mercury": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
+    "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+    "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
     "start_here_insurance": "1SpTrXhctgacO8qPLTWo8ZSCiiLr1Zkj65XT86V1Xeeo",
@@ -55,7 +55,9 @@
     "unit1_524": "1fB7OZg2Jpy7jVI7Y6cC_qJ8zmjqgGvD-JRY3MYG5gKM",
     "unit2_524": "1NUtDh7Ff5Ska6iM41DQtxrwmFnQLJpiFy4Ev0R2un8M",
     "lock_travelers_geico": "17j4SdPNU62FSCJSULu1Q_BGLYr3MRlJcdcyS80hXyvI",
-    "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY"
+    "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
+    "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA",
+    "native_mercury_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU"
   },
   "notes": [
     "Megan-owned closing PDFs may remain at root (no move permission); CANONICAL copies filed in 03 and 05.",
@@ -75,6 +77,7 @@
     "2026-09-20 EOEB/L5 mixed pattern CONFIRMED, remainder unallocated. Live ASK 150UnbXc\u2026 START HERE 1_2empVX\u2026 lock 1sXXyE4c\u2026. Prior Q9 ASK/START HERE/lock in _SUPERSEDED.",
     "2026-09-20 Q9+mixed Drive refresh: live ASK 1r6-OcV1\u2026 EPGC 1nZkTISK\u2026 START HERE 1sOaEz-b\u2026 lock 1vPLG0kR\u2026 Q6/Q8 and pre-mixed Q9 sheets in _SUPERSEDED.",
     "2026-09-20 leftover packet lock 1TxnKmr\u2026 (concurrent Q1/Q2 mixed title) moved to _SUPERSEDED. Canonical lock remains 1vPLG0kR\u2026 / bank 1sd6Mugd\u2026 / packet 170l3Jhb\u2026.",
-    "2026-09-20 Travelers/Geico lock: Travelers=prior 524 home, Geico=cars. Live ASK 1STRCzJe\u2026 SF_SPLIT 1xhHImqE\u2026 524 U1 1fB7OZg2\u2026 U2 1NUtDh7F\u2026 START HERE root 1SpTrXhc\u2026 packet 1Z_LjTDN\u2026 LOCK 17j4SdPN\u2026. Stale 1cB4REka / 1S9p9cm9 / 1nxaewV4 / 1-AIgRc3a / 13xD5XXn plus earlier 1R18NvBr / 1pNIBh26 / 1ewPhq4R / 12rxY13j / 13-H7dv2 / 1B9-17KS / 1pQdfdeg moved to _SUPERSEDED. Mercury live IDs unchanged (ASK 1r6-OcV1 / EPGC 1nZkTISK / START HERE 1sOaEz-b / lock 1vPLG0kR)."
+    "2026-09-20 Travelers/Geico lock: Travelers=prior 524 home, Geico=cars. Live ASK 1STRCzJe\u2026 SF_SPLIT 1xhHImqE\u2026 524 U1 1fB7OZg2\u2026 U2 1NUtDh7F\u2026 START HERE root 1SpTrXhc\u2026 packet 1Z_LjTDN\u2026 LOCK 17j4SdPN\u2026. Stale 1cB4REka / 1S9p9cm9 / 1nxaewV4 / 1-AIgRc3a / 13xD5XXn plus earlier 1R18NvBr / 1pNIBh26 / 1ewPhq4R / 12rxY13j / 13-H7dv2 / 1B9-17KS / 1pQdfdeg moved to _SUPERSEDED. Mercury live IDs unchanged (ASK 1r6-OcV1 / EPGC 1nZkTISK / START HERE 1sOaEz-b / lock 1vPLG0kR).",
+    "2026-09-20 native Mercury CSV ingest: user upload 1pJL5IFj\u2026 (8291 full-year). 0 new unique Sent cash vs the 64. Venus $20k + Roman Gold Belt $45k LOCKED inventory. Live ASK 1TeRpRYc\u2026 START HERE 1umzmMAi\u2026 lock 1kgFtNXa\u2026 Fortuna 1-SlRPpR4\u2026. Prior Q6\u2013Q9 ASK/START HERE/lock 1r6-OcV1 / 1sOaEz-b / 1vPLG0kR moved to _SUPERSEDED. EPGC MATCHED 1nZkTISK unchanged (P&L dollars unchanged)."
   ]
 }
