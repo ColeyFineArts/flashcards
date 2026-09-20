@@ -37,17 +37,17 @@
     "childcare_recon": "1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
-    "like_last_year_epgc_art_gcm": "14OHplL2CA7ycDB0ySnF6Mk3qx7E6IwwjzUn0yX5a1KM",
+    "like_last_year_epgc_art_gcm": "11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g",
     "start_here_xlsx": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
     "sale_closing_2025": "1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv",
     "purchase_cd_524_2023": "10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f",
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
     "sale_facts_sheet": "1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY",
     "grove_purchase_facts_sheet": "1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc",
-    "start_here_mercury": "1XyHQoGQGa_QDq86sGec4G2fTJp7GNdLk4OvdonBnF1w",
-    "ask_mercury": "1wIdB9jq92tAG9zCTqRhGiyYl4Ng9NefHCffyfAdiPy8",
-    "mercury_ledger": "1pnRmZxUoRmI2tkvpMArI_XEj7VyN4nNBtnz6bQmPYhY",
-    "epgc_2025_matched": "14OHplL2CA7ycDB0ySnF6Mk3qx7E6IwwjzUn0yX5a1KM",
+    "start_here_mercury": "1APFvhRrxj6t941kjeC_MwStU9c0pP5FHRwQbo2-Kme8",
+    "ask_mercury": "1G2LwKMOnCqlz_c1e0qEQrLhNMiGJR32lZXx8WXadzIs",
+    "mercury_ledger": "1GJxO-nbwGA1DQp48SLMq8889gdA96agThm6NMim2g_U",
+    "epgc_2025_matched": "11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
   },
   "notes": [
@@ -63,6 +63,7 @@
     "2026-09-19: user could not open native xlsx (corrupt XML). Moved 1c5OGQwO / 1nr69eD to _SUPERSEDED. Live files are converted Google Sheets: OPEN ME 1CR8ocRz\u2026 plus Parts A\u2013D. START HERE 1TF9TXxG\u2026.",
     "2026-09-19 evening: rebuilt on last year\u2019s Personal Income.xlsx look. Live: Income+Properties 1XkpQn0z\u2026 (216 has 2023|2024|2025 rent/mortgage/HOA) and EPGC+Art+GCM 1X6j9Bo-\u2026. START HERE 1G7ZF45y\u2026. Prior different-template Parts A\u2013D and 7-tab OPEN ME in _SUPERSEDED.",
     "2026-09-20 Mercury 8291: ASK 1Rf9lDZn\u2026 ledger 15yO66Gp\u2026 EPGC MATCHED 1bN2WsHJ\u2026 Coinbase Investments 1cDuwXi6\u2026 START HERE 1QSFrHBe\u2026. Prior EPGC+Art+GCM 1X6j9Bo- / 1tMHJgQ1 moved to _SUPERSEDED (mixed dump).",
-    "2026-09-20 Q6/Q8: David Aaron $13,595 LOCKED EPGC Consultant June; Koziol/Ariadne $150k LOCKED pass-through. Live ASK 1wIdB9jq\u2026 EPGC 14OHplL2\u2026 START HERE 1XyHQoGQ\u2026. Prior Mercury ASK/ledger/EPGC/START HERE moved to _SUPERSEDED."
+    "2026-09-20 Q6/Q8: David Aaron $13,595 LOCKED EPGC Consultant June; Koziol/Ariadne $150k LOCKED pass-through. Live ASK 1wIdB9jq\u2026 EPGC 14OHplL2\u2026 START HERE 1XyHQoGQ\u2026. Prior Mercury ASK/ledger/EPGC/START HERE moved to _SUPERSEDED.",
+    "2026-09-20 Q9: Aquinas Hobor $1,000 LOCKED books sold \u2192 EPGC Art Sales February. Live ASK 1G2LwKMO\u2026 EPGC 11ihhr9h\u2026 START HERE 1APFvhRr\u2026 lock 1GJxO-nb\u2026. Prior Q6/Q8 ASK/EPGC/START HERE/lock moved to _SUPERSEDED."
   ]
 }

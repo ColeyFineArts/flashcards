@@ -19,11 +19,13 @@
   "ask": {
     "eoeb_remainder": 130270.0,
     "l5": 87396.32,
+    "eoeb_l5_pattern": "mixed art sales + advisory/consultant CONFIRMED; invoice-level split ASK; do not dump remainder",
     "fortuna_remainder_out": 85000.0,
     "erdal_in": 57000.0,
     "aysel": 50000.0,
-    "aquinas_books_cost_tbd": true,
-    "mosaics_cost_missing_on_mercury": 40000.0
+    "mosaics_cost_missing_on_mercury": 40000.0,
+    "eoeb_jan16_canosan_horse": 1000.0,
+    "aquinas_books_cost_tbd": true
   },
   "epgc_art_sales_2025_monthly": [
     14000.0,
@@ -70,14 +72,18 @@
   ],
   "epgc_consultant_fees": 992.8,
   "drive": {
-    "start_here_mercury_root": "1XyHQoGQGa_QDq86sGec4G2fTJp7GNdLk4OvdonBnF1w",
-    "start_here_mercury_packet": "16ayO4Zc9p7GNyqV2xP6M4PQKPffBm701JKFNqmbQ7vw",
-    "ask_mercury": "1wIdB9jq92tAG9zCTqRhGiyYl4Ng9NefHCffyfAdiPy8",
-    "ask_mercury_bank_folder": "1HNsoJjJQR-6p-Got35kNqpbf_puXBxjByFSEIPo8ms8",
-    "mercury_ledger_q6_q8": "1pnRmZxUoRmI2tkvpMArI_XEj7VyN4nNBtnz6bQmPYhY",
-    "mercury_ledger_q6_q8_bank_folder": "1qyx1Qv4ToVga1XP9YbiCoYQTcQZg6NaU4mrPToPG39A",
-    "epgc_2025_matched": "14OHplL2CA7ycDB0ySnF6Mk3qx7E6IwwjzUn0yX5a1KM",
-    "epgc_2025_matched_bank_folder": "1RZE_x0PTTGyfMq6ZauAkndQkEjLl0ZNo2FVvK00PiRU",
+    "start_here_mercury_root": "1APFvhRrxj6t941kjeC_MwStU9c0pP5FHRwQbo2-Kme8",
+    "start_here_mercury_packet": "1p2ddQqTDuLUYw6mbMuuAToNQo3RHlpWS6EAgIgCWFZs",
+    "start_here_mercury_bank": "1V6r0TWeGKrj8nL4CHLpaGhNqup6r-Gl9CejBQfAlAAg",
+    "ask_mercury": "1G2LwKMOnCqlz_c1e0qEQrLhNMiGJR32lZXx8WXadzIs",
+    "ask_mercury_bank_folder": "1kUe-1FOzdseuEDyDot17GMSbfxbmgil4rZ94Jd2n-rg",
+    "ask_mercury_packet": "1Hn1S4rz52im3ISHM6NdDalW0vb1H4u7cO8ShgKrAWZo",
+    "mercury_ledger_q6_q9": "1GJxO-nbwGA1DQp48SLMq8889gdA96agThm6NMim2g_U",
+    "mercury_ledger_q6_q9_bank_folder": "1avMw_ZQh0zYZAAJ478XDSupOhZAaMsQqgZEwgQ3gbck",
+    "mercury_ledger_q6_q9_packet": "19IG_kylyVOgF4QIbWinwfT2uNS07yPqkEPNdG68bmtE",
+    "epgc_2025_matched": "11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g",
+    "epgc_2025_matched_bank_folder": "1ETnjTHApziXebBEPhuyAwF1O4J3jE1CqfxXj1KP0M9A",
+    "epgc_2025_matched_packet": "1Vr-DS9gNwUmUJnpetCC3mFAfX2GzzRUzQRkx6jrKngo",
     "income_i8_note": "1cDyZJQB42YfFNM0I7Wv4maTP81GlHlkeuQdsvoE-GYI",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
   }

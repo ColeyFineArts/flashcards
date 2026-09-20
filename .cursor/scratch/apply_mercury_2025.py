@@ -22,6 +22,10 @@ LOCKED this pass:
   Aquinas Hobor $1,000 IN (2/4) = books sold (ART_SALE LOCKED)
     (user 2026-09-20: "9. Books sold to Aquinas"). Hits EPGC Art Sales
     February. Cost / titles TBD — not in Income I8 until Cost.
+  EOEB and L5 mixed art sales + advisory/consultant CONFIRMED
+    (user 2026-09-20). Remainder dollars stay unallocated — do NOT dump
+    EOEB $130,270 or L5 $87,396.32 onto Consultant or Art Sales.
+    Jan 16 EOEB $1,000 Canosan-horse question stays open.
 
 Do NOT dump unclassified Mercury into EPGC Art Sales.
 Do not re-run apply_checking_answers_2025.py.
@@ -88,6 +92,17 @@ def add(arr, month: int, amt):
     arr[month] += D(amt)
 
 
+MIXED_EOEB = (
+    "User 2026-09-20: EOEB LLC mixed art sales AND advisory/consultant fees. "
+    "Pattern confirmed; this invoice still unallocated. Do NOT dump EOEB remainder "
+    "$130,270 onto Consultant or Art Sales. Invoice-level split still ASK."
+)
+MIXED_L5 = (
+    "User 2026-09-20: L5 LLC mixed art sales AND advisory/consultant fees. "
+    "Pattern confirmed; this invoice still unallocated. Do NOT dump L5 remainder "
+    "$87,396.32 onto Consultant or Art Sales. Invoice-level split still ASK."
+)
+
 # (date, amount) -> classification. Amounts signed as Mercury cash (IN +, OUT -).
 # bucket: ART_SALE | ART_PURCHASE | ADVISORY | INVESTMENT | COGS_JEWELRY | TRANSFER
 #         | PASS_THROUGH | REIMBURSE | TEST | ASK | EPGC_EXPENSE
@@ -108,14 +123,16 @@ RULES = {
     ("2025-01-16", D("1000.00")): (
         "ASK",
         "ASK",
-        "EOEB $1,000 — Canosan horse vs advisory",
-        "Art Sales has Canosan Terracotta Horse to Erdal $1,000. This cash is EOEB, not Erdal. Sale or advisory invoice?",
+        "EOEB $1,000 — Canosan horse vs advisory (STILL OPEN)",
+        "STILL OPEN after mixed-pattern confirm. Art Sales has Canosan Terracotta Horse to Erdal $1,000. "
+        "This cash is EOEB, not Erdal. Sale of the horse, advisory invoice, or other? Not allocated.",
     ),
     ("2025-02-04", D("1000.00")): (
         "ART_SALE",
         "LOCKED",
-        "Books sold to Aquinas Hobor — Sale Price",
-        "User 2026-09-20: books sold to Aquinas. Hits EPGC Art Sales February $1,000. Cost / titles TBD (not in I8 net until Cost). Distinct from 2022 Saharan bracelets sale.",
+        "Books (titles TBD) — Sale Price",
+        "User 2026-09-20: book SALE to Aquinas Hobor. Hits EPGC Art Sales February +$1,000. "
+        "Art Sales register: Books (titles TBD), Cost TBD. Not in Income I8 until Cost is known (same as Sale 6428).",
     ),
     ("2025-02-04", D("-25000.00")): (
         "TRANSFER",
@@ -174,14 +191,14 @@ RULES = {
     ("2025-03-10", D("14000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Invoice / MAKE A PAYMENT. Not matched to an Art Sales object. Proposed advisory (Consultant) until you say otherwise.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-05-01", D("21000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-05-09", D("-20000.00")): (
         "ART_PURCHASE",
@@ -192,20 +209,20 @@ RULES = {
     ("2025-05-13", D("16200.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-06-12", D("25000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-06-12", D("3300.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-06-24", D("13595.00")): (
         "ADVISORY",
@@ -222,8 +239,8 @@ RULES = {
     ("2025-07-08", D("2000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing Request or Invoice Payment. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-07-09", D("-334.17")): (
         "EPGC_EXPENSE",
@@ -234,20 +251,20 @@ RULES = {
     ("2025-07-11", D("8534.79")): (
         "ADVISORY",
         "ASK",
-        "L5 — sale vs art advisory",
-        "Auto-Routing Request or Invoice Payment. Same invoice pattern as EOEB. Proposed advisory until confirmed.",
+        "L5 — mixed unallocated (sale vs advisory)",
+        MIXED_L5,
     ),
     ("2025-07-15", D("50000.00")): (
         "ADVISORY",
         "ASK",
-        "L5 $50,000 — sale vs art advisory vs pass-through",
-        "Largest L5 invoice. Sale of an object, advisory, or pass-through? Same week as Aysel $50k IN and Fortuna $45k OUT.",
+        "L5 $50,000 — mixed unallocated (sale vs advisory)",
+        MIXED_L5 + " Same week as Aysel $50k IN and Fortuna $45k OUT.",
     ),
     ("2025-07-15", D("2500.00")): (
         "ADVISORY",
         "ASK",
-        "L5 — sale vs art advisory",
-        "Auto-Routing Request or Invoice Payment. Proposed advisory until confirmed.",
+        "L5 — mixed unallocated (sale vs advisory)",
+        MIXED_L5,
     ),
     ("2025-07-18", D("50000.00")): (
         "ASK",
@@ -282,14 +299,14 @@ RULES = {
     ("2025-08-29", D("10000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-09-02", D("5042.00")): (
         "ADVISORY",
         "ASK",
-        "L5 — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "L5 — mixed unallocated (sale vs advisory)",
+        MIXED_L5,
     ),
     ("2025-09-04", D("-3000.00")): (
         "INVESTMENT",
@@ -300,14 +317,14 @@ RULES = {
     ("2025-09-19", D("5000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-09-23", D("9119.27")): (
         "ADVISORY",
         "ASK",
-        "L5 — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "L5 — mixed unallocated (sale vs advisory)",
+        MIXED_L5,
     ),
     ("2025-09-25", D("-40000.00")): (
         "TRANSFER",
@@ -318,8 +335,8 @@ RULES = {
     ("2025-09-25", D("3100.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-09-29", D("-6000.00")): (
         "INVESTMENT",
@@ -330,8 +347,8 @@ RULES = {
     ("2025-10-01", D("10000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-10-01", D("-10000.00")): (
         "INVESTMENT",
@@ -360,8 +377,8 @@ RULES = {
     ("2025-10-15", D("16000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-10-20", D("150000.00")): (
         "PASS_THROUGH",
@@ -372,8 +389,8 @@ RULES = {
     ("2025-10-21", D("7500.00")): (
         "ADVISORY",
         "ASK",
-        "L5 — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "L5 — mixed unallocated (sale vs advisory)",
+        MIXED_L5,
     ),
     ("2025-10-21", D("-150000.00")): (
         "PASS_THROUGH",
@@ -384,8 +401,8 @@ RULES = {
     ("2025-10-24", D("1500.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-10-30", D("-658.63")): (
         "EPGC_EXPENSE",
@@ -396,8 +413,8 @@ RULES = {
     ("2025-10-31", D("2170.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "EOEB — mixed unallocated (sale vs advisory)",
+        MIXED_EOEB,
     ),
     ("2025-11-06", D("-10000.00")): (
         "INVESTMENT",
@@ -450,8 +467,8 @@ RULES = {
     ("2025-12-04", D("4700.26")): (
         "ADVISORY",
         "ASK",
-        "L5 — sale vs art advisory",
-        "Auto-Routing. Proposed advisory until confirmed.",
+        "L5 — mixed unallocated (sale vs advisory)",
+        MIXED_L5,
     ),
     ("2025-12-11", D("-5000.00")): (
         "INVESTMENT",
@@ -671,23 +688,25 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws.sheet_properties.tabColor = "FFC000"
     ws["A1"] = (
         "ASK — remaining Mercury 8291 questions. "
-        "Q6 consultant, Q7 Wise expertise write-ups, Q8 pass-through, Q9 Aquinas books LOCKED 2026-09-20. "
-        "Not tax advice."
+        "Q6 consultant, Q7 Wise expertise, Q8 pass-through, Q9 Aquinas books LOCKED (green). "
+        "Q1/Q2 mixed pattern CONFIRMED, dollars unallocated (yellow). Not tax advice."
     )
     ws["A1"].font = CG_B
     ws.merge_cells("A1:C1")
 
     questions = [
         (
-            "1. EOEB LLC remainder after mosaics",
-            f"${sums['eoeb_remainder']:,.2f} of EOEB IN is not the $105,000 mosaics sale and not the $565.75 Wise reimbursement. "
-            "Invoice / MAKE A PAYMENT pattern. Book as art advisory (EPGC Consultant) or as more art sales? "
-            "Jan 16 $1,000 might be the Canosan horse (sold to Erdal $1,000 on Art Sales) — yes/no?",
+            "1. EOEB LLC remainder after mosaics — MIXED PATTERN CONFIRMED, dollars unallocated",
+            f"${sums['eoeb_remainder']:,.2f} of EOEB IN is not mosaics $105,000 and not Wise reimburse $565.75. "
+            "User 2026-09-20: EOEB is mixed art sales AND advisory/consultant fees. "
+            "Do NOT dump this remainder onto Consultant or Art Sales. Invoice-level split still ASK. "
+            "Jan 16 $1,000 Canosan-horse question STILL OPEN (Art Sales horse is to Erdal; this cash is EOEB).",
         ),
         (
-            "2. L5 (all seven invoices)",
-            f"${sums['l5']:,.2f}. Same Auto-Routing Request or Invoice Payment pattern as EOEB. "
-            "Advisory fees, art sales, or mixed? The 7/15 $50,000 lands the same week as Aysel $50k and Fortuna $45k.",
+            "2. L5 (all seven invoices) — MIXED PATTERN CONFIRMED, dollars unallocated",
+            f"${sums['l5']:,.2f}. User 2026-09-20: L5 is mixed art sales AND advisory/consultant fees. "
+            "Do NOT dump onto Consultant or Art Sales. Invoice-level split still ASK. "
+            "The 7/15 $50,000 still sits in the Aysel $50k / Fortuna $45k week.",
         ),
         (
             "3. Fortuna / Erdal Dere OUT after seals",
@@ -718,9 +737,10 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
             "CONFIRMED 2026-09-20: pass-through, not P&L. Not a sale, not a purchase, not COGS, not Consultant.",
         ),
         (
-            "9. Aquinas Hobor $1,000 IN (2/4) — LOCKED books sold",
-            "CONFIRMED 2026-09-20: books sold to Aquinas. Booked EPGC Art Sales February $1,000 (peach). "
-            "Cost / titles TBD — not in Income I8 until Cost. Distinct from 2022 Saharan bracelets.",
+            "9. Aquinas Hobor $1,000 IN (2/4) — LOCKED book sale",
+            "CONFIRMED 2026-09-20: book SALE. Hits EPGC Art Sales February +$1,000 "
+            "(Feb $136,000; matched cash $150,000). Art Sales register: Books (titles TBD) to Aquinas Hobor, "
+            "Sale Price $1,000, Sale Date 2025-02-04, Cost TBD. Not in Income I8 until Cost (same as Sale 6428).",
         ),
         (
             "10. Mosaics Cost $90,000 vs Mercury $50,000",
@@ -761,7 +781,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
         ("David Aaron Limited", "$13,595 (6/24) consultant fee → EPGC Consultant June. Not a sale."),
         ("Koziol / Ariadne", "$150,000 IN 10/20 + $150,000 OUT 10/21 LOCKED pass-through — not P&L"),
         ("Wise expertise write-ups", "$334.17 (7/9) + $658.63 (10/30) = $992.80 → EPGC Consultant Fees expense. Dec $565.75 still reimbursed / not P&L."),
-        ("Aquinas Hobor books", "$1,000 IN 2/4 LOCKED books sold → EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost)."),
+        ("Aquinas Hobor books", "$1,000 IN 2/4 LOCKED book sale → EPGC Art Sales February +$1,000 (Feb $136,000; matched cash $150,000). Cost / titles TBD (not in I8 until Cost, same as Sale 6428)."),
     ]
     for i, (k, v) in enumerate(locked, start=16):
         ws.cell(i, 1, k).font = CG
@@ -902,55 +922,73 @@ def reclass_david_aaron(ws: Worksheet) -> None:
         )
 
 
-def lock_aquinas_books(ws: Worksheet) -> None:
-    """Always add/refresh the Aquinas books sale. patch_art_sales returns early after Newstar."""
-    sale_note = (
-        "LOCKED 2026-09-20: books sold to Aquinas. $1,000 cash on EPGC Art Sales February. "
-        "Cost / titles TBD — not in Income I8 until Cost. Distinct from 2022 Saharan bracelets. Not tax advice."
-    )
-    if _already_has(ws, "Books sold to Aquinas Hobor"):
-        for r in range(1, (ws.max_row or 1) + 1):
-            a = str(ws.cell(r, 1).value or "")
-            if "Books sold to Aquinas Hobor" in a and not a.startswith("2025 Mercury"):
-                ws.cell(r, 1).fill = GREEN
-                ws.cell(r, 2, "Aquinas Hobor").fill = GREEN
-                f = ws.cell(r, 6, 1000)
-                f.number_format = ACCT
-                f.fill = GREEN
-                ws.cell(r, 7, datetime(2025, 2, 4))
-                ws.cell(r, 7).number_format = "YYYY-MM-DD"
-                ws.cell(r, 7).fill = GREEN
-                ws.cell(r, 8, f'=IF(C{r}="","",F{r}-C{r})')
-                ws.cell(r, 9, sale_note).fill = GREEN
-                for col in range(1, 10):
-                    ws.cell(r, col).font = CG
-                    ws.cell(r, col).fill = GREEN
-        return
-    last = 1
-    for r in range(1, (ws.max_row or 1) + 1):
-        if any(ws.cell(r, c).value not in (None, "") for c in range(1, 10)):
-            last = r
-    start = last + 2
-    ws.cell(start, 1, "2025 Mercury 8291 — Books sold to Aquinas Hobor (LOCKED)")
-    ws.cell(start, 1).font = CG_B
-    ws.cell(start, 1).fill = GREEN
-    try:
-        ws.merge_cells(start_row=start, start_column=1, end_row=start, end_column=9)
-    except Exception:
-        pass
-    r = start + 1
-    ws.cell(r, 1, "Books sold to Aquinas Hobor (titles TBD)")
-    ws.cell(r, 2, "Aquinas Hobor")
-    ws.cell(r, 5, "Aquinas Hobor")
+def _write_aquinas_register_row(ws: Worksheet, r: int) -> None:
+    """Sale 6428 pattern: Sale Price locked, Cost TBD yellow, net off I8 until Cost."""
+    ws.cell(r, 1, "Books (titles TBD)").fill = GREEN
+    ws.cell(r, 1).font = CG
+    ws.cell(r, 2, "Cost TBD").fill = YELLOW
+    ws.cell(r, 2).font = CG
+    ws.cell(r, 3).value = None
+    ws.cell(r, 3).fill = YELLOW
+    ws.cell(r, 4).value = None
+    ws.cell(r, 5, "Aquinas Hobor").fill = GREEN
+    ws.cell(r, 5).font = CG
     f = ws.cell(r, 6, 1000)
     f.number_format = ACCT
+    f.fill = GREEN
+    f.font = CG
     ws.cell(r, 7, datetime(2025, 2, 4))
     ws.cell(r, 7).number_format = "YYYY-MM-DD"
-    ws.cell(r, 8, f'=IF(C{r}="","",F{r}-C{r})')
-    ws.cell(r, 9, sale_note)
-    for col in range(1, 10):
-        ws.cell(r, col).font = CG
-        ws.cell(r, col).fill = GREEN
+    ws.cell(r, 7).fill = GREEN
+    ws.cell(r, 7).font = CG
+    ws.cell(r, 8, f'=IF(OR(F{r}="",C{r}=""),"",F{r}-C{r})')
+    ws.cell(r, 8).font = CG
+    n = ws.cell(
+        r,
+        9,
+        "LOCKED 2026-09-20: book SALE $1,000 on Mercury 8291. Cost TBD — not in Income I8 yet (same as Sale 6428). Titles TBD. Not tax advice.",
+    )
+    n.fill = YELLOW
+    n.font = CG
+    n.alignment = WRAP
+
+
+def _clear_parked_aquinas(ws: Worksheet, rows: list[int]) -> None:
+    for r in sorted(rows, reverse=True):
+        header = str(ws.cell(r - 1, 1).value or "") if r > 1 else ""
+        if "Books sold to Aquinas" in header and header.startswith("2025 Mercury"):
+            ws.delete_rows(r - 1, 2)
+        else:
+            ws.delete_rows(r, 1)
+
+
+def lock_aquinas_books(ws: Worksheet) -> None:
+    """Always add/refresh the Aquinas books sale next to Sale 6428. Cost TBD yellow."""
+    existing = []
+    sale_row = None
+    for r in range(1, (ws.max_row or 1) + 1):
+        a = str(ws.cell(r, 1).value or "")
+        if a.startswith("Sale 6428"):
+            sale_row = r
+        if ("Books (titles TBD)" in a or "Books sold to Aquinas" in a) and not a.startswith("2025 Mercury"):
+            existing.append(r)
+    register = [r for r in existing if r <= 80]
+    parked = [r for r in existing if r > 80]
+    if register:
+        _write_aquinas_register_row(ws, register[0])
+        _clear_parked_aquinas(ws, parked)
+        return
+    insert_at = (sale_row + 1) if sale_row else 77
+    to_unmerge = [str(rng) for rng in list(ws.merged_cells.ranges) if rng.min_row <= insert_at <= rng.max_row]
+    for rng in to_unmerge:
+        try:
+            ws.unmerge_cells(rng)
+        except Exception:
+            pass
+    ws.insert_rows(insert_at)
+    _write_aquinas_register_row(ws, insert_at)
+    shifted = [r + 1 if r >= insert_at else r for r in parked]
+    _clear_parked_aquinas(ws, shifted)
 
 
 def patch_art_sales(ws: Worksheet) -> None:
@@ -1183,25 +1221,82 @@ LOCKED this pass
 - Aquinas Hobor $1,000 (2/4) → books sold. EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost).
 
 EPGC 2025 Art Sales is MATCHED/LOCKED cash ($150,000: Jan $14,000 / Feb $136,000).
-EPGC Consultant June is $13,595 (David Aaron). EOEB remainder / L5 still ASK — not on Consultant.
+EPGC Consultant June is $13,595 (David Aaron).
+EOEB remainder / L5 MIXED PATTERN CONFIRMED (art sales + advisory/consultant) — dollars unallocated; not on Consultant or Art Sales.
 
 ANSWERED
 6. David Aaron Limited $13,595 (6/24) — LOCKED consultant fee (EPGC Consultant June).
 7. Wise $334.17 + $658.63 — LOCKED business expenses (expertise write-ups) on EPGC Consultant Fees.
 8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
-9. Aquinas Hobor $1,000 (2/4) — LOCKED books sold (EPGC Art Sales February; Cost TBD).
+9. Aquinas Hobor $1,000 (2/4) — LOCKED book sale (EPGC Art Sales February +$1,000; Cost TBD, not in I8).
 
 ASK remaining
-1. EOEB remainder ${money(sums['eoeb_remainder']):,.2f} after mosaics — advisory or more sales? Is Jan 16 $1,000 the Canosan horse?
-2. All L5 ${money(sums['l5']):,.2f} — advisory or sales? (7/15 $50,000 especially)
-3. Fortuna OUT remaining ${money(sums['fortuna_remainder_out']):,.2f} — inventory objects?
+1. EOEB remainder ${money(sums['eoeb_remainder']):,.2f} — MIXED PATTERN CONFIRMED; invoice-level split ASK. Do not dump onto Consultant or Art Sales. Jan 16 $1,000 Canosan-horse still open.
+2. L5 ${money(sums['l5']):,.2f} — MIXED PATTERN CONFIRMED; invoice-level split ASK. Do not dump.
+3. Fortuna leftover ${money(sums['fortuna_remainder_out']):,.2f} — inventory objects?
 4. Erdal IN ${money(sums['erdal_in']):,.2f} — sales to Erdal?
 5. Aysel Dere $50,000 IN (7/18)
-10. Where is the other $40,000 of mosaics Cost?
+10. Mosaics Cost $40,000 missing on Mercury 8291.
 
 Income I8 Art net is ${money(sums['art_net_locked']):,.2f} from MATCHED deals with Cost only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost. Consultant is EPGC, not I8.
 """
     path.write_text(text, encoding="utf-8")
+
+
+def write_compact_lock(path: Path, sums: dict) -> None:
+    rows = [
+        ["Q", "Status", "What", "Where it hits"],
+        [
+            "6",
+            "LOCKED",
+            "David Aaron Limited $13,595 IN (6/24) consultant fee",
+            "EPGC Consultant June $13,595. Not Art Sales. Not I8.",
+        ],
+        [
+            "7",
+            "LOCKED",
+            "Wise $334.17 (7/9) + $658.63 (10/30) expertise write-ups",
+            "EPGC Consultant Fees $992.80 (Jul $334.17 / Oct $658.63). Dec Wise $565.75 still REIMBURSE / not P&L.",
+        ],
+        [
+            "8",
+            "LOCKED",
+            "Koziol $150,000 IN (10/20) / Ariadne $150,000 OUT (10/21)",
+            "Pass-through — not P&L.",
+        ],
+        [
+            "9",
+            "LOCKED",
+            "Aquinas Hobor $1,000 IN (2/4) book SALE",
+            "EPGC Art Sales February +$1,000 (Feb $136,000; matched cash $150,000). Register: Books (titles TBD), Cost TBD. NOT in I8 until Cost (same as Sale 6428).",
+        ],
+        [
+            "1",
+            "PATTERN CONFIRMED / dollars unallocated",
+            f"EOEB remainder ${money(sums['eoeb_remainder']):,.2f} mixed art sales + advisory/consultant",
+            "Do NOT dump onto Consultant or Art Sales. Invoice-level split ASK. Jan 16 $1,000 Canosan-horse still open.",
+        ],
+        [
+            "2",
+            "PATTERN CONFIRMED / dollars unallocated",
+            f"L5 ${money(sums['l5']):,.2f} mixed art sales + advisory/consultant",
+            "Do NOT dump onto Consultant or Art Sales. Invoice-level split ASK.",
+        ],
+        [
+            "ASK remaining",
+            "ASK",
+            f"Fortuna leftover ${money(sums['fortuna_remainder_out']):,.2f} / Erdal IN ${money(sums['erdal_in']):,.2f} / Aysel $50,000 / mosaics Cost $40,000",
+            "Object names / invoice split still needed.",
+        ],
+        [
+            "LOCKED totals",
+            "LOCKED",
+            "Consultant Fees Jul+Oct $992.80; Consultant June $13,595; Art Sales Feb $136,000; I8 $23,055.06",
+            "Dec Wise $565.75 REIMBURSE. EOEB remainder / L5 not on P&L.",
+        ],
+    ]
+    with path.open("w", newline="", encoding="utf-8") as f:
+        csv.writer(f).writerows(rows)
 
 
 def main() -> None:
@@ -1259,7 +1354,9 @@ def main() -> None:
             "Consultant June $13,595 = David Aaron Limited LOCKED (user: consultant fee, not a sale). "
             "Consultant Fees July $334.17 + October $658.63 = Wise expertise write-ups LOCKED "
             f"(${money(sums['wise_expertise']):,.2f}). "
-            f"EOEB remainder ${money(sums['eoeb_remainder']):,.2f} and L5 ${money(sums['l5']):,.2f} still ASK — not on Consultant income. "
+            f"EOEB remainder ${money(sums['eoeb_remainder']):,.2f} and L5 ${money(sums['l5']):,.2f} "
+            "MIXED PATTERN CONFIRMED (art sales + advisory/consultant) — invoice-level split still ASK; "
+            "not dumped onto Consultant or Art Sales. "
             "Koziol/Ariadne $150,000 LOCKED pass-through — not P&L. "
             "Coinbase is Investments, not this tab. Newstar $23,581 is Art Sales COGS, not operating expense. "
             "Dec Wise $565.75 reimbursed — not on Consultant Fees. "
@@ -1352,11 +1449,13 @@ def main() -> None:
         "ask": {
             "eoeb_remainder": float(sums["eoeb_remainder"]),
             "l5": float(sums["l5"]),
+            "eoeb_l5_pattern": "mixed art sales + advisory/consultant CONFIRMED; invoice-level split ASK; do not dump remainder",
             "fortuna_remainder_out": float(sums["fortuna_remainder_out"]),
             "erdal_in": float(sums["erdal_in"]),
             "aysel": float(sums["aysel"]),
-            "aquinas_books_cost_tbd": True,
             "mosaics_cost_missing_on_mercury": 40000.0,
+            "eoeb_jan16_canosan_horse": 1000.0,
+            "aquinas_books_cost_tbd": True,
         },
         "epgc_art_sales_2025_monthly": [float(x) for x in art_sales_months],
         "epgc_consultant_2025_monthly": [float(x) for x in consultant_months],
@@ -1380,6 +1479,7 @@ def main() -> None:
         epgc_url="(Drive URL filled after upload)",
         income_url="https://docs.google.com/spreadsheets/d/1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k/edit",
     )
+    write_compact_lock(CSV_DIR / "LOCK_Mercury_Q6_Q9.csv", sums)
 
     if PACKET.exists():
         pkt = json.loads(PACKET.read_text(encoding="utf-8"))
@@ -1389,7 +1489,8 @@ def main() -> None:
             "2026-09-20 Q6–Q9: David Aaron $13,595 Consultant June; "
             "Wise $992.80 Consultant Fees (expertise write-ups); "
             "Koziol/Ariadne $150k pass-through; Aquinas books $1,000 Art Sales February (Cost TBD). "
-            "Art Sales MATCHED/LOCKED $150,000. I8 $23,055.06 (excludes books until Cost)."
+            "Art Sales MATCHED/LOCKED $150,000 (Feb $136,000). I8 $23,055.06 (excludes books until Cost). "
+            "EOEB/L5 mixed pattern confirmed, dollars unallocated."
         )
         PACKET.write_text(json.dumps(pkt, indent=2), encoding="utf-8")
 
