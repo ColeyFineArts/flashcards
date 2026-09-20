@@ -5,44 +5,40 @@ Not tax advice. Same Personal Income.xlsx tabs as last year.
 Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
 64 unique 2025 cash transactions from the monthly statements + Monarch.
 
-Open the ASK sheet first:
-https://docs.google.com/spreadsheets/d/1Rf9lDZn3SecYTBdFDmDR8oC9EK-RkVeD8aM-pKHK0Pw/edit
+Open the classification ledger (answer the ASK tab):
+(Drive URL filled after upload)
 
-Full 64-row classification ledger:
-https://docs.google.com/spreadsheets/d/15yO66GpbVaHGCDpWZ-GM1D6YFwzOi_Fo0YTnojhbjHA/edit
-
-EPGC 2025 Art Sales (MATCHED cash only):
-https://docs.google.com/spreadsheets/d/1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80/edit
-
-Coinbase ACH (Investments — not EPGC):
-https://docs.google.com/spreadsheets/d/1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4/edit
+EPGC + Art Sales + GCM + Investments (last-year tabs, Art Sales unbundled):
+(Drive URL filled after upload)
 
 Income + properties (unchanged this pass):
 https://docs.google.com/spreadsheets/d/1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k/edit
 
-START HERE doc:
-https://docs.google.com/document/d/1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw/edit
-
 LOCKED this pass
 - Coinbase ACH net $-51,000.00 (funded $59,000.00 / back $8,000.00) → Investments. Not EPGC. Not the Coinbase 6108 card.
 - Newstar Jewelers $23,581.00 → jewelry fabrication COGS (intaglios, engraved gems, scarabs). Not EPGC operating.
-- Art sales matched: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21).
+- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21).
 - Seals Cost $13,000 = Fortuna 1/8. Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
 - BoA 9922 transfers $261,172.00 = owner draws, not P&L.
 - Dec 2 Wise $565.75 reimbursed by EOEB — not income.
+- David Aaron Limited $13,595 (6/24) → EPGC Consultant June. User: consultant fee, not a sale.
+- Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → LOCKED pass-through. Not P&L.
 
-EPGC 2025 Art Sales is now only those matched sales ($149,000 cash: Jan $14,000 / Feb $135,000). Consultant stays $0 until you answer EOEB / L5.
+EPGC 2025 Art Sales is only those matched sales ($149,000 cash: Jan $14,000 / Feb $135,000).
+EPGC Consultant June is $13,595 (David Aaron). EOEB remainder / L5 still ASK — not on Consultant.
 
-ASK (please answer)
+ANSWERED
+6. David Aaron Limited $13,595 (6/24) — LOCKED consultant fee (EPGC Consultant June).
+8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
+
+ASK remaining
 1. EOEB remainder $130,270.00 after mosaics — advisory or more sales? Is Jan 16 $1,000 the Canosan horse?
 2. All L5 $87,396.32 — advisory or sales? (7/15 $50,000 especially)
 3. Fortuna OUT remaining $85,000.00 — inventory objects?
 4. Erdal IN $57,000.00 — sales to Erdal?
 5. Aysel Dere $50,000 IN (7/18)
-6. David Aaron Limited $13,595 (6/24) — proposed sale, confirm object
 7. Wise $334.17 + $658.63 (Dec was reimbursed)
-8. Koziol $150,000 / Ariadne $150,000 same window — pass-through?
 9. Aquinas Hobor $1,000 (2/4)
 10. Where is the other $40,000 of mosaics Cost?
 
-Income I8 Art net is $23,055.06 from MATCHED deals only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 still waits on Cost.
+Income I8 Art net is $23,055.06 from MATCHED deals only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 still waits on Cost. Consultant is EPGC, not I8.

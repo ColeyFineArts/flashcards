@@ -6,12 +6,12 @@
   "start_here_packet": "1oMk9p28WmRBYS5z_F1-zI53wDho7_8zUJQso0VYrpRQ",
   "start_here_cc": "13-H7dv2jmXNRHSUuKnDYSrzg1FwLiysUwvdSCM63UbM",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
-  "xlsx_bytes_local": 105652,
+  "xlsx_bytes_local": 118151,
   "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
   "like_last_year_income_properties_packet": "1qLmbezF77s8iKTV0UV9YUznkPlwzXyCm-Q50sXG_qBI",
   "like_last_year_epgc_art_gcm": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
   "like_last_year_epgc_art_gcm_packet": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
-  "xlsx_note": "2026-09-20 Mercury 8291 classified. EPGC Art Sales 2025 is MATCHED Berk/mosaics only. Prior mixed dump sheet moved to _SUPERSEDED. Live: ASK + MERCURY ledger + EPGC MATCHED + Coinbase Investments.",
+  "xlsx_note": "2026-09-20 Q6/Q8: David Aaron $13,595 LOCKED EPGC Consultant June (not a sale). Koziol/Ariadne $150k LOCKED pass-through (not P&L). Art Sales still MATCHED $149,000. I8 Art net $23,055.06 unchanged.",
   "note": "Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -76,7 +76,9 @@
       "newstar_cogs": 23581.0,
       "art_sale_locked_gross": 149000.0,
       "art_net_locked": 23055.06,
-      "boa_9922_draws": 261172.0
+      "boa_9922_draws": 261172.0,
+      "david_aaron_consultant": 13595.0,
+      "koziol_ariadne_passthrough": 150000.0
     },
     "ask": {
       "eoeb_remainder": 130270.0,
@@ -84,9 +86,8 @@
       "fortuna_remainder_out": 85000.0,
       "erdal_in": 57000.0,
       "aysel": 50000.0,
-      "david_aaron_proposed": 13595.0,
       "wise_unreimbursed": 992.8,
-      "koziol_ariadne_passthrough": 150000.0,
+      "aquinas_hobor": 1000.0,
       "mosaics_cost_missing_on_mercury": 40000.0
     },
     "epgc_art_sales_2025_monthly": [
@@ -103,7 +104,31 @@
       0.0,
       0.0
     ],
-    "epgc_consultant": 0.0
+    "epgc_consultant_2025_monthly": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      13595.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "epgc_consultant": 13595.0,
+    "drive": {
+      "start_here_mercury_root": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
+      "start_here_mercury_packet": "1NZi645tpNH2vgb1LRWmgOXIPb8umBNNrZQkp_KXZwak",
+      "ask_mercury": "1Rf9lDZn3SecYTBdFDmDR8oC9EK-RkVeD8aM-pKHK0Pw",
+      "ask_mercury_bank_folder": "1qr8NgnnmyDwy7aJcjSb8hPfmCld37fHq9cF7KPcN3qI",
+      "mercury_ledger": "15yO66GpbVaHGCDpWZ-GM1D6YFwzOi_Fo0YTnojhbjHA",
+      "mercury_ledger_bank_folder": "1ketiHa1NDVMFLBiz04rn5Gp1ZSm4kKJgecbysI8Fgak",
+      "epgc_2025_matched": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
+      "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
+    }
   },
   "start_here_mercury": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
   "start_here_mercury_packet": "1NZi645tpNH2vgb1LRWmgOXIPb8umBNNrZQkp_KXZwak"

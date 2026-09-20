@@ -10,7 +10,9 @@
     "newstar_cogs": 23581.0,
     "art_sale_locked_gross": 149000.0,
     "art_net_locked": 23055.06,
-    "boa_9922_draws": 261172.0
+    "boa_9922_draws": 261172.0,
+    "david_aaron_consultant": 13595.0,
+    "koziol_ariadne_passthrough": 150000.0
   },
   "ask": {
     "eoeb_remainder": 130270.0,
@@ -18,9 +20,8 @@
     "fortuna_remainder_out": 85000.0,
     "erdal_in": 57000.0,
     "aysel": 50000.0,
-    "david_aaron_proposed": 13595.0,
     "wise_unreimbursed": 992.8,
-    "koziol_ariadne_passthrough": 150000.0,
+    "aquinas_hobor": 1000.0,
     "mosaics_cost_missing_on_mercury": 40000.0
   },
   "epgc_art_sales_2025_monthly": [
@@ -37,7 +38,21 @@
     0.0,
     0.0
   ],
-  "epgc_consultant": 0.0,
+  "epgc_consultant_2025_monthly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    13595.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "epgc_consultant": 13595.0,
   "drive": {
     "start_here_mercury_root": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
     "start_here_mercury_packet": "1NZi645tpNH2vgb1LRWmgOXIPb8umBNNrZQkp_KXZwak",
