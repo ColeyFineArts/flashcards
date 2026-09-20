@@ -160,7 +160,9 @@ U1_ELEC = [132.94, 216.44, 184.09, 60.95, 83.76, 69.69, 164.88, 203.43, 187.63, 
 # 524 USB loan 09422 regular monthly P+I from joint 0203 (not $50k extra principal on 9922)
 U1_MORTGAGE = [4287.51, 4287.51, 4287.51, 4287.51, 4287.51, 4287.51, 4287.51, 5089.77, 5089.77, 4438.69, 4438.69, 4377.54]
 
-EPGC_BIZ = [15000, 30000, 14000, 0, 37200, 41895, 37034.79, 10000, 22261.27, 50670, 6000, 0]
+# MATCHED Mercury 8291 art-sale cash only (Berk $14k Jan + Berk $30k/mosaics $105k Feb).
+# Do not dump EOEB/L5/Coinbase/Newstar here — see apply_mercury_2025.py.
+EPGC_BIZ = [14000, 135000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 EPGC_AD = [0, 0, 755.98, 0, 199, 0, 0, 0, 0, 0, 0, 0]
 EPGC_TRAVEL = [0, 20, 0, 0, 20, 0, 20, 20, 0, 20, 53, 0]
 EPGC_CELL = [51.12, 93.26, 98.26, 98.26, 98.26, 98.26, 98.23, 98.34, 98.34, 98.39, 98.39, 97.91]
@@ -267,8 +269,10 @@ def fill_epgc(ws: Worksheet) -> None:
     write_months(ws, 68, 2, EPGC_TECH)
     write_months(ws, 70, 2, EPGC_LIB)
     ws["A75"] = (
-        "2025: Consultant $0 (GCM 1099 is personal — GCM tab). Cellphone includes AT&T. "
-        "Canva + Park Chicago + Field Museum in Software / Travel. Not tax advice."
+        "2025: Art Sales = MATCHED Mercury cash only (Berk $14k + $30k + mosaics $105k). "
+        "Consultant $0 until EOEB/L5 answered (GCM 1099 is personal — GCM tab). "
+        "Coinbase ACH is Investments; Newstar is Art Sales COGS. "
+        "Cellphone includes AT&T. Canva + Park Chicago + Field Museum in Software / Travel. Not tax advice."
     )
 
 

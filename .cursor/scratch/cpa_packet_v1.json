@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "correction": "CPA deliverable matches prior Personal Income.xlsx look (2023|2024|2025 columns; RENTAL INCOME / MORTGAGE / HOA)",
   "drive_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
   "start_here": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
@@ -12,8 +12,8 @@
   "like_last_year_epgc_art_gcm": "1X6j9Bo-bK607PVw8LpwUJq6pX9lVQ8GLF-YlGhWVoQc",
   "like_last_year_epgc_art_gcm_packet": "1tMHJgQ12RGPzHf8qdjKfuPZ0CrzcJlzIzhlPqjsFIM0",
   "xlsx_note": "Rebuilt from last year's Personal Income.xlsx. 216 has 2023|2024|2025 monthly rent, Rocket mortgage, HOA. Native xlsx uploads remain unreliable; live files are converted Google Sheets.",
-  "note": "Grove Collaborative ≠ 827 N Grove the house.",
-  "remind_jacob": "Double-check ComEd with Megan — checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
+  "note": "Grove Collaborative \u2260 827 N Grove the house.",
+  "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
     "pass": "checking-answers",
     "gcm_board_1099_personal": 21500.0,
@@ -58,5 +58,46 @@
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4"
+  },
+  "mercury_8291": {
+    "updated": "2026-09-20",
+    "disclaimer": "Not tax advice. Organizational packet only.",
+    "account": "Mercury Checking 8291 EPGC LLC",
+    "n_txns": 64,
+    "locked": {
+      "coinbase_net": -51000.0,
+      "coinbase_out": -59000.0,
+      "coinbase_in": 8000.0,
+      "newstar_cogs": 23581.0,
+      "art_sale_locked_gross": 149000.0,
+      "art_net_locked": 23055.06,
+      "boa_9922_draws": 261172.0
+    },
+    "ask": {
+      "eoeb_remainder": 130270.0,
+      "l5": 87396.32,
+      "fortuna_remainder_out": 85000.0,
+      "erdal_in": 57000.0,
+      "aysel": 50000.0,
+      "david_aaron_proposed": 13595.0,
+      "wise_unreimbursed": 992.8,
+      "koziol_ariadne_passthrough": 150000.0,
+      "mosaics_cost_missing_on_mercury": 40000.0
+    },
+    "epgc_art_sales_2025_monthly": [
+      14000.0,
+      135000.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "epgc_consultant": 0.0
   }
 }

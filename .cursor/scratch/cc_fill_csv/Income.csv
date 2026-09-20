@@ -1,13 +1,12 @@
-,2024,2024,2025,2025
-,Projected,Actual,Projected,Actual
-Income,,,,
-Hindman / Freeman W-2 (Monarch deposits — reconcile to W-2),110000,,110000,70618
-216 N. Oak Park Ave,1500,,1500,19500.0
-524 Ferdinand Ave #2 (STR platform net),20000,,17000,17086.94
-GCM / Gates 1099-NEC,16000,,21500,21500.0
-Art Sales (net — see Art Sales tab),20000,,20000,0
-Megan's Income,0,,0,0
-EBITDA,=SUM(B4:B9),=SUM(C4:C9),=SUM(D4:D9),=SUM(E4:E9)
-,,,,
-"Notes: E4 Monarch paycheck cash ≠ W-2 Box 1. E5 216 Oak Park LTR cash $19500.00 (Delach + Ava co-tenant CONFIRMED + Joan; vacant Oct + half Nov; half-Nov $975 WAIT 8507). E6 PLATFORM STR net LOCKED. E7 GCM 1099-NEC $21,500 on GCM tab only — NOT EPGC Consultant (reimbursements excluded; May 22 CONFIRMED). E8 Art net $0 until Sale 6428 Cost is filled (Sale Price $11,000 on Art Sales, check to Megan). Not tax advice.",,,,
-,,,,
+,2022,2022,2023,2023,2024,2024,2025,2025
+,Projected ,Actual,Projected ,Actual,Projected,Actual,Projected,Actual
+Income,,,,,,,,
+Hindman ,92000,97876.85,110000,115000,110000,,110000,70618
+216 N. Oak Park Ave,0,125,1500,,1500,,19500,19500
+524 Ferdinand Ave #2,,,,,20000,,17000,17086.94
+GCM Boards,14000,25875,14700,14700,16000,,21500,21500
+Art Sales,10000,15000,15000,54777.25,20000,,20000,23055.06
+Megan's Income,67000,67000,74000,,0,,0,0
+EBITDA,=SUM(B4:B9),=SUM(C4:C9),=SUM(D4:D9),=SUM(E4:E9),=SUM(F4:F9),=SUM(G4:G9),=SUM(H4:H9),=SUM(I4:I9)
+,,,,,,,,
+"2025 Actual: I4 Monarch paycheck cash ≠ W-2 Box 1. I5 216 LTR cash $19,500. I6 524 #2 STR platform net LOCKED. I7 GCM 1099-NEC $21,500. I8 Art net $23,055.06 = MATCHED Mercury deals only (Berk lots $30,000 − $22,944.94 Cost) + seals $1,000 + mosaics $15,000. Excludes Sale 6428 $11,000 until Cost, David Aaron $13,595 (proposed), Erdal/Aysel/EOEB/L5 ASK. Not tax advice.",,,,,,,,

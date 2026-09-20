@@ -1,0 +1,1243 @@
+#!/usr/bin/env python3
+"""Classify 2025 Mercury Checking 8291 (EPGC LLC / Choice Financial).
+
+User (2026-09-20): some are art purchases/sales, some art advisory fees,
+some investments (Coinbase), some COGS (Newstar Jewelers = jewelry from
+intaglios / engraved gems / scarabs).
+
+LOCKED this pass:
+  Coinbase ACH = investment transfer (not EPGC operating, not Art Sales)
+  Newstar Jewelers = jewelry-fabrication COGS
+  Berk $14k + $30k, Fortuna $13k seals, EOEB $105k mosaics, Plutus $50k
+    mosaics partial cost, BoA 9922 draws, $10 test wires, Dec Wise/EOEB
+    $565.75 reimbursement
+
+Do NOT dump unclassified Mercury into EPGC Art Sales.
+Do not re-run apply_checking_answers_2025.py.
+Not tax advice.
+"""
+from __future__ import annotations
+
+import csv
+import json
+import shutil
+from copy import copy
+from datetime import datetime
+from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
+
+from openpyxl import Workbook, load_workbook
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.worksheet import Worksheet
+
+ROOT = Path("/workspace/.cursor/scratch")
+MONARCH = ROOT / "monarch_ty2025.csv"
+XLSX = ROOT / "Personal_Income_2025_Tax_Turbo.xlsx"
+DELIVERABLE = ROOT / "tax_turbo_deliverable" / "Personal_Income_2025_Tax_Turbo.xlsx"
+PARTS = ROOT / "tax_turbo_parts"
+CSV_DIR = ROOT / "cc_fill_csv"
+JSON_PATH = ROOT / "mercury_2025.json"
+PACKET = ROOT / "cpa_packet_v1.json"
+
+MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+PEACH = PatternFill("solid", fgColor="F7CAAC")
+YELLOW = PatternFill("solid", fgColor="FFF2CC")
+GREEN = PatternFill("solid", fgColor="C6EFCE")
+BLUE = PatternFill("solid", fgColor="DDEBF7")
+GRAY = PatternFill("solid", fgColor="F2F2F2")
+ORANGE = PatternFill("solid", fgColor="F8CBAD")
+NAVY = PatternFill("solid", fgColor="1F4E79")
+WHITE = Font(bold=True, color="FFFFFF", name="Calibri", size=11)
+CG = Font(name="Century Gothic", size=10)
+CG_B = Font(name="Century Gothic", size=11, bold=True)
+ACCT = '_("$"* #,##0.00_);_("$"* \\(#,##0.00\\);_("$"* "-"??_);_(@_)'
+THIN = Border(
+    left=Side(style="thin", color="B0B0B0"),
+    right=Side(style="thin", color="B0B0B0"),
+    top=Side(style="thin", color="B0B0B0"),
+    bottom=Side(style="thin", color="B0B0B0"),
+)
+WRAP = Alignment(wrap_text=True, vertical="top")
+
+
+def D(x) -> Decimal:
+    return Decimal(str(x)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+
+
+def money(x) -> float:
+    return float(D(x))
+
+
+def zeros():
+    return [Decimal("0.00")] * 12
+
+
+def add(arr, month: int, amt):
+    arr[month] += D(amt)
+
+
+# (date, amount) -> classification. Amounts signed as Mercury cash (IN +, OUT -).
+# bucket: ART_SALE | ART_PURCHASE | ADVISORY | INVESTMENT | COGS_JEWELRY | TRANSFER
+#         | PASS_THROUGH | REIMBURSE | TEST | ASK
+# status: LOCKED | MATCHED | PROPOSED | ASK | HOLD | NOT_PL
+RULES = {
+    ("2025-01-08", D("-13000.00")): (
+        "ART_PURCHASE",
+        "MATCHED",
+        "A Collection of Seals — COGS",
+        "Fortuna / Erdal Dere. Matches Art Sales Cost $13,000; Berk sold it 1/10 for $14,000.",
+    ),
+    ("2025-01-10", D("14000.00")): (
+        "ART_SALE",
+        "MATCHED",
+        "A Collection of Seals — Sale Price",
+        "Harlan J. Berk Ltd wire. Matches Art Sales Sale Price $14,000.",
+    ),
+    ("2025-01-16", D("1000.00")): (
+        "ASK",
+        "ASK",
+        "EOEB $1,000 — Canosan horse vs advisory",
+        "Art Sales has Canosan Terracotta Horse to Erdal $1,000. This cash is EOEB, not Erdal. Sale or advisory invoice?",
+    ),
+    ("2025-02-04", D("1000.00")): (
+        "ASK",
+        "ASK",
+        "Aquinas Hobor $1,000",
+        "Prior-year buyer (Saharan bracelets 2022). 2025 sale, leftover, or something else?",
+    ),
+    ("2025-02-04", D("-25000.00")): (
+        "TRANSFER",
+        "LOCKED",
+        "Owner transfer to BoA 9922",
+        "Not EPGC P&L. Draw / transfer to Jake Adv Plus 9922.",
+    ),
+    ("2025-02-07", D("30000.00")): (
+        "ART_SALE",
+        "MATCHED",
+        "Berk lots lump Sale Price $30,000",
+        "Harlan J. Berk Ltd PER ARB. Matches Art Sales F71 hardcoded $30,000 covering rows 51–70. Per-object invoices still yellow.",
+    ),
+    ("2025-02-21", D("105000.00")): (
+        "ART_SALE",
+        "MATCHED",
+        "Three Ancient Mosaics — Sale Price",
+        "EOEB LLC MAKE A PAYMENT. Matches Art Sales to Jonathan Yantis $105,000.",
+    ),
+    ("2025-02-21", D("10.00")): (
+        "TEST",
+        "LOCKED",
+        "$10 test wire in",
+        "Not P&L.",
+    ),
+    ("2025-02-21", D("-10.00")): (
+        "TEST",
+        "LOCKED",
+        "$10 test wire to Jamal M. Rifai",
+        "Not P&L. Related to mosaics counterparty test.",
+    ),
+    ("2025-02-24", D("-90000.00")): (
+        "TRANSFER",
+        "LOCKED",
+        "Owner transfer to BoA 9922",
+        "Not EPGC P&L.",
+    ),
+    ("2025-02-24", D("10.00")): (
+        "TEST",
+        "LOCKED",
+        "$10 test wire EPGC",
+        "Not P&L.",
+    ),
+    ("2025-02-25", D("-49990.00")): (
+        "ART_PURCHASE",
+        "MATCHED",
+        "Three Ancient Mosaics — partial COGS",
+        "Plutus & Mnemosyne LLC. With the 2/24 $10 test this is $50,000 of the $90,000 mosaics Cost. $40,000 of Cost is not on Mercury 8291.",
+    ),
+    ("2025-02-24", D("-10.00")): (
+        "TEST",
+        "LOCKED",
+        "$10 test (Jamal or Plutus)",
+        "Not P&L. If this is the Plutus $10, it is the first $10 of the $50,000 mosaics cost; the $49,990 follows 2/25.",
+    ),
+    ("2025-03-10", D("14000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Invoice / MAKE A PAYMENT. Not matched to an Art Sales object. Proposed advisory (Consultant) until you say otherwise.",
+    ),
+    ("2025-05-01", D("21000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+    ),
+    ("2025-05-09", D("-20000.00")): (
+        "ART_PURCHASE",
+        "ASK",
+        "Fortuna / Erdal — inventory vs other",
+        "After seals $13,000. Object name? Inventory purchase (COGS when sold) or something else?",
+    ),
+    ("2025-05-13", D("16200.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+    ),
+    ("2025-06-12", D("25000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+    ),
+    ("2025-06-12", D("3300.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Invoice / MAKE A PAYMENT. Proposed advisory until confirmed.",
+    ),
+    ("2025-06-24", D("13595.00")): (
+        "ART_SALE",
+        "PROPOSED",
+        "David Aaron Limited — proposed art sale",
+        "London antiquities dealer; Request or Invoice Payment $13,595. Booked as a proposed sale (yellow) — confirm object / whether this is a purchase refund.",
+    ),
+    ("2025-07-03", D("-40000.00")): (
+        "TRANSFER",
+        "LOCKED",
+        "Owner transfer to BoA 9922",
+        "Not EPGC P&L.",
+    ),
+    ("2025-07-08", D("2000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing Request or Invoice Payment. Proposed advisory until confirmed.",
+    ),
+    ("2025-07-09", D("-334.17")): (
+        "ASK",
+        "ASK",
+        "Wise — vendor / COGS / other",
+        "International payment from EPGC. Not reimbursed. COGS, advisory cost, or personal?",
+    ),
+    ("2025-07-11", D("8534.79")): (
+        "ADVISORY",
+        "ASK",
+        "L5 — sale vs art advisory",
+        "Auto-Routing Request or Invoice Payment. Same invoice pattern as EOEB. Proposed advisory until confirmed.",
+    ),
+    ("2025-07-15", D("50000.00")): (
+        "ADVISORY",
+        "ASK",
+        "L5 $50,000 — sale vs art advisory vs pass-through",
+        "Largest L5 invoice. Sale of an object, advisory, or pass-through? Same week as Aysel $50k IN and Fortuna $45k OUT.",
+    ),
+    ("2025-07-15", D("2500.00")): (
+        "ADVISORY",
+        "ASK",
+        "L5 — sale vs art advisory",
+        "Auto-Routing Request or Invoice Payment. Proposed advisory until confirmed.",
+    ),
+    ("2025-07-18", D("50000.00")): (
+        "ASK",
+        "ASK",
+        "Aysel Dere $50,000 IN",
+        "Same week as L5 $50k, Fortuna $45k OUT (7/21), Erdal $26k IN (7/24). Sale, family/related transfer, or inventory reverse?",
+    ),
+    ("2025-07-21", D("-45000.00")): (
+        "ART_PURCHASE",
+        "ASK",
+        "Fortuna / Erdal — inventory vs other",
+        "Object name? Ties to Aysel $50k / Erdal $26k the same week?",
+    ),
+    ("2025-07-24", D("26000.00")): (
+        "ART_SALE",
+        "ASK",
+        "Erdal Dere $26,000 IN — sale vs other",
+        "Incoming wire ERDAL DERE. Sale of inventory to Erdal, repayment, or advisory?",
+    ),
+    ("2025-07-28", D("-60000.00")): (
+        "TRANSFER",
+        "LOCKED",
+        "Owner transfer to BoA 9922",
+        "Not EPGC P&L.",
+    ),
+    ("2025-08-15", D("-20000.00")): (
+        "ART_PURCHASE",
+        "ASK",
+        "Fortuna / Erdal — inventory vs other",
+        "Object name?",
+    ),
+    ("2025-08-29", D("10000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-09-02", D("5042.00")): (
+        "ADVISORY",
+        "ASK",
+        "L5 — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-09-04", D("-3000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer off Mercury 8291. Not EPGC operating. Distinct from Coinbase 6108 credit-card spend.",
+    ),
+    ("2025-09-19", D("5000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-09-23", D("9119.27")): (
+        "ADVISORY",
+        "ASK",
+        "L5 — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-09-25", D("-40000.00")): (
+        "TRANSFER",
+        "LOCKED",
+        "Owner transfer to BoA 9922",
+        "Not EPGC P&L.",
+    ),
+    ("2025-09-25", D("3100.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-09-29", D("-6000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-10-01", D("10000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-10-01", D("-10000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-10-09", D("-6172.00")): (
+        "TRANSFER",
+        "LOCKED",
+        "Owner transfer to BoA 9922",
+        "Not EPGC P&L.",
+    ),
+    ("2025-10-09", D("25000.00")): (
+        "ART_SALE",
+        "ASK",
+        "Erdal Dere $25,000 IN — sale vs other",
+        "Incoming wire ERDAL DERE. Sale of inventory to Erdal or something else?",
+    ),
+    ("2025-10-14", D("-8000.00")): (
+        "COGS_JEWELRY",
+        "LOCKED",
+        "Newstar Jewelers — jewelry fabrication",
+        "Fees for making jewelry out of intaglios, engraved gems, and scarabs. COGS, not EPGC operating. Not added to sold-lot Cost (Berk lots already sold in February).",
+    ),
+    ("2025-10-15", D("16000.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-10-20", D("150000.00")): (
+        "PASS_THROUGH",
+        "HOLD",
+        "Jack Koziol & Tracy Hoffman $150,000 IN",
+        "Incoming wire /BNF/Per your request. Next-day $150,000 OUT to Ariadne Demirjian LLC. Proposed pass-through — not income unless you say it is a sale.",
+    ),
+    ("2025-10-21", D("7500.00")): (
+        "ADVISORY",
+        "ASK",
+        "L5 — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-10-21", D("-150000.00")): (
+        "PASS_THROUGH",
+        "HOLD",
+        "Ariadne Demirjian LLC $150,000 OUT",
+        "Same window as Koziol $150,000 IN. Proposed pass-through — not COGS/expense unless you say it is a purchase.",
+    ),
+    ("2025-10-24", D("1500.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-10-30", D("-658.63")): (
+        "ASK",
+        "ASK",
+        "Wise — vendor / COGS / other",
+        "International payment from EPGC. Not reimbursed. COGS, advisory cost, or personal?",
+    ),
+    ("2025-10-31", D("2170.00")): (
+        "ADVISORY",
+        "ASK",
+        "EOEB — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-11-06", D("-10000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-11-07", D("6000.00")): (
+        "ART_SALE",
+        "ASK",
+        "Erdal Dere Fortuna PAYMENT $6,000 IN",
+        "Wire memo ERDAL DERE FORTUNA PAYMENT. Sale, refund of a Fortuna purchase, or other?",
+    ),
+    ("2025-11-12", D("-8000.00")): (
+        "COGS_JEWELRY",
+        "LOCKED",
+        "Newstar Jewelers — jewelry fabrication",
+        "Intaglios / engraved gems / scarabs. COGS, not EPGC operating.",
+    ),
+    ("2025-11-14", D("-10000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-11-17", D("-10000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-11-24", D("-5000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-12-02", D("565.75")): (
+        "REIMBURSE",
+        "LOCKED",
+        "EOEB reimburses Wise $565.75",
+        "Monarch tag Reimburse. Nets with same-day Wise OUT. Not income.",
+    ),
+    ("2025-12-02", D("-565.75")): (
+        "REIMBURSE",
+        "LOCKED",
+        "Wise $565.75 reimbursed by EOEB",
+        "Same-day EOEB IN $565.75. Net $0. Not EPGC expense.",
+    ),
+    ("2025-12-04", D("4700.26")): (
+        "ADVISORY",
+        "ASK",
+        "L5 — sale vs art advisory",
+        "Auto-Routing. Proposed advisory until confirmed.",
+    ),
+    ("2025-12-11", D("-5000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH funding",
+        "Investment transfer. Not EPGC operating.",
+    ),
+    ("2025-12-22", D("8000.00")): (
+        "INVESTMENT",
+        "LOCKED",
+        "Coinbase ACH back to Mercury",
+        "Investment withdrawal onto 8291. Not Art Sales / not advisory income.",
+    ),
+    ("2025-12-24", D("-7581.00")): (
+        "COGS_JEWELRY",
+        "LOCKED",
+        "Newstar Jewelers — jewelry fabrication (3 of 3)",
+        "Mercury.com ‘3 of 3’. Intaglios / engraved gems / scarabs. COGS, not EPGC operating.",
+    ),
+}
+
+
+def merchant_from_statement(stmt: str, monarch_merchant: str) -> str:
+    s = stmt or ""
+    if "Merchant name:" in s:
+        return s.split("Merchant name:", 1)[1].strip()
+    return monarch_merchant
+
+
+def load_mercury_rows() -> list[dict]:
+    seen = set()
+    out = []
+    with MONARCH.open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if "8291" not in (row.get("Account") or ""):
+                continue
+            if not (row.get("Date") or "").startswith("2025"):
+                continue
+            tid = row["Id"]
+            if tid in seen:
+                continue
+            seen.add(tid)
+            amt = D(row["Amount"])
+            date = row["Date"]
+            key = (date, amt)
+            if key not in RULES:
+                raise SystemExit(f"unclassified Mercury txn {date} {amt} {row['Merchant']} {row['Original Statement']}")
+            bucket, status, deal, note = RULES[key]
+            month = int(date[5:7]) - 1
+            out.append(
+                {
+                    "date": date,
+                    "month": month,
+                    "counterparty": merchant_from_statement(row["Original Statement"], row["Merchant"]),
+                    "monarch_merchant": row["Merchant"],
+                    "statement": row["Original Statement"],
+                    "monarch_category": row["Category"],
+                    "amount": amt,
+                    "bucket": bucket,
+                    "status": status,
+                    "deal": deal,
+                    "note": note,
+                    "id": tid,
+                }
+            )
+    out.sort(key=lambda r: (r["date"], r["amount"], r["counterparty"]))
+    if len(out) != 64:
+        raise SystemExit(f"expected 64 unique 2025 Mercury 8291 txns, got {len(out)}")
+    return out
+
+
+def monthly_sum(rows, pred) -> list[Decimal]:
+    arr = zeros()
+    for r in rows:
+        if pred(r):
+            add(arr, r["month"], r["amount"])
+    return arr
+
+
+def write_months(ws: Worksheet, row: int, start_col: int, values, fill, zero_fill=None):
+    for i, v in enumerate(values):
+        cell = ws.cell(row, start_col + i)
+        cell.value = money(v)
+        cell.number_format = ACCT
+        cell.font = CG
+        if D(v) != 0:
+            cell.fill = fill
+        elif zero_fill is not None:
+            cell.fill = zero_fill
+
+
+def style_header_row(ws, row, cols, titles):
+    for i, t in enumerate(titles, start=1):
+        cell = ws.cell(row, i, t)
+        cell.fill = NAVY
+        cell.font = WHITE
+        cell.alignment = Alignment(wrap_text=True, vertical="center")
+    ws.row_dimensions[row].height = 22
+
+
+def fill_status(cell, status: str):
+    cell.value = status
+    cell.font = CG
+    cell.fill = {
+        "LOCKED": GREEN,
+        "MATCHED": GREEN,
+        "PROPOSED": YELLOW,
+        "ASK": YELLOW,
+        "HOLD": BLUE,
+        "NOT_PL": GRAY,
+    }.get(status, YELLOW)
+
+
+def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
+    if "MERCURY 8291" in wb.sheetnames:
+        del wb["MERCURY 8291"]
+    ws = wb.create_sheet("MERCURY 8291", 0)
+    ws.sheet_properties.tabColor = "1F4E79"
+    ws["A1"] = (
+        "Mercury Checking 8291 — EPGC LLC (Choice Financial) 2025. "
+        "64 unique cash transactions. Coinbase ACH = investment. "
+        "Newstar = jewelry COGS on intaglios/gems/scarabs. "
+        "Do not treat BoA 9922 draws or Koziol/Ariadne $150k as P&L until confirmed. "
+        "Not tax advice."
+    )
+    ws["A1"].font = CG_B
+    ws["A1"].alignment = WRAP
+    ws.merge_cells("A1:L1")
+    ws.row_dimensions[1].height = 48
+
+    headers = [
+        "Date",
+        "Counterparty",
+        "Amount",
+        "Direction",
+        "Bucket",
+        "Status",
+        "Deal / object",
+        "Hits EPGC Art Sales?",
+        "Hits EPGC Consultant?",
+        "Monarch category",
+        "Original statement",
+        "Notes",
+    ]
+    style_header_row(ws, 3, 12, headers)
+
+    for i, r in enumerate(rows, start=4):
+        amt = r["amount"]
+        direction = "IN" if amt >= 0 else "OUT"
+        art = "YES" if r["bucket"] == "ART_SALE" and r["status"] in ("LOCKED", "MATCHED") else "no"
+        adv = "no — ASK first" if r["bucket"] == "ADVISORY" else "no"
+        ws.cell(i, 1, r["date"]).font = CG
+        ws.cell(i, 2, r["counterparty"]).font = CG
+        c = ws.cell(i, 3, money(amt))
+        c.number_format = ACCT
+        c.font = CG
+        ws.cell(i, 4, direction).font = CG
+        ws.cell(i, 5, r["bucket"]).font = CG
+        fill_status(ws.cell(i, 6), r["status"])
+        ws.cell(i, 7, r["deal"]).font = CG
+        ws.cell(i, 8, art).font = CG
+        ws.cell(i, 9, adv).font = CG
+        ws.cell(i, 10, r["monarch_category"]).font = CG
+        ws.cell(i, 11, r["statement"]).font = CG
+        n = ws.cell(i, 12, r["note"])
+        n.font = CG
+        n.alignment = WRAP
+        bucket_fill = {
+            "ART_SALE": PEACH,
+            "ART_PURCHASE": ORANGE,
+            "COGS_JEWELRY": ORANGE,
+            "INVESTMENT": BLUE,
+            "TRANSFER": GRAY,
+            "PASS_THROUGH": BLUE,
+            "REIMBURSE": GRAY,
+            "TEST": GRAY,
+            "ADVISORY": YELLOW,
+            "ASK": YELLOW,
+        }.get(r["bucket"], YELLOW)
+        ws.cell(i, 5).fill = bucket_fill
+        if r["status"] in ("LOCKED", "MATCHED") and r["bucket"] in ("ART_SALE", "COGS_JEWELRY", "INVESTMENT"):
+            ws.cell(i, 3).fill = GREEN
+        elif r["status"] in ("ASK", "PROPOSED", "HOLD"):
+            ws.cell(i, 3).fill = YELLOW
+        else:
+            ws.cell(i, 3).fill = GRAY
+        ws.row_dimensions[i].height = 36
+
+    last = 3 + len(rows)
+    ws.auto_filter.ref = f"A3:L{last}"
+    ws.freeze_panes = "A4"
+    widths = [12, 28, 14, 10, 16, 12, 42, 22, 22, 22, 55, 70]
+    for i, w in enumerate(widths, start=1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    return ws
+
+
+def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
+    if "ASK Mercury" in wb.sheetnames:
+        del wb["ASK Mercury"]
+    ws = wb.create_sheet("ASK Mercury", 1)
+    ws.sheet_properties.tabColor = "FFC000"
+    ws["A1"] = "ASK — Mercury 8291 (answer these so EPGC Consultant / remaining sales can be booked). Not tax advice."
+    ws["A1"].font = CG_B
+    ws.merge_cells("A1:C1")
+
+    questions = [
+        (
+            "1. EOEB LLC remainder after mosaics",
+            f"${sums['eoeb_remainder']:,.2f} of EOEB IN is not the $105,000 mosaics sale and not the $565.75 Wise reimbursement. "
+            "Invoice / MAKE A PAYMENT pattern. Book as art advisory (EPGC Consultant) or as more art sales? "
+            "Jan 16 $1,000 might be the Canosan horse (sold to Erdal $1,000 on Art Sales) — yes/no?",
+        ),
+        (
+            "2. L5 (all seven invoices)",
+            f"${sums['l5']:,.2f}. Same Auto-Routing Request or Invoice Payment pattern as EOEB. "
+            "Advisory fees, art sales, or mixed? The 7/15 $50,000 lands the same week as Aysel $50k and Fortuna $45k.",
+        ),
+        (
+            "3. Fortuna / Erdal Dere OUT after seals",
+            f"${sums['fortuna_remainder_out']:,.2f} after the 1/8 $13,000 seals COGS (5/9 $20k, 7/21 $45k, 8/15 $20k). "
+            "Inventory purchases (object names) or something else?",
+        ),
+        (
+            "4. Erdal Dere IN",
+            f"${sums['erdal_in']:,.2f} (7/24 $26k, 10/9 $25k, 11/7 $6k ‘FORTUNA PAYMENT’). "
+            "Sales to Erdal, refunds of Fortuna purchases, or other?",
+        ),
+        (
+            "5. Aysel Dere $50,000 IN (7/18)",
+            "Sale, related-party transfer, or part of the mid-July Fortuna/L5 cluster?",
+        ),
+        (
+            "6. David Aaron Limited $13,595 IN (6/24)",
+            "Proposed art sale (London antiquities dealer invoice). Confirm object. If it is a purchase you paid and they refunded, say so.",
+        ),
+        (
+            "7. Wise $334.17 (7/9) and $658.63 (10/30)",
+            "Who / what? Dec $565.75 was reimbursed by EOEB (locked net $0). These two were not.",
+        ),
+        (
+            "8. Jack Koziol & Tracy Hoffman $150,000 IN (10/20) / Ariadne Demirjian $150,000 OUT (10/21)",
+            "Proposed pass-through (not P&L). If this was a real purchase/sale, name the object.",
+        ),
+        (
+            "9. Aquinas Hobor $1,000 IN (2/4)",
+            "Sale, leftover, or other? Aquinas bought Saharan bracelets in 2022.",
+        ),
+        (
+            "10. Mosaics Cost $90,000 vs Mercury $50,000",
+            "Plutus & Mnemosyne paid $50,000 in February. Where is the other $40,000 of Cost (other account / 2024 / still owed)?",
+        ),
+    ]
+
+    ws["A3"] = "Question"
+    ws["B3"] = "What I need"
+    ws["A3"].fill = NAVY
+    ws["B3"].fill = NAVY
+    ws["A3"].font = WHITE
+    ws["B3"].font = WHITE
+    for i, (q, detail) in enumerate(questions, start=4):
+        ws.cell(i, 1, q).font = CG_B
+        ws.cell(i, 1).fill = YELLOW
+        ws.cell(i, 1).alignment = WRAP
+        ws.cell(i, 2, detail).font = CG
+        ws.cell(i, 2).fill = YELLOW
+        ws.cell(i, 2).alignment = WRAP
+        ws.row_dimensions[i].height = 48
+
+    r = 15
+    ws.cell(r, 1, "LOCKED / MATCHED this pass (do not recast without saying so)").font = WHITE
+    ws.cell(r, 1).fill = NAVY
+    ws.merge_cells("A15:B15")
+    locked = [
+        ("Coinbase ACH net", f"${sums['coinbase_net']:,.2f}  (OUT ${sums['coinbase_out']:,.2f} / IN ${sums['coinbase_in']:,.2f}) — Investments tab, not EPGC"),
+        ("Newstar Jewelers", f"${sums['newstar']:,.2f} jewelry fabrication COGS (10/14 $8,000 + 11/12 $8,000 + 12/24 $7,581)"),
+        ("Berk sales", "$14,000 seals (1/10) + $30,000 lots (2/7) = $44,000 Art Sales"),
+        ("Mosaics", "EOEB $105,000 sale (2/21) / Plutus $50,000 of $90,000 Cost"),
+        ("BoA 9922 draws", f"${sums['boa_out']:,.2f} owner transfer — not P&L"),
+        ("Wise/EOEB 12/2", "$565.75 reimbursed — not income, not expense"),
+        ("$10 test wires", "Jamal Rifai / EPGC / Plutus tests — not P&L"),
+    ]
+    for i, (k, v) in enumerate(locked, start=16):
+        ws.cell(i, 1, k).font = CG
+        ws.cell(i, 1).fill = GREEN
+        ws.cell(i, 2, v).font = CG
+        ws.cell(i, 2).fill = GREEN
+
+    ws.column_dimensions["A"].width = 55
+    ws.column_dimensions["B"].width = 110
+    ws.column_dimensions["C"].width = 20
+    return ws
+
+
+def patch_epgc(ws: Worksheet, art_sales_months, note: str) -> None:
+    # 2025 Art Sales is row 53, Consultant row 54 (from rebuild_like_prior_2025).
+    write_months(ws, 53, 2, art_sales_months, PEACH, zero_fill=GRAY)
+    write_months(ws, 54, 2, zeros(), GRAY, zero_fill=GRAY)
+    n53 = ws.cell(53, 14)
+    n53.value = "=SUM(B53:M53)"
+    n53.number_format = ACCT
+    n54 = ws.cell(54, 14)
+    n54.value = "=SUM(B54:M54)"
+    n54.number_format = ACCT
+    # Wipe 2024 values that copy_row_block left on the 2025 expense block.
+    for row in (58, 59, 60, 61, 62, 65, 69, 71, 72):
+        for col in range(2, 14):
+            cell = ws.cell(row, col)
+            if isinstance(cell.value, (int, float, Decimal)):
+                cell.value = 0
+                cell.fill = GRAY
+                cell.number_format = ACCT
+    ws["A75"] = note
+    ws["A75"].font = CG
+    ws["A75"].alignment = WRAP
+    try:
+        ws.merge_cells("A75:N76")
+    except Exception:
+        pass
+    ws.row_dimensions[75].height = 72
+
+
+def patch_investments(ws: Worksheet, coin_months, coin_in, coin_out, coin_net) -> None:
+    ws["A1"] = "Fidelity"
+    ws["B1"] = "SEP IRA"
+    ws["A2"] = "ML"
+    ws["B2"] = "UTMA EMMA COLEY"
+    ws["A3"] = "ML"
+    ws["B3"] = "UTMA PHOEBE COLEY"
+    ws["A5"] = "Coinbase (ACH from Mercury 8291)"
+    ws["A5"].font = Font(name="Century Gothic", size=12, bold=True)
+    ws["B5"] = "Investment transfers — not EPGC Art Sales, not advisory. Distinct from Coinbase 6108 card."
+    ws["B5"].font = CG
+    headers = ["", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", "2025 NET"]
+    for i, h in enumerate(headers, start=1):
+        cell = ws.cell(6, i, h)
+        cell.fill = NAVY
+        cell.font = WHITE
+    ws["A7"] = "To Coinbase (funding)"
+    ws["A8"] = "From Coinbase (back to 8291)"
+    ws["A9"] = "Net transfer"
+    for i, v in enumerate(coin_months):
+        # coin_months is signed net by month
+        pass
+    # rebuild in/out months from signed net isn't enough — pass arrays
+    ws["A11"] = (
+        f"2025: funded ${money(coin_out) * -1:,.2f} / returned ${money(coin_in):,.2f} / net ${money(coin_net):,.2f} "
+        "off the EPGC operating account. Not income, not an expense. Not tax advice."
+    )
+    ws["A11"].alignment = WRAP
+    ws.merge_cells("A11:N11")
+    ws.row_dimensions[11].height = 32
+    for col in range(1, 15):
+        ws.column_dimensions[get_column_letter(col)].width = 14
+    ws.column_dimensions["A"].width = 32
+
+
+def write_coinbase_months(ws, out_m, in_m, net_m):
+    write_months(ws, 7, 2, out_m, BLUE, zero_fill=GRAY)
+    write_months(ws, 8, 2, in_m, BLUE, zero_fill=GRAY)
+    write_months(ws, 9, 2, net_m, GREEN, zero_fill=GRAY)
+    for row, formula in ((7, "=SUM(B7:M7)"), (8, "=SUM(B8:M8)"), (9, "=SUM(B9:M9)")):
+        c = ws.cell(row, 14)
+        c.value = formula
+        c.number_format = ACCT
+        c.font = CG
+
+
+def _already_has(ws: Worksheet, needle: str) -> bool:
+    for r in range(1, (ws.max_row or 1) + 1):
+        v = ws.cell(r, 1).value
+        if v and needle in str(v):
+            return True
+    return False
+
+
+def patch_art_sales(ws: Worksheet) -> None:
+    # Restore net formulas on Berk lots 51–70; F71 stays $30,000 lump.
+    for r in range(51, 71):
+        ws.cell(r, 8).value = f'=IF(OR(F{r}="",C{r}=""),"",F{r}-C{r})'
+        ws.cell(r, 9).value = f'=IF(OR(H{r}="",C{r}=0),"",H{r}/C{r})'
+    ws["F71"] = 30000
+    ws["F71"].number_format = ACCT
+    ws["F71"].fill = GREEN
+    ws["G71"] = datetime(2025, 2, 7)
+    ws["G71"].number_format = "YYYY-MM-DD"
+    ws["G71"].fill = GREEN
+    ws["H71"] = "=F71-C71"
+    ws["C73"].fill = GREEN
+    ws["F73"].fill = GREEN
+    ws["D73"] = datetime(2025, 1, 8)
+    ws["D73"].number_format = "YYYY-MM-DD"
+    ws["G73"] = datetime(2025, 1, 10)
+    ws["G73"].number_format = "YYYY-MM-DD"
+    ws["C74"].fill = GREEN
+    ws["F74"].fill = GREEN
+    ws["A78"] = (
+        "Mercury 8291 MATCHED: Berk $14,000 (1/10 seals) + $30,000 (2/7 lots). "
+        "EOEB $105,000 (2/21 mosaics). Fortuna $13,000 (1/8 seals Cost). "
+        "Plutus $50,000 of mosaics $90,000 Cost — $40,000 of Cost not on 8291 (ASK). "
+        "Newstar $23,581 is jewelry fabrication COGS, parked below — not in sold-lot Cost "
+        "(Berk gem/scarab lots already sold in February). Not tax advice."
+    )
+    ws["A78"].fill = GREEN
+    ws["A78"].alignment = WRAP
+    ws.merge_cells("A78:I78")
+    ws.row_dimensions[78].height = 48
+
+    # Insert proposed David Aaron as a 2025 sale row if not present.
+    # Row 76 is Sale 6428. Put David Aaron at row 79 (after the mercury note),
+    # and fabrication / ASK purchases below inventory.
+    if _already_has(ws, "Newstar Jewelers — jewelry from intaglios"):
+        return
+    last = 1
+    for r in range(1, ws.max_row + 1):
+        if any(ws.cell(r, c).value not in (None, "") for c in range(1, 10)):
+            last = r
+    start = last + 2
+    ws.cell(start, 1, "2025 Mercury 8291 — proposed sale / ASK cash (not in EPGC Art Sales until confirmed)")
+    ws.cell(start, 1).font = CG_B
+    ws.merge_cells(start_row=start, start_column=1, end_row=start, end_column=9)
+
+    extra_sales = [
+        (
+            "Proposed: object TBD (David Aaron Limited invoice)",
+            "David Aaron Limited",
+            None,
+            "2025-06-24",
+            "David Aaron Limited (London)",
+            13595.00,
+            "2025-06-24",
+            YELLOW,
+            "PROPOSED art sale — confirm object. Mercury Request or Invoice Payment.",
+        ),
+    ]
+    r = start + 1
+    ws.cell(r, 1, extra_sales[0][0]).fill = YELLOW
+    ws.cell(r, 2, extra_sales[0][1]).fill = YELLOW
+    ws.cell(r, 5, extra_sales[0][4]).fill = YELLOW
+    ws.cell(r, 6, extra_sales[0][5]).fill = YELLOW
+    ws.cell(r, 6).number_format = ACCT
+    ws.cell(r, 7, extra_sales[0][6])
+    ws.cell(r, 8).value = f'=IF(OR(F{r}="",C{r}=""),"",F{r}-C{r})'
+    ws.cell(r, 9, extra_sales[0][8]).fill = YELLOW
+
+    r = start + 3
+    ws.cell(r, 1, "2025 Mercury COGS — Newstar Jewelers (LOCKED jewelry fabrication)")
+    ws.cell(r, 1).font = CG_B
+    ws.cell(r, 1).fill = GREEN
+    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=9)
+    newstar = [
+        ("Newstar Jewelers — jewelry from intaglios / engraved gems / scarabs", "Mercury 8291", 8000.00, "2025-10-14"),
+        ("Newstar Jewelers — jewelry from intaglios / engraved gems / scarabs", "Mercury 8291", 8000.00, "2025-11-12"),
+        ("Newstar Jewelers — jewelry from intaglios / engraved gems / scarabs (3 of 3)", "Mercury 8291", 7581.00, "2025-12-24"),
+    ]
+    for i, (obj, src, cost, dt) in enumerate(newstar, start=r + 1):
+        ws.cell(i, 1, obj).fill = GREEN
+        ws.cell(i, 2, src).fill = GREEN
+        c = ws.cell(i, 3, cost)
+        c.number_format = ACCT
+        c.fill = GREEN
+        ws.cell(i, 4, dt).fill = GREEN
+        ws.cell(i, 9, "LOCKED COGS fabrication. Not in sold-lot Cost total (Feb Berk lots already sold). Identify which gems/intaglios/scarabs.")
+    tot_row = r + 4
+    ws.cell(tot_row, 1, "Newstar 2025 total")
+    ws.cell(tot_row, 3, f"=SUM(C{r+1}:C{r+3})")
+    ws.cell(tot_row, 3).number_format = ACCT
+    ws.cell(tot_row, 3).fill = GREEN
+
+    r = tot_row + 2
+    ws.cell(r, 1, "2025 Mercury ASK — Fortuna inventory remaining (not in Cost total until object is named)")
+    ws.cell(r, 1).font = CG_B
+    ws.cell(r, 1).fill = YELLOW
+    fortuna = [
+        ("Fortuna / Erdal Dere — object TBD", "Mercury 8291", 20000.00, "2025-05-09"),
+        ("Fortuna / Erdal Dere — object TBD", "Mercury 8291", 45000.00, "2025-07-21"),
+        ("Fortuna / Erdal Dere — object TBD", "Mercury 8291", 20000.00, "2025-08-15"),
+    ]
+    for i, (obj, src, cost, dt) in enumerate(fortuna, start=r + 1):
+        ws.cell(i, 1, obj).fill = YELLOW
+        ws.cell(i, 2, src).fill = YELLOW
+        c = ws.cell(i, 3, cost)
+        c.number_format = ACCT
+        c.fill = YELLOW
+        ws.cell(i, 4, dt).fill = YELLOW
+        ws.cell(i, 9, "ASK: inventory purchase vs other. Do not add to sold Cost until named (avoid double count).")
+    ws.cell(r + 4, 1, "Fortuna remaining 2025 (excl. seals $13,000 already on row 73)")
+    ws.cell(r + 4, 3, 85000)
+    ws.cell(r + 4, 3).number_format = ACCT
+    ws.cell(r + 4, 3).fill = YELLOW
+
+
+def patch_income(ws: Worksheet, art_net: Decimal) -> None:
+    ws["I8"] = money(art_net)
+    ws["I8"].number_format = ACCT
+    ws["I8"].fill = YELLOW
+    ws["I8"].font = CG
+    ws["A12"] = (
+        "2025 Actual: I4 Monarch paycheck cash ≠ W-2 Box 1. I5 216 LTR cash $19,500. "
+        "I6 524 #2 STR platform net LOCKED. I7 GCM 1099-NEC $21,500. "
+        f"I8 Art net ${money(art_net):,.2f} = MATCHED Mercury deals only "
+        "(Berk lots $30,000 − $22,944.94 Cost) + seals $1,000 + mosaics $15,000. "
+        "Excludes Sale 6428 $11,000 until Cost, David Aaron $13,595 (proposed), "
+        "Erdal/Aysel/EOEB/L5 ASK. Not tax advice."
+    )
+    ws["A12"].alignment = WRAP
+    ws.row_dimensions[12].height = 48
+
+
+def summarize(rows: list[dict]) -> dict:
+    def s(pred):
+        return sum((r["amount"] for r in rows if pred(r)), D(0))
+
+    def sabs_out(pred):
+        return sum((-r["amount"] for r in rows if pred(r) and r["amount"] < 0), D(0))
+
+    eoeb = [r for r in rows if "EOEB" in r["counterparty"].upper() or "EOEB" in r["statement"].upper()]
+    l5 = [r for r in rows if r["counterparty"].strip() == "L5" or "Merchant name: L5" in r["statement"]]
+    fortuna = [r for r in rows if "Fortuna" in r["statement"] or "Fortuna" in r["counterparty"]]
+    erdal_in = [
+        r
+        for r in rows
+        if r["amount"] > 0
+        and "ERDAL" in (r["counterparty"] + " " + r["statement"]).upper()
+        and r["bucket"] != "REIMBURSE"
+    ]
+    # 11/7 is Erdal Fortuna PAYMENT — include in erdal_in
+    coin = [r for r in rows if r["bucket"] == "INVESTMENT"]
+    newstar = [r for r in rows if r["bucket"] == "COGS_JEWELRY"]
+    boa = [r for r in rows if r["bucket"] == "TRANSFER"]
+    mosaics_sale = D("105000")
+    reimb = D("565.75")
+    eoeb_in = sum((r["amount"] for r in eoeb if r["amount"] > 0), D(0))
+    fortuna_out = sum((-r["amount"] for r in fortuna if r["amount"] < 0), D(0))
+    return {
+        "n": len(rows),
+        "eoeb_in": eoeb_in,
+        "eoeb_remainder": eoeb_in - mosaics_sale - reimb,
+        "l5": sum((r["amount"] for r in l5), D(0)),
+        "fortuna_out": fortuna_out,
+        "fortuna_remainder_out": fortuna_out - D("13000"),
+        "erdal_in": sum((r["amount"] for r in erdal_in), D(0)),
+        "aysel": s(lambda r: "Aysel" in r["counterparty"] or "Aysel" in r["statement"]),
+        "coinbase_in": sum((r["amount"] for r in coin if r["amount"] > 0), D(0)),
+        "coinbase_out": sum((r["amount"] for r in coin if r["amount"] < 0), D(0)),
+        "coinbase_net": sum((r["amount"] for r in coin), D(0)),
+        "newstar": sum((-r["amount"] for r in newstar), D(0)),
+        "boa_out": sum((-r["amount"] for r in boa), D(0)),
+        "david_aaron": D("13595.00"),
+        "wise_unreimbursed": D("334.17") + D("658.63"),
+        "art_sale_locked_gross": D("14000") + D("30000") + D("105000"),
+        "art_net_locked": (D("30000") - D("22944.94")) + D("1000") + D("15000"),
+        "koziol": D("150000"),
+    }
+
+
+def sheet_to_csv(ws: Worksheet, path: Path) -> None:
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        for row in ws.iter_rows(max_row=ws.max_row, max_col=max(ws.max_column or 1, 1)):
+            w.writerow([("" if c.value is None else c.value) for c in row])
+
+
+def export_sheet(wb, name: str, path: Path) -> None:
+    out = Workbook()
+    out.remove(out.active)
+    src = wb[name]
+    ws = out.create_sheet(name)
+    for r in src.iter_rows(min_row=1, max_row=src.max_row, max_col=src.max_column):
+        for cell in r:
+            d = ws.cell(cell.row, cell.column, cell.value)
+            if cell.has_style:
+                d.font = copy(cell.font)
+                d.fill = copy(cell.fill)
+                d.border = copy(cell.border)
+                d.alignment = copy(cell.alignment)
+                d.number_format = cell.number_format
+    for col, dim in src.column_dimensions.items():
+        ws.column_dimensions[col].width = dim.width
+    out.save(path)
+
+
+def write_start_here(path: Path, sums: dict, mercury_sheet_url: str, epgc_url: str, income_url: str) -> None:
+    text = f"""START HERE — Mercury Bank 8291 (2026-09-20)
+
+Not tax advice. Same Personal Income.xlsx tabs as last year.
+
+Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
+64 unique 2025 cash transactions from the monthly statements + Monarch.
+
+Open the classification ledger (answer the ASK tab):
+{mercury_sheet_url}
+
+EPGC + Art Sales + GCM + Investments (last-year tabs, Art Sales unbundled):
+{epgc_url}
+
+Income + properties (unchanged this pass):
+{income_url}
+
+LOCKED this pass
+- Coinbase ACH net ${money(sums['coinbase_net']):,.2f} (funded ${money(-sums['coinbase_out']):,.2f} / back ${money(sums['coinbase_in']):,.2f}) → Investments. Not EPGC. Not the Coinbase 6108 card.
+- Newstar Jewelers ${money(sums['newstar']):,.2f} → jewelry fabrication COGS (intaglios, engraved gems, scarabs). Not EPGC operating.
+- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21).
+- Seals Cost $13,000 = Fortuna 1/8. Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
+- BoA 9922 transfers ${money(sums['boa_out']):,.2f} = owner draws, not P&L.
+- Dec 2 Wise $565.75 reimbursed by EOEB — not income.
+
+EPGC 2025 Art Sales is now only those matched sales ($149,000 cash: Jan $14,000 / Feb $135,000). Consultant stays $0 until you answer EOEB / L5.
+
+ASK (please answer)
+1. EOEB remainder ${money(sums['eoeb_remainder']):,.2f} after mosaics — advisory or more sales? Is Jan 16 $1,000 the Canosan horse?
+2. All L5 ${money(sums['l5']):,.2f} — advisory or sales? (7/15 $50,000 especially)
+3. Fortuna OUT remaining ${money(sums['fortuna_remainder_out']):,.2f} — inventory objects?
+4. Erdal IN ${money(sums['erdal_in']):,.2f} — sales to Erdal?
+5. Aysel Dere $50,000 IN (7/18)
+6. David Aaron Limited $13,595 (6/24) — proposed sale, confirm object
+7. Wise $334.17 + $658.63 (Dec was reimbursed)
+8. Koziol $150,000 / Ariadne $150,000 same window — pass-through?
+9. Aquinas Hobor $1,000 (2/4)
+10. Where is the other $40,000 of mosaics Cost?
+
+Income I8 Art net is ${money(sums['art_net_locked']):,.2f} from MATCHED deals only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 still waits on Cost.
+"""
+    path.write_text(text, encoding="utf-8")
+
+
+def main() -> None:
+    rows = load_mercury_rows()
+    sums = summarize(rows)
+
+    art_sales_months = monthly_sum(
+        rows,
+        lambda r: r["bucket"] == "ART_SALE" and r["status"] in ("LOCKED", "MATCHED"),
+    )
+    coin_net_m = monthly_sum(rows, lambda r: r["bucket"] == "INVESTMENT")
+    coin_out_m = monthly_sum(rows, lambda r: r["bucket"] == "INVESTMENT" and r["amount"] < 0)
+    coin_in_m = monthly_sum(rows, lambda r: r["bucket"] == "INVESTMENT" and r["amount"] > 0)
+
+    wb = load_workbook(XLSX)
+    build_ledger_sheet(wb, rows)
+    build_ask_sheet(wb, rows, sums)
+    preferred = [
+        "Income",
+        "524 Ferdinand Ave, Unit 2",
+        "216 N. Oak Park Ave",
+        "EPGC LLC",
+        "Refrence Library",
+        "Art Sales and Purchases",
+        "GCM",
+        "Hindman W2",
+        "Megan T4",
+        "Investments",
+        "524 Ferdinand Ave, Unit 1",
+        "524 Home Sale",
+        "827 Grove CapEx",
+        "Childcare 2441",
+        "MERCURY 8291",
+        "ASK Mercury",
+    ]
+    existing = [n for n in preferred if n in wb.sheetnames]
+    extras = [n for n in wb.sheetnames if n not in existing]
+    wb._sheets[:] = [wb[n] for n in existing + extras]
+    patch_epgc(
+        wb["EPGC LLC"],
+        art_sales_months,
+        (
+            "2025 Mercury unbundled 2026-09-20: Art Sales = MATCHED cash only "
+            "(Berk $14,000 Jan + Berk $30,000 / mosaics $105,000 Feb = $149,000). "
+            "Prior mixed Mercury dump removed. Consultant $0 until EOEB remainder "
+            f"${money(sums['eoeb_remainder']):,.2f} and L5 ${money(sums['l5']):,.2f} are answered. "
+            "Coinbase is Investments, not this tab. Newstar $23,581 is Art Sales COGS, not operating expense. "
+            "2024 leftover supplies/furniture/consultant-fee numbers on this 2025 block were zeroed. "
+            "GCM 1099 is personal. Not tax advice."
+        ),
+    )
+    inv = wb["Investments"]
+    patch_investments(inv, coin_net_m, sums["coinbase_in"], sums["coinbase_out"], sums["coinbase_net"])
+    write_coinbase_months(inv, coin_out_m, coin_in_m, coin_net_m)
+    patch_art_sales(wb["Art Sales and Purchases"])
+    patch_income(wb["Income"], sums["art_net_locked"])
+
+    wb.save(XLSX)
+    DELIVERABLE.parent.mkdir(exist_ok=True)
+    shutil.copy2(XLSX, DELIVERABLE)
+    PARTS.mkdir(exist_ok=True)
+    CSV_DIR.mkdir(exist_ok=True)
+
+    export_names = [
+        ("MERCURY 8291", "MERCURY_LEDGER.csv"),
+        ("ASK Mercury", "ASK_Mercury.csv"),
+        ("EPGC LLC", "EPGC_LLC.csv"),
+        ("Art Sales and Purchases", "Art_Sales.csv"),
+        ("Investments", "Investments.csv"),
+        ("Income", "Income.csv"),
+    ]
+    for name, fname in export_names:
+        sheet_to_csv(wb[name], CSV_DIR / fname)
+        safe = name.replace(",", "").replace(".", "")[:40]
+        export_sheet(wb, name, PARTS / f"{safe}.xlsx")
+
+    # Multi-tab Mercury pack for Drive conversion
+    pack = Workbook()
+    pack.remove(pack.active)
+    for name in ("ASK Mercury", "MERCURY 8291", "EPGC LLC", "Art Sales and Purchases", "Investments", "Income"):
+        src = wb[name]
+        ws = pack.create_sheet(name)
+        for r in src.iter_rows(min_row=1, max_row=src.max_row, max_col=min(src.max_column or 1, 14)):
+            for cell in r:
+                d = ws.cell(cell.row, cell.column, cell.value)
+                if cell.has_style:
+                    d.font = copy(cell.font)
+                    d.fill = copy(cell.fill)
+                    d.alignment = copy(cell.alignment)
+                    d.number_format = cell.number_format
+        for col, dim in src.column_dimensions.items():
+            ws.column_dimensions[col].width = dim.width
+        if src.sheet_properties.tabColor:
+            ws.sheet_properties.tabColor = src.sheet_properties.tabColor.rgb
+    pack_path = PARTS / "Personal Income 2025 — Mercury 8291.xlsx"
+    pack.save(pack_path)
+
+    epgc_pack = Workbook()
+    epgc_pack.remove(epgc_pack.active)
+    for name in ("EPGC LLC", "Art Sales and Purchases", "GCM", "Investments", "ASK Mercury", "MERCURY 8291"):
+        src = wb[name]
+        ws = epgc_pack.create_sheet(name)
+        for r in src.iter_rows(min_row=1, max_row=src.max_row, max_col=min(src.max_column or 1, 14)):
+            for cell in r:
+                d = ws.cell(cell.row, cell.column, cell.value)
+                if cell.has_style:
+                    d.font = copy(cell.font)
+                    d.fill = copy(cell.fill)
+                    d.alignment = copy(cell.alignment)
+                    d.number_format = cell.number_format
+        for col, dim in src.column_dimensions.items():
+            ws.column_dimensions[col].width = dim.width
+    epgc_pack_path = PARTS / "Personal Income 2025 — like last year (EPGC+Art+GCM).xlsx"
+    epgc_pack.save(epgc_pack_path)
+
+    payload = {
+        "updated": "2026-09-20",
+        "disclaimer": "Not tax advice. Organizational packet only.",
+        "account": "Mercury Checking 8291 EPGC LLC",
+        "n_txns": sums["n"],
+        "locked": {
+            "coinbase_net": float(sums["coinbase_net"]),
+            "coinbase_out": float(sums["coinbase_out"]),
+            "coinbase_in": float(sums["coinbase_in"]),
+            "newstar_cogs": float(sums["newstar"]),
+            "art_sale_locked_gross": float(sums["art_sale_locked_gross"]),
+            "art_net_locked": float(sums["art_net_locked"]),
+            "boa_9922_draws": float(sums["boa_out"]),
+        },
+        "ask": {
+            "eoeb_remainder": float(sums["eoeb_remainder"]),
+            "l5": float(sums["l5"]),
+            "fortuna_remainder_out": float(sums["fortuna_remainder_out"]),
+            "erdal_in": float(sums["erdal_in"]),
+            "aysel": float(sums["aysel"]),
+            "david_aaron_proposed": float(sums["david_aaron"]),
+            "wise_unreimbursed": float(sums["wise_unreimbursed"]),
+            "koziol_ariadne_passthrough": float(sums["koziol"]),
+            "mosaics_cost_missing_on_mercury": 40000.0,
+        },
+        "epgc_art_sales_2025_monthly": [float(x) for x in art_sales_months],
+        "epgc_consultant": 0.0,
+    }
+    JSON_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+
+    write_start_here(
+        CSV_DIR / "START_HERE_mercury.txt",
+        sums,
+        mercury_sheet_url="(Drive URL filled after upload)",
+        epgc_url="(Drive URL filled after upload)",
+        income_url="https://docs.google.com/spreadsheets/d/1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k/edit",
+    )
+
+    if PACKET.exists():
+        pkt = json.loads(PACKET.read_text(encoding="utf-8"))
+        pkt["updated"] = "2026-09-20"
+        pkt["mercury_8291"] = payload
+        PACKET.write_text(json.dumps(pkt, indent=2), encoding="utf-8")
+
+    print("n", sums["n"])
+    print("art sales months", [float(x) for x in art_sales_months], "year", float(sum(art_sales_months)))
+    print("coinbase net", float(sums["coinbase_net"]))
+    print("newstar", float(sums["newstar"]))
+    print("eoeb remainder", float(sums["eoeb_remainder"]))
+    print("l5", float(sums["l5"]))
+    print("fortuna remainder", float(sums["fortuna_remainder_out"]))
+    print("erdal in", float(sums["erdal_in"]))
+    print("aysel", float(sums["aysel"]))
+    print("boa", float(sums["boa_out"]))
+    print("art net locked", float(sums["art_net_locked"]))
+    print("saved", XLSX, XLSX.stat().st_size)
+    print("pack", pack_path, pack_path.stat().st_size)
+
+
+if __name__ == "__main__":
+    main()
