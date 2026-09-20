@@ -26,6 +26,14 @@ LOCKED this pass:
     (user 2026-09-20). Remainder dollars stay unallocated — do NOT dump
     EOEB $130,270 or L5 $87,396.32 onto Consultant or Art Sales.
     Jan 16 EOEB $1,000 Canosan-horse question stays open.
+  Native Mercury CSV 2026-09-20 (epgc-llc-transactions-2025-jan-01-to-
+    2025-dec-31.csv, account 8291): duplicate of the already-classified
+    2025 year — 0 new unique Sent cash vs the 64. Fortuna 5/9 $20,000 =
+    bronze head of a goddess, likely Venus (LOCKED inventory). Fortuna
+    7/21 $45,000 = Roman Gold Belt (LOCKED inventory). Not sold 2025 —
+    parked Cost, not dumped onto Art Sales / Consultant. Aug Fortuna
+    $20,000 still unnamed (Monarch 8/15 = native 8/18). Failed Aysel
+    $50k OUT 7/17 and Cancelled Erdal $13k 1/8 are not cash.
 
 Do NOT dump unclassified Mercury into EPGC Art Sales.
 Do not re-run apply_checking_answers_2025.py.
@@ -48,6 +56,8 @@ from openpyxl.worksheet.worksheet import Worksheet
 
 ROOT = Path("/workspace/.cursor/scratch")
 MONARCH = ROOT / "monarch_ty2025.csv"
+NATIVE_CSV = ROOT / "mercury_8291_native_2025.csv"
+NATIVE_DRIVE_ID = "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU"
 XLSX = ROOT / "Personal_Income_2025_Tax_Turbo.xlsx"
 DELIVERABLE = ROOT / "tax_turbo_deliverable" / "Personal_Income_2025_Tax_Turbo.xlsx"
 PARTS = ROOT / "tax_turbo_parts"
@@ -112,7 +122,9 @@ RULES = {
         "ART_PURCHASE",
         "MATCHED",
         "A Collection of Seals — COGS",
-        "Fortuna / Erdal Dere. Matches Art Sales Cost $13,000; Berk sold it 1/10 for $14,000.",
+        "Fortuna / Erdal Dere. Mercury native note: J.K. New York Collection. "
+        "Matches Art Sales Cost $13,000; Berk sold it 1/10 for $14,000. "
+        "Same-day Cancelled ACH to Erdal Dere (closed) is not cash.",
     ),
     ("2025-01-10", D("14000.00")): (
         "ART_SALE",
@@ -202,9 +214,11 @@ RULES = {
     ),
     ("2025-05-09", D("-20000.00")): (
         "ART_PURCHASE",
-        "ASK",
-        "Fortuna / Erdal — inventory vs other",
-        "After seals $13,000. Object name? Inventory purchase (COGS when sold) or something else?",
+        "LOCKED",
+        "Bronze head of a goddess, likely Venus — inventory Cost",
+        "Mercury native 2025 CSV note: 'For bronze head of a goddess, likely Venus'. "
+        "Inventory purchase from Fortuna / Erdal. Not sold on 2025 Art Sales — parked Cost, "
+        "not in sold-lot Cost (avoid double count). Not dumped onto Consultant or Art Sales P&L.",
     ),
     ("2025-05-13", D("16200.00")): (
         "ADVISORY",
@@ -269,14 +283,18 @@ RULES = {
     ("2025-07-18", D("50000.00")): (
         "ASK",
         "ASK",
-        "Aysel Dere $50,000 IN",
-        "Same week as L5 $50k, Fortuna $45k OUT (7/21), Erdal $26k IN (7/24). Sale, family/related transfer, or inventory reverse?",
+        "Aysel Dere $50,000 IN on Monarch — NOT on Mercury native Sent",
+        "Monarch 7/18 +$50,000 IN. Mercury native 2025 CSV (user upload 2026-09-20) has no Sent Aysel cash. "
+        "Native has Failed $50,000 OUT 7/17 'Recipient account does not exist'. "
+        "Keep on ASK — do not dump onto Art Sales or Consultant. Is the Monarch IN a phantom of the failed send?",
     ),
     ("2025-07-21", D("-45000.00")): (
         "ART_PURCHASE",
-        "ASK",
-        "Fortuna / Erdal — inventory vs other",
-        "Object name? Ties to Aysel $50k / Erdal $26k the same week?",
+        "LOCKED",
+        "Roman Gold Belt — inventory Cost",
+        "Mercury native 2025 CSV note: Roman Gold Belt. Inventory purchase from Fortuna / Erdal. "
+        "Not sold on 2025 Art Sales — parked Cost, not in sold-lot Cost. "
+        "Same week as L5 $50k / Monarch Aysel $50k ASK / Erdal $26k IN.",
     ),
     ("2025-07-24", D("26000.00")): (
         "ART_SALE",
@@ -293,8 +311,10 @@ RULES = {
     ("2025-08-15", D("-20000.00")): (
         "ART_PURCHASE",
         "ASK",
-        "Fortuna / Erdal — inventory vs other",
-        "Object name?",
+        "Fortuna / Erdal — object still unnamed",
+        "Same $20,000 OUT as Mercury native initiated 2025-08-18 / Monarch posted 2025-08-15. "
+        "No object name in the native memo ('From EPGC LLC via mercury.com'). "
+        "Inventory vs other? Do not add to sold Cost until named. Not a second unique txn.",
     ),
     ("2025-08-29", D("10000.00")): (
         "ADVISORY",
@@ -498,6 +518,106 @@ def merchant_from_statement(stmt: str, monarch_merchant: str) -> str:
     return monarch_merchant
 
 
+def _native_iso(mdy: str) -> str:
+    # MM-DD-YYYY → YYYY-MM-DD
+    mm, dd, yyyy = mdy.split("-")
+    return f"{yyyy}-{mm}-{dd}"
+
+
+def load_native_rows() -> list[dict]:
+    """Mercury native 2025 CSV (user Drive upload). Account 8291 only."""
+    if not NATIVE_CSV.exists():
+        return []
+    out = []
+    with NATIVE_CSV.open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            acct = row.get("Source Account") or ""
+            if "8291" not in acct:
+                continue
+            date = _native_iso(row["Date (UTC)"])
+            amt = D(row["Amount"])
+            out.append(
+                {
+                    "date": date,
+                    "amount": amt,
+                    "status": (row.get("Status") or "").strip(),
+                    "description": (row.get("Description") or "").strip(),
+                    "reference": (row.get("Reference") or "").strip(),
+                    "note": (row.get("Note") or "").strip(),
+                    "bank": (row.get("Bank Description") or "").strip(),
+                    "fail": (row.get("Failure Reason") or "").strip(),
+                    "tracking": (row.get("Tracking ID") or "").strip(),
+                }
+            )
+    return out
+
+
+def native_ingest_stats(native: list[dict]) -> dict:
+    sent = [r for r in native if r["status"] == "Sent"]
+    noncash = [r for r in native if r["status"] != "Sent"]
+    sent_keys = {(r["date"], r["amount"]) for r in sent}
+    rules_keys = set(RULES)
+    # 8/18 native Fortuna $20k is the 8/15 Monarch key, not a new unique.
+    alias = {("2025-08-18", D("-20000.00")): ("2025-08-15", D("-20000.00"))}
+    mapped = {alias.get(k, k) for k in sent_keys}
+    new_unique = sorted(mapped - rules_keys)
+    missing_from_native = sorted(rules_keys - mapped)
+    return {
+        "drive_id": NATIVE_DRIVE_ID,
+        "title": "epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv",
+        "account": "Mercury Checking xx8291",
+        "n_rows": len(native),
+        "sent_cash_rows": len(sent),
+        "sent_unique_keys": len(sent_keys),
+        "new_unique_vs_64": len(new_unique),
+        "new_unique_keys": [f"{d} {a}" for d, a in new_unique],
+        "missing_from_native_sent": [f"{d} {a}" for d, a in missing_from_native],
+        "date_shift": "Fortuna $20,000 Monarch 2025-08-15 = Mercury native 2025-08-18 (same cash)",
+        "non_cash": [
+            {
+                "date": r["date"],
+                "amount": float(r["amount"]),
+                "status": r["status"],
+                "who": r["description"],
+                "reason": r["fail"] or r["note"] or r["reference"],
+            }
+            for r in noncash
+        ],
+    }
+
+
+def overlay_native(rows: list[dict], native: list[dict]) -> None:
+    """Attach native memo / initiated date. Do not add Failed/Cancelled as cash."""
+    sent = [r for r in native if r["status"] == "Sent"]
+    by_key: dict[tuple, list] = {}
+    for n in sent:
+        key = (n["date"], n["amount"])
+        if key == ("2025-08-18", D("-20000.00")):
+            key = ("2025-08-15", D("-20000.00"))
+        by_key.setdefault(key, []).append(n)
+    used = set()
+    for r in rows:
+        cands = by_key.get((r["date"], r["amount"])) or []
+        pick = None
+        for i, n in enumerate(cands):
+            tag = (n["date"], n["amount"], n["tracking"] or n["description"], i)
+            if tag in used:
+                continue
+            pick = n
+            used.add(tag)
+            break
+        if not pick and cands:
+            pick = cands[0]
+        if not pick:
+            continue
+        extra = " | ".join(x for x in (pick["reference"], pick["note"], pick["bank"]) if x)
+        r["native_date"] = pick["date"]
+        r["native_status"] = pick["status"]
+        r["native_memo"] = extra
+        if extra and extra not in (r["statement"] or ""):
+            r["statement"] = f"{r['statement']}; Mercury native: {extra}"
+
+
 def load_mercury_rows() -> list[dict]:
     seen = set()
     out = []
@@ -537,6 +657,9 @@ def load_mercury_rows() -> list[dict]:
     out.sort(key=lambda r: (r["date"], r["amount"], r["counterparty"]))
     if len(out) != 64:
         raise SystemExit(f"expected 64 unique 2025 Mercury 8291 txns, got {len(out)}")
+    native = load_native_rows()
+    if native:
+        overlay_native(out, native)
     return out
 
 
@@ -589,8 +712,10 @@ def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
     ws.sheet_properties.tabColor = "1F4E79"
     ws["A1"] = (
         "Mercury Checking 8291 — EPGC LLC (Choice Financial) 2025. "
-        "64 unique cash transactions. Coinbase ACH = investment. "
+        "64 unique cash transactions (Monarch IDs). Native Mercury CSV 2026-09-20 is the same 8291 year — "
+        "0 new unique Sent cash. Coinbase ACH = investment. "
         "Newstar = jewelry COGS on intaglios/gems/scarabs. "
+        "Fortuna Venus $20k (5/9) + Roman Gold Belt $45k (7/21) LOCKED inventory (not sold Cost). "
         "BoA 9922 draws and Koziol/Ariadne $150k are LOCKED not-P&L (pass-through / owner transfer). "
         "David Aaron $13,595 is LOCKED EPGC Consultant (June). "
         "Wise $334.17 + $658.63 are LOCKED EPGC Consultant Fees (expertise write-ups). "
@@ -712,9 +837,10 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
             "9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26.",
         ),
         (
-            "3. Fortuna / Erdal Dere OUT after seals",
-            f"${sums['fortuna_remainder_out']:,.2f} after the 1/8 $13,000 seals COGS (5/9 $20k, 7/21 $45k, 8/15 $20k). "
-            "Inventory purchases (object names) or something else?",
+            "3. Fortuna / Erdal $20,000 Aug — object still unnamed",
+            f"${sums['fortuna_remainder_out']:,.2f}. Monarch posted 8/15 = Mercury native initiated 8/18 "
+            "(same cash, not a second unique txn). Native memo has no object name. "
+            "Venus $20,000 (5/9) and Roman Gold Belt $45,000 (7/21) are LOCKED inventory below — not this question.",
         ),
         (
             "4. Erdal Dere IN",
@@ -722,8 +848,11 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
             "Sales to Erdal, refunds of Fortuna purchases, or other?",
         ),
         (
-            "5. Aysel Dere $50,000 IN (7/18)",
-            "Sale, related-party transfer, or part of the mid-July Fortuna/L5 cluster?",
+            "5. Aysel Dere $50,000 — Monarch IN vs native Failed OUT",
+            "Monarch 7/18 +$50,000 IN is in the 64. Mercury native CSV has NO Sent Aysel cash — "
+            "only Failed $50,000 OUT 7/17 'Recipient account does not exist'. "
+            "Is the Monarch IN a phantom of the failed send, or a real incoming the export omitted? "
+            "Do not dump onto Art Sales or Consultant until confirmed.",
         ),
         (
             "6. David Aaron Limited $13,595 IN (6/24) — LOCKED consultant fee",
@@ -792,6 +921,9 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
         ("Wise expertise write-ups", "$334.17 (7/9) + $658.63 (10/30) = $992.80 → EPGC Consultant Fees expense. Dec $565.75 still reimbursed / not P&L."),
         ("Aquinas Hobor books", "$1,000 IN 2/4 LOCKED book sale → EPGC Art Sales February +$1,000 (Feb $136,000; matched cash $150,000). Cost / titles TBD (not in I8 until Cost, same as Sale 6428)."),
         ("EOEB / L5 mixed pattern", "CONFIRMED mixed art sales AND advisory/consultant. Remainder $130,270 / $87,396.32 unallocated — not on P&L until invoice split. Jan 16 $1,000 Canosan-horse still open."),
+        ("Fortuna Venus inventory", "$20,000 OUT 5/9 LOCKED. Mercury native note: bronze head of a goddess, likely Venus. Parked Cost — not sold 2025, not dumped onto Art Sales/Consultant."),
+        ("Fortuna Roman Gold Belt", "$45,000 OUT 7/21 LOCKED. Mercury native note: Roman Gold Belt. Parked Cost — not sold 2025, not dumped onto Art Sales/Consultant."),
+        ("Native CSV 2026-09-20", "epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv is account 8291, same 2025 year already classified. 0 new unique Sent cash vs the 64. Failed Aysel 7/17 and Cancelled Erdal 1/8 are not cash."),
     ]
     for i, (k, v) in enumerate(locked, start=16):
         ws.cell(i, 1, k).font = CG
@@ -1056,6 +1188,91 @@ def _fix_art_sales_footer(ws: Worksheet, note: str) -> None:
     ws.row_dimensions[note_row].height = 48
 
 
+def lock_fortuna_named_inventory(ws: Worksheet) -> None:
+    """Always refresh Fortuna inventory rows from native CSV object names.
+
+    Venus $20k and Roman Gold Belt $45k LOCKED parked Cost. Aug $20k stays ASK.
+    Do not add named unsold inventory to sold-lot Cost.
+    """
+    header_row = None
+    by_amt_date = {}
+    remaining_row = None
+    for r in range(1, (ws.max_row or 1) + 1):
+        a = str(ws.cell(r, 1).value or "")
+        dt = str(ws.cell(r, 4).value or "")
+        cost = ws.cell(r, 3).value
+        if "Fortuna inventory" in a or (a.startswith("2025 Mercury ASK") and "Fortuna" in a):
+            header_row = r
+        if a.startswith("Fortuna remaining 2025"):
+            remaining_row = r
+        if a.startswith("Fortuna / Erdal") or "Venus" in a or "Roman Gold Belt" in a:
+            by_amt_date[(str(cost), dt[:10] if dt else dt)] = r
+    targets = [
+        (
+            ("20000", "2025-05-09"),
+            "Bronze head of a goddess, likely Venus — Fortuna inventory",
+            GREEN,
+            "LOCKED 2026-09-20 from Mercury native CSV note. Parked Cost. Not sold 2025 — not in sold-lot Cost. Not tax advice.",
+        ),
+        (
+            ("45000", "2025-07-21"),
+            "Roman Gold Belt — Fortuna inventory",
+            GREEN,
+            "LOCKED 2026-09-20 from Mercury native CSV note. Parked Cost. Not sold 2025 — not in sold-lot Cost. Not tax advice.",
+        ),
+        (
+            ("20000", "2025-08-15"),
+            "Fortuna / Erdal Dere — object still unnamed (native 8/18 = Monarch 8/15)",
+            YELLOW,
+            "ASK: same $20,000 as Mercury native 2025-08-18. No object name. Do not add to sold Cost. Not a second unique txn.",
+        ),
+    ]
+    # also match float costs
+    def find_row(cost_s, date_s):
+        for key, r in by_amt_date.items():
+            c, d = key
+            try:
+                same_cost = D(c) == D(cost_s)
+            except Exception:
+                same_cost = str(c).startswith(cost_s)
+            if same_cost and date_s in d:
+                return r
+        return None
+
+    for (cost_s, date_s), title, fill, note in targets:
+        r = find_row(cost_s, date_s)
+        if r is None:
+            continue
+        ws.cell(r, 1, title).fill = fill
+        ws.cell(r, 1).font = CG
+        ws.cell(r, 2, "Mercury 8291").fill = fill
+        ws.cell(r, 2).font = CG
+        c = ws.cell(r, 3)
+        try:
+            c.value = float(cost_s)
+        except Exception:
+            pass
+        c.number_format = ACCT
+        c.fill = fill
+        ws.cell(r, 4, date_s).fill = fill
+        ws.cell(r, 9, note).fill = fill
+        ws.cell(r, 9).font = CG
+        ws.cell(r, 9).alignment = WRAP
+    if header_row:
+        ws.cell(
+            header_row,
+            1,
+            "2025 Mercury Fortuna inventory — Venus + Roman Gold Belt LOCKED; Aug $20k unnamed ASK",
+        )
+        ws.cell(header_row, 1).font = CG_B
+        ws.cell(header_row, 1).fill = GREEN
+    if remaining_row:
+        ws.cell(remaining_row, 1, "Fortuna unnamed remaining 2025 (excl. seals $13,000 + Venus $20,000 + Belt $45,000)")
+        ws.cell(remaining_row, 3, 20000)
+        ws.cell(remaining_row, 3).number_format = ACCT
+        ws.cell(remaining_row, 3).fill = YELLOW
+
+
 def patch_art_sales(ws: Worksheet) -> None:
     # Restore net formulas on Berk lots 51–70; F71 stays $30,000 lump.
     for r in range(51, 71):
@@ -1089,6 +1306,7 @@ def patch_art_sales(ws: Worksheet) -> None:
     reclass_david_aaron(ws)
     lock_aquinas_books(ws)
     _fix_art_sales_footer(ws, matched_note)
+    lock_fortuna_named_inventory(ws)
 
     # Insert Newstar / Fortuna ASK rows once. Do not insert David Aaron as a sale.
     if _already_has(ws, "Newstar Jewelers — jewelry from intaglios"):
@@ -1136,24 +1354,32 @@ def patch_art_sales(ws: Worksheet) -> None:
     ws.cell(tot_row, 3).fill = GREEN
 
     r = tot_row + 2
-    ws.cell(r, 1, "2025 Mercury ASK — Fortuna inventory remaining (not in Cost total until object is named)")
+    ws.cell(r, 1, "2025 Mercury Fortuna inventory — Venus + Roman Gold Belt LOCKED; Aug $20k unnamed ASK")
     ws.cell(r, 1).font = CG_B
-    ws.cell(r, 1).fill = YELLOW
+    ws.cell(r, 1).fill = GREEN
     fortuna = [
-        ("Fortuna / Erdal Dere — object TBD", "Mercury 8291", 20000.00, "2025-05-09"),
-        ("Fortuna / Erdal Dere — object TBD", "Mercury 8291", 45000.00, "2025-07-21"),
-        ("Fortuna / Erdal Dere — object TBD", "Mercury 8291", 20000.00, "2025-08-15"),
+        ("Bronze head of a goddess, likely Venus — Fortuna inventory", "Mercury 8291", 20000.00, "2025-05-09"),
+        ("Roman Gold Belt — Fortuna inventory", "Mercury 8291", 45000.00, "2025-07-21"),
+        ("Fortuna / Erdal Dere — object still unnamed (native 8/18 = Monarch 8/15)", "Mercury 8291", 20000.00, "2025-08-15"),
     ]
     for i, (obj, src, cost, dt) in enumerate(fortuna, start=r + 1):
-        ws.cell(i, 1, obj).fill = YELLOW
-        ws.cell(i, 2, src).fill = YELLOW
+        named = "unnamed" not in obj
+        fill = GREEN if named else YELLOW
+        ws.cell(i, 1, obj).fill = fill
+        ws.cell(i, 2, src).fill = fill
         c = ws.cell(i, 3, cost)
         c.number_format = ACCT
-        c.fill = YELLOW
-        ws.cell(i, 4, dt).fill = YELLOW
-        ws.cell(i, 9, "ASK: inventory purchase vs other. Do not add to sold Cost until named (avoid double count).")
-    ws.cell(r + 4, 1, "Fortuna remaining 2025 (excl. seals $13,000 already on row 73)")
-    ws.cell(r + 4, 3, 85000)
+        c.fill = fill
+        ws.cell(i, 4, dt).fill = fill
+        ws.cell(
+            i,
+            9,
+            "LOCKED parked Cost. Not sold 2025 — not in sold-lot Cost."
+            if named
+            else "ASK: same $20,000 as Mercury native 2025-08-18. No object name. Do not add to sold Cost.",
+        )
+    ws.cell(r + 4, 1, "Fortuna unnamed remaining 2025 (excl. seals $13,000 + Venus $20,000 + Belt $45,000)")
+    ws.cell(r + 4, 3, 20000)
     ws.cell(r + 4, 3).number_format = ACCT
     ws.cell(r + 4, 3).fill = YELLOW
 
@@ -1201,13 +1427,28 @@ def summarize(rows: list[dict]) -> dict:
     reimb = D("565.75")
     eoeb_in = sum((r["amount"] for r in eoeb if r["amount"] > 0), D(0))
     fortuna_out = sum((-r["amount"] for r in fortuna if r["amount"] < 0), D(0))
+    fortuna_named_unsold = sum(
+        (
+            -r["amount"]
+            for r in rows
+            if r["bucket"] == "ART_PURCHASE"
+            and r["status"] == "LOCKED"
+            and ("Venus" in r["deal"] or "Gold Belt" in r["deal"] or "Venus" in r["note"] or "Gold Belt" in r["note"])
+        ),
+        D(0),
+    )
+    fortuna_ask = sum(
+        (-r["amount"] for r in rows if r["bucket"] == "ART_PURCHASE" and r["status"] == "ASK" and ("Fortuna" in r["counterparty"] or "Fortuna" in r["deal"] or "Erdal" in r["counterparty"])),
+        D(0),
+    )
     return {
         "n": len(rows),
         "eoeb_in": eoeb_in,
         "eoeb_remainder": eoeb_in - mosaics_sale - reimb,
         "l5": sum((r["amount"] for r in l5), D(0)),
         "fortuna_out": fortuna_out,
-        "fortuna_remainder_out": fortuna_out - D("13000"),
+        "fortuna_remainder_out": fortuna_ask,
+        "fortuna_named_inventory": fortuna_named_unsold,
         "erdal_in": sum((r["amount"] for r in erdal_in), D(0)),
         "aysel": s(lambda r: "Aysel" in r["counterparty"] or "Aysel" in r["statement"]),
         "coinbase_in": sum((r["amount"] for r in coin if r["amount"] > 0), D(0)),
@@ -1263,7 +1504,13 @@ def write_start_here(
 Not tax advice. Same Personal Income.xlsx tabs as last year.
 
 Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
-64 unique 2025 cash transactions from the monthly statements + Monarch.
+64 unique 2025 cash transactions from Monarch IDs.
+
+User uploaded native Mercury CSV 2026-09-20 15:39 UTC:
+epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv (Drive {NATIVE_DRIVE_ID}).
+Account 8291. Same 2025 year already classified — 0 new unique Sent cash vs the 64.
+Failed Aysel $50k OUT 7/17 and Cancelled Erdal $13k 1/8 are not cash.
+Fortuna $20k Monarch 8/15 = native 8/18 (date shift, not a second txn).
 
 Open ASK (Q6–Q9 locked green; Q1/Q2 mixed pattern confirmed, dollars unallocated):
 {mercury_sheet_url}
@@ -1271,7 +1518,7 @@ Open ASK (Q6–Q9 locked green; Q1/Q2 mixed pattern confirmed, dollars unallocat
 EPGC LLC 2025 (Art Sales cash $150,000 Jan $14,000 / Feb $136,000; Consultant June $13,595; Consultant Fees $992.80):
 {epgc_url}
 
-Lock sheet Q6 consultant / Q7 write-ups / Q8 pass-through / Q9 Aquinas books + mixed unallocated:
+Lock sheet Q6 consultant / Q7 write-ups / Q8 pass-through / Q9 Aquinas books + Venus/Belt inventory:
 {lock_url}
 
 Income + properties (I8 still $23,055.06 — Aquinas Cost TBD):
@@ -1281,7 +1528,8 @@ LOCKED this pass
 - Coinbase ACH net ${money(sums['coinbase_net']):,.2f} (funded ${money(-sums['coinbase_out']):,.2f} / back ${money(sums['coinbase_in']):,.2f}) → Investments. Not EPGC. Not the Coinbase 6108 card.
 - Newstar Jewelers ${money(sums['newstar']):,.2f} → jewelry fabrication COGS (intaglios, engraved gems, scarabs). Not EPGC operating.
 - Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21) + Aquinas books $1,000 (2/4).
-- Seals Cost $13,000 = Fortuna 1/8. Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
+- Seals Cost $13,000 = Fortuna 1/8 (native note: J.K. New York Collection). Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
+- Fortuna Venus $20,000 (5/9) + Roman Gold Belt $45,000 (7/21) LOCKED inventory from native memos. Parked Cost — not sold 2025, not on P&L.
 - BoA 9922 transfers ${money(sums['boa_out']):,.2f} = owner draws, not P&L.
 - Dec 2 Wise $565.75 reimbursed by EOEB — not income.
 - David Aaron Limited $13,595 (6/24) → EPGC Consultant June. User: consultant fee, not a sale.
@@ -1298,13 +1546,14 @@ ANSWERED
 7. Wise $334.17 + $658.63 — LOCKED business expenses (expertise write-ups) on EPGC Consultant Fees.
 8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
 9. Aquinas Hobor $1,000 (2/4) — LOCKED book sale (EPGC Art Sales February +$1,000; Cost TBD, not in I8).
+Fortuna Venus $20,000 (5/9) + Roman Gold Belt $45,000 (7/21) — LOCKED inventory (native CSV notes).
 
 ASK remaining
 1. EOEB remainder ${money(sums['eoeb_remainder']):,.2f} — MIXED PATTERN CONFIRMED; invoice-level split ASK. Do not dump onto Consultant or Art Sales. Jan 16 $1,000 Canosan-horse still open.
 2. L5 ${money(sums['l5']):,.2f} — MIXED PATTERN CONFIRMED; invoice-level split ASK. Do not dump.
-3. Fortuna leftover ${money(sums['fortuna_remainder_out']):,.2f} — inventory objects?
+3. Fortuna unnamed ${money(sums['fortuna_remainder_out']):,.2f} — Aug $20,000 (Monarch 8/15 = native 8/18). Object name?
 4. Erdal IN ${money(sums['erdal_in']):,.2f} — sales to Erdal?
-5. Aysel Dere $50,000 IN (7/18)
+5. Aysel Dere — Monarch 7/18 +$50,000 IN vs native Failed 7/17 −$50,000 OUT (recipient account does not exist). Phantom or omitted incoming?
 10. Mosaics Cost $40,000 missing on Mercury 8291.
 
 Income I8 Art net is ${money(sums['art_net_locked']):,.2f} from MATCHED deals with Cost only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost. Consultant is EPGC, not I8.
@@ -1354,8 +1603,20 @@ def write_compact_lock(path: Path, sums: dict) -> None:
         [
             "ASK remaining",
             "ASK",
-            f"Fortuna leftover ${money(sums['fortuna_remainder_out']):,.2f} / Erdal IN ${money(sums['erdal_in']):,.2f} / Aysel $50,000 / mosaics Cost $40,000",
-            "Object names / invoice split still needed.",
+            f"Fortuna unnamed ${money(sums['fortuna_remainder_out']):,.2f} / Erdal IN ${money(sums['erdal_in']):,.2f} / Aysel Monarch IN vs native Failed OUT / mosaics Cost $40,000",
+            "Aug $20k object name; Aysel phantom vs omitted incoming; invoice split still needed.",
+        ],
+        [
+            "Fortuna Venus + Belt",
+            "LOCKED",
+            "Venus $20,000 (5/9) + Roman Gold Belt $45,000 (7/21) inventory from native CSV notes",
+            "Parked Cost. Not sold 2025. Not dumped onto Art Sales or Consultant.",
+        ],
+        [
+            "Native CSV 2026-09-20",
+            "INGESTED",
+            "epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv account 8291",
+            "0 new unique Sent cash vs the 64. Failed Aysel 7/17 and Cancelled Erdal 1/8 not cash. Fortuna $20k date 8/15 Monarch = 8/18 native.",
         ],
         [
             "LOCKED totals",
@@ -1371,6 +1632,7 @@ def write_compact_lock(path: Path, sums: dict) -> None:
 def main() -> None:
     rows = load_mercury_rows()
     sums = summarize(rows)
+    native_stats = native_ingest_stats(load_native_rows())
 
     art_sales_months = monthly_sum(
         rows,
@@ -1514,14 +1776,18 @@ def main() -> None:
             "koziol_ariadne_passthrough": float(sums["koziol"]),
             "wise_expertise_writeups": float(sums["wise_expertise"]),
             "aquinas_books_sale": float(sums["aquinas_books"]),
+            "fortuna_venus_inventory": 20000.0,
+            "fortuna_roman_gold_belt": 45000.0,
         },
         "ask": {
             "eoeb_remainder": float(sums["eoeb_remainder"]),
             "l5": float(sums["l5"]),
             "eoeb_l5_pattern": "mixed art sales + advisory/consultant CONFIRMED; invoice-level split ASK; do not dump remainder",
             "fortuna_remainder_out": float(sums["fortuna_remainder_out"]),
+            "fortuna_named_inventory": float(sums["fortuna_named_inventory"]),
             "erdal_in": float(sums["erdal_in"]),
             "aysel": float(sums["aysel"]),
+            "aysel_native": "Monarch 7/18 +$50,000 IN vs native Failed 7/17 −$50,000 OUT; not dumped",
             "mosaics_cost_missing_on_mercury": 40000.0,
             "eoeb_jan16_canosan_horse": 1000.0,
             "aquinas_books_cost_tbd": True,
@@ -1531,6 +1797,7 @@ def main() -> None:
         "epgc_consultant": float(sum(consultant_months)),
         "epgc_consultant_fees_2025_monthly": [float(x) for x in consultant_fees_months],
         "epgc_consultant_fees": float(sum(consultant_fees_months)),
+        "native_csv": native_stats,
     }
     if JSON_PATH.exists():
         try:
@@ -1562,11 +1829,11 @@ def main() -> None:
         pkt["updated"] = "2026-09-20"
         pkt["mercury_8291"] = payload
         pkt["xlsx_note"] = (
-            "2026-09-20 Q6–Q9: David Aaron $13,595 Consultant June; "
-            "Wise $992.80 Consultant Fees (expertise write-ups); "
-            "Koziol/Ariadne $150k pass-through; Aquinas books $1,000 Art Sales February (Cost TBD). "
-            "Art Sales MATCHED/LOCKED $150,000 (Feb $136,000). I8 $23,055.06 (excludes books until Cost). "
-            "EOEB/L5 mixed pattern confirmed, dollars unallocated."
+            "2026-09-20 native Mercury CSV ingest: 0 new unique Sent cash vs the 64. "
+            "Fortuna Venus $20k (5/9) + Roman Gold Belt $45k (7/21) LOCKED inventory (parked Cost). "
+            "Aug Fortuna $20k unnamed (8/15 Monarch = 8/18 native). "
+            "Aysel Monarch IN vs native Failed OUT still ASK. "
+            "Q6–Q9 + EOEB/L5 mixed unallocated unchanged. I8 $23,055.06."
         )
         PACKET.write_text(json.dumps(pkt, indent=2), encoding="utf-8")
 
@@ -1577,6 +1844,10 @@ def main() -> None:
     print("eoeb remainder", float(sums["eoeb_remainder"]))
     print("l5", float(sums["l5"]))
     print("fortuna remainder", float(sums["fortuna_remainder_out"]))
+    print("fortuna named inventory", float(sums["fortuna_named_inventory"]))
+    print("native new unique vs 64", native_stats.get("new_unique_vs_64"))
+    print("native missing from sent", native_stats.get("missing_from_native_sent"))
+    print("native non-cash", native_stats.get("non_cash"))
     print("erdal in", float(sums["erdal_in"]))
     print("aysel", float(sums["aysel"]))
     print("boa", float(sums["boa_out"]))
