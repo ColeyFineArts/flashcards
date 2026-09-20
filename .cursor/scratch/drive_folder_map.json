@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "root": {
     "id": "1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu",
     "title": "2025 Taxes",
@@ -36,25 +36,31 @@
     "childcare_recon": "1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
-    "like_last_year_epgc_art_gcm": "1X6j9Bo-bK607PVw8LpwUJq6pX9lVQ8GLF-YlGhWVoQc",
+    "like_last_year_epgc_art_gcm": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
     "start_here_xlsx": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
     "sale_closing_2025": "1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv",
     "purchase_cd_524_2023": "10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f",
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
     "sale_facts_sheet": "1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY",
-    "grove_purchase_facts_sheet": "1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc"
+    "grove_purchase_facts_sheet": "1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc",
+    "start_here_mercury": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
+    "ask_mercury": "1Rf9lDZn3SecYTBdFDmDR8oC9EK-RkVeD8aM-pKHK0Pw",
+    "mercury_ledger": "15yO66GpbVaHGCDpWZ-GM1D6YFwzOi_Fo0YTnojhbjHA",
+    "epgc_2025_matched": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
+    "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
   },
   "notes": [
     "Megan-owned closing PDFs may remain at root (no move permission); CANONICAL copies filed in 03 and 05.",
     "Nested Documents folder emptied and trashed.",
     "Root duplicate Airbnb/VRBO PDFs trashed; originals remain in Platform PDFs.",
     "Closing fact sheets populated 2026-09-17 from Megan CDs.",
-    "CC answers 2026-09-18: START HERE 1_ekfhyHO… (Grove Collaborative + State Farm); old CC sheets in _SUPERSEDED.",
-    "Checking 2026-09-18: JSC 1zsgbJxK… (9922) + joint 1dIxS-Vn… (0203) under 07; inflows mapped GCM/LTR/gifts.",
-    "START HERE checking inflows 1JWVlG6i…; ASK 1Kpv3_eN…; old Grove START HERE/ASK/EPGC/SOURCE in _SUPERSEDED.",
-    "Checking answers 2026-09-18: START HERE 13-H7dv2j…; ASK 1R18NvBr…; Oak Park 1Lws45r7…; EPGC Consultant $0; Art Sales Sale 6428 $11k. Prior checking-inflow sheets in _SUPERSEDED.",
-    "Native xlsx on Drive 2026-09-18 23:36: root 1c5OGQwO… + packet 1nr69eD_… (45,229 bytes, 19 tabs, checking answers). START HERE root 1HroQW8H…. Corrupt 50,960-byte truncated uploads in _SUPERSEDED.",
-    "2026-09-19: user could not open native xlsx (corrupt XML). Moved 1c5OGQwO / 1nr69eD to _SUPERSEDED. Live files are converted Google Sheets: OPEN ME 1CR8ocRz… plus Parts A–D. START HERE 1TF9TXxG….",
-    "2026-09-19 evening: rebuilt on last year’s Personal Income.xlsx look. Live: Income+Properties 1XkpQn0z… (216 has 2023|2024|2025 rent/mortgage/HOA) and EPGC+Art+GCM 1X6j9Bo-…. START HERE 1G7ZF45y…. Prior different-template Parts A–D and 7-tab OPEN ME in _SUPERSEDED."
+    "CC answers 2026-09-18: START HERE 1_ekfhyHO\u2026 (Grove Collaborative + State Farm); old CC sheets in _SUPERSEDED.",
+    "Checking 2026-09-18: JSC 1zsgbJxK\u2026 (9922) + joint 1dIxS-Vn\u2026 (0203) under 07; inflows mapped GCM/LTR/gifts.",
+    "START HERE checking inflows 1JWVlG6i\u2026; ASK 1Kpv3_eN\u2026; old Grove START HERE/ASK/EPGC/SOURCE in _SUPERSEDED.",
+    "Checking answers 2026-09-18: START HERE 13-H7dv2j\u2026; ASK 1R18NvBr\u2026; Oak Park 1Lws45r7\u2026; EPGC Consultant $0; Art Sales Sale 6428 $11k. Prior checking-inflow sheets in _SUPERSEDED.",
+    "Native xlsx on Drive 2026-09-18 23:36: root 1c5OGQwO\u2026 + packet 1nr69eD_\u2026 (45,229 bytes, 19 tabs, checking answers). START HERE root 1HroQW8H\u2026. Corrupt 50,960-byte truncated uploads in _SUPERSEDED.",
+    "2026-09-19: user could not open native xlsx (corrupt XML). Moved 1c5OGQwO / 1nr69eD to _SUPERSEDED. Live files are converted Google Sheets: OPEN ME 1CR8ocRz\u2026 plus Parts A\u2013D. START HERE 1TF9TXxG\u2026.",
+    "2026-09-19 evening: rebuilt on last year\u2019s Personal Income.xlsx look. Live: Income+Properties 1XkpQn0z\u2026 (216 has 2023|2024|2025 rent/mortgage/HOA) and EPGC+Art+GCM 1X6j9Bo-\u2026. START HERE 1G7ZF45y\u2026. Prior different-template Parts A\u2013D and 7-tab OPEN ME in _SUPERSEDED.",
+    "2026-09-20 Mercury 8291: ASK 1Rf9lDZn\u2026 ledger 15yO66Gp\u2026 EPGC MATCHED 1bN2WsHJ\u2026 Coinbase Investments 1cDuwXi6\u2026 START HERE 1QSFrHBe\u2026. Prior EPGC+Art+GCM 1X6j9Bo- / 1tMHJgQ1 moved to _SUPERSEDED (mixed dump)."
   ]
 }

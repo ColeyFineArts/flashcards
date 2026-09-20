@@ -9,9 +9,9 @@
   "xlsx_bytes_local": 105652,
   "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
   "like_last_year_income_properties_packet": "1qLmbezF77s8iKTV0UV9YUznkPlwzXyCm-Q50sXG_qBI",
-  "like_last_year_epgc_art_gcm": "1X6j9Bo-bK607PVw8LpwUJq6pX9lVQ8GLF-YlGhWVoQc",
-  "like_last_year_epgc_art_gcm_packet": "1tMHJgQ12RGPzHf8qdjKfuPZ0CrzcJlzIzhlPqjsFIM0",
-  "xlsx_note": "Rebuilt from last year's Personal Income.xlsx. 216 has 2023|2024|2025 monthly rent, Rocket mortgage, HOA. Native xlsx uploads remain unreliable; live files are converted Google Sheets.",
+  "like_last_year_epgc_art_gcm": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
+  "like_last_year_epgc_art_gcm_packet": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
+  "xlsx_note": "2026-09-20 Mercury 8291 classified. EPGC Art Sales 2025 is MATCHED Berk/mosaics only. Prior mixed dump sheet moved to _SUPERSEDED. Live: ASK + MERCURY ledger + EPGC MATCHED + Coinbase Investments.",
   "note": "Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -57,7 +57,12 @@
     "art_cc": "1KQyTRezVYzY5liK-mFUmeZQ7gbHhDZLF4riWxq4oyhs",
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
-    "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4"
+    "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4",
+    "start_here_mercury": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
+    "ask_mercury": "1Rf9lDZn3SecYTBdFDmDR8oC9EK-RkVeD8aM-pKHK0Pw",
+    "mercury_ledger": "15yO66GpbVaHGCDpWZ-GM1D6YFwzOi_Fo0YTnojhbjHA",
+    "epgc_2025_matched": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
+    "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
   },
   "mercury_8291": {
     "updated": "2026-09-20",
@@ -99,5 +104,7 @@
       0.0
     ],
     "epgc_consultant": 0.0
-  }
+  },
+  "start_here_mercury": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
+  "start_here_mercury_packet": "1NZi645tpNH2vgb1LRWmgOXIPb8umBNNrZQkp_KXZwak"
 }

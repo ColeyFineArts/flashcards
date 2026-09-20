@@ -37,5 +37,15 @@
     0.0,
     0.0
   ],
-  "epgc_consultant": 0.0
+  "epgc_consultant": 0.0,
+  "drive": {
+    "start_here_mercury_root": "1QSFrHBeSiwCP_KRxAtbru--wc24a80jCAgugTeMpxGw",
+    "start_here_mercury_packet": "1NZi645tpNH2vgb1LRWmgOXIPb8umBNNrZQkp_KXZwak",
+    "ask_mercury": "1Rf9lDZn3SecYTBdFDmDR8oC9EK-RkVeD8aM-pKHK0Pw",
+    "ask_mercury_bank_folder": "1qr8NgnnmyDwy7aJcjSb8hPfmCld37fHq9cF7KPcN3qI",
+    "mercury_ledger": "15yO66GpbVaHGCDpWZ-GM1D6YFwzOi_Fo0YTnojhbjHA",
+    "mercury_ledger_bank_folder": "1ketiHa1NDVMFLBiz04rn5Gp1ZSm4kKJgecbysI8Fgak",
+    "epgc_2025_matched": "1bN2WsHJIyuahCtwrnvzYro-lHPXyNoXMY7IZbYuTN80",
+    "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4"
+  }
 }
