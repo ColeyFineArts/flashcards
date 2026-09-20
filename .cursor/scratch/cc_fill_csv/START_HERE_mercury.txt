@@ -5,13 +5,16 @@ Not tax advice. Same Personal Income.xlsx tabs as last year.
 Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
 64 unique 2025 cash transactions from the monthly statements + Monarch.
 
-Open the classification ledger (answer the ASK tab):
-(Drive URL filled after upload)
+Open ASK (Q6–Q9 locked green; Q1/Q2 mixed pattern confirmed, dollars unallocated):
+https://docs.google.com/spreadsheets/d/1G2LwKMOnCqlz_c1e0qEQrLhNMiGJR32lZXx8WXadzIs/edit
 
-EPGC + Art Sales + GCM + Investments (last-year tabs, Art Sales unbundled):
-(Drive URL filled after upload)
+EPGC LLC 2025 (Art Sales cash $150,000 Jan $14,000 / Feb $136,000; Consultant June $13,595; Consultant Fees $992.80):
+https://docs.google.com/spreadsheets/d/11ihhr9haJrESwfJfjm1SKwFTpEJlfYL2HSmMoVNiT6g/edit
 
-Income + properties (unchanged this pass):
+Lock sheet Q6 consultant / Q7 write-ups / Q8 pass-through / Q9 Aquinas books + mixed unallocated:
+https://docs.google.com/spreadsheets/d/1GJxO-nbwGA1DQp48SLMq8889gdA96agThm6NMim2g_U/edit
+
+Income + properties (I8 still $23,055.06 — Aquinas Cost TBD):
 https://docs.google.com/spreadsheets/d/1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k/edit
 
 LOCKED this pass

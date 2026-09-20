@@ -63,9 +63,13 @@ todos:
     content: "DONE — Ava co-tenant keep; vacant Oct+half Nov; Joan $675 repair; GCM off EPGC Consultant (personal 1099); May 22 reimbursement; Bear Creek $38k gift to Jake from parents; Freeman’s $11k Sale 6428 to Megan; 8507 WAIT-MEGAN. Not tax advice."
     status: completed
   - id: mercury-q6-q8
-    content: "DONE 2026-09-20 — Q6 David Aaron $13,595 LOCKED EPGC Consultant June (not a sale). Q8 Koziol/Ariadne $150k LOCKED pass-through (not P&L). Art Sales MATCHED $149,000; I8 $23,055.06 unchanged. ASK remaining 1–5, 7, 9, 10."
+    content: "DONE 2026-09-20 — Q6 David Aaron $13,595 LOCKED EPGC Consultant June (not a sale). Q8 Koziol/Ariadne $150k LOCKED pass-through (not P&L)."
     status: completed
-    content: "DONE 2026-09-20 — Q7 Wise $334.17 + $658.63 LOCKED EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed. ASK remaining 1–5, 9, 10."
+  - id: mercury-q7
+    content: "DONE 2026-09-20 — Q7 Wise $334.17 + $658.63 LOCKED EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed."
+    status: completed
+  - id: mercury-q9-mixed
+    content: "DONE 2026-09-20 — Q9 Aquinas Hobor $1,000 LOCKED book sale (Art Sales Feb $136,000 / matched cash $150,000; Cost TBD so I8 stays $23,055.06). Q1/Q2 EOEB/L5 mixed pattern CONFIRMED, dollars unallocated. Remaining ASK: Fortuna $85k, Erdal $57k, Aysel $50k, mosaics Cost $40k, Jan 16 Canosan horse."
     status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
