@@ -16,6 +16,9 @@ LOCKED this pass:
   Jack Koziol & Tracy Hoffman $150,000 IN (10/20) /
     Ariadne Demirjian LLC $150,000 OUT (10/21) = pass-through, not P&L
     (user 2026-09-20: "8. Pass through")
+  Wise $334.17 (7/9) + $658.63 (10/30) = EPGC Consultant Fees expense
+    (user 2026-09-20: "7. Business expenses (expertise write ups)").
+    Distinct from Dec Wise $565.75 reimbursed by EOEB (not P&L).
 
 Do NOT dump unclassified Mercury into EPGC Art Sales.
 Do not re-run apply_checking_answers_2025.py.
@@ -84,7 +87,7 @@ def add(arr, month: int, amt):
 
 # (date, amount) -> classification. Amounts signed as Mercury cash (IN +, OUT -).
 # bucket: ART_SALE | ART_PURCHASE | ADVISORY | INVESTMENT | COGS_JEWELRY | TRANSFER
-#         | PASS_THROUGH | REIMBURSE | TEST | ASK
+#         | PASS_THROUGH | REIMBURSE | TEST | ASK | EPGC_EXPENSE
 # status: LOCKED | MATCHED | PROPOSED | ASK | HOLD | NOT_PL
 RULES = {
     ("2025-01-08", D("-13000.00")): (
@@ -220,10 +223,10 @@ RULES = {
         "Auto-Routing Request or Invoice Payment. Proposed advisory until confirmed.",
     ),
     ("2025-07-09", D("-334.17")): (
-        "ASK",
-        "ASK",
-        "Wise — vendor / COGS / other",
-        "International payment from EPGC. Not reimbursed. COGS, advisory cost, or personal?",
+        "EPGC_EXPENSE",
+        "LOCKED",
+        "Wise — expertise write-ups (Consultant Fees)",
+        "User 2026-09-20: business expense (expertise write-ups). Hits EPGC Consultant Fees July $334.17. Not COGS, not reimbursed. Distinct from Dec Wise $565.75 (EOEB reimburse).",
     ),
     ("2025-07-11", D("8534.79")): (
         "ADVISORY",
@@ -382,10 +385,10 @@ RULES = {
         "Auto-Routing. Proposed advisory until confirmed.",
     ),
     ("2025-10-30", D("-658.63")): (
-        "ASK",
-        "ASK",
-        "Wise — vendor / COGS / other",
-        "International payment from EPGC. Not reimbursed. COGS, advisory cost, or personal?",
+        "EPGC_EXPENSE",
+        "LOCKED",
+        "Wise — expertise write-ups (Consultant Fees)",
+        "User 2026-09-20: business expense (expertise write-ups). Hits EPGC Consultant Fees October $658.63. Not COGS, not reimbursed. Distinct from Dec Wise $565.75 (EOEB reimburse).",
     ),
     ("2025-10-31", D("2170.00")): (
         "ADVISORY",
@@ -570,6 +573,7 @@ def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
         "Newstar = jewelry COGS on intaglios/gems/scarabs. "
         "BoA 9922 draws and Koziol/Ariadne $150k are LOCKED not-P&L (pass-through / owner transfer). "
         "David Aaron $13,595 is LOCKED EPGC Consultant (June). "
+        "Wise $334.17 + $658.63 are LOCKED EPGC Consultant Fees (expertise write-ups). "
         "Not tax advice."
     )
     ws["A1"].font = CG_B
@@ -628,6 +632,7 @@ def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
             "PASS_THROUGH": BLUE,
             "REIMBURSE": GRAY,
             "TEST": GRAY,
+            "EPGC_EXPENSE": PEACH,
             "ADVISORY": YELLOW,
             "ASK": YELLOW,
         }.get(r["bucket"], YELLOW)
@@ -637,6 +642,7 @@ def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
             "COGS_JEWELRY",
             "INVESTMENT",
             "ADVISORY",
+            "EPGC_EXPENSE",
         ):
             ws.cell(i, 3).fill = GREEN
         elif r["status"] in ("ASK", "PROPOSED", "HOLD"):
@@ -661,7 +667,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws.sheet_properties.tabColor = "FFC000"
     ws["A1"] = (
         "ASK — remaining Mercury 8291 questions. "
-        "Q6 David Aaron consultant fee and Q8 Koziol/Ariadne pass-through LOCKED 2026-09-20. "
+        "Q6 consultant, Q7 Wise expertise write-ups, Q8 pass-through LOCKED 2026-09-20. "
         "Not tax advice."
     )
     ws["A1"].font = CG_B
@@ -698,8 +704,10 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
             "CONFIRMED 2026-09-20: consultant fee, not a sale. Booked EPGC Consultant June $13,595 (peach). Not Art Sales. Not Income I8.",
         ),
         (
-            "7. Wise $334.17 (7/9) and $658.63 (10/30)",
-            "Who / what? Dec $565.75 was reimbursed by EOEB (locked net $0). These two were not.",
+            "7. Wise $334.17 (7/9) and $658.63 (10/30) — LOCKED expertise write-ups",
+            "CONFIRMED 2026-09-20: business expenses (expertise write-ups). "
+            "Booked EPGC Consultant Fees July $334.17 + October $658.63 = $992.80. "
+            "Not COGS. Distinct from Dec Wise $565.75 reimbursed by EOEB (still not P&L).",
         ),
         (
             "8. Jack Koziol & Tracy Hoffman $150,000 IN (10/20) / Ariadne Demirjian $150,000 OUT (10/21) — LOCKED pass-through",
@@ -721,7 +729,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     ws["B3"].fill = NAVY
     ws["A3"].font = WHITE
     ws["B3"].font = WHITE
-    confirmed_idx = {6, 8}  # 1-based question numbers
+    confirmed_idx = {6, 7, 8}  # 1-based question numbers
     for i, (q, detail) in enumerate(questions, start=4):
         qnum = i - 3
         fill = GREEN if qnum in confirmed_idx else YELLOW
@@ -747,6 +755,7 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
         ("$10 test wires", "Jamal Rifai / EPGC / Plutus tests — not P&L"),
         ("David Aaron Limited", "$13,595 (6/24) consultant fee → EPGC Consultant June. Not a sale."),
         ("Koziol / Ariadne", "$150,000 IN 10/20 + $150,000 OUT 10/21 LOCKED pass-through — not P&L"),
+        ("Wise expertise write-ups", "$334.17 (7/9) + $658.63 (10/30) = $992.80 → EPGC Consultant Fees expense. Dec $565.75 still reimbursed / not P&L."),
     ]
     for i, (k, v) in enumerate(locked, start=16):
         ws.cell(i, 1, k).font = CG
@@ -760,8 +769,9 @@ def build_ask_sheet(wb, rows: list[dict], sums: dict) -> Worksheet:
     return ws
 
 
-def patch_epgc(ws: Worksheet, art_sales_months, consultant_months, note: str) -> None:
+def patch_epgc(ws: Worksheet, art_sales_months, consultant_months, consultant_fees_months, note: str) -> None:
     # 2025 Art Sales is row 53, Consultant row 54 (from rebuild_like_prior_2025).
+    # Consultant Fees expense is row 69 (distinct from Consultant income).
     write_months(ws, 53, 2, art_sales_months, PEACH, zero_fill=GRAY)
     write_months(ws, 54, 2, consultant_months, PEACH, zero_fill=GRAY)
     n53 = ws.cell(53, 14)
@@ -778,6 +788,10 @@ def patch_epgc(ws: Worksheet, art_sales_months, consultant_months, note: str) ->
                 cell.value = 0
                 cell.fill = GRAY
                 cell.number_format = ACCT
+    write_months(ws, 69, 2, consultant_fees_months, PEACH, zero_fill=GRAY)
+    n69 = ws.cell(69, 14)
+    n69.value = "=SUM(B69:M69)"
+    n69.number_format = ACCT
     ws["A75"] = note
     ws["A75"].font = CG
     ws["A75"].alignment = WRAP
@@ -1045,7 +1059,7 @@ def summarize(rows: list[dict]) -> dict:
         "newstar": sum((-r["amount"] for r in newstar), D(0)),
         "boa_out": sum((-r["amount"] for r in boa), D(0)),
         "david_aaron": D("13595.00"),
-        "wise_unreimbursed": D("334.17") + D("658.63"),
+        "wise_expertise": D("334.17") + D("658.63"),
         "art_sale_locked_gross": D("14000") + D("30000") + D("105000"),
         "art_net_locked": (D("30000") - D("22944.94")) + D("1000") + D("15000"),
         "koziol": D("150000"),
@@ -1104,12 +1118,14 @@ LOCKED this pass
 - Dec 2 Wise $565.75 reimbursed by EOEB — not income.
 - David Aaron Limited $13,595 (6/24) → EPGC Consultant June. User: consultant fee, not a sale.
 - Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → LOCKED pass-through. Not P&L.
+- Wise $334.17 (7/9) + $658.63 (10/30) → EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed.
 
 EPGC 2025 Art Sales is only those matched sales ($149,000 cash: Jan $14,000 / Feb $135,000).
 EPGC Consultant June is $13,595 (David Aaron). EOEB remainder / L5 still ASK — not on Consultant.
 
 ANSWERED
 6. David Aaron Limited $13,595 (6/24) — LOCKED consultant fee (EPGC Consultant June).
+7. Wise $334.17 + $658.63 — LOCKED business expenses (expertise write-ups) on EPGC Consultant Fees.
 8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
 
 ASK remaining
@@ -1118,7 +1134,6 @@ ASK remaining
 3. Fortuna OUT remaining ${money(sums['fortuna_remainder_out']):,.2f} — inventory objects?
 4. Erdal IN ${money(sums['erdal_in']):,.2f} — sales to Erdal?
 5. Aysel Dere $50,000 IN (7/18)
-7. Wise $334.17 + $658.63 (Dec was reimbursed)
 9. Aquinas Hobor $1,000 (2/4)
 10. Where is the other $40,000 of mosaics Cost?
 
@@ -1139,6 +1154,10 @@ def main() -> None:
         rows,
         lambda r: r["bucket"] == "ADVISORY" and r["status"] == "LOCKED",
     )
+    consultant_fees_months = zeros()
+    for r in rows:
+        if r["bucket"] == "EPGC_EXPENSE" and r["status"] == "LOCKED" and r["amount"] < 0:
+            add(consultant_fees_months, r["month"], -r["amount"])
     coin_net_m = monthly_sum(rows, lambda r: r["bucket"] == "INVESTMENT")
     coin_out_m = monthly_sum(rows, lambda r: r["bucket"] == "INVESTMENT" and r["amount"] < 0)
     coin_in_m = monthly_sum(rows, lambda r: r["bucket"] == "INVESTMENT" and r["amount"] > 0)
@@ -1171,14 +1190,17 @@ def main() -> None:
         wb["EPGC LLC"],
         art_sales_months,
         consultant_months,
+        consultant_fees_months,
         (
             "2025 Mercury 2026-09-20: Art Sales = MATCHED cash only "
             "(Berk $14,000 Jan + Berk $30,000 / mosaics $105,000 Feb = $149,000). "
             "Consultant June $13,595 = David Aaron Limited LOCKED (user: consultant fee, not a sale). "
-            f"EOEB remainder ${money(sums['eoeb_remainder']):,.2f} and L5 ${money(sums['l5']):,.2f} still ASK — not on Consultant. "
+            "Consultant Fees July $334.17 + October $658.63 = Wise expertise write-ups LOCKED "
+            f"(${money(sums['wise_expertise']):,.2f}). "
+            f"EOEB remainder ${money(sums['eoeb_remainder']):,.2f} and L5 ${money(sums['l5']):,.2f} still ASK — not on Consultant income. "
             "Koziol/Ariadne $150,000 LOCKED pass-through — not P&L. "
             "Coinbase is Investments, not this tab. Newstar $23,581 is Art Sales COGS, not operating expense. "
-            "2024 leftover supplies/furniture/consultant-fee numbers on this 2025 block were zeroed. "
+            "Dec Wise $565.75 reimbursed — not on Consultant Fees. "
             "GCM 1099 is personal. Not tax advice."
         ),
     )
@@ -1261,6 +1283,7 @@ def main() -> None:
             "boa_9922_draws": float(sums["boa_out"]),
             "david_aaron_consultant": float(sums["david_aaron"]),
             "koziol_ariadne_passthrough": float(sums["koziol"]),
+            "wise_expertise_writeups": float(sums["wise_expertise"]),
         },
         "ask": {
             "eoeb_remainder": float(sums["eoeb_remainder"]),
@@ -1268,13 +1291,14 @@ def main() -> None:
             "fortuna_remainder_out": float(sums["fortuna_remainder_out"]),
             "erdal_in": float(sums["erdal_in"]),
             "aysel": float(sums["aysel"]),
-            "wise_unreimbursed": float(sums["wise_unreimbursed"]),
             "aquinas_hobor": 1000.0,
             "mosaics_cost_missing_on_mercury": 40000.0,
         },
         "epgc_art_sales_2025_monthly": [float(x) for x in art_sales_months],
         "epgc_consultant_2025_monthly": [float(x) for x in consultant_months],
         "epgc_consultant": float(sum(consultant_months)),
+        "epgc_consultant_fees_2025_monthly": [float(x) for x in consultant_fees_months],
+        "epgc_consultant_fees": float(sum(consultant_fees_months)),
     }
     if JSON_PATH.exists():
         try:
@@ -1310,6 +1334,7 @@ def main() -> None:
     print("aysel", float(sums["aysel"]))
     print("boa", float(sums["boa_out"]))
     print("consultant months", [float(x) for x in consultant_months], "year", float(sum(consultant_months)))
+    print("consultant fees months", [float(x) for x in consultant_fees_months], "year", float(sum(consultant_fees_months)))
     print("art net locked", float(sums["art_net_locked"]))
     print("saved", XLSX, XLSX.stat().st_size)
     print("pack", pack_path, pack_path.stat().st_size)

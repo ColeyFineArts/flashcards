@@ -6,12 +6,12 @@
   "start_here_packet": "1oMk9p28WmRBYS5z_F1-zI53wDho7_8zUJQso0VYrpRQ",
   "start_here_cc": "13-H7dv2jmXNRHSUuKnDYSrzg1FwLiysUwvdSCM63UbM",
   "local_xlsx": ".cursor/scratch/Personal_Income_2025_Tax_Turbo.xlsx",
-  "xlsx_bytes_local": 118151,
+  "xlsx_bytes_local": 118366,
   "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
   "like_last_year_income_properties_packet": "1qLmbezF77s8iKTV0UV9YUznkPlwzXyCm-Q50sXG_qBI",
   "like_last_year_epgc_art_gcm": "14OHplL2CA7ycDB0ySnF6Mk3qx7E6IwwjzUn0yX5a1KM",
   "like_last_year_epgc_art_gcm_packet": "14OHplL2CA7ycDB0ySnF6Mk3qx7E6IwwjzUn0yX5a1KM",
-  "xlsx_note": "2026-09-20 Q6/Q8: David Aaron $13,595 LOCKED EPGC Consultant June (not a sale). Koziol/Ariadne $150k LOCKED pass-through (not P&L). Art Sales still MATCHED $149,000. I8 Art net $23,055.06 unchanged.",
+  "xlsx_note": "2026-09-20 Q6/Q7/Q8: David Aaron $13,595 Consultant June; Wise $992.80 Consultant Fees (expertise write-ups); Koziol/Ariadne $150k pass-through. Art Sales MATCHED $149,000. I8 $23,055.06.",
   "note": "Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -78,7 +78,8 @@
       "art_net_locked": 23055.06,
       "boa_9922_draws": 261172.0,
       "david_aaron_consultant": 13595.0,
-      "koziol_ariadne_passthrough": 150000.0
+      "koziol_ariadne_passthrough": 150000.0,
+      "wise_expertise_writeups": 992.8
     },
     "ask": {
       "eoeb_remainder": 130270.0,
@@ -86,7 +87,6 @@
       "fortuna_remainder_out": 85000.0,
       "erdal_in": 57000.0,
       "aysel": 50000.0,
-      "wise_unreimbursed": 992.8,
       "aquinas_hobor": 1000.0,
       "mosaics_cost_missing_on_mercury": 40000.0
     },
@@ -119,6 +119,21 @@
       0.0
     ],
     "epgc_consultant": 13595.0,
+    "epgc_consultant_fees_2025_monthly": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      334.17,
+      0.0,
+      0.0,
+      658.63,
+      0.0,
+      0.0
+    ],
+    "epgc_consultant_fees": 992.8,
     "drive": {
       "start_here_mercury_root": "1XyHQoGQGa_QDq86sGec4G2fTJp7GNdLk4OvdonBnF1w",
       "start_here_mercury_packet": "16ayO4Zc9p7GNyqV2xP6M4PQKPffBm701JKFNqmbQ7vw",

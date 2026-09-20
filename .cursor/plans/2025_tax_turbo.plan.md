@@ -65,6 +65,8 @@ todos:
   - id: mercury-q6-q8
     content: "DONE 2026-09-20 — Q6 David Aaron $13,595 LOCKED EPGC Consultant June (not a sale). Q8 Koziol/Ariadne $150k LOCKED pass-through (not P&L). Art Sales MATCHED $149,000; I8 $23,055.06 unchanged. ASK remaining 1–5, 7, 9, 10."
     status: completed
+    content: "DONE 2026-09-20 — Q7 Wise $334.17 + $658.63 LOCKED EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed. ASK remaining 1–5, 9, 10."
+    status: completed
   - id: optional-monarch-mcp
     content: Connect Monarch MCP read-only (https://api.monarch.com/mcp) after declutter — host reachable (HTTP 405); Cursor MCP not auth'd yet; CSV export unblocks operating P&L without MCP
     status: pending
