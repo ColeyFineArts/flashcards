@@ -35,15 +35,9 @@
     "capex_cpa_53660": "1aqJe32LWQwwAXdk7pDdo0MJHBu6mVnM7hbsE5W6aBmE",
     "childcare_recon": "1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
-    "open_me_sheet": "1CR8ocRzjZwJ1VwP1n4nfndVx_mcmMoMNxiprg23pveg",
-    "open_me_sheet_packet": "1M0_AOnoT6IESAReQfeCARZPp8BFqGfIrf7EajMGKP-k",
-    "part_a": "19F9BZb1oIUs9CZR2dFfOYJjbZOzfC_cKDzX2IHkiYIw",
-    "part_b": "1hzCvKVINVqnCUcIZnZgHyQ3j4r-04OdnnBGglWS1d6A",
-    "part_c": "1OUpXXrT7lvRaRizZmRJFLmm4bAoim6LjFXhRhIi_o8A",
-    "part_d": "1lJwNVs2WS6wfThkSyL7b4qRQ2wcyQCI5-Nn2VIAwIiU",
-    "xlsx_turbo_root_broken_superseded": "1c5OGQwO2DGDosjZP9xDEd1mTd4X_6CLm",
-    "xlsx_turbo_packet_broken_superseded": "1nr69eD_je8_NHtFbPuDmxVbtFjGcsQZF",
-    "start_here_xlsx": "1TF9TXxGJL01QE5bcr6Q6RyqalBwCenP5rApRSMggnUg",
+    "like_last_year_income_properties": "1XkpQn0ztm6reE5GzIhRqNJaA2mZNp6lPsfz2MuI523k",
+    "like_last_year_epgc_art_gcm": "1X6j9Bo-bK607PVw8LpwUJq6pX9lVQ8GLF-YlGhWVoQc",
+    "start_here_xlsx": "1G7ZF45yDDvm5h4Vb_DyRVsBZ2gJKNLeWo8f3uO6wpGk",
     "sale_closing_2025": "1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv",
     "purchase_cd_524_2023": "10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f",
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
@@ -60,6 +54,7 @@
     "START HERE checking inflows 1JWVlG6i…; ASK 1Kpv3_eN…; old Grove START HERE/ASK/EPGC/SOURCE in _SUPERSEDED.",
     "Checking answers 2026-09-18: START HERE 13-H7dv2j…; ASK 1R18NvBr…; Oak Park 1Lws45r7…; EPGC Consultant $0; Art Sales Sale 6428 $11k. Prior checking-inflow sheets in _SUPERSEDED.",
     "Native xlsx on Drive 2026-09-18 23:36: root 1c5OGQwO… + packet 1nr69eD_… (45,229 bytes, 19 tabs, checking answers). START HERE root 1HroQW8H…. Corrupt 50,960-byte truncated uploads in _SUPERSEDED.",
-    "2026-09-19: user could not open native xlsx (corrupt XML). Moved 1c5OGQwO / 1nr69eD to _SUPERSEDED. Live files are converted Google Sheets: OPEN ME 1CR8ocRz… plus Parts A–D. START HERE 1TF9TXxG…."
+    "2026-09-19: user could not open native xlsx (corrupt XML). Moved 1c5OGQwO / 1nr69eD to _SUPERSEDED. Live files are converted Google Sheets: OPEN ME 1CR8ocRz… plus Parts A–D. START HERE 1TF9TXxG….",
+    "2026-09-19 evening: rebuilt on last year’s Personal Income.xlsx look. Live: Income+Properties 1XkpQn0z… (216 has 2023|2024|2025 rent/mortgage/HOA) and EPGC+Art+GCM 1X6j9Bo-…. START HERE 1G7ZF45y…. Prior different-template Parts A–D and 7-tab OPEN ME in _SUPERSEDED."
   ]
 }
