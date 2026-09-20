@@ -12,7 +12,7 @@
   "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
   "like_last_year_epgc_art_gcm_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
   "xlsx_note": "2026-09-20 216 Oak Park costs locked to last-year pattern: insurance $42.84/mo; mortgage/HOA cash + yellow WAIT 8507; Brennan $150; Imelda $300 move-out; Joan $675 INTERIOR REPAIR; Ace keys $11. Smoke detector Amazon ASK. Not tax advice.",
-  "note": "Grove Collaborative \u2260 827 N Grove the house. Travelers = prior 524 home; Geico = personal auto. Only State Farm home share on 524 INSURANCE.",
+  "note": "Lemonade = 216 Oak Park. Travelers = 524 home. Geico = 524 cars. Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
     "pass": "checking-answers",
@@ -276,5 +276,17 @@
     "drive_start_here": "1cPeb1LfmlG0ZV5VQoqYsXy8THwo0utcL-V8fIDmyH4M",
     "drive_lock": "1ceyNBu1HMJJmTVKPpW0oQFYmoj2iCeNdDUov3fYUHxc",
     "drive_pnl": "1Dp8r4WskMlqgQsPW62oewo992kldN5ThWwEMIP6xyLU"
+  },
+  "carrier_map": {
+    "user": "Lemomade is for 216 N Grove I believe. The Geico and Travelers is for 524 Ferdinand",
+    "lemonade": "216 N. Oak Park Avenue #1Z",
+    "not_lemonade": [
+      "524 Ferdinand",
+      "827 N Grove",
+      "Grove Collaborative"
+    ],
+    "travelers": "524 Ferdinand home",
+    "geico": "524 Ferdinand cars (personal auto, not 216)",
+    "note": "User said 216 N Grove; packet maps that to 216 Oak Park LTR, not 827 Grove."
   }
 }

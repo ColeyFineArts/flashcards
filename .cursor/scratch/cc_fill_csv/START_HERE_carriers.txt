@@ -1,0 +1,18 @@
+START HERE — insurance carriers (2026-09-20)
+
+Not tax advice. Organizational packet only.
+
+User: “Lemomade is for 216 N Grove I believe. The Geico and Travelers is for 524 Ferdinand.”
+
+LOCKED (no dollar move — already booked this way)
+1. Lemonade = 216 N. Oak Park Avenue #1Z (LTR).
+   There is no 216 N Grove on this packet. 827 N Grove closed 12/18 is a different house.
+   2023/2024 Excel already amortized Lemonade on the 216 tab ($26.75 / $35.08).
+   2025 is $42.84/mo × 12 = $514.08 (cash $514.00 10/3 Megan Chase).
+2. Travelers = 524 Ferdinand home. Leftover Jan cash $0. 50/50 U1/U2 home-share.
+3. Geico = 524 Ferdinand cars. Credit $540.89 EXCLUDED personal.
+   Not on 216. Not on EPGC. Not on the 524 home INSURANCE line
+   (that line is State Farm HOME share + Travelers leftover $0).
+4. Grove Collaborative ≠ 827 N Grove the house.
+
+Do not re-run apply_checking_answers_2025.py.
