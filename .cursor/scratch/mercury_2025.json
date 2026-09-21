@@ -10,7 +10,7 @@
     "newstar_cogs": 23581.0,
     "art_sale_locked_gross": 251000.0,
     "art_net_locked": 39055.06,
-    "boa_9922_draws": 221172.0,
+    "boa_9922_draws": 261172.0,
     "david_aaron_consultant": 13595.0,
     "koziol_ariadne_passthrough": 150000.0,
     "wise_expertise_writeups": 992.8,
@@ -30,8 +30,9 @@
     "mosaics_cost": 90000.0,
     "mosaics_profit": 15000.0,
     "mosaics_plutus_8291": 50000.0,
-    "mosaics_boa_9922": 40000.0,
-    "boa_9922_draws_note": "Was $261,172. Pull $40,000 of 2/24 $90,000 EPGC\u21929922 out as mosaics Cost funding. Remaining 2/24 $50,000 is still an owner draw."
+    "boa_9922_draws_note": "Restored $261,172. The $40k pull assumed Plutus $50k was Jamal Cost. 2/24 $90k EPGC\u21929922 is an owner transfer. Jamal funding slice ASK.",
+    "mosaics_two_deals": true,
+    "mosaics_cost_note": "Combined Cost $90,000 WORKING ($105k sale \u2212 $15k profit). Deal B Plutus/Antiquarium $50,000 LOCKED on 8291. Deal A Jamal BoA ASK. Not a locked 50+40 Jamal payment."
   },
   "ask": {
     "eoeb_remainder": 130270.0,
@@ -48,7 +49,9 @@
     "l5_note": "7/15 $50,000 locked as Roman Gold Belt SALE; remaining 7/11 $8,534.79; 7/15 $2,500; 9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26 still UNALLOCATED",
     "erdal_in_note": "11/7 $6,000 FORTUNA PAYMENT still ASK; 7/24 Venus LOCKED; 10/9 August joint LOCKED",
     "eoeb_remainder_note": "Per-invoice UNALLOCATED (proposed FEE, no matching Cost). Do not dump onto Consultant or Art Sales. 1/16 Canosan OPEN. 5/1 not Venus.",
-    "mosaics_boa_40k_wire_label": "Soft: Monarch 9922 has no labeled $40,000 outgoing to Jamal in Feb (only $90,000 IN from EPGC 2/24). Cost/profit locked. Confirm on 9922 statement if needed."
+    "mosaics_two_deal_split": 105000.0,
+    "mosaics_jamal_boa_cost": true,
+    "mosaics_two_deal_note": "Split of EOEB $105k Deal A (Jamal) vs Deal B (Plutus/Antiquarium). Jamal Cost amount on 9922 statement. Whether $15k profit is combined or Deal A only. Do not dump. Not tax advice."
   },
   "epgc_art_sales_2025_monthly": [
     14000.0,
@@ -128,9 +131,9 @@
     "start_here_mercury_root": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
     "start_here_mercury_packet": "14Tx2Iqk6pNhQzoc_5GUgj06r5TVryeATKizrRAHG7I0",
     "start_here_mercury_income": "1Kqw__ySsoXHTxldxGbYnTEDOhDOmQXw31pKaKx60X6Y",
-    "start_here_mercury_bank": "1GrLyx25cb4RLo6SnTrq_F8VY95nbZznyl9H9kYCjgwU",
-    "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
-    "ask_mercury_bank_folder": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+    "start_here_mercury_bank": "1YURh31U-j0woYzPSpuaTvWJLIPmGo2r6vKoYEffOA7E",
+    "ask_mercury": "1wUQF1PjXhbnFzNu1t03iB0KmhztCWSl3rSVUE_oM61w",
+    "ask_mercury_bank_folder": "16LWdQpHkiEF0uAGWwHefmx_ngUpscIjJdbjYc-SKoy4",
     "ask_mercury_packet": "1WwbQbCNrrD306t5SXuEWdJ39tDtyO2JvBJKTz9xMvWM",
     "ask_mercury_income": "184z2cCDVnDg3h28fuFUW5r_FI9AkYFHgTHHSj8wSMZo",
     "mercury_ledger_q6_q9": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
@@ -145,11 +148,14 @@
     "income_i8_note": "1cDyZJQB42YfFNM0I7Wv4maTP81GlHlkeuQdsvoE-GYI",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
     "native_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU",
-    "deal_classifier": "1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8",
+    "deal_classifier": "1UglEtTDOb1Mu2G9HWqcggTLmRAKNqwhOMG-SdXINt0k",
     "personal_income_2025": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
     "personal_income_2025_root": "175x6fMYC0zVads6l4QyuY4Zkfn-xOeNm7SgKe-yxmJM",
-    "art_sales_labeled": "1RY_bwHX-FqmFAQpEGgvCQCB2ykP-f8VU2n2mE_qlSFg",
-    "start_here": "1ATxsIMwH4X-x-zP7xUTTiZc4dwAKh5spEjnIelajn8k"
+    "art_sales_labeled": "1OfHYP14zIuJKGwVZHr1HmaAY-eTI-sJJN1ghqZp-wP0",
+    "start_here": "1RCiZrR-aE3qsza89JshNEQoqnzcth8hMsZr77Psxx_Q",
+    "deal_classifier_bank": "16mtlhFWf0rPgCLp4nInopygh5yc5odex7cWwOq2z0rU",
+    "start_here_eoeb": "1LRrc8cVZYM0RdFzFNOsFqhZOr3DGnvVk6w8aBiEboRI",
+    "lock_two_deals": "1eV4ElHeJtrdQI06CHxmCQi4NpfE6KCBPUAnjaymKPSs"
   },
   "deal_classifier": {
     "classes": [
@@ -163,15 +169,17 @@
     "august_fortuna": "SALE (joint, EPGC share)",
     "david_aaron": "FEE",
     "koziol_ariadne": "PASS",
-    "eoeb_mosaics": "SALE (Cost $90k Jamal / profit $15k LOCKED)",
+    "eoeb_mosaics": "SALE (two deals pooled in $105k; split ASK)",
     "eoeb_12_2_reimburse": "LOCKED not income",
     "eoeb_remainder": "UNALLOCATED (proposed FEE per invoice; not dumped)",
     "l5_remainder": "UNALLOCATED",
     "erdal_11_7": "ASK",
     "csv": ".cursor/scratch/cc_fill_csv/DEAL_CLASSIFIER.csv",
     "disclaimer": "Not tax advice. Organizational packet only.",
-    "sheet_id": "1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8",
-    "sheet_id_bank": "189oaudb6-W_71Kcv7sNNatJISSK7H61mYUzmrJpbpPU",
-    "sheet_id_07": "1NsvBO2QVA7SzqpeHPjXVcjdsjJezP8OJZtO8L_K4sRA"
+    "sheet_id": "1UglEtTDOb1Mu2G9HWqcggTLmRAKNqwhOMG-SdXINt0k",
+    "sheet_id_bank": "16mtlhFWf0rPgCLp4nInopygh5yc5odex7cWwOq2z0rU",
+    "sheet_id_07": "1NsvBO2QVA7SzqpeHPjXVcjdsjJezP8OJZtO8L_K4sRA",
+    "plutus_antiquarium": "SALE Deal B Cost $50k LOCKED",
+    "jamal_mosaics": "SALE Deal A; Cost from personal BoA ASK"
   }
 }

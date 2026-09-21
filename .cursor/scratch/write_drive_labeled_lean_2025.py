@@ -127,7 +127,8 @@ def write_book(src_path: Path, dest: Path) -> None:
         src,
         wb,
         "Art Sales and Purchases",
-        [(r, c) for r in range(1, 82) for c in (1, 3, 6, 8, 11)],
+        [(r, c) for r in range(1, 82) for c in (1, 3, 6, 8, 11)]
+        + [(r, 2) for r in range(73, 81)],
     )
     copy(src, wb, "GCM", [(r, c) for r in range(20, 27) for c in range(1, 6)])
     copy(src, wb, "Hindman W2", [(r, c) for r in range(1, 10) for c in range(1, 6)])
@@ -170,6 +171,9 @@ def main() -> None:
     assert inc["I10"].value == "=SUM(I4:I9)"
     assert art["A1"].value == "Art Sales and Purchases"
     assert art["A4"].value == "An Ashanti Wood Fertility Figure"
+    assert "Two mosaic" in str(art["A74"].value)
+    assert "Plutus" in str(art["B74"].value)
+    assert art["C74"].value == 90000 and art["F74"].value == 105000
     assert art["A78"].value == "Roman Gold Belt"
     assert art["C78"].value == 45000 and art["F78"].value == 50000
     assert "Venus" in str(art["A79"].value)
