@@ -1,47 +1,53 @@
 START HERE — last year's spreadsheet, 2025 numbers filled
 Not tax advice. Organizational packet only.
 
-Open this Google Sheet (this is last year's Personal Income.xlsx with 2025 filled in):
-https://docs.google.com/spreadsheets/d/1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I/edit
+Open this ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate):
+https://docs.google.com/spreadsheets/d/1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o/edit
 
-Same 11 tabs as last year, in the same order, plus a 2025 Data sources lock tab:
-Income | 524 Ferdinand Ave, Unit 2 | 216 N. Oak Park Ave | EPGC LLC | Refrence Library | Art Sales and Purchases | GCM | Hindman W2 | Megan T4 | Investments | 524 Ferdinand Ave, Unit 1 | 2025 Data sources
+START HERE doc:
+https://docs.google.com/document/d/1vX40kNzE9O-UdHhXDmYnLoNZg2CKEzum144MPx1eDAk/edit
 
-Last year's file (2023/2024, do not edit) is next to it:
+Copies
+07 Income folder:
+https://docs.google.com/spreadsheets/d/1HhfHE_dSw4vU403_eAVOxCDR9pfKLSPSgKpyTMCdKhk/edit
+My Drive / 2025 Taxes:
+https://docs.google.com/spreadsheets/d/12t_Nr3JPqssa1CRZi59vITYqq7Pam3HX6HE7mYy5lLU/edit
+
+Tabs in last year's order (all inside that one file)
+1. Income — 2022–2025. 2025 Actual: Hindman $70,618 / 216 $19,500 / 524 #2 $17,086.94 / GCM $21,500 / Art $23,055.06. I10 EBITDA =SUM(I4:I9) → $151,760.
+2. 524 Ferdinand Ave, Unit 2 — 2023 YR TOTAL | 2024 YR TOTAL | 2025 YR TOTAL. 2025 STR $13,879.55. Grove Collaborative $791.21.
+3. 216 N. Oak Park Ave — 2023 | 2024 | 2025. Lemonade $42.84/mo = $514.08. Rent $19,500. Mortgage $14,617.54. HOA $5,058.36. Brennan $150 / Ace $11 / Joan $675 / Imelda $300.
+4. EPGC LLC — 2023, then 2024, then 2025 (Art Sales $14,000 + $136,000; Consultant June $13,595). 2025 Total is a live SUM.
+5. Refrence Library
+6. Art Sales and Purchases — prior years, then Sales 2025. Do not dump EOEB $130,270 or L5 $87,396.32.
+7. GCM — 2022–2025 stacked like last year. 2025 board $4,100 / $9,200 / $4,100 / $4,100 = $21,500.
+8. Hindman W2
+9. Megan T4
+10. Investments — Coinbase ACH net -$51,000.
+11. 524 Ferdinand Ave, Unit 1 — 2023 YR TOTAL | 2025 YR TOTAL (same as last year; no 2024 rental block).
+
+Last year's file (2023/2024, do not edit):
 https://drive.google.com/file/d/1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2/view
 
-How this stays correct (so we do not go in circles)
+How this stays correct
 1. Copy last year's Personal Income.xlsx. Never rebuild from CSVs.
 2. Fill the 2025 year block only. 2023 and 2024 stay as they were.
-3. python3 .cursor/scratch/assert_personal_income_2025.py must print LOCK OK before any Drive upload.
-4. Open the 2025 Data sources tab. SELF-CHECK formulas must say MATCH.
+3. python3 .cursor/scratch/assert_personal_income_2025.py must print LOCK OK + SHEETS-SAFE OK.
+4. Drive upload is a compact xlsx Google converts (cell refs like AO5 survive). SpreadsheetML A1 SUM(C5:N5) becomes #ERROR! in Sheets.
 5. CSV builders (.cursor/scratch/build_drive_all_tabs.py) now refuse to run.
 
-If a Drive file is missing Hindman W2, Megan T4, or Refrence Library, or uses Calibri with no merged C1:O1 on 216, it is a CSV dump — ignore it.
-
 216 N. Oak Park #1Z (LTR) 2025 — same rows as last year
-RENTER'S INSURANCE: Lemonade $42.84/mo × 12 (same amortize as 2023 $26.75 and 2024 $35.08). Not an October lump $514.
-RENTAL INCOME: $1,950 × 6, then $1,450 / $2,450 / vacant Oct + half Nov / $3,900 Dec = $19,500.
+RENTER'S INSURANCE: Lemonade $42.84/mo × 12. Not an October lump $514.
+RENTAL INCOME: $1,950 × 6, then $1,450 / $2,450 / vacant Sep–Nov / $3,900 Dec = $19,500.
 MORTGAGE: $1,226.25 Jan–Oct / $1,177.52 Nov–Dec (Jan–Jun yellow WAIT 8507).
 HOA: $421.53 × 12 (Jan–May yellow WAIT 8507).
 INTERIOR MAINTENANCE: $150 Chris Brennan August; $11 Ace keys December.
 INTERIOR REPAIR: $675 Joan December.
 MOVE OUT FEE: $300 Imelda October.
-User said "216 N Grove" — this Oak Park #1Z unit, not 827 Grove.
 
 524 Ferdinand
-Travelers was prior home insurance. Geico was the cars. 2025 State Farm home share only on Units 1 & 2. Auto + Geico credit are personal.
+Travelers was prior home insurance. Geico was the cars. 2025 State Farm home share only on Units 1 & 2. Auto + Geico credit are personal. Grove Collaborative ≠ 827 N Grove.
 
-Income 2025 Actual (column I)
-I4 Hindman $70,618 yellow (paycheck cash ≠ W-2 Box 1).
-I5 216 $19,500 locked.
-I6 524 #2 STR $17,086.94 locked.
-I7 GCM $21,500 locked (4100 / 9200 / 4100 / 4100 on GCM tab).
-I8 Art net $23,055.06 matched Mercury deals with Cost.
+Do not open anything titled _SUPERSEDED. Those files stored =SUM as text, split this into 11 separate files, or put 2025 numbers into the 2023 columns.
 
-Copies
-Packet: https://docs.google.com/spreadsheets/d/1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I/edit
-07 Income: https://docs.google.com/spreadsheets/d/1nBEa7_BvzQ58QjLqWG2Jzn_igHqB4h4TgB69XJM3TeU/edit
-Root: https://docs.google.com/spreadsheets/d/1JrD58IyeNrcXViJtQW8nXE0qE5mzK6O4tETyMX2Ccbc/edit
-
-CSV dumps and truncated 8-tab conversions are in _SUPERSEDED. Mercury ASK 1TeRpRYc / EPGC 1nZkTISK / lock 1kgFtNXa unchanged.
+Not tax advice.

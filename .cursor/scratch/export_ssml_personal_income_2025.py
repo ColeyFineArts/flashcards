@@ -54,8 +54,8 @@ LAST_YEAR_TABS = [
     "Megan T4",
     "Investments",
     "524 Ferdinand Ave, Unit 1",
-    "2025 Data sources",
 ]
+PACKET_TABS = LAST_YEAR_TABS + ["2025 Data sources"]
 
 
 def year_start_for_total_col(c: int) -> int:
@@ -84,12 +84,12 @@ def src_2025_start(name: str) -> int:
 
 
 def property_dest_col(name: str, src_c: int) -> int | None:
-    """Map source columns onto last-year's first year block (C–O = 2025)."""
+    """Keep last year's layout: 2023 C–O, 2024 P–AB, 2025 AC–AO (Unit 1: 2023 C–O, 2025 P–AB)."""
     if src_c <= 2:
         return src_c
-    start = src_2025_start(name)
-    if start <= src_c <= start + 12:
-        return 3 + (src_c - start)
+    limit = 28 if name == "524 Ferdinand Ave, Unit 1" else 41
+    if 3 <= src_c <= limit:
+        return src_c
     return None
 
 
@@ -141,12 +141,18 @@ def keep_formula(ws, r, c, fml: str) -> bool:
     if name == "Income":
         return True
     if name in PROPERTY_TABS:
-        # Live 2025 year-total only (remapped to column O).
-        return c == src_2025_start(name) + 12
-    if name in {"GCM", "Hindman W2", "Megan T4", "Investments"}:
-        return True
+        # Live year-total formulas for every year block (O / AB / AO).
+        return c in YEAR_TOTAL_COLS and c <= max_col_for(name, ws)
+    if name == "GCM":
+        # Same-row R1C1 SUMs calculate; GCM's =R[-1]C / SUM(R[-1]C[-3]:R[-1]C)
+        # recalculate to 0 in Sheets. Store computed 2022–2025 totals.
+        return False
+    if name in {"Hindman W2", "Megan T4"}:
+        return False
+    if name == "Investments":
+        return False
     if name == "EPGC LLC":
-        # 2025 monthly totals stay live; earlier years store calculated numbers.
+        # 2025 Total / TOTAL EXPENSES stay live; 2023/2024 store calculated numbers.
         return r in {55, 73}
     if name == "Art Sales and Purchases":
         return r >= 49 and "SUM(" in fml.upper()
@@ -165,26 +171,50 @@ def row_label(ws, r: int) -> str:
     return ""
 
 
+def dest_row_index(name: str, r: int) -> int:
+    """Keep last year's row order (oldest year first, 2025 appended)."""
+    return r
+
+
 def keep_row(name: str, r: int, ws=None) -> bool:
     if name == "Income":
         return r <= 10
     if name == "2025 Data sources":
         return r <= 12
     if name == "EPGC LLC":
-        # Header + 2025 block (A51). Prior years are in last year's file.
-        return r <= 4 or (51 <= r <= 73)
+        # Last year stacked 2023 then 2024 then 2025. Keep all three P&L blocks.
+        return r <= 73
     if name in PROPERTY_TABS and ws is not None:
+        # Last-year P&L grid through YTD (skip closing-cost notes underneath).
+        last_pnl = {
+            "524 Ferdinand Ave, Unit 2": 37,
+            "524 Ferdinand Ave, Unit 1": 43,
+            "216 N. Oak Park Ave": 44,
+        }[name]
+        if r > last_pnl:
+            return False
         if r <= 2:
             return True
         if row_label(ws, r):
             return True
-        start = src_2025_start(name)
-        return row_has_month_values(ws, r, start)
+        if name == "524 Ferdinand Ave, Unit 1":
+            return row_has_month_values(ws, r, 3) or row_has_month_values(ws, r, 16)
+        return (
+            row_has_month_values(ws, r, 3)
+            or row_has_month_values(ws, r, 16)
+            or row_has_month_values(ws, r, 29)
+        )
     if name == "Art Sales and Purchases":
-        # Year header + 2025 deals/totals (row 49+).
-        return r <= 3 or (49 <= r <= 79)
+        # Year section headers + totals for 2022–2024; every 2025 deal row.
+        if r in {2, 14, 15, 37, 38, 47}:
+            return True
+        return 49 <= r <= 78
     if name == "Refrence Library":
-        return r <= 3 or r >= 57
+        return r == 1 or r >= 74  # column headers + 2025 Jewelry Books
+    if name == "GCM":
+        return r <= 26
+    if name in {"Hindman W2", "Megan T4"}:
+        return True
     return True
 
 
@@ -332,14 +362,20 @@ def sheets_formula(fml: str) -> str | None:
     m = SUM_MINUS_RE.fullmatch(f)
     if m:
         return f"={m.group(1)}-{m.group(2)}"
+    # SUM(B24) becomes #REF!/0 in Sheets R1C1. Use the cell itself.
+    m = SUM_ONE_RE.fullmatch(f)
+    if m:
+        return f"={m.group(1)}{m.group(2)}"
     return f"={f}"
 
 
 def max_col_for(name: str, ws) -> int:
     if name == "Income":
         return 9
+    if name == "524 Ferdinand Ave, Unit 1":
+        return 28
     if name in PROPERTY_TABS:
-        return src_2025_start(name) + 12
+        return 41
     if name in {"GCM", "Hindman W2", "Megan T4"}:
         return 5
     if name == "Investments":
@@ -387,13 +423,21 @@ def cell_xml(dest_c: int, last: int, sid: str, merge: str, body: str) -> str:
     return f"<Cell{idx}{st}{merge}>{body}</Cell>" if body else f"<Cell{idx}{st}{merge}/>"
 
 
-def emit_cells(pieces: dict[int, str]) -> str:
-    """Emit dest columns in order, filling holes so Google does not shift cells."""
+def emit_cells(pieces: dict[int, str], skip: set[int] | None = None) -> str:
+    """Emit dest columns in order, filling holes so Google does not shift cells.
+
+    skip = columns covered by MergeAcross/MergeDown — do not insert empty
+    cells inside a merge, or the following year-block shifts right.
+    """
     if not pieces:
         return ""
+    skip = skip or set()
     last = 0
     bits: list[str] = []
-    for dest_c in range(min(pieces), max(pieces) + 1):
+    lo, hi = min(pieces), max(pieces)
+    for dest_c in range(lo, hi + 1):
+        if dest_c in skip and dest_c not in pieces:
+            continue
         if dest_c in pieces:
             xml = pieces[dest_c]
             if dest_c != last + 1 and 'ss:Index="' not in xml:
@@ -415,8 +459,6 @@ def worksheet_xml(ws) -> tuple[str, int, int]:
     merges = merge_map(ws)
     covered = merged_covered(ws)
     bits: list[str] = [f'<Worksheet ss:Name="{esc(name)}"><Table>']
-    if name != "Income":
-        bits.append('<Column ss:Index="2" ss:Width="160"/>')
     n_cells = 0
     n_f = 0
     max_r = ws.max_row or 1
@@ -424,16 +466,13 @@ def worksheet_xml(ws) -> tuple[str, int, int]:
     prop = name in PROPERTY_TABS
     col_map: dict[int, int] = {}
     if prop:
-        start = src_2025_start(name)
-        col_map = {1: 1, 2: 2}
-        for i in range(13):
-            col_map[start + i] = 3 + i
+        # Identity map — 2023/2024/2025 stay in last year's columns.
+        col_map = {c: c for c in range(1, max_c + 1)}
     rows: dict[int, str] = {}
     for r in range(1, max_r + 1):
         if not keep_row(name, r, ws):
             continue
         pieces: dict[int, str] = {}
-        has_year_total_f = False
         for c in range(1, max_c + 1):
             dest_c = property_dest_col(name, c) if prop else c
             if dest_c is None:
@@ -451,7 +490,8 @@ def worksheet_xml(ws) -> tuple[str, int, int]:
                     fml = formula_to_r1c1(fml, r, dest_c)
             write_f = bool(is_f and fml and keep_formula(ws, r, c, raw_f[1:] if raw_f else ""))
             if write_f and prop and cached.get((r, c), 0.0) == 0.0:
-                if not row_has_month_values(ws, r, src_2025_start(name)):
+                year_start = year_start_for_total_col(c)
+                if year_start and not row_has_month_values(ws, r, year_start):
                     write_f = False
             val = cell.value
             if name == "Income" and r == 1 and isinstance(val, (int, float)) and not isinstance(val, bool):
@@ -468,8 +508,6 @@ def worksheet_xml(ws) -> tuple[str, int, int]:
             merge = ""
             if (r, c) in merges:
                 across, down = merges[(r, c)]
-                if prop and dest_c == 3 and r == 1:
-                    across = 12
                 if across:
                     merge += f' ss:MergeAcross="{across}"'
                 if down:
@@ -477,57 +515,69 @@ def worksheet_xml(ws) -> tuple[str, int, int]:
             st = f' ss:StyleID="{sid}"' if sid else ""
             if write_f:
                 n_f += 1
-                has_year_total_f = dest_c == 15
                 cached_v = cached.get((r, c), 0.0)
                 pieces[dest_c] = (
                     f'<Cell{st}{merge} ss:Formula="{esc(fml)}">'
                     f'<Data ss:Type="Number">{num_str(cached_v)}</Data></Cell>'
                 )
             elif isinstance(val, (int, float)) and not isinstance(val, bool):
+                # Skip literal zeros — emit_cells fills the hole with <Cell/>
+                # so JAN–DEC stay aligned without Number-0 bloat.
+                if val == 0 and (r, c) not in merges and dest_c not in YEAR_TOTAL_COLS:
+                    continue
                 pieces[dest_c] = (
                     f"<Cell{st}{merge}><Data ss:Type=\"Number\">{num_str(float(val))}</Data></Cell>"
                 )
             else:
                 text = cell_text(val, name)
-                if r == 2 and dest_c == 15 and prop and "YR TOTAL" in str(text):
-                    text = "2025 YR TOTAL"
+                if r == 2 and dest_c in YEAR_TOTAL_COLS and prop and "YR TOTAL" in str(text):
+                    if dest_c == 28 and name == "524 Ferdinand Ave, Unit 1":
+                        text = "2025 YR TOTAL"
+                    elif dest_c == 15:
+                        text = "2023 YR TOTAL"
+                    elif dest_c == 28:
+                        text = "2024 YR TOTAL"
+                    elif dest_c == 41:
+                        text = "2025 YR TOTAL"
                 if not text.strip() and (r, c) not in merges:
                     continue
                 pieces[dest_c] = (
                     f"<Cell{st}{merge}><Data ss:Type=\"String\">{esc(text)}</Data></Cell>"
                 )
-        # Only pad C–N on year-total formula rows. Padding the merged C1
-        # address would insert extra cells after MergeAcross and shift months.
-        if prop and has_year_total_f:
-            start = src_2025_start(name)
-            for dest_c in range(3, 15):
-                if dest_c in pieces:
-                    continue
-                src_c = start + (dest_c - 3)
-                src_cell = ws.cell(r, src_c)
-                bg = None
-                if src_cell.fill and src_cell.fill.fill_type not in (None, "none"):
-                    bg = rgb(getattr(src_cell.fill, "fgColor", None))
-                sid = "p" if bg == PEACH else ""
-                st = f' ss:StyleID="{sid}"' if sid else ""
-                pieces[dest_c] = f"<Cell{st}/>"
         if not pieces:
             continue
-        rows[r] = emit_cells(pieces)
+        row_skip: set[int] = set()
+        for (mr, mc), (across, down) in merges.items():
+            if mr != r:
+                continue
+            dest_m = property_dest_col(name, mc) if prop else mc
+            if dest_m is None:
+                continue
+            for dc in range(dest_m + 1, dest_m + across + 1):
+                row_skip.add(dc)
+        rows[dest_row_index(name, r)] = emit_cells(pieces, row_skip)
     last_r = max(rows) if rows else 0
-    # Emit empty rows so last-year row numbers stay put if Google ignores ss:Index.
-    fill_empty = prop or name in {"EPGC LLC", "Art Sales and Purchases", "Refrence Library"}
+    # Google's converter ignores ss:Index when rows are omitted, which shifts
+    # R1C1 year-totals onto the wrong line. Emit every row through last_r.
+    fill_empty = prop or name in {"GCM", "EPGC LLC", "Art Sales and Purchases"}
     for r in range(1, last_r + 1):
         if r in rows:
             bits.append(f'<Row ss:Index="{r}">' + rows[r] + "</Row>")
         elif fill_empty:
             bits.append(f'<Row ss:Index="{r}"/>')
-    opts = [
-        '<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">',
-        "<FreezePanes/><FrozenNoSplit/>",
-        "<SplitHorizontal>2</SplitHorizontal><TopRowBottomPane>2</TopRowBottomPane>",
-        "</WorksheetOptions>",
-    ]
+    # Freeze A–B like a working P&L; scroll property tabs to the 2025 block.
+    opts = ['<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">']
+    if name == "EPGC LLC":
+        opts.append("<TopRowVisible>50</TopRowVisible>")
+    elif name == "Art Sales and Purchases":
+        opts.append("<TopRowVisible>48</TopRowVisible>")
+    elif name == "GCM":
+        opts.append("<TopRowVisible>21</TopRowVisible>")
+    elif prop:
+        # Last year had no freeze panes. Open scrolled to the 2025 year block.
+        left = 16 if name == "524 Ferdinand Ave, Unit 1" else 29
+        opts.append(f"<LeftColumnVisible>{left}</LeftColumnVisible>")
+    opts.append("</WorksheetOptions>")
     bits.append("</Table>" + "".join(opts) + "</Worksheet>")
     return "".join(bits), n_cells, n_f
 
@@ -540,11 +590,11 @@ def emit(src: Path, dest: Path) -> dict[str, str]:
     wb = load_workbook(src, data_only=False)
     sheets: dict[str, str] = {}
     stats: list[tuple[str, int, int, int]] = []
-    for name in LAST_YEAR_TABS:
+    for name in PACKET_TABS:
         xml, n_cells, n_f = worksheet_xml(wb[name])
         sheets[name] = xml
         stats.append((name, len(xml), n_cells, n_f))
-    full = wrap([sheets[n] for n in LAST_YEAR_TABS])
+    full = wrap([sheets[n] for n in PACKET_TABS])
     dest.write_text(full, encoding="utf-8")
     print(f"SSML {dest} {dest.stat().st_size} bytes")
     for name, nbytes, n_cells, n_f in stats:
@@ -558,7 +608,7 @@ def emit(src: Path, dest: Path) -> dict[str, str]:
     print(f"R1C1 SUM formulas: {r1c1_n}")
 
     groups = {
-        "all": LAST_YEAR_TABS,
+        "all": PACKET_TABS,
         "income": ["Income"],
         "216": ["216 N. Oak Park Ave"],
         "u2": ["524 Ferdinand Ave, Unit 2"],
@@ -571,6 +621,7 @@ def emit(src: Path, dest: Path) -> dict[str, str]:
         "art": ["Art Sales and Purchases"],
         "ref": ["Refrence Library"],
         "ds": ["2025 Data sources"],
+        "book": LAST_YEAR_TABS,
         "inc216": ["Income", "216 N. Oak Park Ave"],
         "core": [
             "Income",

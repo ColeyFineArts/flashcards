@@ -240,25 +240,29 @@ def restyle_gcm_like_last_year(ws: Worksheet) -> None:
     ws["A22"] = "GCM Boards 2025"
 
 
+def _year_block_title(ws: Worksheet, merge: str, src_addr: str = "C1") -> None:
+    """Copy last year's row-1 property title across a year block (C:O, P:AB, AC:AO)."""
+    merges = {str(r) for r in ws.merged_cells.ranges}
+    if merge not in merges:
+        ws.merge_cells(merge)
+    dest = merge.split(":")[0]
+    ws[dest] = ws[src_addr].value
+    ws[dest].font = copy(ws[src_addr].font)
+    ws[dest].alignment = copy(ws[src_addr].alignment)
+
+
 def finish_year_titles(wb) -> None:
     """Last year's Unit 2 merges C1:O1 and P1:AB1. Add the 2025 block the same way."""
     u2 = wb["524 Ferdinand Ave, Unit 2"]
-    merges = {str(r) for r in u2.merged_cells.ranges}
-    if "AC1:AO1" not in merges:
-        u2.merge_cells("AC1:AO1")
-    u2["AC1"] = u2["C1"].value
-    u2["AC1"].font = copy(u2["C1"].font)
-    u2["AC1"].alignment = copy(u2["C1"].alignment)
+    _year_block_title(u2, "AC1:AO1")
+
+    oak = wb["216 N. Oak Park Ave"]
+    _year_block_title(oak, "P1:AB1")
+    _year_block_title(oak, "AC1:AO1")
 
     u1 = wb["524 Ferdinand Ave, Unit 1"]
     u1.sheet_state = "visible"
-    merges = {str(r) for r in u1.merged_cells.ranges}
-    if "P1:AB1" not in merges:
-        u1.merge_cells("P1:AB1")
-    if u1["P1"].value in (None, ""):
-        u1["P1"] = u1["C1"].value
-    u1["P1"].font = copy(u1["C1"].font)
-    u1["P1"].alignment = copy(u1["C1"].alignment)
+    _year_block_title(u1, "P1:AB1")
 
     try:
         wb.defined_names.clear()

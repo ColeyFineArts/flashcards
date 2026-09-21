@@ -77,6 +77,12 @@ def assert_workbook(path: Path) -> None:
     merges = {str(r) for r in oak.merged_cells.ranges}
     if "C1:O1" not in merges:
         fail(f"216 lost last-year merge C1:O1; have {merges}")
+    if "P1:AB1" not in merges:
+        fail(f"216 missing 2024 year-block merge P1:AB1; have {merges}")
+    if "AC1:AO1" not in merges:
+        fail(f"216 missing 2025 year-block merge AC1:AO1; have {merges}")
+    if oak["AC1"].value != oak["C1"].value:
+        fail(f"216 AC1 {oak['AC1'].value!r} != C1 {oak['C1'].value!r}")
     if months(oak, 5, 29) != OAK_RENT:
         fail(f"216 2025 rent {months(oak, 5, 29)}")
     if months(oak, 14, 29) != OAK_INS:

@@ -54,6 +54,8 @@ def sanitize_xlsx(path: Path) -> None:
                 text = data.decode("utf-8")
                 text = _strip_xml_tag_block(text, "externalReferences")
                 text = _strip_xml_tag_block(text, "definedNames")
+                text = re.sub(r"<definedNames\s*/>", "", text)
+                text = re.sub(r"<externalReferences\s*/>", "", text)
                 text = text.replace(
                     'name="524 Ferdinand Ave, Unit 1" sheetId="11" state="hidden"',
                     'name="524 Ferdinand Ave, Unit 1" sheetId="11" state="visible"',
@@ -73,13 +75,19 @@ def assert_formulas_are_real(path: Path) -> None:
     wb = z.read("xl/workbook.xml").decode("utf-8")
     if "externalReferences" in wb:
         raise SystemExit("LOCK FAIL: xlsx still has externalReferences (Google will not convert)")
-    if "definedNames" in wb:
+    if re.search(r"<definedNames(?!\s*/>)", wb) and "</definedNames>" in wb:
         raise SystemExit("LOCK FAIL: xlsx still has definedNames (includes #REF!)")
+    if "#REF!" in wb:
+        raise SystemExit("LOCK FAIL: workbook.xml still contains #REF!")
     if 'name="524 Ferdinand Ave, Unit 1"' in wb and "state=\"hidden\"" in wb:
         raise SystemExit("LOCK FAIL: Unit 1 is still hidden")
     s1 = z.read("xl/worksheets/sheet1.xml").decode("utf-8")
     if "<f>SUM(I4:I9)</f>" not in s1:
         raise SystemExit("LOCK FAIL: Income I10 is not an Excel <f> formula (Drive will show =SUM as text)")
+    if "xl/sharedStrings.xml" in z.namelist():
+        ss = z.read("xl/sharedStrings.xml").decode("utf-8")
+        if "SUM(I4:I9)" in ss or "=SUM(" in ss:
+            raise SystemExit("LOCK FAIL: SUM landed in sharedStrings (Drive will show =SUM as text)")
     s3 = z.read("xl/worksheets/sheet3.xml").decode("utf-8")
     if "<f>SUM(AC5:AN5)</f>" not in s3:
         raise SystemExit("LOCK FAIL: 216 AO5 is not an Excel <f> formula")
