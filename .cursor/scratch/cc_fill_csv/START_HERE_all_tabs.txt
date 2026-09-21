@@ -1,14 +1,27 @@
 START HERE — last year's spreadsheet, 2025 numbers filled
 Not tax advice. Organizational packet only.
 
-OPEN THIS ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate, Art Sales has 2022–2024 lots + 2025 Belt, Venus, August joint; mosaics Cost $90k to Jamal / profit $15k):
+OPEN THIS ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate; I8 $39,055.06; EPGC July $76,000 + Oct $25,000; mosaics Cost $90k):
 https://docs.google.com/spreadsheets/d/1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4/edit
 
 07_income copy:
 https://docs.google.com/spreadsheets/d/1t2dRKpWmN4cT-bqmJxBtIovzvYmoJFrNr9P1bXaCeUg/edit
 
+2025 Taxes root copy:
+https://docs.google.com/spreadsheets/d/175x6fMYC0zVads6l4QyuY4Zkfn-xOeNm7SgKe-yxmJM/edit
+
+Art Sales NAMES (2022–2024 lots + Belt Cost $45,000 / Sale $50,000 / Venus EPGC proceeds $26,000 / August Fortuna $25,000). The 11-tab Google convert kept Art numbers but dropped object labels — use this labeled companion:
+https://docs.google.com/spreadsheets/d/1RY_bwHX-FqmFAQpEGgvCQCB2ykP-f8VU2n2mE_qlSFg/edit
+07 copy:
+https://docs.google.com/spreadsheets/d/1Pv77HY2bRHA8UcoZIlfuGFAYEGI1DLp-LBcNDERKCQo/edit
+root copy:
+https://docs.google.com/spreadsheets/d/1pfhP-8shoJNFypuz-YJ1rfHvL7-jwHL8lOIgbRpL2rE/edit
+
 Deal Classifier (per-invoice EOEB — SALE/FEE/PASS/UNALLOCATED; remainder $130,270 NOT dumped):
 https://docs.google.com/spreadsheets/d/1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8/edit
+
+Fortuna inventory LOCKED SOLD 2025 (Belt, Venus, August — not parked unsold):
+https://docs.google.com/spreadsheets/d/1TK93q6iwXuoWodkikxwFNKgGkfDiGgyk1RpvMEKmPPw/edit
 
 Stale truncated Sheet (I8 $23,055.06 / Art Sales cut off — do not trash; superseded):
 https://docs.google.com/spreadsheets/d/1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o/edit
@@ -29,12 +42,14 @@ Tabs in last year's order (all inside that one file)
 Mosaics Cost $90,000 LOCKED (user 2026-09-21): owed to Jamal, sent from personal BoA as $50k + $40k. Mercury Plutus $50k + BoA $40k. Profit $15,000. Do not double-count the 2/24 $90k EPGC→9922 transfer as extra Cost.
 
 Deal Classifier: SALE vs FEE vs PASS vs UNALLOCATED.
-Belt = SALE. Venus = SALE (joint). August Fortuna = SALE (joint). Mosaics = SALE. EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE.
+Belt = SALE. Venus = SALE (joint; Sale Price = EPGC proceeds $26,000, not full hammer). August Fortuna = SALE (joint). Mosaics = SALE. EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE.
 
 
 START HERE Doc:
-https://docs.google.com/document/d/1EG93k7MHqc6AAxK8KFsYnHm9bS5wDaiZVPZVrsIWONs/edit
+https://docs.google.com/document/d/1ATxsIMwH4X-x-zP7xUTTiZc4dwAKh5spEjnIelajn8k/edit
 07_income Doc copy:
-https://docs.google.com/document/d/17Ryy1ELCEleama_hx4Lu9_GXaRPGjjyTXucKgGAmJ6Q/edit
+https://docs.google.com/document/d/1oX9glq6j3cCgBthBejRckUViGPVIWBTYdgqDu8_6mms/edit
+root Doc copy:
+https://docs.google.com/document/d/1zJs-h_A3HkrgBf3WCUmzzMZGPI0c3C8HVis_CZ9jwXI/edit
 
 Not tax advice.

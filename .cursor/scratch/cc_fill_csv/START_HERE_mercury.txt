@@ -1,4 +1,4 @@
-START HERE — Mercury Bank 8291 (2026-09-21 EOEB classifier + August Fortuna)
+START HERE — Mercury Bank 8291 (2026-09-21 labeled Art Sales + Fortuna sold)
 
 Not tax advice. Same Personal Income.xlsx tabs as last year. Organizational packet only.
 
@@ -9,6 +9,11 @@ OPEN THIS 11-tab workbook (Belt / Venus / August / mosaics Cost $90k / I8 $39,05
 https://docs.google.com/spreadsheets/d/1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4/edit
 07_income copy:
 https://docs.google.com/spreadsheets/d/1t2dRKpWmN4cT-bqmJxBtIovzvYmoJFrNr9P1bXaCeUg/edit
+root copy:
+https://docs.google.com/spreadsheets/d/175x6fMYC0zVads6l4QyuY4Zkfn-xOeNm7SgKe-yxmJM/edit
+
+Art Sales NAMES (2022–2024 lots + Belt / Venus / August) — 11-tab convert dropped object labels:
+https://docs.google.com/spreadsheets/d/1RY_bwHX-FqmFAQpEGgvCQCB2ykP-f8VU2n2mE_qlSFg/edit
 
 Deal Classifier (per-invoice EOEB; remainder $130,270 UNALLOCATED — do not dump):
 https://docs.google.com/spreadsheets/d/1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8/edit
@@ -16,6 +21,11 @@ Mercury Bank copy:
 https://docs.google.com/spreadsheets/d/189oaudb6-W_71Kcv7sNNatJISSK7H61mYUzmrJpbpPU/edit
 07_income copy:
 https://docs.google.com/spreadsheets/d/1NsvBO2QVA7SzqpeHPjXVcjdsjJezP8OJZtO8L_K4sRA/edit
+
+Fortuna inventory LOCKED SOLD 2025 (not parked unsold):
+https://docs.google.com/spreadsheets/d/1TK93q6iwXuoWodkikxwFNKgGkfDiGgyk1RpvMEKmPPw/edit
+Mercury Bank copy:
+https://docs.google.com/spreadsheets/d/1zBivqV1znj17A0568Wko7BHYIaSXTRcEvYV8eEqaenc/edit
 
 ASK (Q10 mosaics Cost LOCKED):
 https://docs.google.com/spreadsheets/d/1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4/edit
@@ -33,6 +43,7 @@ LOCKED this pass
   $40,000 of that transfer = mosaics Cost funding (not owner draw). ASK 10 CLOSED.
 - Roman Gold Belt SALE: Fortuna Cost $45,000 / L5 Sale $50,000 / net $5,000 → EPGC Art Sales July + I8.
 - Venus joint SALE: Fortuna Cost $20,000 / Erdal proceeds $26,000 / net $6,000 → EPGC Art Sales July + I8.
+  Sale Price on the register is EPGC proceeds ($26,000), not the object’s full hammer.
 - August Fortuna joint SALE: Fortuna Cost $20,000 / Erdal proceeds $25,000 / net $5,000 → EPGC Art Sales October + I8.
 - David Aaron Limited $13,595 (6/24) → EPGC Consultant June. FEE, not a sale.
 - Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → PASS. Not P&L.
@@ -54,6 +65,8 @@ ASK remaining — do not dump
 Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost (not in I8).
 
 START HERE Mercury Doc:
-https://docs.google.com/document/d/1dOlQOcAgAooyo1pTaIhZWYb48GQmsn1Nl3ShAho5kLA/edit
+https://docs.google.com/document/d/1DLFYOLOXqdXE9sOwchG7m2QpICD8IlEsRlpD4tYB8ns/edit
 07_income Doc copy:
-https://docs.google.com/document/d/1zcIqhzVXKqCZaaOGquFamLWYew_F6n08MJL6aJIWTns/edit
+https://docs.google.com/document/d/1oX9glq6j3cCgBthBejRckUViGPVIWBTYdgqDu8_6mms/edit
+Packet Doc:
+https://docs.google.com/document/d/1ATxsIMwH4X-x-zP7xUTTiZc4dwAKh5spEjnIelajn8k/edit
