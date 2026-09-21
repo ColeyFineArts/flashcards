@@ -83,8 +83,9 @@ def write_book(src: Path, dest: Path) -> None:
             strings.append(text)
         return sindex[text]
 
+    tab_names = list(wb.sheetnames)
     sheets_xml: list[str] = []
-    for name in LAST_YEAR_TABS:
+    for name in tab_names:
         ws = wb[name]
         cached = compute_formulas(ws)
         merges = merge_map(ws)
@@ -204,7 +205,7 @@ def write_book(src: Path, dest: Path) -> None:
     )
 
     sheet_entries, rels, overrides = [], [], []
-    for i, name in enumerate(LAST_YEAR_TABS, start=1):
+    for i, name in enumerate(tab_names, start=1):
         rid = f"rId{i}"
         sheet_entries.append(f'<sheet name="{html.escape(name)}" sheetId="{i}" r:id="{rid}"/>')
         rels.append(f'<Relationship Id="{rid}" Type="{WS_TYPE}" Target="worksheets/sheet{i}.xml"/>')
@@ -212,7 +213,7 @@ def write_book(src: Path, dest: Path) -> None:
             f'<Override PartName="/xl/worksheets/sheet{i}.xml" '
             'ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>'
         )
-    n = len(LAST_YEAR_TABS)
+    n = len(tab_names)
     rels.append(f'<Relationship Id="rId{n+1}" Type="{ST_TYPE}" Target="styles.xml"/>')
     rels.append(f'<Relationship Id="rId{n+2}" Type="{SS_TYPE}" Target="sharedStrings.xml"/>')
     workbook = (
