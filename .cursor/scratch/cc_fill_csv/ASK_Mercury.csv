@@ -1,29 +1,23 @@
-"ASK — remaining Mercury 8291 questions after Belt + Venus SALE lock 2026-09-21. Q6 consultant, Q7 Wise expertise, Q8 pass-through, Q9 Aquinas books LOCKED (green). Belt = SALE to L5. Venus = joint SALE (EPGC share). Q1 EOEB remainder and remaining L5 MIXED PATTERN CONFIRMED (blue) — dollars unallocated. Not tax advice.",,
+"ASK — remaining Mercury 8291 questions after Belt + Venus + August Fortuna SALE lock 2026-09-21. EOEB remainder is per-invoice UNALLOCATED (proposed FEE) — not dumped. Q6 consultant, Q7 Wise expertise, Q8 pass-through, Q9 Aquinas books LOCKED. Not tax advice.",,
 ,,
 Question,What I need,Classifier
-"1. EOEB LLC remainder after mosaics — MIXED PATTERN CONFIRMED, dollars unallocated","$130,270.00 of EOEB IN is not mosaics $105,000 and not Wise reimburse $565.75. User: EOEB is mixed art sales AND advisory/consultant fees. Do NOT dump this remainder onto Consultant or Art Sales. Mark each invoice sale vs advisory: 1/16 $1,000 (Canosan-horse STILL OPEN — Art Sales horse is to Erdal, this cash is EOEB); 3/10 $14,000; 5/1 $21,000; 5/13 $16,200; 6/12 $25,000 + $3,300; 7/8 $2,000; 8/29 $10,000; 9/19 $5,000; 9/25 $3,100; 10/1 $10,000; 10/15 $16,000; 10/24 $1,500; 10/31 $2,170.",UNALLOCATED
-"2. L5 remainder after Belt $50,000 SALE — MIXED PATTERN CONFIRMED, dollars unallocated","$37,396.32 remaining after locking 7/15 $50,000 as Roman Gold Belt SALE. Do NOT attach these invoices to the belt. Do NOT dump onto Consultant or Art Sales. Mark each remaining invoice sale vs advisory: 7/11 $8,534.79; 7/15 $2,500; 9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26.",UNALLOCATED
-"3. Fortuna / Erdal $20,000 Aug — object still unnamed","$20,000.00. Monarch posted 8/15 = Mercury native initiated 8/18 (same cash, not a second unique txn). Native memo has no object name. Not Venus (5/9, now SOLD). Not Roman Gold Belt (7/21, now SOLD).",INVENTORY
-4. Other Erdal Dere IN after Venus remittance,"$31,000.00 remaining (10/9 $25,000 and 11/7 $6,000 ‘FORTUNA PAYMENT’). 7/24 $26,000 is LOCKED Venus remittance (investment + earnings). These two still ASK.",UNALLOCATED
-"5. Aysel Dere $50,000 — Monarch IN vs native Failed OUT","Monarch 7/18 +$50,000 IN is in the 64. Mercury native CSV has NO Sent Aysel cash — only Failed $50,000 OUT 7/17 'Recipient account does not exist'. Is the Monarch IN a phantom of the failed send, or a real incoming the export omitted? Not the belt. Do not dump until confirmed.",UNALLOCATED
+"1. EOEB LLC remainder after mosaics — per-invoice UNALLOCATED (proposed FEE, not dumped)","$130,270.00 of EOEB IN is not mosaics $105,000 and not Wise reimburse $565.75. See DEAL_CLASSIFIER.csv for every invoice. Hypothesis: no matching dealer Cost → looks like FEE. Do NOT dump this remainder onto Consultant or Art Sales. 1/16 $1,000 Canosan-horse still OPEN. 5/1 $21,000 is NOT Venus. Fortuna outs are NOT EOEB Cost.",UNALLOCATED
+"2. L5 remainder after Belt $50,000 SALE — MIXED PATTERN CONFIRMED, dollars unallocated","$37,396.32 remaining after locking 7/15 $50,000 as Roman Gold Belt SALE. Do NOT attach these invoices to the belt. Do NOT dump onto Consultant or Art Sales. 7/11 $8,534.79; 7/15 $2,500; 9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26.",UNALLOCATED
+3. August Fortuna joint — LOCKED SALE (object still unnamed),"Fortuna 8/15 (native 8/18) −$20,000 Cost / Erdal 10/9 +$25,000 proceeds ($20k capital + $5k earnings). Hits EPGC Art Sales October. Object name still unknown. Not consultant. Not unsold inventory.","SALE (joint, EPGC share)"
+"4. Erdal Dere 11/7 $6,000 FORTUNA PAYMENT — still ASK","$6,000.00. Not the August joint (10/9 $25,000). Not Venus (7/24 $26,000).",UNALLOCATED
+"5. Aysel Dere $50,000 — Monarch IN vs native Failed OUT","Monarch 7/18 +$50,000 IN is in the 64. Native Failed $50,000 OUT 7/17. Not the belt. Do not dump.",UNALLOCATED
 "6. David Aaron Limited $13,595 IN (6/24) — LOCKED consultant fee","CONFIRMED: consultant fee, not a sale. Booked EPGC Consultant June $13,595. Not Art Sales. Not I8.",FEE
-7. Wise $334.17 (7/9) and $658.63 (10/30) — LOCKED expertise write-ups,CONFIRMED: business expenses (expertise write-ups). EPGC Consultant Fees July $334.17 + October $658.63 = $992.80. Distinct from Dec Wise $565.75 reimbursed by EOEB (still not P&L).,FEE
-"8. Jack Koziol & Tracy Hoffman $150,000 IN (10/20) / Ariadne Demirjian $150,000 OUT (10/21) — LOCKED pass-through","CONFIRMED: pass-through, not P&L. Not a sale, not a purchase, not COGS, not Consultant.",PASS
-"9. Aquinas Hobor $1,000 IN (2/4) — LOCKED book sale",CONFIRMED: book SALE. Hits EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost).,SALE
-"10. Mosaics Cost $90,000 vs Mercury $50,000","Plutus & Mnemosyne paid $50,000 in February. Where is the other $40,000 of Cost (other account / 2024 / still owed)?",ASK
+7. Wise $334.17 (7/9) and $658.63 (10/30) — LOCKED expertise write-ups,EPGC Consultant Fees $992.80. Distinct from Dec Wise $565.75 reimbursed by EOEB.,FEE
+"8. Jack Koziol & Tracy Hoffman $150,000 IN (10/20) / Ariadne Demirjian $150,000 OUT (10/21) — LOCKED pass-through","CONFIRMED: pass-through, not P&L.",PASS
+"9. Aquinas Hobor $1,000 IN (2/4) — LOCKED book sale",Hits EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost).,SALE
+"10. Mosaics Cost $90,000 vs Mercury $50,000","Plutus & Mnemosyne paid $50,000 in February. Where is the other $40,000 of Cost?",ASK
 ,,
 LOCKED / MATCHED this pass (do not recast without saying so),,Classifier
 Roman Gold Belt,"Fortuna 7/21 −$45,000 Cost / L5 7/15 +$50,000 Sale. Net $5,000. Remaining L5 not attached.",SALE
-"Venus (bronze head, joint)","Fortuna 5/9 −$20,000 EPGC Cost / Erdal 7/24 +$26,000 proceeds (investment + $6,000 earnings). Sale Price = EPGC proceeds, not full hammer.","SALE (joint, EPGC share)"
-Coinbase ACH net,"$-51,000.00 (OUT $-59,000.00 / IN $8,000.00) — Investments tab, not EPGC",n/a
-Newstar Jewelers,"$23,581.00 jewelry fabrication COGS",n/a
-Berk sales,"$14,000 seals (1/10) + $30,000 lots (2/7) = $44,000 Art Sales",SALE
+"Venus (bronze head, joint)","Fortuna 5/9 −$20,000 / Erdal 7/24 +$26,000. Sale Price = EPGC proceeds.","SALE (joint, EPGC share)"
+August Fortuna joint (unnamed),"Fortuna 8/15 −$20,000 / Erdal 10/9 +$25,000. EPGC Art Sales October. Net $5,000.","SALE (joint, EPGC share)"
 Mosaics,"EOEB $105,000 sale (2/21) / Plutus $50,000 of $90,000 Cost",SALE
-BoA 9922 draws,"$261,172.00 owner transfer — not P&L",n/a
-Wise/EOEB 12/2,"$565.75 reimbursed — not income, not expense",n/a
 David Aaron Limited,"$13,595 (6/24) consultant fee → EPGC Consultant June. Not a sale.",FEE
 Koziol / Ariadne,"$150,000 IN 10/20 + $150,000 OUT 10/21 LOCKED pass-through — not P&L",PASS
-Wise expertise write-ups,$334.17 (7/9) + $658.63 (10/30) = $992.80 → EPGC Consultant Fees,FEE
-Aquinas Hobor books,"$1,000 IN 2/4 LOCKED book sale → EPGC Art Sales February. Cost TBD (not in I8).",SALE
-EOEB / remaining L5 mixed pattern,"CONFIRMED mixed art + advisory. Remainder $130,270.00 / $37,396.32 unallocated.",UNALLOCATED
-Native CSV 2026-09-20,epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv is account 8291. 0 new unique Sent cash vs the 64.,n/a
+Wise/EOEB 12/2,"$565.75 reimbursed — not income, not expense",n/a
+EOEB remainder,"$130,270.00 per-invoice UNALLOCATED (proposed FEE). Not dumped.",UNALLOCATED

@@ -3,9 +3,11 @@ Q,Status,What,Where it hits
 7,LOCKED,Wise $334.17 (7/9) + $658.63 (10/30) expertise write-ups,EPGC Consultant Fees $992.80. Classifier: FEE.
 8,LOCKED,"Koziol $150,000 IN (10/20) / Ariadne $150,000 OUT (10/21)",Pass-through — not P&L. Classifier: PASS.
 9,LOCKED,"Aquinas Hobor $1,000 IN (2/4) book SALE",EPGC Art Sales February. Cost TBD. Classifier: SALE.
-Belt,LOCKED,"Roman Gold Belt Fortuna $45,000 / L5 $50,000","EPGC Art Sales July +$50,000. I8 net +$5,000. Classifier: SALE. Remaining L5 not attached."
-Venus,LOCKED,"Venus Fortuna $20,000 / Erdal remittance $26,000","EPGC Art Sales July +$26,000. I8 net +$6,000. Sale Price = EPGC proceeds, not full hammer. Classifier: SALE (joint, EPGC share)."
-1,PATTERN CONFIRMED / dollars unallocated,"EOEB remainder $130,270.00 mixed art sales + advisory/consultant","Do NOT dump. Classifier: UNALLOCATED. Jan 16 $1,000 Canosan-horse still open."
-2,PATTERN CONFIRMED / dollars unallocated,"L5 remainder $37,396.32 mixed after Belt $50k SALE",Do NOT dump. Classifier: UNALLOCATED.
-ASK remaining,ASK,"Fortuna unnamed $20,000 / other Erdal IN $31,000 / Aysel Monarch IN vs native Failed OUT / mosaics Cost $40,000",Aug $20k object name (INVENTORY). Other Erdal not Venus. Aysel not the belt.
-LOCKED totals,LOCKED,"Art Sales gross $226,000 (Jan 14k + Feb 136k + July 76k); I8 $34,055.06; Consultant June $13,595",Dec Wise $565.75 REIMBURSE. EOEB remainder / other L5 not on P&L.
+Belt,LOCKED,"Roman Gold Belt Fortuna $45,000 / L5 $50,000","EPGC Art Sales July +$50,000. I8 net +$5,000. Classifier: SALE."
+Venus,LOCKED,"Venus Fortuna $20,000 / Erdal remittance $26,000","EPGC Art Sales July +$26,000. I8 net +$6,000. Classifier: SALE (joint, EPGC share)."
+August,LOCKED,"August Fortuna joint Fortuna $20,000 / Erdal 10/9 $25,000","EPGC Art Sales October +$25,000. I8 net +$5,000. Classifier: SALE (joint, EPGC share). 11/7 $6,000 still ASK."
+EOEB mosaics,LOCKED,"EOEB 2/21 $105,000 mosaics",EPGC Art Sales February. Classifier: SALE.
+EOEB 12/2,LOCKED not income,EOEB/Wise $565.75 reimburse,Not P&L.
+1,UNALLOCATED per invoice (proposed FEE),"EOEB remainder $130,270.00",DEAL_CLASSIFIER.csv. Do NOT dump onto Consultant or Art Sales.
+2,PATTERN CONFIRMED / dollars unallocated,"L5 remainder $37,396.32",Do NOT dump. Classifier: UNALLOCATED.
+LOCKED totals,LOCKED,"Art Sales gross $251,000 (Jan 14k + Feb 136k + July 76k + Oct 25k); I8 $39,055.06; Consultant June $13,595",EOEB remainder / other L5 not on P&L.

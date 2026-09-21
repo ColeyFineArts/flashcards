@@ -1,56 +1,36 @@
 START HERE — last year's spreadsheet, 2025 numbers filled
 Not tax advice. Organizational packet only.
 
-Open this ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate, Art Sales has 2022–2024 lots + 2025 Belt and Venus):
+Open this ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate, Art Sales has 2022–2024 lots + 2025 Belt, Venus, August joint):
 https://docs.google.com/spreadsheets/d/XLSX_PLACEHOLDER/edit
+
+Deal Classifier (EOEB per invoice — proposed FEE, lock UNALLOCATED):
+https://docs.google.com/spreadsheets/d/CLASSIFIER_PLACEHOLDER/edit
 
 START HERE doc:
 https://docs.google.com/document/d/DOC_PLACEHOLDER/edit
 
-Copies
-07 Income folder:
-https://docs.google.com/spreadsheets/d/XLSX07_PLACEHOLDER/edit
-My Drive / 2025 Taxes:
-https://docs.google.com/spreadsheets/d/XLSXROOT_PLACEHOLDER/edit
-
 Tabs in last year's order (all inside that one file)
-1. Income — 2022–2025. 2025 Actual: Hindman $70,618 / 216 $19,500 / 524 #2 $17,086.94 / GCM $21,500 / Art $34,055.06. I10 EBITDA =SUM(I4:I9) → $162,760.
-2. 524 Ferdinand Ave, Unit 2 — 2023 YR TOTAL | 2024 YR TOTAL | 2025 YR TOTAL. 2025 STR $13,879.55. Grove Collaborative $791.21.
-3. 216 N. Oak Park Ave — 2023 | 2024 | 2025. Lemonade $42.84/mo = $514.08. Rent $19,500. Mortgage $14,617.54. HOA $5,058.36. Brennan $150 / Ace $11 / Joan $675 / Imelda $300.
-4. EPGC LLC — 2023, then 2024, then 2025 (Art Sales $14,000 + $136,000 + July $76,000 = $226,000; Consultant June $13,595). 2025 Total is a live SUM.
+1. Income — 2022–2025. 2025 Actual: Hindman $70,618 / 216 $19,500 / 524 #2 $17,086.94 / GCM $21,500 / Art $39,055.06. I10 EBITDA =SUM(I4:I9) → $167,760.
+2. 524 Ferdinand Ave, Unit 2
+3. 216 N. Oak Park Ave
+4. EPGC LLC — 2025 Art Sales $14,000 + $136,000 + July $76,000 + October $25,000 = $251,000; Consultant June $13,595 (David Aaron only).
 5. Refrence Library
-6. Art Sales and Purchases — 2022–2024 lots, then Sales 2025 including Roman Gold Belt SALE to L5 and Venus joint SALE (EPGC share). Do not dump EOEB $130,270 or other L5 $37,396.32.
-7. GCM — 2022–2025 stacked like last year. 2025 board $4,100 / $9,200 / $4,100 / $4,100 = $21,500.
+6. Art Sales and Purchases — 2022–2024 lots, then Sales 2025 including Roman Gold Belt, Venus joint, August Fortuna joint. Do not dump EOEB $130,270.
+7. GCM
 8. Hindman W2
 9. Megan T4
 10. Investments — Coinbase ACH net -$51,000.
-11. 524 Ferdinand Ave, Unit 1 — 2023 YR TOTAL | 2025 YR TOTAL (same as last year; no 2024 rental block).
+11. 524 Ferdinand Ave, Unit 1
 
-Deal Classifier (on 2025 Data sources + DEAL_CLASSIFIER.csv): SALE vs FEE vs PASS vs INVENTORY vs UNALLOCATED.
-Belt = SALE. Venus = SALE (joint, EPGC share). Remaining EOEB/L5 = UNALLOCATED.
-
-Last year's file (2023/2024, do not edit):
-https://drive.google.com/file/d/1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2/view
+Deal Classifier: SALE vs FEE vs PASS vs UNALLOCATED.
+Belt = SALE. Venus = SALE (joint). August Fortuna = SALE (joint). EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE.
 
 How this stays correct
 1. Copy last year's Personal Income.xlsx. Never rebuild from CSVs.
 2. Fill the 2025 year block only. 2023 and 2024 stay as they were.
 3. python3 .cursor/scratch/assert_personal_income_2025.py must print LOCK OK + SHEETS-SAFE OK.
-4. Drive upload is a compact xlsx Google converts (cell refs like AO5 survive). Include Art Sales row 1 and 2022–2024 lots — sparse tiny OOXML dropped Art cells.
+4. Drive upload is a compact xlsx Google converts. Include Art Sales row 1 and 2022–2024 lots.
 5. CSV builders (.cursor/scratch/build_drive_all_tabs.py) now refuse to run.
-
-216 N. Oak Park #1Z (LTR) 2025 — same rows as last year
-RENTER'S INSURANCE: Lemonade $42.84/mo × 12. Not an October lump $514.
-RENTAL INCOME: $1,950 × 6, then $1,450 / $2,450 / vacant Sep–Nov / $3,900 Dec = $19,500.
-MORTGAGE: $1,226.25 Jan–Oct / $1,177.52 Nov–Dec (Jan–Jun yellow WAIT 8507).
-HOA: $421.53 × 12 (Jan–May yellow WAIT 8507).
-INTERIOR MAINTENANCE: $150 Chris Brennan August; $11 Ace keys December.
-INTERIOR REPAIR: $675 Joan December.
-MOVE OUT FEE: $300 Imelda October.
-
-524 Ferdinand
-Travelers was prior home insurance. Geico was the cars. 2025 State Farm home share only on Units 1 & 2. Auto + Geico credit are personal. Grove Collaborative ≠ 827 N Grove.
-
-Do not open anything titled _SUPERSEDED. Those files stored =SUM as text, split this into 11 separate files, or put 2025 numbers into the 2023 columns.
 
 Not tax advice.

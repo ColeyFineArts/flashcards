@@ -3,7 +3,7 @@
 
 xlsx cell refs (AO5) survive Google conversion; SpreadsheetML ss:Index does not.
 Keep the file small enough for Drive MCP base64 (~<20KB zip).
-Art Sales MUST include row 1 and 2022–2024 lots (keep_row 1–82). The prior
+Art Sales MUST include row 1 and 2022–2024 lots (keep_row 1–83). The prior
 sparse skip of 2022–2024 rows made Google convert drop Art cells. Prefer
 compact_personal_income_for_drive.py (~45–65KB) over this tiny path.
 

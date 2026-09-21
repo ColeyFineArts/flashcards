@@ -28,10 +28,13 @@ LOCKED this pass:
   User 2026-09-21: Roman Gold Belt = SALE to L5 (Fortuna Cost 7/21
     −$45,000 / L5 7/15 +$50,000). Venus = joint SALE EPGC share
     (Fortuna Cost 5/9 −$20,000 / Erdal remittance 7/24 +$26,000).
-    Not unsold inventory. Aug Fortuna $20,000 still unnamed.
+    Not unsold inventory. August Fortuna is another joint SALE
+    (Cost 8/15 −$20,000 / Erdal 10/9 +$25,000). EOEB remainder is
+    per-invoice UNALLOCATED (proposed FEE) — not dumped.
 
 Belt + Venus SALE lock for the last-year 11-tab workbook lives in
-lock_belt_venus_2025.py. Do not re-run this script to recast those deals.
+lock_belt_venus_2025.py. August Fortuna + EOEB classifier live in
+lock_august_eoeb_2025.py. Do not re-run this script to recast those deals.
 
 Do NOT dump unclassified Mercury into EPGC Art Sales.
 Do not re-run apply_checking_answers_2025.py.
@@ -202,13 +205,13 @@ RULES = {
         "Not P&L. If this is the Plutus $10, it is the first $10 of the $50,000 mosaics cost; the $49,990 follows 2/25.",
     ),
     ("2025-03-10", D("14000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-05-01", D("21000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -222,19 +225,19 @@ RULES = {
         "I8 net $6,000. Classifier: SALE (joint, EPGC share). Not tax advice.",
     ),
     ("2025-05-13", D("16200.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-06-12", D("25000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-06-12", D("3300.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -252,7 +255,7 @@ RULES = {
         "Not EPGC P&L.",
     ),
     ("2025-07-08", D("2000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -316,14 +319,15 @@ RULES = {
     ),
     ("2025-08-15", D("-20000.00")): (
         "ART_PURCHASE",
-        "ASK",
-        "Fortuna / Erdal — object still unnamed",
-        "Same $20,000 OUT as Mercury native initiated 2025-08-18 / Monarch posted 2025-08-15. "
-        "No object name in the native memo ('From EPGC LLC via mercury.com'). "
-        "Inventory vs other? Do not add to sold Cost until named. Not a second unique txn.",
+        "LOCKED",
+        "August Fortuna joint — unnamed object Cost (Erdal)",
+        "User 2026-09-21: another joint investment with Erdal. He sold; Jacob got capital + earnings. "
+        "Native 8/18 = Monarch 8/15. Object unnamed. Paired with Erdal 10/9 +$25,000 "
+        "($20k capital + $5k earnings). Hits EPGC Art Sales October. Not consultant. "
+        "Not unsold inventory. 7/24 cannot be August (too early). Classifier: SALE (joint). Not tax advice.",
     ),
     ("2025-08-29", D("10000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -341,7 +345,7 @@ RULES = {
         "Investment transfer off Mercury 8291. Not EPGC operating. Distinct from Coinbase 6108 credit-card spend.",
     ),
     ("2025-09-19", D("5000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -359,7 +363,7 @@ RULES = {
         "Not EPGC P&L.",
     ),
     ("2025-09-25", D("3100.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -371,7 +375,7 @@ RULES = {
         "Investment transfer. Not EPGC operating.",
     ),
     ("2025-10-01", D("10000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -390,9 +394,12 @@ RULES = {
     ),
     ("2025-10-09", D("25000.00")): (
         "ART_SALE",
-        "ASK",
-        "Erdal Dere $25,000 IN — sale vs other",
-        "Incoming wire ERDAL DERE. Sale of inventory to Erdal or something else?",
+        "LOCKED",
+        "August Fortuna joint — EPGC proceeds (Erdal remittance)",
+        "User 2026-09-21: working settlement $20k capital + $5k earnings. "
+        "Hits EPGC Art Sales October +$25,000. Object still unnamed. "
+        "11/7 $6,000 FORTUNA PAYMENT still ASK. 7/24 is Venus, not August. "
+        "Not consultant. Not tax advice.",
     ),
     ("2025-10-14", D("-8000.00")): (
         "COGS_JEWELRY",
@@ -401,7 +408,7 @@ RULES = {
         "Fees for making jewelry out of intaglios, engraved gems, and scarabs. COGS, not EPGC operating. Not added to sold-lot Cost (Berk lots already sold in February).",
     ),
     ("2025-10-15", D("16000.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -425,7 +432,7 @@ RULES = {
         "User 2026-09-20: pass-through, not a purchase. Same window as Koziol $150,000 IN. Not P&L.",
     ),
     ("2025-10-24", D("1500.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -437,7 +444,7 @@ RULES = {
         "User 2026-09-20: business expense (expertise write-ups). Hits EPGC Consultant Fees October $658.63. Not COGS, not reimbursed. Distinct from Dec Wise $565.75 (EOEB reimburse).",
     ),
     ("2025-10-31", D("2170.00")): (
-        "ADVISORY",
+        "UNALLOCATED",
         "ASK",
         "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
@@ -449,10 +456,11 @@ RULES = {
         "Investment transfer. Not EPGC operating.",
     ),
     ("2025-11-07", D("6000.00")): (
-        "ART_SALE",
         "ASK",
-        "Erdal Dere Fortuna PAYMENT $6,000 IN",
-        "Wire memo ERDAL DERE FORTUNA PAYMENT. Sale, refund of a Fortuna purchase, or other?",
+        "ASK",
+        "Erdal Dere Fortuna PAYMENT $6,000 IN — still ASK",
+        "Wire memo ERDAL DERE FORTUNA PAYMENT. User 2026-09-21: still ASK. "
+        "Not the August joint (that is 10/9 $25k). Not Venus (7/24 $26k). Not tax advice.",
     ),
     ("2025-11-12", D("-8000.00")): (
         "COGS_JEWELRY",
@@ -787,6 +795,7 @@ def build_ledger_sheet(wb, rows: list[dict]) -> Worksheet:
             "EPGC_EXPENSE": PEACH,
             "ADVISORY": YELLOW,
             "ASK": YELLOW,
+            "UNALLOCATED": BLUE,
         }.get(r["bucket"], YELLOW)
         ws.cell(i, 5).fill = GREEN if (r["bucket"] == "ADVISORY" and r["status"] == "LOCKED") else bucket_fill
         if r["status"] in ("LOCKED", "MATCHED") and r["bucket"] in (
@@ -1197,7 +1206,7 @@ def _fix_art_sales_footer(ws: Worksheet, note: str) -> None:
 def lock_fortuna_named_inventory(ws: Worksheet) -> None:
     """Always refresh Fortuna inventory rows from native CSV object names.
 
-    Venus $20k and Roman Gold Belt $45k LOCKED parked Cost. Aug $20k stays ASK.
+    Venus, Belt, and August Fortuna joint are SOLD 2025 (see Sales rows).
     Do not add named unsold inventory to sold-lot Cost.
     """
     header_row = None
@@ -1228,9 +1237,9 @@ def lock_fortuna_named_inventory(ws: Worksheet) -> None:
         ),
         (
             ("20000", "2025-08-15"),
-            "Fortuna / Erdal Dere — object still unnamed (native 8/18 = Monarch 8/15)",
-            YELLOW,
-            "ASK: same $20,000 as Mercury native 2025-08-18. No object name. Do not add to sold Cost. Not a second unique txn.",
+            "SOLD 2025 — August Fortuna joint (see Sales 2025). Not unsold inventory.",
+            GREEN,
+            "LOCKED 2026-09-21 joint SALE. Erdal 10/9 $25,000 / Cost $20,000 / net $5,000. Object unnamed. Not consultant.",
         ),
     ]
     # also match float costs
@@ -1268,15 +1277,19 @@ def lock_fortuna_named_inventory(ws: Worksheet) -> None:
         ws.cell(
             header_row,
             1,
-            "2025 Mercury Fortuna inventory — Venus + Roman Gold Belt LOCKED; Aug $20k unnamed ASK",
+            "2025 Mercury Fortuna — Venus + Belt + August joint SOLD 2025",
         )
         ws.cell(header_row, 1).font = CG_B
         ws.cell(header_row, 1).fill = GREEN
     if remaining_row:
-        ws.cell(remaining_row, 1, "Fortuna unnamed remaining 2025 (excl. seals $13,000 + Venus $20,000 + Belt $45,000)")
-        ws.cell(remaining_row, 3, 20000)
+        ws.cell(
+            remaining_row,
+            1,
+            "Fortuna unnamed remaining 2025 (excl. seals $13,000 + Venus $20,000 + Belt $45,000 + August joint $20,000)",
+        )
+        ws.cell(remaining_row, 3, 0)
         ws.cell(remaining_row, 3).number_format = ACCT
-        ws.cell(remaining_row, 3).fill = YELLOW
+        ws.cell(remaining_row, 3).fill = GREEN
 
 
 def patch_art_sales(ws: Worksheet) -> None:

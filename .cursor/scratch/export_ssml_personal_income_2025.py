@@ -206,10 +206,10 @@ def keep_row(name: str, r: int, ws=None) -> bool:
         )
     if name == "Art Sales and Purchases":
         # Include row 1 and 2022–2024 lots. Sparse tiny OOXML skipped these
-        # and Google convert dropped Art cells. Keep 2025 Belt/Venus rows too.
+        # and Google convert dropped Art cells. Keep 2025 Belt/Venus/August rows.
         if r == 1:
             return True
-        return 2 <= r <= 82
+        return 2 <= r <= 83
     if name == "Refrence Library":
         return r == 1 or r >= 74  # column headers + 2025 Jewelry Books
     if name == "GCM":
