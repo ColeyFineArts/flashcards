@@ -11,6 +11,9 @@ from pathlib import Path
 
 from openpyxl import load_workbook
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from sanitize_xlsx_for_sheets import assert_formulas_are_real
+
 ROOT = Path("/workspace/.cursor/scratch")
 DEFAULT = ROOT / "tax_turbo_parts" / "Personal Income 2025.xlsx"
 PRIOR = ROOT / "Personal_Income_prior.xlsx"
@@ -106,6 +109,10 @@ def assert_workbook(path: Path) -> None:
         fail(f"Income I8 {inc['I8'].value}")
     if inc["A4"].value != "Hindman ":
         fail(f"Income A4 {inc['A4'].value!r}")
+    if inc["I10"].data_type != "f" or inc["I10"].value != "=SUM(I4:I9)":
+        fail(f"Income I10 must be formula =SUM(I4:I9), got type={inc['I10'].data_type!r} value={inc['I10'].value!r}")
+    if oak["AO5"].data_type != "f":
+        fail(f"216 AO5 must be a formula, got type={oak['AO5'].data_type!r} value={oak['AO5'].value!r}")
 
     gcm = wb["GCM"]
     if [gcm["B24"].value, gcm["C24"].value, gcm["D24"].value, gcm["E24"].value] != [
@@ -145,6 +152,7 @@ def assert_workbook(path: Path) -> None:
 
     print(f"LOCK OK {path} ({path.stat().st_size} bytes)")
     print("tabs", wb.sheetnames)
+    assert_formulas_are_real(path)
 
 
 if __name__ == "__main__":

@@ -26,8 +26,9 @@ def main() -> None:
 
     assert_workbook(CANON)
     print(
-        "LOCK OK. Drive upload must convert this xlsx (or a compact clone of it). "
-        "Never upload a CSV rebuild. Never upload an 8-tab subset."
+        "LOCK OK. Drive upload must convert this xlsx with real <f> formulas. "
+        "Never ODS-roundtrip (that stores =SUM as text). Never CSV rebuild. "
+        "Never upload an 8-tab subset."
     )
 
 

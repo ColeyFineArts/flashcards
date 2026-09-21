@@ -161,7 +161,8 @@ def add_data_sources(wb) -> Worksheet:
 
     checks = [
         ("216 rent vs Income I5", "='216 N. Oak Park Ave'!AO5", "=Income!I5"),
-        ("524 #2 rent vs Income I6", "='524 Ferdinand Ave, Unit 2'!AO5", "=Income!I6"),
+        ("524 #2 Monarch months vs $13,879.55", "='524 Ferdinand Ave, Unit 2'!AO5", 13879.55),
+        ("Income I6 platform vs $17,086.94", "=Income!I6", 17086.94),
         ("GCM 2025 vs Income I7", "=GCM!E26", "=Income!I7"),
         ("216 Lemonade vs $514.08", "='216 N. Oak Park Ave'!AO14", 514.08),
         ("EPGC Art Sales vs $150,000", "='EPGC LLC'!N53", 150000),
@@ -185,7 +186,21 @@ def add_data_sources(wb) -> Worksheet:
         c4.border = THIN
         ws.cell(r, 5, "").border = THIN
 
-    note_r = start + len(checks) + 1
+    gap_r = start + len(checks)
+    ws.cell(
+        gap_r,
+        1,
+        "524 #2 STR: Income I6 is Airbnb+VRBO platform net $17,086.94 (CPA). "
+        "Unit 2 months are Monarch cash Jun–Nov $13,879.55. Gap $3,207.39 = Apr/May "
+        "platform payouts not in Monarch. Do not invent those months. Not a FAIL.",
+    )
+    ws.merge_cells(start_row=gap_r, start_column=1, end_row=gap_r, end_column=5)
+    ws.cell(gap_r, 1).font = BODY
+    ws.cell(gap_r, 1).fill = YELLOW
+    ws.cell(gap_r, 1).alignment = Alignment(wrap_text=True, vertical="center")
+    ws.row_dimensions[gap_r].height = 40
+
+    note_r = gap_r + 1
     ws.cell(
         note_r,
         1,
@@ -219,6 +234,37 @@ def restyle_gcm_like_last_year(ws: Worksheet) -> None:
     for addr in ("B24", "C24", "D24", "E24"):
         ws[addr].number_format = ACCT
         ws[addr].fill = PEACH
+    merges = {str(r) for r in ws.merged_cells.ranges}
+    if "A22:E22" not in merges:
+        ws.merge_cells("A22:E22")
+    ws["A22"] = "GCM Boards 2025"
+
+
+def finish_year_titles(wb) -> None:
+    """Last year's Unit 2 merges C1:O1 and P1:AB1. Add the 2025 block the same way."""
+    u2 = wb["524 Ferdinand Ave, Unit 2"]
+    merges = {str(r) for r in u2.merged_cells.ranges}
+    if "AC1:AO1" not in merges:
+        u2.merge_cells("AC1:AO1")
+    u2["AC1"] = u2["C1"].value
+    u2["AC1"].font = copy(u2["C1"].font)
+    u2["AC1"].alignment = copy(u2["C1"].alignment)
+
+    u1 = wb["524 Ferdinand Ave, Unit 1"]
+    u1.sheet_state = "visible"
+    merges = {str(r) for r in u1.merged_cells.ranges}
+    if "P1:AB1" not in merges:
+        u1.merge_cells("P1:AB1")
+    if u1["P1"].value in (None, ""):
+        u1["P1"] = u1["C1"].value
+    u1["P1"].font = copy(u1["C1"].font)
+    u1["P1"].alignment = copy(u1["C1"].alignment)
+
+    try:
+        wb.defined_names.clear()
+    except Exception:
+        pass
+    wb._external_links = []
 
 
 def mark_income_locks(ws: Worksheet) -> None:
@@ -252,18 +298,22 @@ def main() -> None:
             raise SystemExit(f"missing last-year tab {name}")
         wb.move_sheet(name, offset=i - wb.sheetnames.index(name))
     restyle_gcm_like_last_year(wb["GCM"])
+    finish_year_titles(wb)
     mark_income_locks(wb["Income"])
     add_data_sources(wb)
     DELIVERABLE.parent.mkdir(exist_ok=True)
     wb.save(OUT)
-    shutil.copy2(OUT, DELIVERABLE)
-    shutil.copy2(OUT, TURBO)
     import sys
 
     sys.path.insert(0, str(ROOT))
     from assert_personal_income_2025 import assert_workbook
+    from sanitize_xlsx_for_sheets import assert_formulas_are_real, sanitize_xlsx
 
+    sanitize_xlsx(OUT)
+    shutil.copy2(OUT, DELIVERABLE)
+    shutil.copy2(OUT, TURBO)
     assert_workbook(OUT)
+    assert_formulas_are_real(OUT)
     print("wrote", OUT, OUT.stat().st_size, "bytes")
 
 
