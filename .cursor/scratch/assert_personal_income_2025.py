@@ -111,7 +111,7 @@ def assert_workbook(path: Path) -> None:
         fail(f"Income I6 {inc['I6'].value}")
     if inc["I7"].value != 21500:
         fail(f"Income I7 {inc['I7'].value}")
-    if inc["I8"].value != 23055.06:
+    if inc["I8"].value != 34055.06:
         fail(f"Income I8 {inc['I8'].value}")
     if inc["A4"].value != "Hindman ":
         fail(f"Income A4 {inc['A4'].value!r}")
@@ -134,6 +134,8 @@ def assert_workbook(path: Path) -> None:
         fail(f"EPGC A51 {ep['A51'].value!r}")
     if ep["B53"].value != 14000 or ep["C53"].value != 136000:
         fail(f"EPGC Art Sales 2025 {ep['B53'].value}/{ep['C53'].value}")
+    if ep["H53"].value != 76000:
+        fail(f"EPGC Art Sales July {ep['H53'].value} (need Belt $50,000 + Venus $26,000)")
     if ep["G54"].value != 13595:
         fail(f"EPGC Consultant June {ep['G54'].value}")
     if ep["H69"].value != 334.17 or ep["K69"].value != 658.63:
@@ -146,6 +148,21 @@ def assert_workbook(path: Path) -> None:
         fail("Art Sales mosaics F74 != 105000")
     if art["F77"].value != 1000:
         fail("Art Sales Aquinas F77 != 1000")
+    if art["A1"].value != "Art Sales and Purchases":
+        fail(f"Art Sales A1 {art['A1'].value!r} (row 1 must exist or Google convert drops the tab)")
+    if art["A78"].value != "Roman Gold Belt":
+        fail(f"Art Sales A78 {art['A78'].value!r} (Belt SALE)")
+    if art["C78"].value != 45000 or art["F78"].value != 50000:
+        fail(f"Art Sales Belt Cost/Sale {art['C78'].value}/{art['F78'].value}")
+    if "Venus" not in str(art["A79"].value or ""):
+        fail(f"Art Sales A79 {art['A79'].value!r} (Venus SALE)")
+    if art["C79"].value != 20000 or art["F79"].value != 26000:
+        fail(f"Art Sales Venus Cost/proceeds {art['C79'].value}/{art['F79'].value}")
+    parked = " ".join(str(art.cell(r, 1).value or "") for r in range(120, (art.max_row or 120) + 1))
+    if "Roman Gold Belt — Fortuna inventory" in parked:
+        fail("Belt still parked as unsold Fortuna inventory")
+    if "likely Venus — Fortuna inventory" in parked:
+        fail("Venus still parked as unsold Fortuna inventory")
 
     inv = wb["Investments"]
     if "Coinbase" not in str(inv["A5"].value or ""):

@@ -22,18 +22,16 @@ LOCKED this pass:
   Aquinas Hobor $1,000 IN (2/4) = books sold (ART_SALE LOCKED)
     (user 2026-09-20: "9. Books sold to Aquinas"). Hits EPGC Art Sales
     February. Cost / titles TBD — not in Income I8 until Cost.
-  EOEB and L5 mixed art sales + advisory/consultant CONFIRMED
-    (user 2026-09-20). Remainder dollars stay unallocated — do NOT dump
-    EOEB $130,270 or L5 $87,396.32 onto Consultant or Art Sales.
-    Jan 16 EOEB $1,000 Canosan-horse question stays open.
-  Native Mercury CSV 2026-09-20 (epgc-llc-transactions-2025-jan-01-to-
-    2025-dec-31.csv, account 8291): duplicate of the already-classified
-    2025 year — 0 new unique Sent cash vs the 64. Fortuna 5/9 $20,000 =
-    bronze head of a goddess, likely Venus (LOCKED inventory). Fortuna
-    7/21 $45,000 = Roman Gold Belt (LOCKED inventory). Not sold 2025 —
-    parked Cost, not dumped onto Art Sales / Consultant. Aug Fortuna
-    $20,000 still unnamed (Monarch 8/15 = native 8/18). Failed Aysel
-    $50k OUT 7/17 and Cancelled Erdal $13k 1/8 are not cash.
+  EOEB remainder and remaining L5 mixed art + advisory CONFIRMED.
+    Do NOT dump EOEB $130,270 or other L5 $37,396.32 onto Consultant
+    or Art Sales. Jan 16 EOEB $1,000 Canosan-horse still open.
+  User 2026-09-21: Roman Gold Belt = SALE to L5 (Fortuna Cost 7/21
+    −$45,000 / L5 7/15 +$50,000). Venus = joint SALE EPGC share
+    (Fortuna Cost 5/9 −$20,000 / Erdal remittance 7/24 +$26,000).
+    Not unsold inventory. Aug Fortuna $20,000 still unnamed.
+
+Belt + Venus SALE lock for the last-year 11-tab workbook lives in
+lock_belt_venus_2025.py. Do not re-run this script to recast those deals.
 
 Do NOT dump unclassified Mercury into EPGC Art Sales.
 Do not re-run apply_checking_answers_2025.py.
@@ -103,14 +101,17 @@ def add(arr, month: int, amt):
 
 
 MIXED_EOEB = (
-    "User 2026-09-20: EOEB LLC mixed art sales AND advisory/consultant fees. "
-    "Pattern confirmed; this invoice still unallocated. Do NOT dump EOEB remainder "
-    "$130,270 onto Consultant or Art Sales. Invoice-level split still ASK."
+    "User 2026-09-21 Deal Classifier: leftover EOEB after mosaics has no matching "
+    "dealer Cost on 8291 (Fortuna Venus/Belt/Aug joints are NOT EOEB Cost) and looks "
+    "like FEE — still UNALLOCATED. Do NOT dump onto EPGC Consultant or Art Sales. "
+    "5/1 $21,000 is NOT Venus. Jan 16 $1,000 Canosan-horse still OPEN. Not tax advice."
 )
 MIXED_L5 = (
     "User 2026-09-20: L5 LLC mixed art sales AND advisory/consultant fees. "
-    "Pattern confirmed; this invoice still unallocated. Do NOT dump L5 remainder "
-    "$87,396.32 onto Consultant or Art Sales. Invoice-level split still ASK."
+    "Pattern confirmed; remaining invoices still unallocated after locking "
+    "7/15 $50,000 as Roman Gold Belt SALE. Do NOT dump L5 remainder "
+    "$37,396.32 onto Consultant or Art Sales. Invoice-level split still ASK. "
+    "Do NOT attach remaining L5 invoices to the belt."
 )
 
 # (date, amount) -> classification. Amounts signed as Mercury cash (IN +, OUT -).
@@ -136,8 +137,8 @@ RULES = {
         "ASK",
         "ASK",
         "EOEB $1,000 — Canosan horse vs advisory (STILL OPEN)",
-        "STILL OPEN after mixed-pattern confirm. Art Sales has Canosan Terracotta Horse to Erdal $1,000. "
-        "This cash is EOEB, not Erdal. Sale of the horse, advisory invoice, or other? Not allocated.",
+        "STILL OPEN. Art Sales register horse is to Erdal $1,000; this cash is EOEB. "
+        "Do not lock as the horse sale. Classifier: UNALLOCATED / OPEN. Not tax advice.",
     ),
     ("2025-02-04", D("1000.00")): (
         "ART_SALE",
@@ -203,39 +204,39 @@ RULES = {
     ("2025-03-10", D("14000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-05-01", D("21000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-05-09", D("-20000.00")): (
         "ART_PURCHASE",
         "LOCKED",
-        "Bronze head of a goddess, likely Venus — inventory Cost",
-        "Mercury native 2025 CSV note: 'For bronze head of a goddess, likely Venus'. "
-        "Inventory purchase from Fortuna / Erdal. Not sold on 2025 Art Sales — parked Cost, "
-        "not in sold-lot Cost (avoid double count). Not dumped onto Consultant or Art Sales P&L.",
+        "Venus — EPGC Cost (joint with Erdal)",
+        "User 2026-09-21: Erdal and Jacob bought together. Not unsold inventory. "
+        "Paired with Erdal 7/24 +$26,000 remittance (investment + $6,000 earnings). "
+        "I8 net $6,000. Classifier: SALE (joint, EPGC share). Not tax advice.",
     ),
     ("2025-05-13", D("16200.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-06-12", D("25000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-06-12", D("3300.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-06-24", D("13595.00")): (
@@ -253,7 +254,7 @@ RULES = {
     ("2025-07-08", D("2000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-07-09", D("-334.17")): (
@@ -269,10 +270,13 @@ RULES = {
         MIXED_L5,
     ),
     ("2025-07-15", D("50000.00")): (
-        "ADVISORY",
-        "ASK",
-        "L5 $50,000 — mixed unallocated (sale vs advisory)",
-        MIXED_L5 + " Same week as Aysel $50k IN and Fortuna $45k OUT.",
+        "ART_SALE",
+        "LOCKED",
+        "Roman Gold Belt — Sale Price (L5)",
+        "User 2026-09-21: sold to L5. Only L5 payment large enough. "
+        "Hits EPGC Art Sales July +$50,000. L5 paid 6 days before Fortuna Cost — "
+        "back-to-back dealer cash. Do NOT attach remaining L5 invoices. "
+        "Classifier: SALE. Not tax advice.",
     ),
     ("2025-07-15", D("2500.00")): (
         "ADVISORY",
@@ -291,16 +295,18 @@ RULES = {
     ("2025-07-21", D("-45000.00")): (
         "ART_PURCHASE",
         "LOCKED",
-        "Roman Gold Belt — inventory Cost",
-        "Mercury native 2025 CSV note: Roman Gold Belt. Inventory purchase from Fortuna / Erdal. "
-        "Not sold on 2025 Art Sales — parked Cost, not in sold-lot Cost. "
-        "Same week as L5 $50k / Monarch Aysel $50k ASK / Erdal $26k IN.",
+        "Roman Gold Belt — Cost (Fortuna)",
+        "User 2026-09-21: Cost of SALE to L5, not unsold inventory. Native memo Roman Gold Belt. "
+        "Paired with L5 7/15 +$50,000. Net $5,000 on I8. Classifier: SALE. Not tax advice.",
     ),
     ("2025-07-24", D("26000.00")): (
         "ART_SALE",
-        "ASK",
-        "Erdal Dere $26,000 IN — sale vs other",
-        "Incoming wire ERDAL DERE. Sale of inventory to Erdal, repayment, or advisory?",
+        "LOCKED",
+        "Venus — EPGC proceeds (Erdal remittance)",
+        "User 2026-09-21: Erdal sold it and paid back Jacob’s $20,000 + $6,000 earnings. "
+        "Art Sales Sale Price = EPGC proceeds $26,000, not full hammer. "
+        "Hits EPGC Art Sales July. Other Erdal IN still ASK. "
+        "Classifier: SALE (joint, EPGC share). Not tax advice.",
     ),
     ("2025-07-28", D("-60000.00")): (
         "TRANSFER",
@@ -319,7 +325,7 @@ RULES = {
     ("2025-08-29", D("10000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-09-02", D("5042.00")): (
@@ -337,7 +343,7 @@ RULES = {
     ("2025-09-19", D("5000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-09-23", D("9119.27")): (
@@ -355,7 +361,7 @@ RULES = {
     ("2025-09-25", D("3100.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-09-29", D("-6000.00")): (
@@ -367,7 +373,7 @@ RULES = {
     ("2025-10-01", D("10000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-10-01", D("-10000.00")): (
@@ -397,7 +403,7 @@ RULES = {
     ("2025-10-15", D("16000.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-10-20", D("150000.00")): (
@@ -421,7 +427,7 @@ RULES = {
     ("2025-10-24", D("1500.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-10-30", D("-658.63")): (
@@ -433,7 +439,7 @@ RULES = {
     ("2025-10-31", D("2170.00")): (
         "ADVISORY",
         "ASK",
-        "EOEB — mixed unallocated (sale vs advisory)",
+        "EOEB remainder — UNALLOCATED (proposed FEE, no matching Cost)",
         MIXED_EOEB,
     ),
     ("2025-11-06", D("-10000.00")): (
@@ -1210,15 +1216,15 @@ def lock_fortuna_named_inventory(ws: Worksheet) -> None:
     targets = [
         (
             ("20000", "2025-05-09"),
-            "Bronze head of a goddess, likely Venus — Fortuna inventory",
+            "SOLD 2025 — Venus joint (see Sales 2025). Not unsold inventory.",
             GREEN,
-            "LOCKED 2026-09-20 from Mercury native CSV note. Parked Cost. Not sold 2025 — not in sold-lot Cost. Not tax advice.",
+            "LOCKED 2026-09-21 joint SALE. EPGC proceeds $26,000 / Cost $20,000 / net $6,000. Sale Price = remittance, not full hammer.",
         ),
         (
             ("45000", "2025-07-21"),
-            "Roman Gold Belt — Fortuna inventory",
+            "SOLD 2025 — Roman Gold Belt to L5 (see Sales 2025). Not unsold inventory.",
             GREEN,
-            "LOCKED 2026-09-20 from Mercury native CSV note. Parked Cost. Not sold 2025 — not in sold-lot Cost. Not tax advice.",
+            "LOCKED 2026-09-21 SALE. L5 $50,000 / Cost $45,000 / net $5,000. Remaining L5 not attached.",
         ),
         (
             ("20000", "2025-08-15"),
@@ -1445,11 +1451,21 @@ def summarize(rows: list[dict]) -> dict:
         "n": len(rows),
         "eoeb_in": eoeb_in,
         "eoeb_remainder": eoeb_in - mosaics_sale - reimb,
-        "l5": sum((r["amount"] for r in l5), D(0)),
+        "l5": sum(
+            (
+                r["amount"]
+                for r in l5
+                if not (r["bucket"] == "ART_SALE" and r["status"] == "LOCKED")
+            ),
+            D(0),
+        ),
         "fortuna_out": fortuna_out,
         "fortuna_remainder_out": fortuna_ask,
-        "fortuna_named_inventory": fortuna_named_unsold,
-        "erdal_in": sum((r["amount"] for r in erdal_in), D(0)),
+        "fortuna_named_inventory": D(0),
+        "erdal_in": sum(
+            (r["amount"] for r in erdal_in if r["status"] != "LOCKED"),
+            D(0),
+        ),
         "aysel": s(lambda r: "Aysel" in r["counterparty"] or "Aysel" in r["statement"]),
         "coinbase_in": sum((r["amount"] for r in coin if r["amount"] > 0), D(0)),
         "coinbase_out": sum((r["amount"] for r in coin if r["amount"] < 0), D(0)),
@@ -1459,8 +1475,17 @@ def summarize(rows: list[dict]) -> dict:
         "david_aaron": D("13595.00"),
         "wise_expertise": D("334.17") + D("658.63"),
         "aquinas_books": D("1000.00"),
-        "art_sale_locked_gross": D("14000") + D("30000") + D("105000") + D("1000"),
-        "art_net_locked": (D("30000") - D("22944.94")) + D("1000") + D("15000"),
+        "art_sale_locked_gross": D("14000")
+        + D("30000")
+        + D("105000")
+        + D("1000")
+        + D("50000")
+        + D("26000"),
+        "art_net_locked": (D("30000") - D("22944.94"))
+        + D("1000")
+        + D("15000")
+        + D("5000")
+        + D("6000"),
         "koziol": D("150000"),
     }
 
@@ -1776,8 +1801,10 @@ def main() -> None:
             "koziol_ariadne_passthrough": float(sums["koziol"]),
             "wise_expertise_writeups": float(sums["wise_expertise"]),
             "aquinas_books_sale": float(sums["aquinas_books"]),
-            "fortuna_venus_inventory": 20000.0,
-            "fortuna_roman_gold_belt": 45000.0,
+            "roman_gold_belt_sale": 50000.0,
+            "roman_gold_belt_cost": 45000.0,
+            "venus_epgc_proceeds": 26000.0,
+            "venus_epgc_cost": 20000.0,
         },
         "ask": {
             "eoeb_remainder": float(sums["eoeb_remainder"]),

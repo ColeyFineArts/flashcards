@@ -205,10 +205,11 @@ def keep_row(name: str, r: int, ws=None) -> bool:
             or row_has_month_values(ws, r, 29)
         )
     if name == "Art Sales and Purchases":
-        # Year section headers + totals for 2022–2024; every 2025 deal row.
-        if r in {2, 14, 15, 37, 38, 47}:
+        # Include row 1 and 2022–2024 lots. Sparse tiny OOXML skipped these
+        # and Google convert dropped Art cells. Keep 2025 Belt/Venus rows too.
+        if r == 1:
             return True
-        return 49 <= r <= 78
+        return 2 <= r <= 82
     if name == "Refrence Library":
         return r == 1 or r >= 74  # column headers + 2025 Jewelry Books
     if name == "GCM":
@@ -383,7 +384,7 @@ def max_col_for(name: str, ws) -> int:
     if name == "EPGC LLC":
         return 14
     if name == "Art Sales and Purchases":
-        return 8
+        return 11
     if name == "Refrence Library":
         return 5
     if name == "2025 Data sources":

@@ -1,61 +1,60 @@
-START HERE — Mercury Bank 8291 (2026-09-20)
+START HERE — Mercury Bank 8291 (2026-09-21 Belt + Venus SALE lock)
 
-Not tax advice. Same Personal Income.xlsx tabs as last year.
+Not tax advice. Same Personal Income.xlsx tabs as last year. Organizational packet only.
 
 Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
 64 unique 2025 cash transactions from Monarch IDs.
 
-User uploaded native Mercury CSV 2026-09-20 15:39 UTC:
-epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv (Drive 1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU).
-Account 8291. Same 2025 year already classified — 0 new unique Sent cash vs the 64.
-Failed Aysel $50k OUT 7/17 and Cancelled Erdal $13k 1/8 are not cash.
-Fortuna $20k Monarch 8/15 = native 8/18 (date shift, not a second txn).
+User 2026-09-21 LOCKED two deals that were parked as unsold inventory:
 
-Open ASK (Q6–Q9 locked green; Q1/Q2 mixed pattern confirmed, dollars unallocated):
-https://docs.google.com/spreadsheets/d/1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10/edit
+1. Roman Gold Belt — SALE to L5 (not unsold, not consultant, not pass-through).
+   Cost: Mercury 8291 Fortuna/Erdal Dere 2025-07-21 −$45,000 (native memo: Roman Gold Belt).
+   Working sale: L5 2025-07-15 +$50,000 (only L5 payment large enough). Net $5,000.
+   L5 paid 6 days before Fortuna Cost — back-to-back dealer cash.
+   Do NOT attach remaining L5 invoices to the belt.
 
-EPGC LLC 2025 (Art Sales cash $150,000 Jan $14,000 / Feb $136,000; Consultant June $13,595; Consultant Fees $992.80):
-https://docs.google.com/spreadsheets/d/1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs/edit
+2. Venus (bronze head of a goddess) — joint SALE, EPGC share (not unsold, not consultant).
+   Erdal and Jacob bought together. Erdal sold it and paid back Jacob’s investment plus earnings.
+   EPGC Cost: Fortuna 2025-05-09 −$20,000.
+   Working remittance: Erdal Dere IN 2025-07-24 +$26,000 = $20,000 + $6,000 earnings.
+   Art Sales Sale Price = EPGC proceeds ($26,000), not the object’s full hammer.
 
-Lock sheet native CSV ingest + Venus/Belt inventory:
-https://docs.google.com/spreadsheets/d/1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0/edit
+Open ASK (remainder still unallocated):
+https://docs.google.com/spreadsheets/d/ASK_PLACEHOLDER/edit
 
-Fortuna inventory (Venus + Roman Gold Belt LOCKED; Aug $20k ASK):
-https://docs.google.com/spreadsheets/d/1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA/edit
+EPGC LLC 2025 (Art Sales cash $226,000 = Jan $14,000 / Feb $136,000 / July $76,000; Consultant June $13,595; Consultant Fees $992.80):
+https://docs.google.com/spreadsheets/d/EPGC_PLACEHOLDER/edit
 
-Full-tab workbook like last year (Income, 216, 524 U1/U2, EPGC LLC, Art Sales and Purchases, GCM, Investments — 2023|2024|2025, calculating formulas):
-https://docs.google.com/spreadsheets/d/1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o/edit
+One spreadsheet like last year (11 tabs, 2023|2024|2025, calculating formulas, Art Sales includes 2022–2024 lots + Belt + Venus):
+https://docs.google.com/spreadsheets/d/XLSX_PLACEHOLDER/edit
+
+Deal Classifier: SALE vs FEE vs PASS vs INVENTORY vs UNALLOCATED.
+Belt = SALE. Venus = SALE (joint, EPGC share). Remaining EOEB/L5 = UNALLOCATED.
+David Aaron = FEE. Koziol/Ariadne = PASS. Fortuna Aug unnamed = INVENTORY ASK.
 
 LOCKED this pass
-- Coinbase ACH net $-51,000.00 (funded $59,000.00 / back $8,000.00) → Investments. Not EPGC. Not the Coinbase 6108 card.
-- Newstar Jewelers $23,581.00 → jewelry fabrication COGS (intaglios, engraved gems, scarabs). Not EPGC operating.
-- Art sales matched to last year’s Art Sales tab: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21) + Aquinas books $1,000 (2/4).
-- Seals Cost $13,000 = Fortuna 1/8 (native note: J.K. New York Collection). Mosaics Cost $90,000 of which Plutus paid $50,000 on Mercury ($40,000 still ASK).
-- Fortuna Venus $20,000 (5/9) + Roman Gold Belt $45,000 (7/21) LOCKED inventory from native memos. Parked Cost — not sold 2025, not on P&L.
+- Roman Gold Belt SALE: Fortuna Cost $45,000 / L5 Sale $50,000 / net $5,000 → EPGC Art Sales July + I8.
+- Venus joint SALE: Fortuna Cost $20,000 / Erdal proceeds $26,000 / net $6,000 → EPGC Art Sales July + I8.
+- Coinbase ACH net $-51,000.00 → Investments. Not EPGC.
+- Newstar Jewelers $23,581.00 → jewelry fabrication COGS.
+- Art sales matched: Berk seals $14,000 (1/10) + Berk lots $30,000 (2/7) + mosaics $105,000 (EOEB 2/21) + Aquinas books $1,000 (2/4).
+- Seals Cost $13,000 = Fortuna 1/8. Mosaics Cost $90,000 of which Plutus paid $50,000 ($40,000 still ASK).
 - BoA 9922 transfers $261,172.00 = owner draws, not P&L.
-- Dec 2 Wise $565.75 reimbursed by EOEB — not income.
-- David Aaron Limited $13,595 (6/24) → EPGC Consultant June. User: consultant fee, not a sale.
+- David Aaron Limited $13,595 (6/24) → EPGC Consultant June. Consultant fee, not a sale.
 - Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → LOCKED pass-through. Not P&L.
-- Wise $334.17 (7/9) + $658.63 (10/30) → EPGC Consultant Fees (expertise write-ups). Dec $565.75 still reimbursed.
-- Aquinas Hobor $1,000 (2/4) → books sold. EPGC Art Sales February. Cost / titles TBD (not in I8 until Cost).
+- Wise $334.17 (7/9) + $658.63 (10/30) → EPGC Consultant Fees (expertise write-ups).
+- Aquinas Hobor $1,000 (2/4) → books sold. EPGC Art Sales February. Cost TBD (not in I8 until Cost).
 
-EPGC 2025 Art Sales is MATCHED/LOCKED cash ($150,000: Jan $14,000 / Feb $136,000).
-EPGC Consultant June is $13,595 (David Aaron).
-EOEB remainder / L5 MIXED PATTERN CONFIRMED (art sales + advisory/consultant) — dollars unallocated; not on Consultant or Art Sales.
+EPGC 2025 Art Sales MATCHED/LOCKED cash $226,000 (Jan $14,000 / Feb $136,000 / July $76,000).
+EPGC Consultant June is $13,595 (David Aaron only).
+Income I8 Art net is $34,055.06 (prior $23,055.06 + Belt $5,000 + Venus $6,000).
 
-ANSWERED
-6. David Aaron Limited $13,595 (6/24) — LOCKED consultant fee (EPGC Consultant June).
-7. Wise $334.17 + $658.63 — LOCKED business expenses (expertise write-ups) on EPGC Consultant Fees.
-8. Koziol $150,000 / Ariadne $150,000 — LOCKED pass-through (not P&L).
-9. Aquinas Hobor $1,000 (2/4) — LOCKED book sale (EPGC Art Sales February +$1,000; Cost TBD, not in I8).
-Fortuna Venus $20,000 (5/9) + Roman Gold Belt $45,000 (7/21) — LOCKED inventory (native CSV notes).
-
-ASK remaining
-1. EOEB remainder $130,270.00 — MIXED PATTERN CONFIRMED; invoice-level split ASK. Do not dump onto Consultant or Art Sales. Jan 16 $1,000 Canosan-horse still open.
-2. L5 $87,396.32 — MIXED PATTERN CONFIRMED; invoice-level split ASK. Do not dump.
-3. Fortuna unnamed $20,000.00 — Aug $20,000 (Monarch 8/15 = native 8/18). Object name?
-4. Erdal IN $57,000.00 — sales to Erdal?
-5. Aysel Dere — Monarch 7/18 +$50,000 IN vs native Failed 7/17 −$50,000 OUT (recipient account does not exist). Phantom or omitted incoming?
+ASK remaining — do not dump
+1. EOEB remainder $130,270.00 — MIXED PATTERN CONFIRMED; invoice-level split ASK. Jan 16 $1,000 Canosan-horse still open.
+2. Other L5 $37,396.32 after removing $50k belt — MIXED PATTERN CONFIRMED. 7/11 $8,534.79; 7/15 $2,500; 9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26.
+3. Fortuna unnamed $20,000.00 — Aug $20,000 (Monarch 8/15 = native 8/18). Not Venus, not belt.
+4. Other Erdal IN $31,000.00 — 10/9 $25,000 and 11/7 $6,000 “FORTUNA PAYMENT”. Not the Venus remittance.
+5. Aysel Dere — Monarch 7/18 +$50,000 IN vs native Failed 7/17 −$50,000 OUT. Not the belt.
 10. Mosaics Cost $40,000 missing on Mercury 8291.
 
-Income I8 Art net is $23,055.06 from MATCHED deals with Cost only (Berk lots net + seals $1,000 + mosaics $15,000). Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost. Consultant is EPGC, not I8.
+Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost (not in I8).

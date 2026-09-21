@@ -1,11 +1,11 @@
 Q,Status,What,Where it hits
-6,LOCKED,"David Aaron Limited $13,595 IN (6/24) consultant fee","EPGC Consultant June $13,595. Not Art Sales. Not I8."
-7,LOCKED,Wise $334.17 (7/9) + $658.63 (10/30) expertise write-ups,EPGC Consultant Fees $992.80 (Jul $334.17 / Oct $658.63). Dec Wise $565.75 still REIMBURSE / not P&L.
-8,LOCKED,"Koziol $150,000 IN (10/20) / Ariadne $150,000 OUT (10/21)",Pass-through — not P&L.
-9,LOCKED,"Aquinas Hobor $1,000 IN (2/4) book SALE","EPGC Art Sales February +$1,000 (Feb $136,000; matched cash $150,000). Register: Books (titles TBD), Cost TBD. NOT in I8 until Cost (same as Sale 6428)."
-1,PATTERN CONFIRMED / dollars unallocated,"EOEB remainder $130,270.00 mixed art sales + advisory/consultant","Do NOT dump onto Consultant or Art Sales. Invoice-level split ASK. Jan 16 $1,000 Canosan-horse still open."
-2,PATTERN CONFIRMED / dollars unallocated,"L5 $87,396.32 mixed art sales + advisory/consultant",Do NOT dump onto Consultant or Art Sales. Invoice-level split ASK.
-ASK remaining,ASK,"Fortuna unnamed $20,000.00 / Erdal IN $57,000.00 / Aysel Monarch IN vs native Failed OUT / mosaics Cost $40,000",Aug $20k object name; Aysel phantom vs omitted incoming; invoice split still needed.
-Fortuna Venus + Belt,LOCKED,"Venus $20,000 (5/9) + Roman Gold Belt $45,000 (7/21) inventory from native CSV notes",Parked Cost. Not sold 2025. Not dumped onto Art Sales or Consultant.
-Native CSV 2026-09-20,INGESTED,epgc-llc-transactions-2025-jan-01-to-2025-dec-31.csv account 8291,0 new unique Sent cash vs the 64. Failed Aysel 7/17 and Cancelled Erdal 1/8 not cash. Fortuna $20k date 8/15 Monarch = 8/18 native.
-LOCKED totals,LOCKED,"Consultant Fees Jul+Oct $992.80; Consultant June $13,595; Art Sales Feb $136,000; I8 $23,055.06",Dec Wise $565.75 REIMBURSE. EOEB remainder / L5 not on P&L.
+6,LOCKED,"David Aaron Limited $13,595 IN (6/24) consultant fee","EPGC Consultant June $13,595. Not Art Sales. Not I8. Classifier: FEE."
+7,LOCKED,Wise $334.17 (7/9) + $658.63 (10/30) expertise write-ups,EPGC Consultant Fees $992.80. Classifier: FEE.
+8,LOCKED,"Koziol $150,000 IN (10/20) / Ariadne $150,000 OUT (10/21)",Pass-through — not P&L. Classifier: PASS.
+9,LOCKED,"Aquinas Hobor $1,000 IN (2/4) book SALE",EPGC Art Sales February. Cost TBD. Classifier: SALE.
+Belt,LOCKED,"Roman Gold Belt Fortuna $45,000 / L5 $50,000","EPGC Art Sales July +$50,000. I8 net +$5,000. Classifier: SALE. Remaining L5 not attached."
+Venus,LOCKED,"Venus Fortuna $20,000 / Erdal remittance $26,000","EPGC Art Sales July +$26,000. I8 net +$6,000. Sale Price = EPGC proceeds, not full hammer. Classifier: SALE (joint, EPGC share)."
+1,PATTERN CONFIRMED / dollars unallocated,"EOEB remainder $130,270.00 mixed art sales + advisory/consultant","Do NOT dump. Classifier: UNALLOCATED. Jan 16 $1,000 Canosan-horse still open."
+2,PATTERN CONFIRMED / dollars unallocated,"L5 remainder $37,396.32 mixed after Belt $50k SALE",Do NOT dump. Classifier: UNALLOCATED.
+ASK remaining,ASK,"Fortuna unnamed $20,000 / other Erdal IN $31,000 / Aysel Monarch IN vs native Failed OUT / mosaics Cost $40,000",Aug $20k object name (INVENTORY). Other Erdal not Venus. Aysel not the belt.
+LOCKED totals,LOCKED,"Art Sales gross $226,000 (Jan 14k + Feb 136k + July 76k); I8 $34,055.06; Consultant June $13,595",Dec Wise $565.75 REIMBURSE. EOEB remainder / other L5 not on P&L.

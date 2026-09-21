@@ -1,0 +1,18 @@
+"Deal Classifier — Mercury 8291 / EPGC 2025. Classes: SALE, FEE, PASS, INVENTORY, UNALLOCATED. Last-year model: Art Sales = gross sale cash by month; Income I8 = art NET for lots with Cost; Consultant never goes to I8. Not tax advice.",,,,,
+Classifier,Counterparty / object,Date,Amount,Hits,Notes
+SALE,Roman Gold Belt / L5,2025-07-15,50000.00,"EPGC Art Sales July; I8 net $5,000",Only L5 payment attached to the belt.
+SALE,Roman Gold Belt / Fortuna,2025-07-21,-45000.00,Art Sales Cost,"Bought from Fortuna, sold to L5. Not unsold inventory."
+"SALE (joint, EPGC share)",Venus / Erdal remittance,2025-07-24,26000.00,"EPGC Art Sales July; I8 net $6,000","Sale Price = EPGC proceeds, not full hammer."
+"SALE (joint, EPGC share)",Venus / Fortuna,2025-05-09,-20000.00,Art Sales Cost (EPGC stake),Erdal and Jacob bought together.
+SALE,Berk seals,2025-01-10,14000.00,"EPGC Art Sales January; I8 net $1,000","Cost Fortuna 1/8 $13,000."
+SALE,Berk lots lump,2025-02-07,30000.00,EPGC Art Sales February; I8 includes lots net,F71 lump.
+SALE,Three Ancient Mosaics / EOEB,2025-02-21,105000.00,"EPGC Art Sales February; I8 net $15,000","Cost $90,000; $40,000 Cost missing on 8291."
+SALE,Aquinas Hobor books,2025-02-04,1000.00,EPGC Art Sales February; not I8 until Cost,Cost / titles TBD.
+FEE,David Aaron Limited,2025-06-24,13595.00,EPGC Consultant June only,Not Art Sales. Not I8.
+FEE,Wise expertise write-ups,2025-07-09 / 2025-10-30,-992.80,EPGC Consultant Fees,"Dec $565.75 is reimbursed, not this."
+PASS,Koziol → Ariadne,2025-10-20 / 2025-10-21,150000.00,Not P&L,Locked pass-through.
+INVENTORY,Fortuna unnamed,2025-08-15,-20000.00,Parked Cost ASK,Not Venus. Not belt.
+UNALLOCATED,EOEB remainder,various,130270.00,none until invoice split,Mixed art + advisory. Do not dump.
+UNALLOCATED,L5 remainder after belt,various,37396.32,none until invoice split,"7/11 $8,534.79; 7/15 $2,500; 9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26."
+UNALLOCATED,Other Erdal IN,2025-10-09 / 2025-11-07,31000.00,none,"10/9 $25,000 and 11/7 $6,000 FORTUNA PAYMENT. Not Venus."
+UNALLOCATED,Aysel Dere Monarch IN,2025-07-18,50000.00,none,Native Failed OUT 7/17. Not the belt.

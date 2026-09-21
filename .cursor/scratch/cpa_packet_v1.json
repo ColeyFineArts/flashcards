@@ -11,7 +11,7 @@
   "like_last_year_income_properties_packet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
   "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
   "like_last_year_epgc_art_gcm_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
-  "xlsx_note": "2026-09-21: Live file is ONE Google Sheet with last year's 11 tab names, 2023|2024|2025 year blocks, 2025 numbers, and calculating SUM formulas. Packet https://docs.google.com/spreadsheets/d/1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o/edit START HERE https://docs.google.com/document/d/1vX40kNzE9O-UdHhXDmYnLoNZg2CKEzum144MPx1eDAk/edit Income I10 $151,760. 216 insurance $42.84/mo = $514.08, rent $19,500. Do not open _SUPERSEDED (formulas-as-text, 11 separate files, or 2025-only C\u2013O). Not tax advice.",
+  "xlsx_note": "2026-09-21: Live file is ONE Google Sheet with last year's 11 tab names, 2023|2024|2025 year blocks, 2025 numbers, calculating SUM formulas. Art Sales includes 2022\u20132024 lots plus Roman Gold Belt SALE and Venus joint SALE. Income I8 $34,055.06. I10 $162,760. EPGC Art Sales July $76,000 (year $226,000). Not tax advice.",
   "note": "Lemonade = 216 Oak Park. Travelers = 524 home. Geico = 524 cars. Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -94,7 +94,7 @@
     "t4_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o"
   },
   "mercury_8291": {
-    "updated": "2026-09-20",
+    "updated": "2026-09-21",
     "disclaimer": "Not tax advice. Organizational packet only.",
     "account": "Mercury Checking 8291 EPGC LLC",
     "n_txns": 64,
@@ -103,28 +103,35 @@
       "coinbase_out": -59000.0,
       "coinbase_in": 8000.0,
       "newstar_cogs": 23581.0,
-      "art_sale_locked_gross": 150000.0,
-      "art_net_locked": 23055.06,
+      "art_sale_locked_gross": 226000.0,
+      "art_net_locked": 34055.06,
       "boa_9922_draws": 261172.0,
       "david_aaron_consultant": 13595.0,
       "koziol_ariadne_passthrough": 150000.0,
       "wise_expertise_writeups": 992.8,
       "aquinas_books_sale": 1000.0,
-      "fortuna_venus_inventory": 20000.0,
-      "fortuna_roman_gold_belt": 45000.0
+      "roman_gold_belt_sale": 50000.0,
+      "roman_gold_belt_cost": 45000.0,
+      "roman_gold_belt_net": 5000.0,
+      "venus_epgc_proceeds": 26000.0,
+      "venus_epgc_cost": 20000.0,
+      "venus_epgc_net": 6000.0
     },
     "ask": {
       "eoeb_remainder": 130270.0,
-      "l5": 87396.32,
+      "l5": 37396.32,
       "eoeb_l5_pattern": "mixed art sales + advisory/consultant CONFIRMED; invoice-level split ASK; do not dump remainder",
       "fortuna_remainder_out": 20000.0,
-      "fortuna_named_inventory": 65000.0,
-      "erdal_in": 57000.0,
+      "fortuna_named_inventory": 0.0,
+      "erdal_in": 31000.0,
       "aysel": 50000.0,
       "aysel_native": "Monarch 7/18 +$50,000 IN vs native Failed 7/17 \u2212$50,000 OUT; not dumped",
       "mosaics_cost_missing_on_mercury": 40000.0,
       "eoeb_jan16_canosan_horse": 1000.0,
-      "aquinas_books_cost_tbd": true
+      "aquinas_books_cost_tbd": true,
+      "l5_after_belt": 37396.32,
+      "l5_note": "7/15 $50,000 locked as Roman Gold Belt SALE; remaining 7/11 $8,534.79; 7/15 $2,500; 9/2 $5,042; 9/23 $9,119.27; 10/21 $7,500; 12/4 $4,700.26 still UNALLOCATED",
+      "erdal_in_note": "10/9 $25,000 and 11/7 $6,000 FORTUNA PAYMENT still ASK; 7/24 $26,000 is Venus remittance LOCKED"
     },
     "epgc_art_sales_2025_monthly": [
       14000.0,
@@ -133,7 +140,7 @@
       0.0,
       0.0,
       0.0,
-      0.0,
+      76000.0,
       0.0,
       0.0,
       0.0,
@@ -330,5 +337,22 @@
   "epgc_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
   "art_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
   "w2_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
-  "t4_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o"
+  "t4_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
+  "deal_classifier": {
+    "classes": [
+      "SALE",
+      "FEE",
+      "PASS",
+      "INVENTORY",
+      "UNALLOCATED"
+    ],
+    "belt": "SALE",
+    "venus": "SALE (joint, EPGC share)",
+    "david_aaron": "FEE",
+    "koziol_ariadne": "PASS",
+    "fortuna_aug_unnamed": "INVENTORY",
+    "eoeb_remainder": "UNALLOCATED",
+    "l5_remainder": "UNALLOCATED",
+    "disclaimer": "Not tax advice. Organizational packet only."
+  }
 }

@@ -1,4 +1,4 @@
-Object,Source,Cost,Date,Status,Notes
-Bronze head of a goddess likely Venus,Mercury 8291 Fortuna,20000.00,2025-05-09,LOCKED,"Native CSV note. Parked Cost. Not sold 2025. Not on Art Sales P&L / Consultant."
-Roman Gold Belt,Mercury 8291 Fortuna,45000.00,2025-07-21,LOCKED,"Native CSV note. Parked Cost. Not sold 2025. Not on Art Sales P&L / Consultant."
-Fortuna unnamed,Mercury 8291 Fortuna,20000.00,2025-08-15,ASK,"Monarch 8/15 = native 8/18. No object name. Same cash not a second unique txn."
+Object,Source,Cost,Date,Status,Classifier,Notes
+Bronze head of a goddess likely Venus,Mercury 8291 Fortuna,20000.00,2025-05-09,LOCKED SOLD 2025,"SALE (joint, EPGC share)","Removed from unsold parked. Erdal and Jacob bought together. Erdal sold it and remitted 7/24 +$26,000 = $20,000 + $6,000 earnings. Sale Price = EPGC proceeds, not full hammer."
+Roman Gold Belt,Mercury 8291 Fortuna,45000.00,2025-07-21,LOCKED SOLD 2025,SALE,"Removed from unsold parked. Sold to L5 7/15 +$50,000 (paid 6 days before Cost). Net $5,000. Do not attach remaining L5 invoices."
+Fortuna unnamed,Mercury 8291 Fortuna,20000.00,2025-08-15,ASK,INVENTORY,Monarch 8/15 = native 8/18. No object name. Same cash not a second unique txn. Not Venus. Not belt.
