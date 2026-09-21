@@ -6,12 +6,12 @@
   "start_here_packet": "1vX40kNzE9O-UdHhXDmYnLoNZg2CKEzum144MPx1eDAk",
   "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
   "local_xlsx": ".cursor/scratch/tax_turbo_parts/Personal Income 2025.xlsx",
-  "xlsx_bytes_local": 93781,
+  "xlsx_bytes_local": 96307,
   "like_last_year_income_properties": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
   "like_last_year_income_properties_packet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
   "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
   "like_last_year_epgc_art_gcm_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
-  "xlsx_note": "2026-09-21: Live file is ONE Google Sheet with last year's 11 tab names, 2023|2024|2025 year blocks, 2025 numbers, calculating SUM formulas. Art Sales includes 2022\u20132024 lots plus Belt, Venus joint, and August Fortuna joint. Income I8 $39,055.06. I10 $167,760. EPGC Art Sales July $76,000 + October $25,000 (year $251,000). EOEB remainder $130,270 per-invoice UNALLOCATED. Not tax advice.",
+  "xlsx_note": "2026-09-21: mosaics Cost $90,000 to Jamal LOCKED (Plutus $50k on Mercury + personal BoA $40k); profit $15,000 already in I8 $39,055.06. 2/24 $90k EPGC\u21929922 is funding, not extra Cost. BoA draws $221,172. EPGC Art Sales $251,000. EOEB remainder $130,270 UNALLOCATED. Not tax advice.",
   "note": "Lemonade = 216 Oak Park. Travelers = 524 home. Geico = 524 cars. Grove Collaborative \u2260 827 N Grove the house.",
   "remind_jacob": "Double-check ComEd with Megan \u2014 checking ACH Jacob $829.15 / Megan $1,565.26; confirm meters and any extra check.",
   "checking_inflows": {
@@ -58,8 +58,8 @@
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4",
-    "start_here_mercury": "1BIeSn_GF7RvhGnNpAY8m5YQZ408mT65p8jrSKdiuKbw",
-    "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+    "start_here_mercury": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
+    "ask_mercury": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
     "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
@@ -91,7 +91,11 @@
     "epgc_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
     "art_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
     "w2_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
-    "t4_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o"
+    "t4_2025_sheet": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
+    "ask_mercury_mosaics_boa": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
+    "ask_mercury_mosaics_boa_packet": "1x41wTnFgd0GEyq6wsfJ4QMQwllK_vuhlwQqDDLT-7iI",
+    "start_here_mosaics_boa": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
+    "start_here_mosaics_boa_packet": "1yJuvpn1gJTSci-dtt9Rr_kX8rj2QN33YrS7kC3_NalY"
   },
   "mercury_8291": {
     "updated": "2026-09-21",
@@ -218,13 +222,13 @@
       ]
     },
     "drive": {
-      "start_here_mercury_root": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
-      "start_here_mercury_packet": "14Tx2Iqk6pNhQzoc_5GUgj06r5TVryeATKizrRAHG7I0",
+      "start_here_mercury_root": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
+      "start_here_mercury_packet": "1yJuvpn1gJTSci-dtt9Rr_kX8rj2QN33YrS7kC3_NalY",
       "start_here_mercury_income": "1Kqw__ySsoXHTxldxGbYnTEDOhDOmQXw31pKaKx60X6Y",
       "start_here_mercury_bank": "1GrLyx25cb4RLo6SnTrq_F8VY95nbZznyl9H9kYCjgwU",
-      "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+      "ask_mercury": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
       "ask_mercury_bank_folder": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
-      "ask_mercury_packet": "1WwbQbCNrrD306t5SXuEWdJ39tDtyO2JvBJKTz9xMvWM",
+      "ask_mercury_packet": "1x41wTnFgd0GEyq6wsfJ4QMQwllK_vuhlwQqDDLT-7iI",
       "ask_mercury_income": "184z2cCDVnDg3h28fuFUW5r_FI9AkYFHgTHHSj8wSMZo",
       "mercury_ledger_q6_q9": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
       "mercury_ledger_q6_q9_bank_folder": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
@@ -240,8 +244,8 @@
       "native_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU"
     }
   },
-  "start_here_mercury": "1umzmMAiDJv1Gwx5X7fQLPJafYNXdITBNmCt3VxCS1YM",
-  "start_here_mercury_packet": "1BIeSn_GF7RvhGnNpAY8m5YQZ408mT65p8jrSKdiuKbw",
+  "start_here_mercury": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
+  "start_here_mercury_packet": "1yJuvpn1gJTSci-dtt9Rr_kX8rj2QN33YrS7kC3_NalY",
   "insurance_lock": {
     "user": "Traveler's was home insurance before for Ferdinand and Geico was for the cars",
     "user_lemonade": "Lemomade is for 216 N Grove I believe. The Geico and Travelers is for 524 Ferdinand",

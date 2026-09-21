@@ -44,8 +44,8 @@
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
     "sale_facts_sheet": "1p1fRuyTDqtybIPVQOTm7o39dnZNgQ6ghylQ0i3bScvY",
     "grove_purchase_facts_sheet": "1RuCiJmOp8gbKbpnu7X8UuACXkyxddcsbOfMhOwYFvvc",
-    "start_here_mercury": "1BIeSn_GF7RvhGnNpAY8m5YQZ408mT65p8jrSKdiuKbw",
-    "ask_mercury": "1TeRpRYctCJwvySbkMnb006aAxqpoD2kjoq3gXe_5e10",
+    "start_here_mercury": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
+    "ask_mercury": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
     "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
@@ -107,6 +107,7 @@
     "2026-09-20 carrier map Drive refresh: live ASK 1snkLOQ5 insurance START HERE root 1T-Ze1GB packet 1d9nAaPq income 1Jc2l16D Travelers/Geico/Lemonade lock 1jOS-4NOl Oak Park costs START HERE 1JhVaB-C / root 1kCMZSOP. Stale 1STRCzJe / 1SpTrXhc / 17j4SdPN / 1cPeb1Lf / 1ckkEK5p / 1Z_LjTDN / 1J1tEbCv / 1pwfYH_b / 1Gr6LHI moved to _SUPERSEDED.",
     "2026-09-20 all-tabs workbook refresh: Lemonade amortized $42.84/mo on 216 (not Oct lump $514). Live converted Google Sheet 1pTA-oJW (packet) / 1QEOcn99 (07) / 1TAU2YRr (root). START HERE 1g9fOKUO / 1mTaxWpq / 1o3dgQNG. Oct-lump 1BFOQzy0 / 128pxCH1 / 1AJcCKiZ and START HERE 1AMZZvar / 1ZoP8OZh / 12nPQIxg in _SUPERSEDED. GCM/EPGC/Art/Carriers tabs present. Travelers+Geico remain 524. Not tax advice.",
     "2026-09-21: live file is last year's Personal Income.xlsx with 2025 filled. Converted Google Sheet 1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I (packet) / 1nBEa7_BvzQ58QjLqWG2Jzn_igHqB4h4TgB69XJM3TeU (07) / 1JrD58IyeNrcXViJtQW8nXE0qE5mzK6O4tETyMX2Ccbc (root). START HERE 1AxWQTP3vcbFosEFrnQ-6Cipu1iIpQsKIAK4zg5kj3hM. Last-year model copy 1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2. CSV dump 1pTA-oJW and truncated reconstructions in _SUPERSEDED. Lock: copy prior xlsx, never CSV; assert_personal_income_2025.py; Data sources SELF-CHECK. Not tax advice.",
-    "2026-09-21 afternoon: user still hitting split-tab / 2025-only / formulas-as-text files. Live converted Sheet is 1Dw4eUPQ (packet) / 1HhfHE_d (07) / 12t_Nr3J (root) with last-year 11 tabs, 2023|2024|2025 blocks, 2025 numbers, calculating I10 $151,760. START HERE 1vX40kNz / 1FSBGE9hb / 1X2y754q. Leftover Part A\u2013D, OPEN ME, and CANONICAL one-tab clones moved to _SUPERSEDED. Not tax advice."
+    "2026-09-21 afternoon: user still hitting split-tab / 2025-only / formulas-as-text files. Live converted Sheet is 1Dw4eUPQ (packet) / 1HhfHE_d (07) / 12t_Nr3J (root) with last-year 11 tabs, 2023|2024|2025 blocks, 2025 numbers, calculating I10 $151,760. START HERE 1vX40kNz / 1FSBGE9hb / 1X2y754q. Leftover Part A\u2013D, OPEN ME, and CANONICAL one-tab clones moved to _SUPERSEDED. Not tax advice.",
+    "2026-09-21 mosaics Cost $90k to Jamal LOCKED (personal BoA $40k + Plutus $50k, profit $15k). ASK 1hFZh3Va packet 1x41wTnF START HERE 14kGWSwl packet 1yJuvpn1. Workbook 1Dw4eUPQ. Not tax advice."
   ]
 }
