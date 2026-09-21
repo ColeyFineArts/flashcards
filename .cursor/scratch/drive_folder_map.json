@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20",
+  "updated": "2026-09-21",
   "root": {
     "id": "1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu",
     "title": "2025 Taxes",
@@ -36,9 +36,9 @@
     "capex_cpa_53660": "1aqJe32LWQwwAXdk7pDdo0MJHBu6mVnM7hbsE5W6aBmE",
     "childcare_recon": "1lEc9OPSOkp6NKPJcLXBI1MtOVsjQCBQRPUZy27GBUfY",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
-    "like_last_year_income_properties": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
+    "like_last_year_income_properties": "1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I",
     "like_last_year_epgc_art_gcm": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
-    "start_here_xlsx": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
+    "start_here_xlsx": "1AxWQTP3vcbFosEFrnQ-6Cipu1iIpQsKIAK4zg5kj3hM",
     "sale_closing_2025": "1vvgkDyz8GSV2HufijcG8OKHNO8oZfKHv",
     "purchase_cd_524_2023": "10TQQAumpK1nx1nXPiRzxE5E8om2UTm0f",
     "purchase_cd_827": "1mWyNNIAIkzO63VeRjiVwqxrLsYBH0AtQ",
@@ -59,12 +59,12 @@
     "start_here_cc": "1GQSzcr3L61W5spNUhuY6ldTGUaPEljdFlR4ujx3rfCY",
     "fortuna_inventory": "1-SlRPpR4SGg-9zaH2Dz6aRYW7KZ5BgypBODpCycMCQA",
     "native_mercury_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU",
-    "like_last_year_all_tabs": "1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc",
-    "like_last_year_all_tabs_07": "1QEOcn99ud9qfxP_-E-dP4nXRSWVFSpk0hM5_DMcjTGc",
-    "like_last_year_all_tabs_root": "1TAU2YRr2yN47s889Gu9Bzdq0O8pgAccw9mfNJOGAQP0",
-    "start_here_all_tabs": "1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE",
-    "start_here_all_tabs_07": "1mTaxWpqm8oY3mHcnho-frWYZaU-IJUsUxmsf8GoUmiA",
-    "start_here_all_tabs_root": "1o3dgQNGR7Jw7NrrzBAAD69yENO94gOOkwv81MyU7ymw",
+    "like_last_year_all_tabs": "1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I",
+    "like_last_year_all_tabs_07": "1nBEa7_BvzQ58QjLqWG2Jzn_igHqB4h4TgB69XJM3TeU",
+    "like_last_year_all_tabs_root": "1JrD58IyeNrcXViJtQW8nXE0qE5mzK6O4tETyMX2Ccbc",
+    "start_here_all_tabs": "1AxWQTP3vcbFosEFrnQ-6Cipu1iIpQsKIAK4zg5kj3hM",
+    "start_here_all_tabs_07": "1rvjkhQth3Q5fu7ljVdCCdURDeue9hrViP6x8GuPz3J0",
+    "start_here_all_tabs_root": "1YAluq5rug6eyDfgecKtzxQH__JxU2qIiQ1hGLcwowWY",
     "oak_park_ltr_insurance": "15Cc67p80iULEA9H68A1NHmupn2ITK4uSrlV2RYzBEGo",
     "oak_park_2025_costs_start": "1JhVaB-Cnlj4DBdK0P3PncKYSvmY0VAh-lPsXMLWz49U",
     "oak_park_2025_costs_start_root": "1kCMZSOPXy_Uq-zmE-o0LT-sHK8EBhcj_kq4s3LXWG-w",
@@ -74,7 +74,12 @@
     "oak_park_2025_pnl_packet": "10FjNJ30Dhk8vYOUu1KEbUCFZT0jWeXVIYEzpsKbw2H8",
     "carrier_map_start": "1XiBPo8wPJRdQBQXcnlyb3oPC6RB4h-Bs90a6d1LucFM",
     "carrier_map_start_root": "1_rgradY-Hese7r6OavU3Je1ysITUE84v9XxE_q49J38",
-    "carrier_map_lock": "15aeoV6xrOe4MGZxQcQvLu3eh3KozSfZadJ49z46fi48"
+    "carrier_map_lock": "15aeoV6xrOe4MGZxQcQvLu3eh3KozSfZadJ49z46fi48",
+    "prior_year_model": "1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2",
+    "personal_income_2025": "1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I",
+    "personal_income_2025_07": "1nBEa7_BvzQ58QjLqWG2Jzn_igHqB4h4TgB69XJM3TeU",
+    "personal_income_2025_root": "1JrD58IyeNrcXViJtQW8nXE0qE5mzK6O4tETyMX2Ccbc",
+    "last_year_model": "1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2"
   },
   "notes": [
     "Megan-owned closing PDFs may remain at root (no move permission); CANONICAL copies filed in 03 and 05.",
@@ -100,6 +105,7 @@
     "2026-09-20 216 Oak Park costs (user list, last-year pattern): insurance $42.84/mo amortized; mortgage/HOA cash + yellow WAIT 8507; Brennan $150; Imelda $300 move-out; Joan $675 INTERIOR REPAIR; Ace keys $11. Smoke detector Amazon ASK. Live START HERE 1cPeb1Lf lock 1ceyNBu1 P&L 1Dp8r4Ws. Oct-cash 216 sheet 15Cc67p80 moved to _SUPERSEDED.",
     "2026-09-20 carrier map: Lemonade=216 Oak Park LTR; Travelers+Geico=524 Ferdinand (home/cars). User said 216 N Grove \u2014 mapped to Oak Park #1Z, not 827 Grove. START HERE 1XiBPo8w lock 15aeoV6x.",
     "2026-09-20 carrier map Drive refresh: live ASK 1snkLOQ5 insurance START HERE root 1T-Ze1GB packet 1d9nAaPq income 1Jc2l16D Travelers/Geico/Lemonade lock 1jOS-4NOl Oak Park costs START HERE 1JhVaB-C / root 1kCMZSOP. Stale 1STRCzJe / 1SpTrXhc / 17j4SdPN / 1cPeb1Lf / 1ckkEK5p / 1Z_LjTDN / 1J1tEbCv / 1pwfYH_b / 1Gr6LHI moved to _SUPERSEDED.",
-    "2026-09-20 all-tabs workbook refresh: Lemonade amortized $42.84/mo on 216 (not Oct lump $514). Live converted Google Sheet 1pTA-oJW (packet) / 1QEOcn99 (07) / 1TAU2YRr (root). START HERE 1g9fOKUO / 1mTaxWpq / 1o3dgQNG. Oct-lump 1BFOQzy0 / 128pxCH1 / 1AJcCKiZ and START HERE 1AMZZvar / 1ZoP8OZh / 12nPQIxg in _SUPERSEDED. GCM/EPGC/Art/Carriers tabs present. Travelers+Geico remain 524. Not tax advice."
+    "2026-09-20 all-tabs workbook refresh: Lemonade amortized $42.84/mo on 216 (not Oct lump $514). Live converted Google Sheet 1pTA-oJW (packet) / 1QEOcn99 (07) / 1TAU2YRr (root). START HERE 1g9fOKUO / 1mTaxWpq / 1o3dgQNG. Oct-lump 1BFOQzy0 / 128pxCH1 / 1AJcCKiZ and START HERE 1AMZZvar / 1ZoP8OZh / 12nPQIxg in _SUPERSEDED. GCM/EPGC/Art/Carriers tabs present. Travelers+Geico remain 524. Not tax advice.",
+    "2026-09-21: live file is last year's Personal Income.xlsx with 2025 filled. Converted Google Sheet 1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I (packet) / 1nBEa7_BvzQ58QjLqWG2Jzn_igHqB4h4TgB69XJM3TeU (07) / 1JrD58IyeNrcXViJtQW8nXE0qE5mzK6O4tETyMX2Ccbc (root). START HERE 1AxWQTP3vcbFosEFrnQ-6Cipu1iIpQsKIAK4zg5kj3hM. Last-year model copy 1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2. CSV dump 1pTA-oJW and truncated reconstructions in _SUPERSEDED. Lock: copy prior xlsx, never CSV; assert_personal_income_2025.py; Data sources SELF-CHECK. Not tax advice."
   ]
 }

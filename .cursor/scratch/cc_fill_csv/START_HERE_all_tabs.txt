@@ -1,40 +1,47 @@
-START HERE — one spreadsheet like last year (2026-09-20)
-
+START HERE — last year's spreadsheet, 2025 numbers filled
 Not tax advice. Organizational packet only.
 
-Open this Google Sheet (EPGC LLC, Art Sales and Purchases, GCM, and Carriers are tabs in this file):
-https://docs.google.com/spreadsheets/d/1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc/edit
+Open this Google Sheet (this is last year's Personal Income.xlsx with 2025 filled in):
+https://docs.google.com/spreadsheets/d/1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I/edit
 
-Tabs: Income | 216 N. Oak Park Ave (LTR) | 524 Ferdinand Ave, Unit 2 | 524 Ferdinand Ave, Unit 1 | EPGC LLC | Art Sales and Purchases | GCM | Investments | ASK Mercury | Carriers
+Same 11 tabs as last year, in the same order, plus a 2025 Data sources lock tab:
+Income | 524 Ferdinand Ave, Unit 2 | 216 N. Oak Park Ave | EPGC LLC | Refrence Library | Art Sales and Purchases | GCM | Hindman W2 | Megan T4 | Investments | 524 Ferdinand Ave, Unit 1 | 2025 Data sources
 
-Why those tabs were missing
-Last year’s Personal Income.xlsx was one workbook. Drive native xlsx conversion failed, so CSVs were converted to Google Sheets and the packet split. This converted Google Sheet puts them back together. Do not open the native xlsx.
+Last year's file (2023/2024, do not edit) is next to it:
+https://drive.google.com/file/d/1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2/view
 
-216 LTR insurance LOCKED
-Lemonade $42.84/mo x 12 = $514.08 on 216 RENTER'S INSURANCE (amortized like 2023 $26.75 and 2024 $35.08).
-Cash $514.00 on 2025-10-03 Megan Chase (1702). Sheet is 8 cents over cash. Not October lump $514.
-User said "216 N Grove" — this Oak Park #1Z unit, not 827 Grove (closed 12/18).
-Travelers was Ferdinand (524) home. Geico was the cars. State Farm 2025 bundle is Ferdinand car+home — only the home share is on 524, not 216.
+How this stays correct (so we do not go in circles)
+1. Copy last year's Personal Income.xlsx. Never rebuild from CSVs.
+2. Fill the 2025 year block only. 2023 and 2024 stay as they were.
+3. python3 .cursor/scratch/assert_personal_income_2025.py must print LOCK OK before any Drive upload.
+4. Open the 2025 Data sources tab. SELF-CHECK formulas must say MATCH.
+5. CSV builders (.cursor/scratch/build_drive_all_tabs.py) now refuse to run.
 
-216 2025 costs LOCKED (same last-year rows)
-Mortgage $1,226.25 Jan-Oct / $1,177.52 Nov-Dec (Jan-Jun yellow WAIT 8507).
-HOA $421.53 x 12 (Jan-May yellow WAIT 8507).
-Chris Brennan $150 INTERIOR August.
-Imelda $300 MOVE OUT FEE October.
-Joan $675 INTERIOR REPAIR December.
-Ace keys $11 INTERIOR December.
-Smoke detector Amazon ASK.
+If a Drive file is missing Hindman W2, Megan T4, or Refrence Library, or uses Calibri with no merged C1:O1 on 216, it is a CSV dump — ignore it.
+
+216 N. Oak Park #1Z (LTR) 2025 — same rows as last year
+RENTER'S INSURANCE: Lemonade $42.84/mo × 12 (same amortize as 2023 $26.75 and 2024 $35.08). Not an October lump $514.
+RENTAL INCOME: $1,950 × 6, then $1,450 / $2,450 / vacant Oct + half Nov / $3,900 Dec = $19,500.
+MORTGAGE: $1,226.25 Jan–Oct / $1,177.52 Nov–Dec (Jan–Jun yellow WAIT 8507).
+HOA: $421.53 × 12 (Jan–May yellow WAIT 8507).
+INTERIOR MAINTENANCE: $150 Chris Brennan August; $11 Ace keys December.
+INTERIOR REPAIR: $675 Joan December.
+MOVE OUT FEE: $300 Imelda October.
+User said "216 N Grove" — this Oak Park #1Z unit, not 827 Grove.
+
+524 Ferdinand
+Travelers was prior home insurance. Geico was the cars. 2025 State Farm home share only on Units 1 & 2. Auto + Geico credit are personal.
+
+Income 2025 Actual (column I)
+I4 Hindman $70,618 yellow (paycheck cash ≠ W-2 Box 1).
+I5 216 $19,500 locked.
+I6 524 #2 STR $17,086.94 locked.
+I7 GCM $21,500 locked (4100 / 9200 / 4100 / 4100 on GCM tab).
+I8 Art net $23,055.06 matched Mercury deals with Cost.
 
 Copies
-Packet: https://docs.google.com/spreadsheets/d/1pTA-oJW87-DWUHb-UugP2N_WdR5feiqy_jdQf1Crvwc/edit
-07 Income: https://docs.google.com/spreadsheets/d/1QEOcn99ud9qfxP_-E-dP4nXRSWVFSpk0hM5_DMcjTGc/edit
-Root: https://docs.google.com/spreadsheets/d/1TAU2YRr2yN47s889Gu9Bzdq0O8pgAccw9mfNJOGAQP0/edit
+Packet: https://docs.google.com/spreadsheets/d/1hbMiATgYDJzN0Ez5Ii-sbYnzBPDtWTCae9OHPYMCP-I/edit
+07 Income: https://docs.google.com/spreadsheets/d/1nBEa7_BvzQ58QjLqWG2Jzn_igHqB4h4TgB69XJM3TeU/edit
+Root: https://docs.google.com/spreadsheets/d/1JrD58IyeNrcXViJtQW8nXE0qE5mzK6O4tETyMX2Ccbc/edit
 
-Mercury live IDs kept: ASK 1TeRpRYc / EPGC 1nZkTISK / lock 1kgFtNXa
-Fortuna Venus + Belt successor: 1spLPY72
-START HERE packet: https://docs.google.com/document/d/1g9fOKUO9dP6byS7D1tchIh7UxX9s_HtL4R2fur25AWE/edit
-START HERE 07: https://docs.google.com/document/d/1mTaxWpqm8oY3mHcnho-frWYZaU-IJUsUxmsf8GoUmiA/edit
-START HERE root: https://docs.google.com/document/d/1o3dgQNGR7Jw7NrrzBAAD69yENO94gOOkwv81MyU7ymw/edit
-Mercury START HERE successor: https://docs.google.com/document/d/1aJ2XjUQsJ4ONDAZ4irdlYuFIvvuI8GOEczrRW5nUdrI/edit
-
-Oct-lump sheet 1BFOQzy0 and old START HERE 1AMZZvar are in _SUPERSEDED.
+CSV dumps and truncated 8-tab conversions are in _SUPERSEDED. Mercury ASK 1TeRpRYc / EPGC 1nZkTISK / lock 1kgFtNXa unchanged.
