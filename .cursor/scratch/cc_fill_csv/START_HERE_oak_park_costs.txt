@@ -32,6 +32,6 @@ Drive
 - START HERE: https://docs.google.com/document/d/1iUQ71NiEZnip5N4hj23X5L_9BShcTKzw-IV0YXwqRX0/edit
 - Lock register: https://docs.google.com/spreadsheets/d/1ceyNBu1HMJJmTVKPpW0oQFYmoj2iCeNdDUov3fYUHxc/edit
 - 216 2025 P&L: https://docs.google.com/spreadsheets/d/1Dp8r4WskMlqgQsPW62oewo992kldN5ThWwEMIP6xyLU/edit
-- One spreadsheet like last year: https://docs.google.com/spreadsheets/d/1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o/edit
+- One spreadsheet like last year: https://docs.google.com/spreadsheets/d/1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4/edit
 
 Do not re-run apply_checking_answers_2025.py.

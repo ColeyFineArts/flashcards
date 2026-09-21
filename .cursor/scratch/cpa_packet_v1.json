@@ -58,7 +58,7 @@
     "childcare_2441": "1L2oIFpPHKvv4aIYpheLP3Gnn1lUbll72THu43RRaNm8",
     "form_2441_part_i": "1t-n9qzcLgkWCKAys9y2oTVn6fFIRHAuPtXJ_JCpX_h4",
     "checklist_current": "12_GrdIt1COJof0XqRqimr9h_kfSQl4GYbYrQC5P1Zr4",
-    "start_here_mercury": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
+    "start_here_mercury": "1dOlQOcAgAooyo1pTaIhZWYb48GQmsn1Nl3ShAho5kLA",
     "ask_mercury": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
     "mercury_ledger": "1kgFtNXajNzpHXelefmrixt1lITdA9VlXDnHNV1HOFF0",
     "epgc_2025_matched": "1nZkTISkRGppquCVJvGAF-lZwqZDdVxr3gmSZryiPXzs",
@@ -75,10 +75,10 @@
     "ask_mercury_live": "1r6-OcV1Z1JfdIBC6PFrb7R4z5K4GGsA7qhkJDkYs_qU",
     "mercury_lock_live": "1vPLG0kRVt5HSOfKR_Um7zh6faKZyU3dQZEh6nNvkjHg",
     "like_last_year_all_tabs_07": "1t2dRKpWmN4cT-bqmJxBtIovzvYmoJFrNr9P1bXaCeUg",
-    "like_last_year_all_tabs_root": "12t_Nr3JPqssa1CRZi59vITYqq7Pam3HX6HE7mYy5lLU",
+    "like_last_year_all_tabs_root": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
     "start_here_all_tabs": "1EG93k7MHqc6AAxK8KFsYnHm9bS5wDaiZVPZVrsIWONs",
     "start_here_all_tabs_07": "17Ryy1ELCEleama_hx4Lu9_GXaRPGjjyTXucKgGAmJ6Q",
-    "start_here_all_tabs_root": "1X2y754q5plG06KtEJjG0pupwwDBKVGwPQadwSA4gdOQ",
+    "start_here_all_tabs_root": "1zh3Qu7FArf-3fkgibLH0JMUglq9J7TPbDFS0jWlvGak",
     "last_year_model": "1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2",
     "personal_income_2025": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
     "personal_income_2025_folder": "1lZvEhDtVhWCjUEjk83Na-I3pX2e4qj_J",
@@ -94,8 +94,8 @@
     "t4_2025_sheet": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
     "ask_mercury_mosaics_boa": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
     "ask_mercury_mosaics_boa_packet": "1x41wTnFgd0GEyq6wsfJ4QMQwllK_vuhlwQqDDLT-7iI",
-    "start_here_mosaics_boa": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
-    "start_here_mosaics_boa_packet": "1yJuvpn1gJTSci-dtt9Rr_kX8rj2QN33YrS7kC3_NalY",
+    "start_here_mosaics_boa": "1dOlQOcAgAooyo1pTaIhZWYb48GQmsn1Nl3ShAho5kLA",
+    "start_here_mosaics_boa_packet": "1zcIqhzVXKqCZaaOGquFamLWYew_F6n08MJL6aJIWTns",
     "personal_income_2025_07": "1t2dRKpWmN4cT-bqmJxBtIovzvYmoJFrNr9P1bXaCeUg",
     "personal_income_2025_stale_truncated": "1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o",
     "deal_classifier": "1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8",
@@ -233,8 +233,8 @@
       ]
     },
     "drive": {
-      "start_here_mercury_root": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
-      "start_here_mercury_packet": "1yJuvpn1gJTSci-dtt9Rr_kX8rj2QN33YrS7kC3_NalY",
+      "start_here_mercury_root": "1dOlQOcAgAooyo1pTaIhZWYb48GQmsn1Nl3ShAho5kLA",
+      "start_here_mercury_packet": "1zcIqhzVXKqCZaaOGquFamLWYew_F6n08MJL6aJIWTns",
       "start_here_mercury_income": "1Kqw__ySsoXHTxldxGbYnTEDOhDOmQXw31pKaKx60X6Y",
       "start_here_mercury_bank": "1GrLyx25cb4RLo6SnTrq_F8VY95nbZznyl9H9kYCjgwU",
       "ask_mercury": "1hFZh3Vag4ut_0knabvsJF6gzoLe325iaGNBLA7O_A-4",
@@ -266,8 +266,8 @@
       "start_here_all_tabs": "1EG93k7MHqc6AAxK8KFsYnHm9bS5wDaiZVPZVrsIWONs"
     }
   },
-  "start_here_mercury": "14kGWSwl2Gu29cBliJvonNa-nG64Bq6TZ_ESbEC7tGlk",
-  "start_here_mercury_packet": "1yJuvpn1gJTSci-dtt9Rr_kX8rj2QN33YrS7kC3_NalY",
+  "start_here_mercury": "1dOlQOcAgAooyo1pTaIhZWYb48GQmsn1Nl3ShAho5kLA",
+  "start_here_mercury_packet": "1zcIqhzVXKqCZaaOGquFamLWYew_F6n08MJL6aJIWTns",
   "insurance_lock": {
     "user": "Traveler's was home insurance before for Ferdinand and Geico was for the cars",
     "user_lemonade": "Lemomade is for 216 N Grove I believe. The Geico and Travelers is for 524 Ferdinand",
@@ -321,8 +321,8 @@
     "rounding_vs_cash": 0.08
   },
   "like_last_year_all_tabs": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
-  "like_last_year_all_tabs_07": "1HhfHE_dSw4vU403_eAVOxCDR9pfKLSPSgKpyTMCdKhk",
-  "like_last_year_all_tabs_root": "12t_Nr3JPqssa1CRZi59vITYqq7Pam3HX6HE7mYy5lLU",
+  "like_last_year_all_tabs_07": "1t2dRKpWmN4cT-bqmJxBtIovzvYmoJFrNr9P1bXaCeUg",
+  "like_last_year_all_tabs_root": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
   "oak_park_2025_costs": {
     "mortgage_sheet": 14617.54,
     "mortgage_cash_jul_dec": 7260.04,
@@ -360,7 +360,7 @@
     "drive_travelers_geico_lock": "1jOS-4NOl8SiWnpJMq9hRem16fPnluOxz35MbxrVq3dI"
   },
   "start_here_all_tabs_07": "17Ryy1ELCEleama_hx4Lu9_GXaRPGjjyTXucKgGAmJ6Q",
-  "start_here_all_tabs_root": "1X2y754q5plG06KtEJjG0pupwwDBKVGwPQadwSA4gdOQ",
+  "start_here_all_tabs_root": "1zh3Qu7FArf-3fkgibLH0JMUglq9J7TPbDFS0jWlvGak",
   "start_here_all_tabs": "1EG93k7MHqc6AAxK8KFsYnHm9bS5wDaiZVPZVrsIWONs",
   "last_year_model": "1XqZyLXxYiyrVWvt4TXGd3kxh7G6uAyW2",
   "personal_income_2025": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4",
