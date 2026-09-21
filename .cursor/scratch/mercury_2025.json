@@ -144,7 +144,9 @@
     "epgc_2025_matched_packet": "1-bJLhXoYgI8uasmUfDEM3fsMFQB1XROMX89p4LseS0c",
     "income_i8_note": "1cDyZJQB42YfFNM0I7Wv4maTP81GlHlkeuQdsvoE-GYI",
     "investments_coinbase": "1cDuwXi6wTRFbqPKepe-5kSKwFxr7tOMbgLrzwtwGZn4",
-    "native_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU"
+    "native_csv": "1pJL5IFjAeQxkzgKHEh_xkcGjhbAxGevU",
+    "deal_classifier": "1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8",
+    "personal_income_2025": "1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4"
   },
   "deal_classifier": {
     "classes": [
@@ -164,6 +166,9 @@
     "l5_remainder": "UNALLOCATED",
     "erdal_11_7": "ASK",
     "csv": ".cursor/scratch/cc_fill_csv/DEAL_CLASSIFIER.csv",
-    "disclaimer": "Not tax advice. Organizational packet only."
+    "disclaimer": "Not tax advice. Organizational packet only.",
+    "sheet_id": "1v9aEm9zcT6kve6mtUBnQELJMdFduxJro5qfWr3Sh3y8",
+    "sheet_id_bank": "189oaudb6-W_71Kcv7sNNatJISSK7H61mYUzmrJpbpPU",
+    "sheet_id_07": "1NsvBO2QVA7SzqpeHPjXVcjdsjJezP8OJZtO8L_K4sRA"
   }
 }
