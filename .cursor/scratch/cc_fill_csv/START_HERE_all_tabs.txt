@@ -1,14 +1,8 @@
 START HERE — last year's spreadsheet, 2025 numbers filled
 Not tax advice. Organizational packet only.
 
-Open this ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate, Art Sales has 2022–2024 lots + 2025 Belt, Venus, August joint):
-https://docs.google.com/spreadsheets/d/XLSX_PLACEHOLDER/edit
-
-Deal Classifier (EOEB per invoice — proposed FEE, lock UNALLOCATED):
-https://docs.google.com/spreadsheets/d/CLASSIFIER_PLACEHOLDER/edit
-
-START HERE doc:
-https://docs.google.com/document/d/DOC_PLACEHOLDER/edit
+Open this ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate, Art Sales has 2022–2024 lots + 2025 Belt, Venus, August joint; mosaics Cost $90k to Jamal / profit $15k):
+https://docs.google.com/spreadsheets/d/1Dw4eUPQD6N0cJVMnYq49GrhbnU8CXiqnk9WtS9c1Q-o/edit
 
 Tabs in last year's order (all inside that one file)
 1. Income — 2022–2025. 2025 Actual: Hindman $70,618 / 216 $19,500 / 524 #2 $17,086.94 / GCM $21,500 / Art $39,055.06. I10 EBITDA =SUM(I4:I9) → $167,760.
@@ -16,21 +10,16 @@ Tabs in last year's order (all inside that one file)
 3. 216 N. Oak Park Ave
 4. EPGC LLC — 2025 Art Sales $14,000 + $136,000 + July $76,000 + October $25,000 = $251,000; Consultant June $13,595 (David Aaron only).
 5. Refrence Library
-6. Art Sales and Purchases — 2022–2024 lots, then Sales 2025 including Roman Gold Belt, Venus joint, August Fortuna joint. Do not dump EOEB $130,270.
+6. Art Sales and Purchases — 2022–2024 lots, then Sales 2025 including mosaics (Jamal Cost $90k / profit $15k), Roman Gold Belt, Venus joint, August Fortuna joint. Do not dump EOEB $130,270.
 7. GCM
 8. Hindman W2
 9. Megan T4
 10. Investments — Coinbase ACH net -$51,000.
 11. 524 Ferdinand Ave, Unit 1
 
-Deal Classifier: SALE vs FEE vs PASS vs UNALLOCATED.
-Belt = SALE. Venus = SALE (joint). August Fortuna = SALE (joint). EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE.
+Mosaics Cost $90,000 LOCKED (user 2026-09-21): owed to Jamal, sent from personal BoA as $50k + $40k. Mercury Plutus $50k + BoA $40k. Profit $15,000. Do not double-count the 2/24 $90k EPGC→9922 transfer as extra Cost.
 
-How this stays correct
-1. Copy last year's Personal Income.xlsx. Never rebuild from CSVs.
-2. Fill the 2025 year block only. 2023 and 2024 stay as they were.
-3. python3 .cursor/scratch/assert_personal_income_2025.py must print LOCK OK + SHEETS-SAFE OK.
-4. Drive upload is a compact xlsx Google converts. Include Art Sales row 1 and 2022–2024 lots.
-5. CSV builders (.cursor/scratch/build_drive_all_tabs.py) now refuse to run.
+Deal Classifier: SALE vs FEE vs PASS vs UNALLOCATED.
+Belt = SALE. Venus = SALE (joint). August Fortuna = SALE (joint). Mosaics = SALE. EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE.
 
 Not tax advice.

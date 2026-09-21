@@ -1,34 +1,34 @@
-START HERE — Mercury Bank 8291 (2026-09-21 Belt + Venus + August Fortuna + EOEB classifier)
+START HERE — Mercury Bank 8291 (2026-09-21 mosaics BoA Cost lock)
 
 Not tax advice. Same Personal Income.xlsx tabs as last year. Organizational packet only.
 
 Mercury Checking 8291 is the EPGC LLC operating account (Choice Financial).
 64 unique 2025 cash transactions from Monarch IDs.
 
-Deal Classifier (per-invoice EOEB — do not dump remainder):
-https://docs.google.com/spreadsheets/d/CLASSIFIER_PLACEHOLDER/edit
-
-One spreadsheet like last year (11 tabs + Belt, Venus, August joint on Art Sales):
-https://docs.google.com/spreadsheets/d/XLSX_PLACEHOLDER/edit
-
 LOCKED this pass
+- Three Ancient Mosaics SALE: EOEB 2/21 $105,000 / Cost $90,000 to Jamal Rifai (DBA Antiquarium) / profit $15,000.
+  User 2026-09-21: the $90k owed to Jamal had to be sent from personal BoA (thinks $50k + $40k).
+  Payment: Mercury → Plutus 2/24–25 $50,000 + personal BoA $40,000.
+  Mercury 2/24 $90,000 EPGC→9922 is same-day funding of personal — not a second $90k of Cost.
+  $40,000 of that transfer = mosaics Cost funding (not owner draw). ASK 10 CLOSED.
 - Roman Gold Belt SALE: Fortuna Cost $45,000 / L5 Sale $50,000 / net $5,000 → EPGC Art Sales July + I8.
 - Venus joint SALE: Fortuna Cost $20,000 / Erdal proceeds $26,000 / net $6,000 → EPGC Art Sales July + I8.
-- August Fortuna joint SALE: Fortuna Cost $20,000 (8/15, native 8/18) / Erdal proceeds $25,000 (10/9) / net $5,000 → EPGC Art Sales October + I8.
+- August Fortuna joint SALE: Fortuna Cost $20,000 / Erdal proceeds $25,000 / net $5,000 → EPGC Art Sales October + I8.
 - David Aaron Limited $13,595 (6/24) → EPGC Consultant June. FEE, not a sale.
 - Koziol $150,000 (10/20) / Ariadne $150,000 (10/21) → PASS. Not P&L.
 - Wise expertise write-ups $992.80 → EPGC Consultant Fees.
-- EOEB mosaics $105,000 (2/21) SALE. EOEB 12/2 $565.75 reimbursed — not income.
+- EOEB 12/2 $565.75 reimbursed — not income.
 
 EPGC 2025 Art Sales LOCKED cash $251,000 (Jan $14,000 / Feb $136,000 / July $76,000 / Oct $25,000).
 EPGC Consultant June is $13,595 (David Aaron only).
-Income I8 Art net is $39,055.06. I10 EBITDA =SUM(I4:I9) → $167,760.
+Income I8 Art net is $39,055.06 (includes mosaics profit $15,000). I10 EBITDA =SUM(I4:I9) → $167,760.
+BoA 9922 draws $221,172 after pulling $40,000 mosaics funding out of the 2/24 $90,000.
 
 ASK remaining — do not dump
 1. EOEB remainder $130,270.00 — per-invoice UNALLOCATED (proposed FEE, no matching Cost). Jan 16 $1,000 Canosan-horse OPEN. 5/1 $21,000 is NOT Venus.
 2. Other L5 $37,396.32 after removing $50k belt.
 3. Erdal 11/7 $6,000 FORTUNA PAYMENT — not August, not Venus.
 4. Aysel Dere — Monarch 7/18 +$50,000 IN vs native Failed 7/17 −$50,000 OUT. Not the belt.
-10. Mosaics Cost $40,000 missing on Mercury 8291.
+10. CLOSED — mosaics $40k Cost is personal BoA. Soft: no labeled $40k OUT to Jamal on Monarch 9922 in Feb (only $90k IN from EPGC). Confirm on 9922 statement if you have it. P&L already correct.
 
 Sale 6428 $11,000 and Aquinas books $1,000 wait on Cost (not in I8).
