@@ -1,0 +1,88 @@
+CPA PACKET 2025 — WORKING DRAFT (adjust as info arrives),,,
+Disclaimer,Organizational packet for CPA (Wermer). Not tax advice. Revise TBD rows when docs arrive — do not block on perfect data.,,
+Version,v1.1 2026-09-18,,
+Drive root,https://drive.google.com/drive/folders/1DkF0ealLM2YZ8IkCxBp-_jN9BJRJcxuu,,
+How to use,Folders 01–07 hold source docs. This sheet is the cover index. Status LOCKED = use now; TBD = plug in later without rebuilding packet.,,
+,,,
+SECTION A — INCOME (W-2 / 1099),,,
+Item,Amount / note,Status,Where
+Form W-2,CANONICAL in 07,LOCKED,1Xgd2Tc4…
+1099 NEC (Gates Capital),$21500 in 07,LOCKED,1k9ySc3h…
+UTMA brokerage PDF,on file 07,LOCKED,
+,,,
+SECTION B — STR (Airbnb + VRBO),,,
+Item,Amount,Status,Where
+Rule,USE PLATFORM PDFs not Monarch cash,LOCKED,
+Airbnb gross / net,$8053 / $7691.41,LOCKED,03 Platform PDFs
+VRBO gross / net,$10214.30 / $9395.53,LOCKED,03 Platform PDFs
+Combined platform net payout,$17086.94,LOCKED,recon 1Yo0IFga…
+Monarch STR cash (incomplete),$12794.57 — gap $4292.37,REFERENCE ONLY,
+,,,
+SECTION C — 524 FERDINAND SALE + Unit 2 basis,,,
+Item,Amount,Status,Where
+Sale date,2025-12-18,LOCKED,Closing Statement
+Sale price,$600000,LOCKED,
+Net to seller,$216844.96,LOCKED,
+USB payoff,$340911.17,LOCKED,
+Commission Living Well,$15000,LOCKED,
+Indicative selling costs (excl payoff/tax),~$20578,WORKING — CPA confirm,
+Indicative amount realized,~$579422,WORKING — CPA confirm,
+Original purchase 2023-08-09,$575000 whole building,LOCKED,Purchase CD
+Unit 2 depreciable basis (2023 4562),bldg $191475 + yard $11959 = $203434,LOCKED,2023 return
+Unit 2 dep taken 2023,$7090,LOCKED,Form 4562
+Unit 2 dep 2024,TBD,TBD — plug when 2024 Form 1040 arrives,
+Unit 2 dep 2025 stub to 12/18,TBD,TBD — CPA compute,
+Sec 121 Unit 1 vs Unit 2 allocation %,TBD,TBD — CPA,
+Lifetime CapEx on 524,TBD,TBD,
+,,,
+SECTION D — 827 GROVE purchase + CapEx,,,
+Item,Amount,Status,Where
+Purchase close,2025-12-18,LOCKED,Purchase CD
+Purchase price,$670000,LOCKED,
+Loan / rate,$535000 @ 5.875%,LOCKED,
+Cash to close,$121925.63,LOCKED,
+Radon on CD,$2550 — check vs CapEx register,FLAG,05
+TY2025 CapEx for return,$53660 ONLY (2 pmts 2025-12-19),LOCKED,05 CapEx CPA sheet
+TY2026 CapEx (not this return),$268532,REFERENCE,
+CapEx UNKNOWN undated,$9401.93,TBD — dates/amounts,05 register
+,,,
+SECTION E — LTR 216 Oak Park,,,
+Item,Amount / note,Status,Where
+Recurring + known one-time cash,~$21450.71,WORKING,04 LTR sheet
+Mortgage,use Rocket 1098 interest not full P+I,LOCKED rule,04/216 folder
+Vacancy late 2025,$0 rent; keep expenses if held out for rent,WORKING,fill exact months
+Smoke detector $,TBD,TBD,
+Exact vacant months,TBD,TBD,
+,,,
+SECTION F — CHILDCARE Form 2441,,,
+Item,Amount / note,Status,Where
+BrightWheel provider cash,$30668.55 invoices / ~$30640.58 Monarch,LOCKED,06
+Aug 4 prepaid,$23361.05 for BOTH kids on Phoebe account,LOCKED,
+CPA allocates Aug prepaid across children AND care months,DECISION LOCKED,,
+Kids Empire $233.28,EXCLUDED,LOCKED,
+Zelle babysitting $100,EXCLUDED,LOCKED,
+Provider name/EIN/address,La Casa Montessori School; EIN 45-5289483; 608 Harrison St Oak Park IL 60304,LOCKED,
+,,,
+SECTION G — OPERATING (Monarch),,,
+Item,Note,Status,Where
+TY2025 Operating Snapshot,2521 txns profiled,WORKING,02
+Monarch CSV CANONICAL,2026-09-17 export,LOCKED source,02/Monarch Money
+TAX tags in app,optional polish,TBD,
+,,,
+SECTION H — TBD PLUG-IN LIST (do not block),,,
+When this arrives,Update these rows,,
+2024 Form 1040 client copy,C dep 2024; cumulative dep; sale adjusted basis,,
+Exact Oak Park vacant months,E vacancy log,,
+Smoke detector $,E one-time,,
+(done) Form 2441 Part I EIN/address,F Part I LOCKED,,
+CapEx UNKNOWN dates,D UNKNOWN rows,,
+Sec 121 allocation %,C gain worksheet,,
+,,,
+SECTION I — CPA ACTION ITEMS,,,
+No,Action,,
+1,Allocate Aug $23361.05 BrightWheel prepaid across Phoebe/Emma and care months for Form 2441,,
+2,Compute 524 Unit 2 gain: amount realized minus (Unit 2 basis minus cumulative dep); apply Sec 121 to Unit 1 portion,,
+3,Confirm TY2025 CapEx line = $53660 only; treat TY2026 separately,,
+4,STR Sch E vs C for Unit 2; use platform $17086.94 net not Monarch,,
+5,Oak Park vacancy: confirm expenses while vacant + held for rent,,
+6,Radon $2550 on Grove CD — CapEx vs closing cost,,

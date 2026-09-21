@@ -1,0 +1,49 @@
+START HERE — checking answers 2026-09-18
+
+Not tax advice. Same tab model as prior Personal Income.xlsx.
+
+Two Bank of America checking folders (07 Income & Bank Docs)
+- bank of america checking_JSC = Adv Plus 4830 6191 9922 (Jake)
+- Bank of America checking_joint = Adv Plus 4830 7359 0203 (Megan + Jacob)
+Twelve 2025 eStmts each. Sampled deposit sections match Monarch on those two accounts.
+
+What I applied after your answers
+1. Ava is Delach co-tenant — keep eight $500 Zelle credits on 216 Oak Park STR / RENTAL INCOME.
+2. Vacant October and half of November (held for rent).
+3. Joan 12/1 Zelle OUT $675 (Checking 8507) → 216 INTERIOR REPAIR (painting + repairs).
+   12/1 $1,950 IN = December occupancy cash; 12/31 $1,950 = January 2026 prepaid cash in TY2025.
+   Joan half-November $975 is NOT booked — it is not on joint 0203.
+4. GCM BOM $21,500 REMOVED from EPGC Consultant. Stays on GCM tab + Income E7 (personal 1099-NEC).
+5. May 22 Gates $609.02 CONFIRMED reimbursement — excluded.
+6. Bear Creek $38,000 is a gift to Jake from parents — not income. UTMA Thomas wires $5,000 each ($10,000) excluded.
+7. Freeman’s / CIBC $11,000 is an art-sale settlement (Sale 6428 Contract 303468). Check went to Megan.
+   Art Sales Sale Price $11,000; Cost / object still yellow.
+8. Checking 8507 statements — WAIT MEGAN (you asked her to send them).
+
+9. 216 costs LOCKED 2026-09-20 (last-year pattern): insurance $42.84/mo; mortgage $1,226.25 cash Jul–Oct / $1,177.52 Nov–Dec; HOA $421.53 Jun–Dec; Brennan $150 Aug; Imelda $300 Oct move-out; Joan $675 Dec painting; Ace keys $11 Dec. Jan–Jun mortgage and Jan–May HOA yellow WAIT 8507. Smoke detector Amazon ASK.
+
+Cash still on 216 Oak Park STR / RENTAL INCOME: $19,500
+- Delach 8 × $1,450 = $11,600
+- Ava 8 × $500 = $4,000
+- Joan 2 × $1,950 = $3,900
+
+What to open (this folder)
+1. CANONICAL — ASK (checking answers 2026-09-18)
+2. CANONICAL — INFLOW_LEDGER
+3. CANONICAL — 216 Oak Park LTR
+4. CANONICAL — EPGC LLC (Consultant is $0)
+5. CANONICAL — GCM (personal 1099)
+6. CANONICAL — Art Sales (Sale 6428 $11,000)
+7. CANONICAL — Income
+8. Full multi-tab .xlsx is in git: Personal_Income_2025_Tax_Turbo.xlsx
+
+Still open
+- WAIT MEGAN: Checking 8507 (NOW) 2025 statements — also needed for Joan’s half-November $975.
+- Sale 6428 object / Cost before Income E8 net can move off $0.
+- REMIND JACOB: Double-check ComEd with Megan. Joint 0203 statements show ComEd ACH.
+
+Still true / LOCKED 2026-09-20
+- Grove Collaborative $791.21 on 524 Unit 2 SUPPLIES ≠ 827 N Grove the house.
+- Travelers was prior 524 home insurance; Geico was the cars.
+- Only State Farm HOME share on 524 INSURANCE (50/50 U1/U2). Auto + Geico credit personal, not EPGC.
+- Travelers leftover Jan 2025 is 524 home ($0 on cards/Monarch).

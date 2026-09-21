@@ -1,0 +1,15 @@
+START HERE — 216 Oak Park LTR insurance (2026-09-20)
+
+Not tax advice. Organizational packet only.
+
+LOCKED: Lemonade $42.84/mo x 12 = $514.08 on 216 N. Oak Park Avenue #1Z RENTER'S INSURANCE (amortized like 2023/2024). Cash $514.00 2025-10-03 Megan Chase (1702). Not October lump.
+
+Why this is 216, not 524
+- Last year’s 216 tab called the row RENTER'S INSURANCE and amortized Lemonade: 2023 $26.75/mo x 12 = $321 (Monarch Lemonade 2023-10-03 $321); 2024 $35.08/mo x 12 ~ $421 (Monarch Lemonade 2024-10-03 $421).
+- 2025 is the same merchant, same card, same Oct 3 date, $514, booked $42.84 each month like those years.
+- Travelers was home for Ferdinand (524). Geico was the cars. State Farm 2025 is the Ferdinand car+home bundle — only the home share is on 524, not 216.
+
+Searched (no other Oak Park policy dollars): Monarch TY2025, Prime/Sapphire/BoA, checking 0203 and 8507, 216 CSV, HOME_SPLIT, apply_state_farm.
+
+524 insurance lock is unchanged (Travelers = 524 home, Geico = cars).
+Do not re-run apply_checking_answers_2025.py.

@@ -1,0 +1,89 @@
+{
+  "ty2025_n": 2521,
+  "str_n": 25,
+  "str_net": 12794.57,
+  "hindman_paychecks": 55698.16,
+  "freeman_paychecks": 11776.32,
+  "business_income": 282070.08,
+  "home_improvement": -3869.74,
+  "mercury_n": 64,
+  "accounts": [
+    [
+      "Amazon Shared (2351)",
+      943
+    ],
+    [
+      " Megan\u2019s Chase (1702)",
+      533
+    ],
+    [
+      "CREDIT CARD (...5423)",
+      299
+    ],
+    [
+      "jakes personal card (...4469)",
+      179
+    ],
+    [
+      "Jake (...9922)",
+      167
+    ],
+    [
+      "Adv Plus Banking (...0203)",
+      136
+    ],
+    [
+      "Checking (...8507)",
+      85
+    ],
+    [
+      "Mercury Checking (...8291)",
+      64
+    ],
+    [
+      "SEP-IRA (...0683)",
+      25
+    ],
+    [
+      "WRC 403(b) Savings Plan  (...6350)",
+      20
+    ],
+    [
+      "9422 (...9422)",
+      14
+    ],
+    [
+      "******9898 (...9898)",
+      14
+    ],
+    [
+      "FREEMAN'S 401(K) PLAN (...9826)",
+      13
+    ],
+    [
+      "CMA-Edge (...1A38)",
+      8
+    ],
+    [
+      "CMA-Edge (...2T48)",
+      7
+    ],
+    [
+      "CMA-Edge (...4729)",
+      7
+    ],
+    [
+      "Savings (...0501)",
+      3
+    ],
+    [
+      "THE METROPOLITAN MUSEUM OF ART 403B RETIREMENT PLAN FOR NON-UNION EMPLOYEES (...8132)",
+      3
+    ],
+    [
+      "5907 (...5907)",
+      1
+    ]
+  ],
+  "xlsx": "/home/ubuntu/.cursor/scratch/Monarch_TY2025_Operating_Snapshot.xlsx"
+}

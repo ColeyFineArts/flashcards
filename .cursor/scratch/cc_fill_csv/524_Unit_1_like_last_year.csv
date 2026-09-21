@@ -1,0 +1,68 @@
+,PROPERTY ADDRESS,"524 Ferdinand Avenue, Unit 1",,,,,,,,,,,,,"524 Ferdinand Avenue, Unit 1",,,,,,,,,,,,
+,INCOME,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,2023 YR TOTAL,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,2025 YR TOTAL
+,MULTI-PROPERTY INCOME OVERVIEW,,,,,,,,,,,,,,,,,,,,,,,,,,
+,MULTI-PROPERTY INCOME OVERVIEW,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C4:N4),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P4:AA4)
+,RENTAL INCOME,,,,,,,,,,,,,=SUM(C5:N5),,,,,,,,,,,,,=SUM(P5:AA5)
+,GROSS RENTAL INCOME,=SUM(C4:C5),=SUM(D4:D5),=SUM(E4:E5),=SUM(F4:F5),=SUM(G4:G5),=SUM(H4:H5),=SUM(I4:I5),=SUM(J4:J5),=SUM(K4:K5),=SUM(L4:L5),=SUM(M4:M5),=SUM(N4:N5),=SUM(C6:N6),=SUM(P4:P5),=SUM(Q4:Q5),=SUM(R4:R5),=SUM(S4:S5),=SUM(T4:T5),=SUM(U4:U5),=SUM(V4:V5),=SUM(W4:W5),=SUM(X4:X5),=SUM(Y4:Y5),=SUM(Z4:Z5),=SUM(AA4:AA5),=SUM(P6:AA6)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,EXPENSES,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,YR TOTAL,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC,YR TOTAL
+, ,,,,,,,,,,,,,,,,,,,,,,,,,,
+,MULTI-PROPERTY EXPENSES OVERVIEW,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C10:N10),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P10:AA10)
+,MARKETING / ADVERTISING,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C11:N11),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P11:AA11)
+,SERVICE FEES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C12:N12),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P12:AA12)
+,REMITTED TAX,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C13:N13),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P13:AA13)
+,INSURANCE,,,,,,,,,,,,1455.09,=SUM(C14:N14),0,78.76,78.75,78.75,78.75,78.75,78.75,80.19,0,0,0,0,=SUM(P14:AA14)
+,INTERIOR MAINTENANCE,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C15:N15),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P15:AA15)
+,EXTERIOR REPAIRS,0,0,0,0,0,0,0,851.32,0,0,0,0,=SUM(C16:N16),0,66.56,688.6,39.57,0,0,50.99,0,34.86,68.48,32.33,0,=SUM(P16:AA16)
+,GROUNDSKEEPING,0,0,0,0,0,0,0,0,0,0,0,,=SUM(C17:N17),0,0,0,0,0,0,0,0,0,0,0,,=SUM(P17:AA17)
+, ,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C18:N18),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P18:AA18)
+, ,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C19:N19),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P19:AA19)
+, ,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C20:N20),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P20:AA20)
+,VILLAGE WATER AND REFUSE,0,0,0,0,0,0,0,118,118,118,118,118.29,=SUM(C21:N21),0,100.55,0,90.67,0,112.83,0,137.63,0,132.76,0,0,=SUM(P21:AA21)
+,GAS,0,0,0,0,0,0,0,31.58,66.56,125.88,86.68,182.89,=SUM(C22:N22),98.57,133.33,115.82,77.8,79.95,48.08,0,79.33,36.25,38.22,0,139.35,=SUM(P22:AA22)
+,ELECTRIC,0,0,0,0,0,0,0,98,131.28,71.5,58.77,84.62,=SUM(C23:N23),132.94,216.44,184.09,60.95,83.76,69.69,164.88,203.43,187.63,139.78,71.29,50.38,=SUM(P23:AA23)
+,INTERNET,45,45,45,45,45,45,45,45,45,45,45,45,=SUM(C24:N24),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P24:AA24)
+,CORRESPONCES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C25:N25),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P25:AA25)
+,INTERIOR DESINGOR,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C26:N26),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P26:AA26)
+,TRAVEL EXPENSES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C27:N27),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P27:AA27)
+,EQUIPMENT/APPLIANCE PURCHASES,0,,0,0,0,0,0,3000,0,0,0,,=SUM(C28:N28),0,,0,0,0,0,0,0,0,0,0,,=SUM(P28:AA28)
+,EQUIPMENT/APPLIANCE RENTAL FEES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C29:N29),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P29:AA29)
+,LAND TAX,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C30:N30),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P30:AA30)
+,BORROWING EXPENSES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C31:N31),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P31:AA31)
+,LOANS INTEREST,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C32:N32),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P32:AA32)
+,TRAVEL EXPENSES,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C33:N33),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P33:AA33)
+,MORTGAGE,,,,,,,,,,3920.64,3920.64,3920.64,=SUM(C34:N34),4287.51,4287.51,4287.51,4287.51,4287.51,4287.51,4287.51,5089.77,5089.77,4438.69,4438.69,4377.54,=SUM(P34:AA34)
+,HOA,,,,,,,,,,,,,=SUM(C35:N35),,,,,,,,,,,,,=SUM(P35:AA35)
+,TERMITE INSPECTION,0,0,0,,0,0,0,145,0,0,,0,=SUM(C36:N36),0,0,0,,0,0,0,0,0,0,,0,=SUM(P36:AA36)
+,OTHER,0,0,0,0,0,0,0,0,,,0,0,=SUM(C37:N37),0,0,0,0,0,0,0,0,,,0,0,=SUM(P37:AA37)
+,OTHER,0,0,0,0,0,0,0,0,0,,,,=SUM(C38:N38),0,0,0,0,0,0,0,0,0,,,,=SUM(P38:AA38)
+, ,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C39:N39),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P39:AA39)
+, ,0,0,0,0,0,0,0,0,0,0,0,0,=SUM(C40:N40),0,0,0,0,0,0,0,0,0,0,0,0,=SUM(P40:AA40)
+,TOTAL EXPENSES,=SUM(C10:C40),=SUM(D10:D40),=SUM(E10:E40),=SUM(F10:F40),=SUM(G10:G40),=SUM(H10:H40),=SUM(I10:I40),=SUM(J10:J40),=SUM(K10:K40),=SUM(L10:L40),=SUM(M10:M40),=SUM(N10:N40),=SUM(C41:N41),=SUM(P10:P40),=SUM(Q10:Q40),=SUM(R10:R40),=SUM(S10:S40),=SUM(T10:T40),=SUM(U10:U40),=SUM(V10:V40),=SUM(W10:W40),=SUM(X10:X40),=SUM(Y10:Y40),=SUM(Z10:Z40),=SUM(AA10:AA40),=SUM(P41:AA41)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,YEAR-TO-DATE INCOME LESS EXPENSES,=C6-C41,=D6-D41,=E6-E41,=F6-F41,=G6-G41,=H6-H41,=I6-I41,=J6-J41,=K6-K41,=L6-L41,=M6-M41,=N6-N41,=O6-O41,=P6-P41,=Q6-Q41,=R6-R41,=S6-S41,=T6-T41,=U6-U41,=V6-V41,=W6-W41,=X6-X41,=Y6-Y41,=Z6-Z41,=AA6-AA41,=AB6-AB41
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2025 columns P–AB. Residence through sale 2025-12-18. MORTGAGE = US Bank loan 09422 monthly P+I from joint 0203 (not $50k extra principal on 9922 Jul/Sep — those are not on this row). HOA n/a. INSURANCE LOCK 2026-09-20: Travelers was prior 524 home; Geico was the cars. Only State Farm HOME share on this INSURANCE line (50/50 with Unit 2). Travelers leftover Jan is 524 home ($0 on cards/Monarch). Auto + Geico credit personal — not EPGC. Lemonade is 216 Oak Park (not 524, not 827 Grove). Not tax advice.,https://forst.tax/tax-deductions-owner-occupied-multi-family-property/,,,,,,,,,,,,,,,,,,,,,,,,,,
+,https://www.realtor.com/realestateandhomes-detail/524-Ferdinand-Ave_Forest-Park_IL_60130_M81246-00338,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Purchase Price,575000,,,,,,,,,,,,,,,,,,,,,,,,,
+,Interest Rate,0.06275,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Misc Closing Costs,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Clear View Home Inspection,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Closing Costs,~15000,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Deductions as Investment ,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Mortgage interest,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Property tax,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Operating expenses,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Depreciation,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Repairs,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Deductions as Primary Residence,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Mortgage interest,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Property tax,,,,,,,,,,,,,,,,,,,,,,,,,,
+,First time home owner tax credit ,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Questions for Advisor,,,,,,,,,,,,,,,,,,,,,,,,,,

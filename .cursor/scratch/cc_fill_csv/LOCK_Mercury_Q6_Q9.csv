@@ -1,0 +1,15 @@
+Q,Status,What,Where it hits
+6,LOCKED,"David Aaron Limited $13,595 IN (6/24) consultant fee","EPGC Consultant June $13,595. Not Art Sales. Not I8. Classifier: FEE."
+7,LOCKED,Wise $334.17 (7/9) + $658.63 (10/30) expertise write-ups,EPGC Consultant Fees $992.80. Classifier: FEE.
+8,LOCKED,"Koziol $150,000 IN (10/20) / Ariadne $150,000 OUT (10/21)","Pass-through — not P&L. Classifier: PASS. L5 10/21 $7,500 is FEE (5%), not a second SALE."
+9,LOCKED,"Aquinas Hobor $1,000 IN (2/4) book SALE",EPGC Art Sales February. Cost TBD. Classifier: SALE.
+10,LOCKED split / ASK Jamal Cost,"EOEB 2/21 $105,000 = Deal B $50k SALE + Deal A $40k SALE + $15k FEE","Art Sales February +$90,000. Consultant February +$15,000. Deal B Cost $50k net $0. Deal A Cost ASK (not in I8). I8 drops the $15k."
+Canosan,LOCKED,"EOEB 1/16 $1,000 Canosan FEE (not horse SALE)","EPGC Consultant January $1,000. Do not double-count Hindman/Erdal horse register."
+NBerk,LOCKED,"EOEB 5/1 $21,000 NBerk FEE (not Venus)","EPGC Consultant May $21,000. Classifier: FEE."
+L5 leftover,LOCKED,"L5 leftover $37,396.32 ALL FEES","EPGC Consultant Jul $11,034.79 / Sep $14,161.27 / Oct $7,500 / Dec $4,700.26. Not I8. Belt $50k SALE stays."
+Belt,LOCKED,"Roman Gold Belt Fortuna $45,000 / L5 $50,000","EPGC Art Sales July +$50,000. I8 net +$5,000. Classifier: SALE. L5 7/15 $2,500 is FEE (5%), not attached."
+Venus,LOCKED,"Venus Fortuna $20,000 / Erdal remittance $26,000","EPGC Art Sales July +$26,000. I8 net +$6,000. Classifier: SALE (joint, EPGC share)."
+August,LOCKED,"August Fortuna joint Fortuna $20,000 / Erdal 10/9 $25,000","EPGC Art Sales October +$25,000. I8 net +$5,000. Classifier: SALE (joint, EPGC share). 11/7 $6,000 still ASK."
+EOEB 12/2,LOCKED not income,EOEB/Wise $565.75 reimburse,Not P&L.
+1,UNALLOCATED per invoice (proposed FEE),"EOEB remainder $108,270.00",DEAL_CLASSIFIER.csv. Do NOT dump onto Consultant or Art Sales.
+LOCKED totals,LOCKED,"Art Sales gross $236,000 (Jan 14k + Feb 121k + July 76k + Oct 25k); I8 $24,055.06 (mosaics $15k is FEE); Consultant $87,991.32","EOEB remainder $108,270 not on P&L."
