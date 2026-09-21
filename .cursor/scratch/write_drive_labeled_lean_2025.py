@@ -3,9 +3,9 @@
 
 Prior converts either dropped Art Sales (sparse OOXML) or dropped column-A
 labels (numeric-only payload). This file keeps:
-  - Income labels + I8 $39,055.06 + I10 =SUM(I4:I9)
-  - Art Sales rows 1–81 with 2022–2024 lots + Belt / Venus / August
-  - EPGC 2025 July $76,000 / October $25,000 / Consultant June $13,595
+  - Income labels + I8 $24,055.06 + I10 =SUM(I4:I9)
+  - Art Sales rows 1–82 with 2022–2024 lots + Deal A/B + Belt / Venus / August
+  - EPGC 2025 Feb $121,000 / July $76,000 / October $25,000 / Consultant $87,991.32
   - 216 Oak Park 2025 + AO5 formula
 and stubs the other last-year tabs so the 11-tab order survives.
 
@@ -127,8 +127,8 @@ def write_book(src_path: Path, dest: Path) -> None:
         src,
         wb,
         "Art Sales and Purchases",
-        [(r, c) for r in range(1, 82) for c in (1, 3, 6, 8, 11)]
-        + [(r, 2) for r in range(73, 81)],
+        [(r, c) for r in range(1, 83) for c in (1, 3, 6, 8, 11)]
+        + [(r, 2) for r in range(73, 82)],
     )
     copy(src, wb, "GCM", [(r, c) for r in range(20, 27) for c in range(1, 6)])
     copy(src, wb, "Hindman W2", [(r, c) for r in range(1, 10) for c in range(1, 6)])
@@ -167,22 +167,32 @@ def main() -> None:
     inc = wb["Income"]
     ep = wb["EPGC LLC"]
     assert inc["A4"].value == "Hindman "
-    assert inc["I8"].value == 39055.06
+    assert inc["I8"].value == 24055.06
     assert inc["I10"].value == "=SUM(I4:I9)"
     assert art["A1"].value == "Art Sales and Purchases"
     assert art["A4"].value == "An Ashanti Wood Fertility Figure"
-    assert "Two mosaic" in str(art["A74"].value)
+    assert "Deal B" in str(art["A74"].value)
     assert "Plutus" in str(art["B74"].value)
-    assert art["C74"].value == 90000 and art["F74"].value == 105000
-    assert art["A78"].value == "Roman Gold Belt"
-    assert art["C78"].value == 45000 and art["F78"].value == 50000
-    assert "Venus" in str(art["A79"].value)
-    assert art["F79"].value == 26000
-    assert "August Fortuna" in str(art["A80"].value)
-    assert art["F80"].value == 25000
+    assert art["C74"].value == 50000 and art["F74"].value == 50000
+    assert "Deal A" in str(art["A75"].value)
+    assert art["F75"].value == 40000
+    assert art["A79"].value == "Roman Gold Belt"
+    assert art["C79"].value == 45000 and art["F79"].value == 50000
+    assert "Venus" in str(art["A80"].value)
+    assert art["F80"].value == 26000
+    assert "August Fortuna" in str(art["A81"].value)
+    assert art["F81"].value == 25000
+    assert ep["C53"].value == 121000
     assert ep["H53"].value == 76000
     assert ep["K53"].value == 25000
+    assert ep["B54"].value == 1000
+    assert ep["C54"].value == 15000
+    assert ep["F54"].value == 21000
     assert ep["G54"].value == 13595
+    assert ep["H54"].value == 11034.79
+    assert ep["J54"].value == 14161.27
+    assert ep["K54"].value == 7500
+    assert ep["M54"].value == 4700.26
     print("LOCK cells OK")
 
 

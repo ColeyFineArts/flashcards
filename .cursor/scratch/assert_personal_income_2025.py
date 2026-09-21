@@ -111,7 +111,7 @@ def assert_workbook(path: Path) -> None:
         fail(f"Income I6 {inc['I6'].value}")
     if inc["I7"].value != 21500:
         fail(f"Income I7 {inc['I7'].value}")
-    if inc["I8"].value != 39055.06:
+    if inc["I8"].value != 24055.06:
         fail(f"Income I8 {inc['I8'].value}")
     if inc["A4"].value != "Hindman ":
         fail(f"Income A4 {inc['A4'].value!r}")
@@ -132,40 +132,50 @@ def assert_workbook(path: Path) -> None:
     ep = wb["EPGC LLC"]
     if ep["A51"].value != 2025:
         fail(f"EPGC A51 {ep['A51'].value!r}")
-    if ep["B53"].value != 14000 or ep["C53"].value != 136000:
+    if ep["B53"].value != 14000 or ep["C53"].value != 121000:
         fail(f"EPGC Art Sales 2025 {ep['B53'].value}/{ep['C53'].value}")
     if ep["H53"].value != 76000:
         fail(f"EPGC Art Sales July {ep['H53'].value} (need Belt $50,000 + Venus $26,000)")
     if ep["K53"].value != 25000:
         fail(f"EPGC Art Sales October {ep['K53'].value} (need August Fortuna joint $25,000)")
+    if ep["B54"].value != 1000 or ep["C54"].value != 15000 or ep["F54"].value != 21000:
+        fail(f"EPGC Consultant Jan/Feb/May {ep['B54'].value}/{ep['C54'].value}/{ep['F54'].value}")
     if ep["G54"].value != 13595:
         fail(f"EPGC Consultant June {ep['G54'].value}")
+    if ep["H54"].value != 11034.79 or ep["J54"].value != 14161.27:
+        fail(f"EPGC Consultant Jul/Sep {ep['H54'].value}/{ep['J54'].value}")
+    if ep["K54"].value != 7500 or ep["M54"].value != 4700.26:
+        fail(f"EPGC Consultant Oct/Dec {ep['K54'].value}/{ep['M54'].value}")
     if ep["H69"].value != 334.17 or ep["K69"].value != 658.63:
         fail(f"EPGC Consultant Fees {ep['H69'].value}/{ep['K69'].value}")
 
     art = wb["Art Sales and Purchases"]
     if art["F73"].value != 14000:
         fail("Art Sales seals F73 != 14000")
-    if art["F74"].value != 105000:
-        fail("Art Sales mosaics F74 != 105000")
-    if art["F77"].value != 1000:
-        fail("Art Sales Aquinas F77 != 1000")
+    if "Deal B" not in str(art["A74"].value or "") or art["C74"].value != 50000 or art["F74"].value != 50000:
+        fail(f"Art Sales Deal B {art['A74'].value!r} {art['C74'].value}/{art['F74'].value}")
+    if "Deal A" not in str(art["A75"].value or "") or art["F75"].value != 40000:
+        fail(f"Art Sales Deal A {art['A75'].value!r} F75={art['F75'].value}")
+    if art["C75"].value not in (None, ""):
+        fail(f"Art Sales Deal A Cost should be ASK blank, got {art['C75'].value}")
+    if art["F78"].value != 1000:
+        fail("Art Sales Aquinas F78 != 1000")
     if art["A1"].value != "Art Sales and Purchases":
         fail(f"Art Sales A1 {art['A1'].value!r} (row 1 must exist or Google convert drops the tab)")
-    if art["A78"].value != "Roman Gold Belt":
-        fail(f"Art Sales A78 {art['A78'].value!r} (Belt SALE)")
-    if art["C78"].value != 45000 or art["F78"].value != 50000:
-        fail(f"Art Sales Belt Cost/Sale {art['C78'].value}/{art['F78'].value}")
-    if "Venus" not in str(art["A79"].value or ""):
-        fail(f"Art Sales A79 {art['A79'].value!r} (Venus SALE)")
-    if art["C79"].value != 20000 or art["F79"].value != 26000:
-        fail(f"Art Sales Venus Cost/proceeds {art['C79'].value}/{art['F79'].value}")
-    if "August Fortuna" not in str(art["A80"].value or ""):
-        fail(f"Art Sales A80 {art['A80'].value!r} (August Fortuna joint SALE)")
-    if art["C80"].value != 20000 or art["F80"].value != 25000:
-        fail(f"Art Sales August Cost/proceeds {art['C80'].value}/{art['F80'].value}")
-    if str(art["A81"].value or "") != "Total":
-        fail(f"Art Sales A81 {art['A81'].value!r} (Total after August)")
+    if art["A79"].value != "Roman Gold Belt":
+        fail(f"Art Sales A79 {art['A79'].value!r} (Belt SALE)")
+    if art["C79"].value != 45000 or art["F79"].value != 50000:
+        fail(f"Art Sales Belt Cost/Sale {art['C79'].value}/{art['F79'].value}")
+    if "Venus" not in str(art["A80"].value or ""):
+        fail(f"Art Sales A80 {art['A80'].value!r} (Venus SALE)")
+    if art["C80"].value != 20000 or art["F80"].value != 26000:
+        fail(f"Art Sales Venus Cost/proceeds {art['C80'].value}/{art['F80'].value}")
+    if "August Fortuna" not in str(art["A81"].value or ""):
+        fail(f"Art Sales A81 {art['A81'].value!r} (August Fortuna joint SALE)")
+    if art["C81"].value != 20000 or art["F81"].value != 25000:
+        fail(f"Art Sales August Cost/proceeds {art['C81'].value}/{art['F81'].value}")
+    if str(art["A82"].value or "") != "Total":
+        fail(f"Art Sales A82 {art['A82'].value!r} (Total after August)")
     parked = " ".join(str(art.cell(r, 1).value or "") for r in range(120, (art.max_row or 120) + 1))
     if "Roman Gold Belt — Fortuna inventory" in parked:
         fail("Belt still parked as unsold Fortuna inventory")

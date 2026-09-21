@@ -1,43 +1,46 @@
 START HERE — last year's spreadsheet, 2025 numbers filled
 Not tax advice. Organizational packet only.
 
-OPEN THIS ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate; I8 $39,055.06; EPGC July $76,000 + Oct $25,000; TWO mosaic deals pooled in EOEB $105k). Google convert kept Art numbers but dropped object labels:
-https://docs.google.com/spreadsheets/d/1uAipm4kgyiZiEPE2Eme6_RWKNXfHQ7XqBEIyFTLzAV4/edit
+OPEN THIS ONE spreadsheet (same 11 tab names as last year, 2023 | 2024 | 2025 year blocks, 2025 numbers, formulas that calculate; I8 $24,055.06; EPGC July $76,000 + Oct $25,000; mosaics SALE $90,000 + FEE $15,000). Google convert kept Art numbers but dropped object labels:
+https://docs.google.com/spreadsheets/d/1rSWqsoa_mxvA5fEXw_0yj8oa0IZ-5rs2KwNpKsd2XMs/edit
 
 07_income copy:
-https://docs.google.com/spreadsheets/d/1t2dRKpWmN4cT-bqmJxBtIovzvYmoJFrNr9P1bXaCeUg/edit
+https://docs.google.com/spreadsheets/d/1apJDDSGYEx2CIA1eQ62fj9lK44AYBKCy0GlhyX8B_pE/edit
 
 2025 Taxes root copy:
-https://docs.google.com/spreadsheets/d/175x6fMYC0zVads6l4QyuY4Zkfn-xOeNm7SgKe-yxmJM/edit
+https://docs.google.com/spreadsheets/d/1XqpWHqdoSTZBJnzT8frhVME-IvRqOoVt-d-Utirb6YE/edit
 
-Art Sales NAMES (2022–2024 lots were on the prior labeled companion; this sheet has 2025 two mosaic deals + Belt / Venus / August):
-https://docs.google.com/spreadsheets/d/1OfHYP14zIuJKGwVZHr1HmaAY-eTI-sJJN1ghqZp-wP0/edit
+Art Sales NAMES (2022–2024 lots + Deal A Jamal + Deal B Plutus + Belt / Venus / August):
+https://docs.google.com/spreadsheets/d/1xJGlxCmigKBhR0XnYQbjZGGzl_m64aalDfDrP2l8KlQ/edit
 
-Deal Classifier (per-invoice EOEB — SALE/FEE/PASS/UNALLOCATED; remainder $130,270 NOT dumped):
-https://docs.google.com/spreadsheets/d/1UglEtTDOb1Mu2G9HWqcggTLmRAKNqwhOMG-SdXINt0k/edit
+Deal Classifier (per-invoice EOEB — SALE/FEE/PASS/UNALLOCATED; remainder $108,270 NOT dumped):
+https://docs.google.com/spreadsheets/d/1NEa7qvWhduqndg9tdGYVvvinZ-NSB8mEwFW1l-a-8bk/edit
 
-ASK (Q10 mosaics mix REOPENED — two deals):
-https://docs.google.com/spreadsheets/d/1wUQF1PjXhbnFzNu1t03iB0KmhztCWSl3rSVUE_oM61w/edit
+ASK (Q10 split LOCKED; Jamal BoA Cost still ASK):
+https://docs.google.com/spreadsheets/d/12PxZu780mmvpD44pLve5Vy6dvYQo_dXjVOMvVow7S5U/edit
 
 Fortuna inventory LOCKED SOLD 2025 (Belt, Venus, August — not parked unsold):
 https://docs.google.com/spreadsheets/d/1TK93q6iwXuoWodkikxwFNKgGkfDiGgyk1RpvMEKmPPw/edit
 
 Tabs in last year's order (all inside that one file)
-1. Income — 2022–2025. 2025 Actual: Hindman $70,618 / 216 $19,500 / 524 #2 $17,086.94 / GCM $21,500 / Art $39,055.06. I10 EBITDA =SUM(I4:I9) → $167,760.
+1. Income — 2022–2025. 2025 Actual: Hindman $70,618 / 216 $19,500 / 524 #2 $17,086.94 / GCM $21,500 / Art $24,055.06. I10 EBITDA =SUM(I4:I9) → $152,760.
 2. 524 Ferdinand Ave, Unit 2
 3. 216 N. Oak Park Ave
-4. EPGC LLC — 2025 Art Sales $14,000 + $136,000 + July $76,000 + October $25,000 = $251,000; Consultant June $13,595 (David Aaron only).
+4. EPGC LLC — 2025 Art Sales $14,000 + $121,000 + July $76,000 + October $25,000 = $236,000; Consultant $87,991.32 (Canosan + mosaics fee + NBerk + David Aaron + L5 leftover FEEs).
 5. Refrence Library
-6. Art Sales and Purchases — 2022–2024 lots, then Sales 2025 including TWO mosaic deals (Jamal Deal A + Plutus/Antiquarium Deal B, EOEB pooled $105k), Roman Gold Belt, Venus joint, August Fortuna joint. Do not dump EOEB $130,270.
+6. Art Sales and Purchases — 2022–2024 lots, then Sales 2025 including Deal B Plutus/Antiquarium (Cost $50k / Sale $50k) + Deal A Jamal (Sale $40k, Cost ASK) + Roman Gold Belt + Venus joint + August Fortuna joint. Do not dump EOEB $108,270.
 7. GCM
 8. Hindman W2
 9. Megan T4
 10. Investments — Coinbase ACH net -$51,000.
 11. 524 Ferdinand Ave, Unit 1
 
-Mosaics (user 2026-09-21): 40/50 mix UNLOCKED. Plutus / DBA Antiquarium is a different mosaic deal, also EOEB. Perhaps EOEB paid for both at once. Combined Sale $105,000 LOCKED. Combined profit $15,000 WORKING. Plutus $50k on Mercury is Deal B Cost, not Jamal. Jamal Cost from personal BoA ASK. Do not double-count the 2/24 $90k EPGC→9922 transfer as extra Cost. BoA 9922 draws $261,172.
+Mosaics (user 2026-09-21 lock): EOEB 2/21 $105,000 = $50k Antiquarium SALE + $40k Jamal SALE + $15k FEE. $15k is Consultant February, not I8 profit. Plutus $50k on Mercury is Deal B Cost. Jamal Cost from personal BoA ASK — do not invent a $40k BoA Cost wire. Do not double-count the 2/24 $90k EPGC→9922 transfer as extra Cost. BoA 9922 draws $261,172.
 
 Deal Classifier: SALE vs FEE vs PASS vs UNALLOCATED.
-Belt = SALE. Venus = SALE (joint). August Fortuna = SALE (joint). Mosaics = two SALE deals, pooled cash. EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE.
+Belt = SALE. Venus = SALE (joint). August Fortuna = SALE (joint). Mosaics = two SALE deals ($90k) + FEE ($15k). L5 leftover = FEE. Canosan EOEB $1k = FEE. NBerk EOEB $21k = FEE. EOEB remainder = UNALLOCATED per invoice (proposed FEE). David Aaron = FEE. Koziol/Ariadne = PASS.
+
+START HERE Doc:
+https://docs.google.com/document/d/1Kup5ndlhMX_JRhLzs6BddeNUfNH95V6G3lVgIrqrv5I/edit
 
 Not tax advice.
